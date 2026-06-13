@@ -72,6 +72,7 @@
       <h3>Metric (applies to all three)</h3>
       <select id="metric">
         <option value="incidence">Incidence per 100,000</option>
+        <option value="death_rate">Deaths per 100,000</option>
         <option value="cases">Reported cases</option>
         <option value="deaths">Reported deaths</option>
         <option value="cfr">Case fatality rate (%)</option>
@@ -98,16 +99,18 @@
   </div>
 
   <div class="card small">
-    <h3 style="margin:2px 2px 10px;font-size:14px;">Vaccination coverage by age 24 months (CDC National Immunization Survey)</h3>
+    <h3 style="margin:2px 2px 10px;font-size:14px;">Childhood vaccination coverage over time</h3>
     <div class="chart-box"><canvas id="coverage"></canvas></div>
     <p class="metric-note"><strong>Availability ≠ coverage.</strong> A vaccine's
       licensure year is not when the population became protected — coverage rises
       over years, and gaps drive residual disease and resurgences (e.g., the
       1989–91 measles resurgence struck <em>unvaccinated preschoolers</em> ~26
-      years after the 1963 vaccine). The NIS only measures coverage from ~1994
-      on (this chart: 2011+), so the critical early-uptake decades are documented
-      as milestones, not a clean series — see
-      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/coverage_milestones.md">coverage_milestones.md</a>.</p>
+      years after the 1963 vaccine; note the dip in measles coverage through the
+      1980s). <strong>Hollow markers (pre-1994) are approximate historical
+      anchors</strong> from published reports; filled diamonds are CDC NIS data
+      (the survey began 1994). See
+      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/coverage_milestones.md">coverage_milestones.md</a>
+      for sources and caveats.</p>
   </div>
 
   <div class="card">
@@ -138,12 +141,14 @@ const COLORS = { polio: "#27ae60", pertussis: "#e67e22", measles: "#c0392b" };
 const NAMES = { polio: "Polio", pertussis: "Pertussis", measles: "Measles" };
 const METRIC_LABEL = {
   incidence: "Incidence per 100,000",
+  death_rate: "Deaths per 100,000",
   cases: "Reported cases",
   deaths: "Reported deaths",
   cfr: "Case fatality rate (%)",
 };
 const METRIC_NOTE = {
   incidence: "Population-adjusted using interpolated Census counts. Most useful for transmission, but only when case definitions are stable across eras.",
+  death_rate: "Deaths per 100,000 population — the recommended metric for long-term severity comparison (least sensitive to changing case definitions). Spans ~1900-present; early measles/pertussis points are approximate Death Registration Area rates. Note medical progress lowered deaths independent of infection rates.",
   cases: "Raw counts are the LEAST comparable across eras — case definitions and diagnostics changed (PCR for pertussis, lab-confirmation for measles, tightened paralytic definition for polio).",
   deaths: "Mortality is the metric least sensitive to changing case definitions, so it is the most reliable for cross-decade comparison — but medical progress lowered deaths independent of infection rates.",
   cfr: "Deaths ÷ reported cases. Reveals lethality per case, but conflates virulence with improvements in medical care; also distorted when case ascertainment changes.",
@@ -278,26 +283,37 @@ wireToggle("logToggle");
 wireToggle("vaxToggle");
 
 function renderCoverage() {
-  const cov = D.coverage;
+  const labels = { measles: "Measles (MMR ≥1)", pertussis: "Pertussis (DTP/DTaP ≥3)", polio: "Polio (≥3)" };
+  const datasets = ["measles", "pertussis", "polio"].map(d => ({
+    label: labels[d],
+    data: D.coverage[d].map(r => ({ x: r.year, y: r.value, approx: r.approx })),
+    borderColor: COLORS[d], backgroundColor: COLORS[d], tension: 0.2,
+    // hollow markers for approximate (pre-1994) anchors, filled for CDC NIS data
+    pointRadius: 4,
+    pointStyle: D.coverage[d].map(r => r.approx ? "circle" : "rectRot"),
+    pointBackgroundColor: D.coverage[d].map(r => r.approx ? "#11161c" : COLORS[d]),
+    pointBorderColor: COLORS[d],
+  }));
   new Chart(document.getElementById("coverage"), {
     type: "line",
-    data: { datasets: [
-      { label: "Measles (MMR ≥1)", data: cov.map(r => ({ x: r.year, y: r.measles })),
-        borderColor: COLORS.measles, backgroundColor: COLORS.measles, tension: 0.2, pointRadius: 3 },
-      { label: "Pertussis (DTaP ≥4)", data: cov.map(r => ({ x: r.year, y: r.pertussis })),
-        borderColor: COLORS.pertussis, backgroundColor: COLORS.pertussis, tension: 0.2, pointRadius: 3 },
-      { label: "Polio (≥3)", data: cov.map(r => ({ x: r.year, y: r.polio })),
-        borderColor: COLORS.polio, backgroundColor: COLORS.polio, tension: 0.2, pointRadius: 3 },
-    ]},
+    data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
       scales: {
-        x: { type: "linear", title: { display: true, text: "Birth year", color: "#9aa7b2" },
+        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
              ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
         y: { min: 0, max: 100, title: { display: true, text: "Coverage (%)", color: "#9aa7b2" },
              ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
       },
-      plugins: { legend: { labels: { color: "#e6edf3" } } },
+      plugins: {
+        legend: { labels: { color: "#e6edf3" } },
+        annotation: { annotations: { era: {
+          type: "box", xMin: 1950, xMax: 1994, backgroundColor: "rgba(150,150,150,0.07)",
+          borderWidth: 0 } } },
+        tooltip: { callbacks: {
+          title: items => "Year " + items[0].parsed.x,
+          afterLabel: ctx => ctx.raw.approx ? "(approximate historical anchor)" : "(CDC NIS)" } },
+      },
     },
   });
 }

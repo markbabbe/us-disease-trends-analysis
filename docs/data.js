@@ -43,6 +43,7 @@ window.DISEASE_DATA = {
       "deaths": 6000,
       "incidence": 26.8645,
       "cfr": 22.2222,
+      "death_rate": 5.9699,
       "note": "NYC-centered epidemic (approx national)"
     },
     {
@@ -51,6 +52,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 13.6088,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -59,6 +61,7 @@ window.DISEASE_DATA = {
       "deaths": 2720,
       "incidence": 28.1327,
       "cfr": 6.4711,
+      "death_rate": 1.8205,
       "note": ""
     },
     {
@@ -67,6 +70,7 @@ window.DISEASE_DATA = {
       "deaths": 1904,
       "incidence": 22.0055,
       "cfr": 5.7177,
+      "death_rate": 1.2582,
       "note": ""
     },
     {
@@ -75,6 +79,7 @@ window.DISEASE_DATA = {
       "deaths": 3145,
       "incidence": 36.7232,
       "cfr": 5.4574,
+      "death_rate": 2.0041,
       "note": "Largest US epidemic on record"
     },
     {
@@ -83,6 +88,7 @@ window.DISEASE_DATA = {
       "deaths": 1450,
       "incidence": 22.2833,
       "cfr": 4.0739,
+      "death_rate": 0.9078,
       "note": ""
     },
     {
@@ -91,6 +97,7 @@ window.DISEASE_DATA = {
       "deaths": 1368,
       "incidence": 23.6739,
       "cfr": 3.5555,
+      "death_rate": 0.8417,
       "note": ""
     },
     {
@@ -99,6 +106,7 @@ window.DISEASE_DATA = {
       "deaths": 1043,
       "incidence": 17.5322,
       "cfr": 3.5984,
+      "death_rate": 0.6309,
       "note": "Salk IPV licensed April 1955"
     },
     {
@@ -107,6 +115,7 @@ window.DISEASE_DATA = {
       "deaths": 566,
       "incidence": 9.0052,
       "cfr": 3.7384,
+      "death_rate": 0.3367,
       "note": ""
     },
     {
@@ -115,6 +124,7 @@ window.DISEASE_DATA = {
       "deaths": 221,
       "incidence": 3.209,
       "cfr": 4.0292,
+      "death_rate": 0.1293,
       "note": ""
     },
     {
@@ -123,6 +133,7 @@ window.DISEASE_DATA = {
       "deaths": 255,
       "incidence": 3.3312,
       "cfr": 4.4064,
+      "death_rate": 0.1468,
       "note": ""
     },
     {
@@ -131,6 +142,7 @@ window.DISEASE_DATA = {
       "deaths": 230,
       "incidence": 1.7789,
       "cfr": 7.21,
+      "death_rate": 0.1283,
       "note": "Sabin OPV rollout beginning"
     },
     {
@@ -139,6 +151,7 @@ window.DISEASE_DATA = {
       "deaths": 90,
       "incidence": 0.722,
       "cfr": 6.8598,
+      "death_rate": 0.0495,
       "note": "OPV licensed"
     },
     {
@@ -147,6 +160,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.2408,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -155,6 +169,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.0646,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -163,6 +178,7 @@ window.DISEASE_DATA = {
       "deaths": 16,
       "incidence": 0.0376,
       "cfr": 22.2222,
+      "death_rate": 0.0084,
       "note": ""
     },
     {
@@ -171,6 +187,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.0162,
       "cfr": null,
+      "death_rate": null,
       "note": "Only sporadic/imported and VAPP"
     },
     {
@@ -179,6 +196,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.0116,
       "cfr": null,
+      "death_rate": null,
       "note": "Last endemic wild-virus outbreak (Amish)"
     },
     {
@@ -187,6 +205,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.0028,
       "cfr": null,
+      "death_rate": null,
       "note": "Vaccine-associated paralytic polio era"
     },
     {
@@ -195,6 +214,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.0,
       "cfr": null,
+      "death_rate": 0.0,
       "note": "OPV discontinued in US"
     },
     {
@@ -203,6 +223,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.0014,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": "Importation into unvaccinated community"
     },
     {
@@ -211,17 +232,55 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.0003,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": "Vaccine-derived case (Rockland County NY)"
     }
   ],
   "pertussis": [
+    {
+      "year": 1900,
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 12.2,
+      "note": "Early death rate (approx)"
+    },
+    {
+      "year": 1910,
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 11.8,
+      "note": "Early death rate (approx)"
+    },
+    {
+      "year": 1920,
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 9.0,
+      "note": "Early death rate (approx)"
+    },
     {
       "year": 1922,
       "cases": 107473,
       "deaths": null,
       "incidence": 98.1867,
       "cfr": null,
+      "death_rate": null,
       "note": "Reporting becoming national"
+    },
+    {
+      "year": 1930,
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 4.8,
+      "note": "Early death rate (approx)"
     },
     {
       "year": 1934,
@@ -229,6 +288,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 209.2235,
       "cfr": null,
+      "death_rate": null,
       "note": "Largest reported year"
     },
     {
@@ -237,6 +297,7 @@ window.DISEASE_DATA = {
       "deaths": 2538,
       "incidence": 139.119,
       "cfr": 1.3804,
+      "death_rate": 1.9203,
       "note": ""
     },
     {
@@ -245,6 +306,7 @@ window.DISEASE_DATA = {
       "deaths": 1675,
       "incidence": 94.3891,
       "cfr": 1.2519,
+      "death_rate": 1.1817,
       "note": ""
     },
     {
@@ -253,6 +315,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 50.6565,
       "cfr": null,
+      "death_rate": null,
       "note": "Whole-cell DTP entering routine use"
     },
     {
@@ -261,6 +324,7 @@ window.DISEASE_DATA = {
       "deaths": 1118,
       "incidence": 79.7736,
       "cfr": 0.9261,
+      "death_rate": 0.7388,
       "note": ""
     },
     {
@@ -269,6 +333,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 37.9774,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -277,6 +342,7 @@ window.DISEASE_DATA = {
       "deaths": 269,
       "incidence": 8.2583,
       "cfr": 1.8165,
+      "death_rate": 0.15,
       "note": ""
     },
     {
@@ -285,6 +351,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 3.5547,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -293,6 +360,7 @@ window.DISEASE_DATA = {
       "deaths": 12,
       "incidence": 2.0909,
       "cfr": 0.2824,
+      "death_rate": 0.0059,
       "note": "Record-low era begins"
     },
     {
@@ -301,6 +369,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.465,
       "cfr": null,
+      "death_rate": null,
       "note": "All-time reported low"
     },
     {
@@ -309,6 +378,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.7636,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -317,6 +387,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 1.5103,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -325,6 +396,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 1.8375,
       "cfr": null,
+      "death_rate": null,
       "note": "Acellular DTaP transition begins"
     },
     {
@@ -333,6 +405,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 2.5475,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -341,6 +414,7 @@ window.DISEASE_DATA = {
       "deaths": 12,
       "incidence": 2.7954,
       "cfr": 0.1525,
+      "death_rate": 0.0043,
       "note": ""
     },
     {
@@ -349,6 +423,7 @@ window.DISEASE_DATA = {
       "deaths": 27,
       "incidence": 8.8342,
       "cfr": 0.1045,
+      "death_rate": 0.0092,
       "note": "PCR testing expands"
     },
     {
@@ -357,6 +432,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 8.6809,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -365,6 +441,7 @@ window.DISEASE_DATA = {
       "deaths": 27,
       "incidence": 8.9232,
       "cfr": 0.098,
+      "death_rate": 0.0087,
       "note": "California epidemic"
     },
     {
@@ -373,6 +450,7 @@ window.DISEASE_DATA = {
       "deaths": 20,
       "incidence": 15.4099,
       "cfr": 0.0414,
+      "death_rate": 0.0064,
       "note": "Highest since 1955"
     },
     {
@@ -381,6 +459,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 10.3739,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -389,6 +468,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 4.7747,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -397,6 +477,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 5.6556,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -405,6 +486,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.7112,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional cumulative)"
     },
     {
@@ -413,6 +495,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 1.6603,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional cumulative)"
     },
     {
@@ -421,6 +504,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 10.4357,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional; resurgence year)"
     },
     {
@@ -429,17 +513,46 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 8.5143,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional cumulative)"
     }
   ],
   "measles": [
+    {
+      "year": 1900,
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 13.3,
+      "note": "Early death rate (approx)"
+    },
+    {
+      "year": 1910,
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 12.4,
+      "note": "Early death rate (approx)"
+    },
     {
       "year": 1920,
       "cases": 469924,
       "deaths": 7575,
       "incidence": 443.2345,
       "cfr": 1.612,
+      "death_rate": 7.1448,
       "note": "High-mortality early era"
+    },
+    {
+      "year": 1930,
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 3.2,
+      "note": "Early death rate (approx)"
     },
     {
       "year": 1940,
@@ -447,6 +560,7 @@ window.DISEASE_DATA = {
       "deaths": 1100,
       "incidence": 220.3026,
       "cfr": 0.3778,
+      "death_rate": 0.8323,
       "note": "Antibiotics not yet widespread"
     },
     {
@@ -455,6 +569,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 666.8626,
       "cfr": null,
+      "death_rate": null,
       "note": "Large epidemic year"
     },
     {
@@ -463,6 +578,7 @@ window.DISEASE_DATA = {
       "deaths": 468,
       "incidence": 210.8854,
       "cfr": 0.1467,
+      "death_rate": 0.3093,
       "note": ""
     },
     {
@@ -471,6 +587,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 420.0714,
       "cfr": null,
+      "death_rate": null,
       "note": "Pre-vaccine peak-type year"
     },
     {
@@ -479,6 +596,7 @@ window.DISEASE_DATA = {
       "deaths": 345,
       "incidence": 335.7978,
       "cfr": 0.0621,
+      "death_rate": 0.2087,
       "note": ""
     },
     {
@@ -487,6 +605,7 @@ window.DISEASE_DATA = {
       "deaths": 552,
       "incidence": 439.2573,
       "cfr": 0.0723,
+      "death_rate": 0.3177,
       "note": "Largest reported postwar year"
     },
     {
@@ -495,6 +614,7 @@ window.DISEASE_DATA = {
       "deaths": 380,
       "incidence": 246.3167,
       "cfr": 0.086,
+      "death_rate": 0.2119,
       "note": ""
     },
     {
@@ -503,6 +623,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 261.5576,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -511,6 +632,7 @@ window.DISEASE_DATA = {
       "deaths": 364,
       "incidence": 206.5293,
       "cfr": 0.0945,
+      "death_rate": 0.1952,
       "note": "Edmonston-B vaccine licensed"
     },
     {
@@ -519,6 +641,7 @@ window.DISEASE_DATA = {
       "deaths": 276,
       "incidence": 136.9307,
       "cfr": 0.1054,
+      "death_rate": 0.1443,
       "note": ""
     },
     {
@@ -527,6 +650,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 31.985,
       "cfr": null,
+      "death_rate": null,
       "note": "Vaccine uptake rising"
     },
     {
@@ -535,6 +659,7 @@ window.DISEASE_DATA = {
       "deaths": 24,
       "incidence": 11.2032,
       "cfr": 0.108,
+      "death_rate": 0.0121,
       "note": ""
     },
     {
@@ -543,6 +668,7 @@ window.DISEASE_DATA = {
       "deaths": 89,
       "incidence": 23.3013,
       "cfr": 0.188,
+      "death_rate": 0.0438,
       "note": "Post-1968 rebound"
     },
     {
@@ -551,6 +677,7 @@ window.DISEASE_DATA = {
       "deaths": 20,
       "incidence": 11.3431,
       "cfr": 0.0821,
+      "death_rate": 0.0093,
       "note": ""
     },
     {
@@ -559,6 +686,7 @@ window.DISEASE_DATA = {
       "deaths": 11,
       "incidence": 5.9617,
       "cfr": 0.0814,
+      "death_rate": 0.0049,
       "note": ""
     },
     {
@@ -567,6 +695,7 @@ window.DISEASE_DATA = {
       "deaths": 4,
       "incidence": 0.642,
       "cfr": 0.2672,
+      "death_rate": 0.0017,
       "note": "Record low pre-resurgence"
     },
     {
@@ -575,6 +704,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 1.1876,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -583,6 +713,7 @@ window.DISEASE_DATA = {
       "deaths": 41,
       "incidence": 7.3807,
       "cfr": 0.2254,
+      "death_rate": 0.0166,
       "note": "Resurgence begins"
     },
     {
@@ -591,6 +722,7 @@ window.DISEASE_DATA = {
       "deaths": 64,
       "incidence": 11.1721,
       "cfr": 0.2303,
+      "death_rate": 0.0257,
       "note": "Resurgence peak"
     },
     {
@@ -599,6 +731,7 @@ window.DISEASE_DATA = {
       "deaths": 9,
       "incidence": 3.8269,
       "cfr": 0.0933,
+      "death_rate": 0.0036,
       "note": ""
     },
     {
@@ -607,6 +740,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.1207,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": ""
     },
     {
@@ -615,6 +749,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.1166,
       "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -623,6 +758,7 @@ window.DISEASE_DATA = {
       "deaths": 1,
       "incidence": 0.0306,
       "cfr": 1.1628,
+      "death_rate": 0.0004,
       "note": "Elimination declared"
     },
     {
@@ -631,6 +767,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.0127,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": "Record low"
     },
     {
@@ -639,6 +776,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.0462,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": ""
     },
     {
@@ -647,6 +785,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.2099,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": ""
     },
     {
@@ -655,6 +794,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.3895,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": "Largest post-elimination year"
     },
     {
@@ -663,6 +803,7 @@ window.DISEASE_DATA = {
       "deaths": 0,
       "incidence": 0.0039,
       "cfr": 0.0,
+      "death_rate": 0.0,
       "note": ""
     },
     {
@@ -671,6 +812,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.0363,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional cumulative)"
     },
     {
@@ -679,6 +821,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.0139,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional cumulative)"
     },
     {
@@ -687,6 +830,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.0782,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional cumulative)"
     },
     {
@@ -695,6 +839,7 @@ window.DISEASE_DATA = {
       "deaths": null,
       "incidence": 0.5957,
       "cfr": null,
+      "death_rate": null,
       "note": "CDC NNDSS API (provisional; large outbreak year)"
     }
   ],
@@ -735,78 +880,307 @@ window.DISEASE_DATA = {
       "pertussis": 0.15
     }
   ],
-  "coverage": [
-    {
-      "year": 2011,
-      "measles": 90.1,
-      "pertussis": 80.7,
-      "polio": 92.0
-    },
-    {
-      "year": 2012,
-      "measles": 90.6,
-      "pertussis": 81.4,
-      "polio": 93.0
-    },
-    {
-      "year": 2013,
-      "measles": 90.3,
-      "pertussis": 81.2,
-      "polio": 92.3
-    },
-    {
-      "year": 2014,
-      "measles": 89.8,
-      "pertussis": 80.1,
-      "polio": 91.0
-    },
-    {
-      "year": 2015,
-      "measles": 90.8,
-      "pertussis": 80.7,
-      "polio": 92.6
-    },
-    {
-      "year": 2016,
-      "measles": 90.8,
-      "pertussis": 80.4,
-      "polio": 92.5
-    },
-    {
-      "year": 2017,
-      "measles": 90.4,
-      "pertussis": 80.9,
-      "polio": 91.5
-    },
-    {
-      "year": 2018,
-      "measles": 92.3,
-      "pertussis": 82.3,
-      "polio": 93.8
-    },
-    {
-      "year": 2019,
-      "measles": 91.5,
-      "pertussis": 81.3,
-      "polio": 92.9
-    },
-    {
-      "year": 2020,
-      "measles": 90.2,
-      "pertussis": 79.6,
-      "polio": 92.1
-    },
-    {
-      "year": 2021,
-      "measles": 90.2,
-      "pertussis": 80.4,
-      "polio": 92.0
-    },
-    {
-      "year": 2022,
-      "measles": 91.4,
-      "pertussis": 80.9,
-      "polio": 92.3
-    }
-  ]
+  "coverage": {
+    "measles": [
+      {
+        "year": 1963,
+        "value": 0.0,
+        "approx": true
+      },
+      {
+        "year": 1968,
+        "value": 48.0,
+        "approx": true
+      },
+      {
+        "year": 1976,
+        "value": 63.0,
+        "approx": true
+      },
+      {
+        "year": 1980,
+        "value": 65.0,
+        "approx": true
+      },
+      {
+        "year": 1985,
+        "value": 62.0,
+        "approx": true
+      },
+      {
+        "year": 1991,
+        "value": 82.0,
+        "approx": true
+      },
+      {
+        "year": 1996,
+        "value": 91.0,
+        "approx": true
+      },
+      {
+        "year": 2011,
+        "value": 90.1,
+        "approx": false
+      },
+      {
+        "year": 2012,
+        "value": 90.6,
+        "approx": false
+      },
+      {
+        "year": 2013,
+        "value": 90.3,
+        "approx": false
+      },
+      {
+        "year": 2014,
+        "value": 89.8,
+        "approx": false
+      },
+      {
+        "year": 2015,
+        "value": 90.8,
+        "approx": false
+      },
+      {
+        "year": 2016,
+        "value": 90.8,
+        "approx": false
+      },
+      {
+        "year": 2017,
+        "value": 90.4,
+        "approx": false
+      },
+      {
+        "year": 2018,
+        "value": 92.3,
+        "approx": false
+      },
+      {
+        "year": 2019,
+        "value": 91.5,
+        "approx": false
+      },
+      {
+        "year": 2020,
+        "value": 90.2,
+        "approx": false
+      },
+      {
+        "year": 2021,
+        "value": 90.2,
+        "approx": false
+      },
+      {
+        "year": 2022,
+        "value": 91.4,
+        "approx": false
+      }
+    ],
+    "pertussis": [
+      {
+        "year": 1970,
+        "value": 75.0,
+        "approx": true
+      },
+      {
+        "year": 1976,
+        "value": 70.0,
+        "approx": true
+      },
+      {
+        "year": 1980,
+        "value": 68.0,
+        "approx": true
+      },
+      {
+        "year": 1985,
+        "value": 65.0,
+        "approx": true
+      },
+      {
+        "year": 1991,
+        "value": 83.0,
+        "approx": true
+      },
+      {
+        "year": 1996,
+        "value": 95.0,
+        "approx": true
+      },
+      {
+        "year": 2011,
+        "value": 93.6,
+        "approx": false
+      },
+      {
+        "year": 2012,
+        "value": 94.2,
+        "approx": false
+      },
+      {
+        "year": 2013,
+        "value": 94.2,
+        "approx": false
+      },
+      {
+        "year": 2014,
+        "value": 93.0,
+        "approx": false
+      },
+      {
+        "year": 2015,
+        "value": 93.9,
+        "approx": false
+      },
+      {
+        "year": 2016,
+        "value": 93.7,
+        "approx": false
+      },
+      {
+        "year": 2017,
+        "value": 92.6,
+        "approx": false
+      },
+      {
+        "year": 2018,
+        "value": 94.6,
+        "approx": false
+      },
+      {
+        "year": 2019,
+        "value": 93.8,
+        "approx": false
+      },
+      {
+        "year": 2020,
+        "value": 92.7,
+        "approx": false
+      },
+      {
+        "year": 2021,
+        "value": 92.8,
+        "approx": false
+      },
+      {
+        "year": 2022,
+        "value": 92.6,
+        "approx": false
+      }
+    ],
+    "polio": [
+      {
+        "year": 1955,
+        "value": 0.0,
+        "approx": true
+      },
+      {
+        "year": 1960,
+        "value": 55.0,
+        "approx": true
+      },
+      {
+        "year": 1963,
+        "value": 65.0,
+        "approx": true
+      },
+      {
+        "year": 1968,
+        "value": 70.0,
+        "approx": true
+      },
+      {
+        "year": 1970,
+        "value": 72.0,
+        "approx": true
+      },
+      {
+        "year": 1976,
+        "value": 67.0,
+        "approx": true
+      },
+      {
+        "year": 1980,
+        "value": 60.0,
+        "approx": true
+      },
+      {
+        "year": 1985,
+        "value": 58.0,
+        "approx": true
+      },
+      {
+        "year": 1991,
+        "value": 72.0,
+        "approx": true
+      },
+      {
+        "year": 1996,
+        "value": 91.0,
+        "approx": true
+      },
+      {
+        "year": 2011,
+        "value": 92.0,
+        "approx": false
+      },
+      {
+        "year": 2012,
+        "value": 93.0,
+        "approx": false
+      },
+      {
+        "year": 2013,
+        "value": 92.3,
+        "approx": false
+      },
+      {
+        "year": 2014,
+        "value": 91.0,
+        "approx": false
+      },
+      {
+        "year": 2015,
+        "value": 92.6,
+        "approx": false
+      },
+      {
+        "year": 2016,
+        "value": 92.5,
+        "approx": false
+      },
+      {
+        "year": 2017,
+        "value": 91.5,
+        "approx": false
+      },
+      {
+        "year": 2018,
+        "value": 93.8,
+        "approx": false
+      },
+      {
+        "year": 2019,
+        "value": 92.9,
+        "approx": false
+      },
+      {
+        "year": 2020,
+        "value": 92.1,
+        "approx": false
+      },
+      {
+        "year": 2021,
+        "value": 92.0,
+        "approx": false
+      },
+      {
+        "year": 2022,
+        "value": 92.3,
+        "approx": false
+      }
+    ]
+  }
 };

@@ -1,0 +1,5 @@
+disease,group,era,pct_hospitalized,source_note
+Measles,All reported cases,2001-2019,20,CDC measles surveillance (~1 in 5 hospitalized)
+Pertussis,Infants under 1 yr,recent,30,CDC pertussis surveillance (higher in youngest infants)
+Pertussis,All reported cases,recent,5,CDC (approximate; most cases not hospitalized)
+Polio,Paralytic (epidemic era),1940s-1950s,95,Historical; most paralytic cases hospitalized, bulbar cases needed respirators

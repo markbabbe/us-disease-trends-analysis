@@ -28,7 +28,7 @@ BASE = "https://data.cdc.gov/resource/fhky-rtsk.json"
 # label -> (vaccine value, dose value) ; dose "" means any/only-one
 SERIES = {
     "measles_mmr": ("≥1 Dose MMR", ""),
-    "pertussis_dtap": ("DTaP", "≥4 Doses"),
+    "pertussis_dtap": ("DTaP", "≥3 Doses"),
     "polio": ("Polio", "≥3 Doses"),
 }
 

@@ -80,6 +80,23 @@ The 2022–2025 rows in `measles.csv` and `pertussis.csv` are therefore labeled 
 CDC NNDSS API (provisional). They capture the recent measles resurgence (2025)
 and pertussis resurgence (2024) that the historical compilation alone would miss.
 
+## Deaths per 100,000 over time
+
+Computed in `scripts/build_dashboard_data.py` and `generate_charts.py` as death
+count ÷ interpolated Census population × 100,000. Early measles/pertussis points
+(1900–1930) use the approximate Death Registration Area rates in
+`early_mortality_rates.csv`; later points are derived from the death counts in
+the disease CSVs. This is the recommended long-run severity metric.
+
+## Hospitalizations (`hospitalizations.csv`)
+
+**There is no continuous national hospitalization rate for these diseases across
+the century.** The earliest systematic sources — NCHS National Hospital
+Discharge Survey (1965+) and HCUP (1988+) — are modern. `hospitalizations.csv`
+therefore records the **documented case-hospitalization proportion** (% of
+reported cases hospitalized) by era, from CDC surveillance, not a per-100,000
+time series. See README §7b.
+
 ## Vaccination coverage (live CDC NIS API)
 
 `coverage.csv` is pulled live from the CDC National Immunization Survey via

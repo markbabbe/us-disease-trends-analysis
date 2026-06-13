@@ -353,6 +353,45 @@ decline — the opposite direction of the pertussis artifact.
 
 ---
 
+# 7b. Hospitalizations over time — what can and cannot be measured
+
+You might reasonably want **hospitalizations per 100,000 throughout time** as a
+severity metric alongside deaths. The honest answer: **a continuous national
+hospitalization rate for these diseases back through the century does not
+exist**, and presenting one would be fabrication.
+
+*Why (observed limitation):*
+
+- There was **no national hospitalization surveillance** for most of the 20th
+  century. The earliest systematic source, the NCHS **National Hospital
+  Discharge Survey (NHDS), began in 1965**; **HCUP** (the Healthcare Cost and
+  Utilization Project) begins in **1988**. Both are modern, sample-based, and
+  diagnosis-coded — not comparable to early-century records, which largely don't
+  exist.
+- For the pre-vaccine era, hospitalization meaning also differed: in the polio
+  epidemics, **paralytic cases were nearly always hospitalized**, and bulbar
+  cases required mechanical ventilation ("iron lungs") — so ~100% hospitalization
+  reflects clinical necessity, not a rate comparable to modern figures.
+
+*What IS documented (chart:
+[`charts/hospitalization_proportion.png`](charts/hospitalization_proportion.png)):*
+the **proportion of reported cases hospitalized** in the modern surveillance era:
+
+| Disease (group) | Era | ≈ % of reported cases hospitalized |
+|---|---|---|
+| Measles (all reported cases) | 2001–2019 | ~20% (about 1 in 5) |
+| Pertussis (infants <1 yr) | recent | ~30% (higher in the youngest) |
+| Pertussis (all reported cases) | recent | ~5% |
+| Polio (paralytic, epidemic era) | 1940s–50s | ~95% (mostly hospitalized) |
+
+**Interpretation.** Case-hospitalization *proportion* is a useful severity
+signal but is **not** a population rate, and it is sensitive to the same
+case-ascertainment changes discussed throughout (if mild cases are detected more
+often, the hospitalized *fraction* falls even if severe disease is unchanged).
+For long-run severity comparison, **deaths per 100,000 remains the best
+available metric** (next section); hospitalization data supplement it only for
+the recent era.
+
 # 8. Which metric is best for long-term comparison?
 
 **Recommendation, by purpose:**
@@ -443,6 +482,8 @@ incidence comparison across the post-licensure era.
 | Chart | File |
 |---|---|
 | Combined incidence per 100,000 (all three) | [`charts/combined_incidence.png`](charts/combined_incidence.png) |
+| **Deaths per 100,000 over time (all three, 1900–present)** | [`charts/deaths_per_100k.png`](charts/deaths_per_100k.png) |
+| Case-hospitalization proportion (documented, modern) | [`charts/hospitalization_proportion.png`](charts/hospitalization_proportion.png) |
 | Early-century death rates 1900–1960 (measles, pertussis) | [`charts/early_mortality_rates.png`](charts/early_mortality_rates.png) |
 | Childhood vaccination coverage (CDC NIS, 2011+) | [`charts/coverage.png`](charts/coverage.png) |
 | Polio — cases / incidence / deaths | [`charts/polio_cases.png`](charts/polio_cases.png) · [`charts/polio_incidence.png`](charts/polio_incidence.png) · [`charts/polio_deaths.png`](charts/polio_deaths.png) |

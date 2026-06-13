@@ -199,24 +199,99 @@ def early_mortality_chart():
     return p
 
 
+def _cov_series(col):
+    """Merge approximate historical anchors + modern NIS for one column."""
+    pts = {}
+    for r in read_csv("coverage_historical.csv"):
+        if r[col].strip():
+            pts[int(r["year"])] = (float(r[col]), True)
+    for r in read_csv("coverage.csv"):
+        if r[col].strip():
+            pts[int(r["year"])] = (float(r[col]), False)
+    yrs = sorted(pts)
+    return yrs, [pts[y][0] for y in yrs], [pts[y][1] for y in yrs]
+
+
 def coverage_chart():
-    rows = read_csv("coverage.csv")
-    yrs = [int(r["year"]) for r in rows]
-    def col(name):
-        return [float(r[name]) if r[name].strip() else None for r in rows]
+    cols = [("measles_mmr", "#c0392b", "Measles (MMR ≥1)"),
+            ("pertussis_dtap", "#e67e22", "Pertussis (DTP/DTaP ≥3)"),
+            ("polio", "#27ae60", "Polio (≥3)")]
     fig, ax = plt.subplots(figsize=(10, 5.5))
-    ax.plot(yrs, col("measles_mmr"), "-o", color="#c0392b", label="Measles (MMR ≥1)")
-    ax.plot(yrs, col("pertussis_dtap"), "-o", color="#e67e22", label="Pertussis (DTaP ≥4)")
-    ax.plot(yrs, col("polio"), "-o", color="#27ae60", label="Polio (≥3)")
+    for col, color, label in cols:
+        yrs, vals, approx = _cov_series(col)
+        ax.plot(yrs, vals, "-o", color=color, markersize=4, label=label)
+        # mark the approximate (pre-1994) anchors with hollow markers
+        ax_yrs = [y for y, a in zip(yrs, approx) if a]
+        ax_vals = [v for v, a in zip(vals, approx) if a]
+        ax.plot(ax_yrs, ax_vals, "o", color=color, markersize=7,
+                markerfacecolor="none", markeredgecolor=color)
     ax.set_ylim(0, 100)
-    ax.set_title("U.S. childhood vaccination coverage by age 24 months\n"
-                 "(CDC NIS — only available ~2011+; modern plateau ~80-93%)")
-    ax.set_xlabel("Birth year")
+    ax.axvspan(1950, 1994, color="#999", alpha=0.08)
+    ax.text(1971, 6, "pre-1994: approx. anchors\n(hollow markers)", fontsize=8, color="#666", ha="center")
+    ax.set_title("U.S. childhood vaccination coverage over time\n"
+                 "(hollow = approximate historical anchors; solid = CDC NIS, 2011+)")
+    ax.set_xlabel("Year")
     ax.set_ylabel("Coverage (%)")
     ax.grid(True, alpha=0.3)
-    ax.legend(loc="lower left")
+    ax.legend(loc="lower right")
     fig.tight_layout()
     p = os.path.join(OUT, "coverage.png")
+    fig.savefig(p, dpi=130)
+    plt.close(fig)
+    return p
+
+
+def hospitalization_chart():
+    rows = read_csv("hospitalizations.csv")
+    labels = [f"{r['disease']}\n{r['group']}" for r in rows]
+    vals = [float(r["pct_hospitalized"]) for r in rows]
+    colors = {"Measles": "#c0392b", "Pertussis": "#e67e22", "Polio": "#27ae60"}
+    bar_colors = [colors[r["disease"]] for r in rows]
+    fig, ax = plt.subplots(figsize=(10, 5.5))
+    bars = ax.bar(labels, vals, color=bar_colors)
+    for b, v in zip(bars, vals):
+        ax.text(b.get_x() + b.get_width() / 2, v + 1, f"~{v:.0f}%", ha="center", fontsize=9)
+    ax.set_ylim(0, 105)
+    ax.set_ylabel("% of reported cases hospitalized")
+    ax.set_title("Case-hospitalization proportion (documented; NOT a long-run per-100k series)\n"
+                 "No national hospitalization surveillance exists back through the century")
+    ax.grid(True, axis="y", alpha=0.3)
+    fig.tight_layout()
+    p = os.path.join(OUT, "hospitalization_proportion.png")
+    fig.savefig(p, dpi=130)
+    plt.close(fig)
+    return p
+
+
+def deaths_per_100k_chart(pyrs, pop):
+    cfgs = [("measles.csv", "#c0392b", "Measles", "measles_death_rate"),
+            ("pertussis.csv", "#e67e22", "Pertussis", "pertussis_death_rate"),
+            ("polio.csv", "#27ae60", "Polio", None)]
+    early = read_csv("early_mortality_rates.csv")
+    fig, ax = plt.subplots(figsize=(10, 5.5))
+    for fname, color, label, early_col in cfgs:
+        rows = read_csv(fname)
+        pts = {}
+        for r in rows:
+            d = to_int(r.get("deaths"))
+            if d is not None:
+                y = int(r["year"])
+                pts[y] = d / pop_for(y, pyrs, pop) * 100000
+        if early_col:  # backfill early-era rates
+            for r in early:
+                y = int(r["year"])
+                if y not in pts and r[early_col].strip():
+                    pts[y] = float(r[early_col])
+        yrs = sorted(y for y in pts if pts[y] > 0)
+        ax.plot(yrs, [pts[y] for y in yrs], "-o", color=color, markersize=4, label=label)
+    ax.set_yscale("log")
+    ax.set_title("Deaths per 100,000 population, U.S. — three diseases (1900-present)")
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Deaths per 100,000 (log scale)")
+    ax.grid(True, which="both", alpha=0.3)
+    ax.legend()
+    fig.tight_layout()
+    p = os.path.join(OUT, "deaths_per_100k.png")
     fig.savefig(p, dpi=130)
     plt.close(fig)
     return p
@@ -251,6 +326,8 @@ def main():
 
     made.append(early_mortality_chart())
     made.append(coverage_chart())
+    made.append(deaths_per_100k_chart(pyrs, pop))
+    made.append(hospitalization_chart())
 
     made.append(combined_incidence(pyrs, pop, [
         ("polio", polio, "total_cases", "Polio (total)"),

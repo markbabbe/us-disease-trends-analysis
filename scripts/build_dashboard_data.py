@@ -32,9 +32,18 @@ def load_pop():
             np.array([int(r["population"]) for r in rows]))
 
 
-def build(rows, case_field):
+def early_rates(disease):
+    """Early-century deaths per 100,000 from early_mortality_rates.csv."""
+    col = {"measles": "measles_death_rate", "pertussis": "pertussis_death_rate"}.get(disease)
+    if not col:
+        return {}
+    return {int(r["year"]): float(r[col]) for r in read_csv("early_mortality_rates.csv")}
+
+
+def build(rows, case_field, disease):
     pyrs, pop = load_pop()
-    out = []
+    early = early_rates(disease)
+    out = {}
     for r in rows:
         y = int(r["year"])
         cases = to_int(r.get(case_field))
@@ -42,9 +51,18 @@ def build(rows, case_field):
         p = float(np.interp(y, pyrs, pop))
         inc = round(cases / p * 100000, 4) if cases is not None else None
         cfr = round(deaths / cases * 100, 4) if (cases and deaths is not None and cases > 0) else None
-        out.append({"year": y, "cases": cases, "deaths": deaths,
-                    "incidence": inc, "cfr": cfr, "note": r.get("notes", "")})
-    return out
+        death_rate = round(deaths / p * 100000, 4) if deaths is not None else None
+        out[y] = {"year": y, "cases": cases, "deaths": deaths, "incidence": inc,
+                  "cfr": cfr, "death_rate": death_rate, "note": r.get("notes", "")}
+    # Backfill early-era death rates (1900-1930) where the count series lacks them.
+    for y, rate in early.items():
+        rec = out.get(y)
+        if rec is None:
+            out[y] = {"year": y, "cases": None, "deaths": None, "incidence": None,
+                      "cfr": None, "death_rate": rate, "note": "Early death rate (approx)"}
+        elif rec["death_rate"] is None:
+            rec["death_rate"] = rate
+    return [out[y] for y in sorted(out)]
 
 
 def early():
@@ -55,13 +73,24 @@ def early():
 
 
 def coverage():
-    rows = read_csv("coverage.csv")
+    """Merge approximate historical anchors with live modern NIS data."""
     def f(v):
         v = (v or "").strip()
         return float(v) if v else None
-    return [{"year": int(r["year"]), "measles": f(r["measles_mmr"]),
-             "pertussis": f(r["pertussis_dtap"]), "polio": f(r["polio"])}
-            for r in rows]
+    series = {"measles": {}, "pertussis": {}, "polio": {}}
+    for r in read_csv("coverage_historical.csv"):
+        y = int(r["year"])
+        for d, col in [("measles", "measles_mmr"), ("pertussis", "pertussis_dtap"), ("polio", "polio")]:
+            v = f(r[col])
+            if v is not None:
+                series[d][y] = {"year": y, "value": v, "approx": True}
+    for r in read_csv("coverage.csv"):
+        y = int(r["year"])
+        for d, col in [("measles", "measles_mmr"), ("pertussis", "pertussis_dtap"), ("polio", "polio")]:
+            v = f(r[col])
+            if v is not None:
+                series[d][y] = {"year": y, "value": v, "approx": False}
+    return {d: [series[d][y] for y in sorted(series[d])] for d in series}
 
 
 def main():
@@ -75,9 +104,9 @@ def main():
                         {"year": 1971, "label": "MMR"},
                         {"year": 1989, "label": "2nd dose"}],
         },
-        "polio": build(read_csv("polio.csv"), "total_cases"),
-        "pertussis": build(read_csv("pertussis.csv"), "reported_cases"),
-        "measles": build(read_csv("measles.csv"), "reported_cases"),
+        "polio": build(read_csv("polio.csv"), "total_cases", "polio"),
+        "pertussis": build(read_csv("pertussis.csv"), "reported_cases", "pertussis"),
+        "measles": build(read_csv("measles.csv"), "reported_cases", "measles"),
         "earlyMortality": early(),
         "coverage": coverage(),
     }
