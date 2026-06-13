@@ -66,6 +66,23 @@ def add_vaccine_lines(ax, disease):
                 rotation=90, va="top", ha="left", fontsize=8, color="#444")
 
 
+# Periods where the case definition / classification changed materially.
+DEFINITION_CHANGE = {
+    "polio": (1954, 1958,
+              "Case definition tightened:\nresidual-paralysis requirement;\nenteroviruses reclassified out"),
+}
+
+
+def add_definition_marker(ax, disease):
+    if disease not in DEFINITION_CHANGE:
+        return
+    x0, x1, label = DEFINITION_CHANGE[disease]
+    ax.axvspan(x0, x1, color="#7b2d8e", alpha=0.18, zorder=0)
+    trans = ax.get_xaxis_transform()  # x in data coords, y in axes fraction
+    ax.text((x0 + x1) / 2, 0.45, label, rotation=90, ha="center", va="center",
+            fontsize=7, color="#5b2270", transform=trans, zorder=5)
+
+
 def drop_zeros(yrs, vals):
     """Log scale cannot show zeros; drop those points."""
     pairs = [(y, v) for y, v in zip(yrs, vals) if v and v > 0]
@@ -83,6 +100,7 @@ def cases_chart(disease, rows, case_field, title):
     ax.set_yscale("log")
     ax.grid(True, which="both", alpha=0.3)
     add_vaccine_lines(ax, disease)
+    add_definition_marker(ax, disease)
     fig.tight_layout()
     p = os.path.join(OUT, f"{disease}_cases.png")
     fig.savefig(p, dpi=130)
@@ -102,6 +120,7 @@ def incidence_chart(disease, rows, case_field, title, pyrs, pop):
     ax.set_yscale("log")
     ax.grid(True, which="both", alpha=0.3)
     add_vaccine_lines(ax, disease)
+    add_definition_marker(ax, disease)
     fig.tight_layout()
     p = os.path.join(OUT, f"{disease}_incidence.png")
     fig.savefig(p, dpi=130)
@@ -120,6 +139,7 @@ def deaths_chart(disease, rows, title):
     ax.set_ylabel("Reported deaths")
     ax.grid(True, alpha=0.3)
     add_vaccine_lines(ax, disease)
+    add_definition_marker(ax, disease)
     fig.tight_layout()
     p = os.path.join(OUT, f"{disease}_deaths.png")
     fig.savefig(p, dpi=130)

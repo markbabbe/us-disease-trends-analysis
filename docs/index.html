@@ -175,9 +175,26 @@ let earlyChart;
 function isLog() { return document.getElementById("logToggle").getAttribute("aria-pressed") === "true"; }
 function showVax() { return document.getElementById("vaxToggle").getAttribute("aria-pressed") === "true"; }
 
+// Periods where the case definition / classification changed materially.
+const DEFINITION_CHANGE = {
+  polio: { x0: 1954, x1: 1958, label: "Case definition tightened (1954-58)" },
+};
+
 function buildAnnotations(dis) {
-  if (!showVax()) return {};
   const ann = {};
+  // Definition-change band (shown regardless of the vaccine-marker toggle).
+  const dc = DEFINITION_CHANGE[dis];
+  if (dc) {
+    ann[`${dis}-defchange`] = {
+      type: "box", xMin: dc.x0, xMax: dc.x1,
+      backgroundColor: "rgba(123,45,142,0.18)", borderColor: "rgba(123,45,142,0.4)",
+      borderWidth: 1,
+      label: { display: true, content: dc.label, rotation: 90,
+               position: { x: "center", y: "center" }, color: "#c79bd6",
+               font: { size: 9 }, backgroundColor: "transparent" },
+    };
+  }
+  if (!showVax()) return ann;
   (D.vaccines[dis] || []).forEach((v, i) => {
     ann[`${dis}-${i}`] = {
       type: "line", xMin: v.year, xMax: v.year,
