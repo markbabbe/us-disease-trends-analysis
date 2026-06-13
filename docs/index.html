@@ -36,6 +36,12 @@
   .small .chart-box { height: 300px; }
   .grid { display: grid; grid-template-columns: 1fr 280px; gap: 14px; }
   @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+  .disease-card { display: grid; grid-template-columns: 1fr 270px; gap: 16px; align-items: start; }
+  @media (max-width: 820px) { .disease-card { grid-template-columns: 1fr; } }
+  .disease-card h3 { margin: 0 0 8px; font-size: 16px; }
+  .disease-chart { position: relative; height: 290px; }
+  .facts-mini { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+  .facts-mini li { margin-bottom: 7px; }
   .facts h3 { margin: 2px 0 10px; font-size: 13px; }
   .facts ul { margin: 0; padding-left: 18px; color: var(--muted); }
   .facts li { margin-bottom: 8px; }
@@ -53,24 +59,17 @@
   <div class="wrap">
     <h1>Long-Term U.S. Disease Trends</h1>
     <p>Polio, pertussis, and measles — reported burden over time, from
-    CDC/MMWR, NCHS Vital Statistics, and U.S. Census data. Toggle diseases and
-    metrics below. Dashed lines mark vaccine introductions. Pre-1950 figures are
-    approximate — read the <strong>trend shape</strong>, not exact digits.</p>
+    CDC/MMWR, NCHS Vital Statistics, and U.S. Census data. Each disease has its
+    own chart (auto-scaled); pick a metric and scale below. Dashed lines mark
+    vaccine introductions. Pre-1950 figures are approximate — read the
+    <strong>trend shape</strong>, not exact digits.</p>
   </div>
 </header>
 
 <div class="wrap">
   <div class="controls">
     <div class="group">
-      <h3>Diseases</h3>
-      <div class="opts" id="diseaseOpts">
-        <label class="chk"><input type="checkbox" value="polio" checked><span class="swatch" style="background:var(--polio)"></span>Polio</label>
-        <label class="chk"><input type="checkbox" value="pertussis" checked><span class="swatch" style="background:var(--pertussis)"></span>Pertussis</label>
-        <label class="chk"><input type="checkbox" value="measles" checked><span class="swatch" style="background:var(--measles)"></span>Measles</label>
-      </div>
-    </div>
-    <div class="group">
-      <h3>Metric</h3>
+      <h3>Metric (applies to all three)</h3>
       <select id="metric">
         <option value="incidence">Incidence per 100,000</option>
         <option value="cases">Reported cases</option>
@@ -88,13 +87,9 @@
     </div>
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <div class="chart-box"><canvas id="main"></canvas></div>
-      <p class="metric-note" id="metricNote"></p>
-    </div>
-    <div class="card facts" id="facts"></div>
-  </div>
+  <p class="metric-note" id="metricNote" style="margin:0 2px 12px;"></p>
+
+  <div id="panels"></div>
 
   <div class="card small">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
@@ -155,45 +150,50 @@ const FACTS = {
             "Caveat: CFR fell ~90% from 1900→1950 BEFORE the vaccine (antibiotics, nutrition, care)."],
 };
 
-let chart, earlyChart;
+const DISEASES = ["polio", "pertussis", "measles"];
+const charts = {};
+let earlyChart;
 
-function activeDiseases() {
-  return [...document.querySelectorAll("#diseaseOpts input:checked")].map(c => c.value);
-}
 function isLog() { return document.getElementById("logToggle").getAttribute("aria-pressed") === "true"; }
 function showVax() { return document.getElementById("vaxToggle").getAttribute("aria-pressed") === "true"; }
 
-function buildAnnotations(diseases) {
+function buildAnnotations(dis) {
   if (!showVax()) return {};
   const ann = {};
-  diseases.forEach(dis => {
-    (D.vaccines[dis] || []).forEach((v, i) => {
-      ann[`${dis}-${i}`] = {
-        type: "line", xMin: v.year, xMax: v.year,
-        borderColor: COLORS[dis], borderWidth: 1, borderDash: [5, 4],
-        label: { display: true, content: `${v.label} ${v.year}`, position: "start",
-                 rotation: 90, backgroundColor: "transparent",
-                 color: COLORS[dis], font: { size: 9 } },
-      };
-    });
+  (D.vaccines[dis] || []).forEach((v, i) => {
+    ann[`${dis}-${i}`] = {
+      type: "line", xMin: v.year, xMax: v.year,
+      borderColor: COLORS[dis], borderWidth: 1, borderDash: [5, 4],
+      label: { display: true, content: `${v.label} ${v.year}`, position: "start",
+               rotation: 90, backgroundColor: "transparent",
+               color: COLORS[dis], font: { size: 9 } },
+    };
   });
   return ann;
 }
 
-function render() {
-  const metric = document.getElementById("metric").value;
-  const diseases = activeDiseases();
-  const datasets = diseases.map(dis => {
-    const pts = D[dis]
-      .filter(r => r[metric] !== null && r[metric] !== undefined && !(isLog() && r[metric] <= 0))
-      .map(r => ({ x: r.year, y: r[metric] }));
-    return { label: NAMES[dis], data: pts, borderColor: COLORS[dis],
-             backgroundColor: COLORS[dis], tension: 0.15, pointRadius: 2.5, borderWidth: 2 };
-  });
+function buildPanels() {
+  const host = document.getElementById("panels");
+  host.innerHTML = DISEASES.map(dis => `
+    <div class="card disease-card">
+      <div>
+        <h3 style="color:${COLORS[dis]}">${NAMES[dis]}</h3>
+        <div class="disease-chart"><canvas id="chart-${dis}"></canvas></div>
+      </div>
+      <div>
+        <ul class="facts-mini">${FACTS[dis].map(f => `<li>${f}</li>`).join("")}</ul>
+      </div>
+    </div>`).join("");
+}
 
+function renderDisease(dis, metric) {
+  const pts = D[dis]
+    .filter(r => r[metric] !== null && r[metric] !== undefined && !(isLog() && r[metric] <= 0))
+    .map(r => ({ x: r.year, y: r[metric] }));
   const cfg = {
     type: "line",
-    data: { datasets },
+    data: { datasets: [{ label: NAMES[dis], data: pts, borderColor: COLORS[dis],
+                         backgroundColor: COLORS[dis], tension: 0.15, pointRadius: 2.5, borderWidth: 2 }] },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
@@ -205,22 +205,20 @@ function render() {
              ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
       },
       plugins: {
-        legend: { labels: { color: "#e6edf3" } },
-        annotation: { annotations: buildAnnotations(diseases) },
+        legend: { display: false },
+        annotation: { annotations: buildAnnotations(dis) },
         tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
       },
     },
   };
+  if (charts[dis]) charts[dis].destroy();
+  charts[dis] = new Chart(document.getElementById(`chart-${dis}`), cfg);
+}
 
-  if (chart) chart.destroy();
-  chart = new Chart(document.getElementById("main"), cfg);
-
+function render() {
+  const metric = document.getElementById("metric").value;
   document.getElementById("metricNote").textContent = METRIC_NOTE[metric];
-
-  const facts = document.getElementById("facts");
-  facts.innerHTML = diseases.map(dis =>
-    `<h3 style="color:${COLORS[dis]}">${NAMES[dis]}</h3><ul>${FACTS[dis].map(f => `<li>${f}</li>`).join("")}</ul>`
-  ).join("") || "<p class='metric-note'>Select a disease to see key facts.</p>";
+  DISEASES.forEach(dis => renderDisease(dis, metric));
 }
 
 function renderEarly() {
@@ -252,7 +250,6 @@ function renderEarly() {
   });
 }
 
-document.querySelectorAll("#diseaseOpts input").forEach(c => c.addEventListener("change", render));
 document.getElementById("metric").addEventListener("change", render);
 function wireToggle(id) {
   const b = document.getElementById(id);
@@ -267,6 +264,7 @@ function wireToggle(id) {
 wireToggle("logToggle");
 wireToggle("vaxToggle");
 
+buildPanels();
 render();
 renderEarly();
 </script>
