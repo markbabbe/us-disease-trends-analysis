@@ -283,6 +283,56 @@ def hospitalization_chart():
     return p
 
 
+def polio_definition_effect():
+    """Isolate the definition change using a definition-immune anchor (deaths).
+
+    Normalize total cases, paralytic cases, and deaths to 1952 (=100). Deaths
+    cannot be reclassified, so if they fall as fast as cases, the decline is real
+    rather than a reporting artifact.
+    """
+    rows = read_csv("polio.csv")
+    def col(f):
+        d = {}
+        for r in rows:
+            v = to_int(r.get(f))
+            if v is not None:
+                d[int(r["year"])] = v
+        return d
+    total, para, deaths = col("total_cases"), col("paralytic_cases"), col("deaths")
+    def norm(d):
+        b = d[1952]
+        return sorted((y, v / b * 100) for y, v in d.items() if 1949 <= y <= 1968 and v > 0)
+    fig, ax = plt.subplots(figsize=(10.5, 6))
+    for d, color, label, lw in [
+        (total, "#999999", "Total reported cases (sensitive: both rules)", 1.5),
+        (para, "#2c6fbb", "Paralytic cases (sensitive: 60-day rule)", 1.8),
+        (deaths, "#c0392b", "Deaths — DEFINITION-IMMUNE", 2.6)]:
+        pts = norm(d)
+        ax.plot([y for y, _ in pts], [v for _, v in pts], "-o", color=color,
+                label=label, markersize=4, linewidth=lw)
+    ax.set_yscale("log")
+    add_definition_marker(ax, "polio")
+    for yr, lab in [(1955, "Salk IPV"), (1961, "Sabin OPV")]:
+        ax.axvline(yr, color="#555", linestyle="--", linewidth=1)
+        ax.text(yr, 0.96, f" {lab} {yr}", rotation=90, va="top", fontsize=8,
+                color="#444", transform=ax.get_xaxis_transform())
+    ax.set_title("Polio: does the 1950s definition change explain the decline?\n"
+                 "Normalized to 1952 = 100 (log scale)")
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Percent of 1952 level (log scale)")
+    ax.grid(True, which="both", alpha=0.3)
+    ax.legend(loc="lower left", fontsize=9)
+    ax.text(0.985, 0.97,
+            "Deaths can't be reclassified.\nThey fell as fast as cases →\nthe decline is largely real,\nnot a definitional artifact.",
+            transform=ax.transAxes, ha="right", va="top", fontsize=8.5,
+            bbox=dict(boxstyle="round", fc="#fdf2f2", ec="#c0392b", alpha=0.9))
+    fig.tight_layout()
+    p = os.path.join(OUT, "polio_definition_effect.png")
+    fig.savefig(p, dpi=130)
+    plt.close(fig)
+    return p
+
+
 def deaths_per_100k_chart(pyrs, pop):
     cfgs = [("measles.csv", "#c0392b", "Measles", "measles_death_rate"),
             ("pertussis.csv", "#e67e22", "Pertussis", "pertussis_death_rate"),
@@ -348,6 +398,7 @@ def main():
     made.append(coverage_chart())
     made.append(deaths_per_100k_chart(pyrs, pop))
     made.append(hospitalization_chart())
+    made.append(polio_definition_effect())
 
     made.append(combined_incidence(pyrs, pop, [
         ("polio", polio, "total_cases", "Polio (total)"),

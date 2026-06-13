@@ -7,6 +7,7 @@ incidence per 100,000 (Census population, interpolated) and case fatality rate.
 import csv
 import json
 import os
+import shutil
 
 import numpy as np
 
@@ -117,6 +118,13 @@ def main():
         json.dump(data, f, indent=2)
         f.write(";\n")
     print("wrote", os.path.relpath(path, os.path.join(HERE, "..")))
+
+    # Copy analytical charts that the dashboard embeds directly (must live in docs/).
+    for fname in ["polio_definition_effect.png"]:
+        src = os.path.join(HERE, "..", "charts", fname)
+        if os.path.exists(src):
+            shutil.copy(src, os.path.join(DOCS, fname))
+            print("copied", fname, "-> docs/")
 
 
 if __name__ == "__main__":

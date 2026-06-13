@@ -103,6 +103,79 @@ after the definition stabilized, (b) the most definition-resistant endpoints —
 statement is: *definitional change is a genuine but partial confounder; it
 shifts the magnitude, not the direction or the bulk, of the trend.*
 
+## 1.2b Capturing the effect of the polio definition change
+
+This deserves a closer, quantitative look, because the definition change and the
+vaccine both arrived in **1955**, making them hard to separate visually (chart:
+[`charts/polio_definition_effect.png`](charts/polio_definition_effect.png)).
+
+### Exactly what changed
+
+Two distinct things happened in the early-to-mid 1950s:
+
+1. **Enterovirus reclassification (1949–1954).** Coxsackie viruses (identified
+   1948) and ECHO viruses (early 1950s) were found to cause aseptic meningitis
+   and minor febrile illness that had previously been lumped into
+   **"nonparalytic poliomyelitis."** As labs could distinguish them, those
+   illnesses were reported as *not polio*, shrinking the broad "poliomyelitis"
+   category.
+2. **Stricter paralytic criteria (~1955, refined through ~1958).** Reporting
+   practice shifted from counting paralysis *present at initial examination* to
+   requiring **residual paralysis confirmed at follow-up** — commonly documented
+   as examinations around **10–20 days and again ~50–70 days after onset** (i.e.,
+   deficit persisting roughly 60 days). Transient paralysis that resolved no
+   longer qualified. (Exact wording and adoption dates varied by jurisdiction and
+   surveillance manual; treat "~60-day residual" as the documented gist, not a
+   single national statute.)
+
+Both changes push reported counts **down** independent of any change in true
+disease — which is exactly why critics cite them.
+
+### How big was the effect? Use a definition-immune anchor
+
+The trick to bounding the artifact is that **deaths cannot be reclassified.** A
+definition can move an illness into or out of the "paralytic polio" category, but
+it cannot change whether someone died. So we normalize three metrics to 1952
+(the epidemic peak = 100) and compare how fast each fell:
+
+| Year | Total cases (most definition-sensitive) | Paralytic cases (60-day rule) | **Deaths (definition-immune)** |
+|---|---|---|---|
+| 1952 | 100 | 100 | 100 |
+| 1955 | 50 | 65 | **33** |
+| 1957 | 9.5 | 12 | **7.0** |
+| 1961 | 2.3 | 4.6 | **2.9** |
+
+Two observations that *constrain* the artifact:
+
+- **Deaths fell as fast as — or faster than — paralytic cases.** If the stricter
+  definition had artificially stripped out mild/transient paralytic cases, the
+  paralytic count would have dropped *faster* than deaths, and the
+  **case-fatality rate would have risen.** It did not: CFR (deaths ÷ paralytic)
+  stayed near **7–9% from 1954 through 1961** (the 14.8% in 1952 reflects that
+  severe epidemic year). A dominant reporting artifact predicts the opposite.
+- **The decline continued for years after the definition stabilized** (1958
+  onward), through the period of rising vaccine coverage — something a one-time
+  definitional reset cannot produce.
+
+### What this does and doesn't let us conclude
+
+- **Supported:** the definition change is *real* and removed some illnesses from
+  the counts, but the **definition-immune death series confirms a large, genuine
+  decline** — the artifact is a *minority* of the total drop, not its cause.
+- **Honest limitation #1 (the one you flagged):** because the vaccine and the
+  definition change both land in 1955, **aggregate national data cannot cleanly
+  attribute the 1955 inflection itself** to one cause. The death-anchor tells us
+  the decline is *real*; it does not, by itself, partition the real decline
+  between vaccine and other factors at that single inflection.
+- **Honest limitation #2 (epidemic variation):** 1952 was an extreme peak.
+  Part of the 1952→1955 drop is **natural epidemic regression**, not vaccine or
+  definition. The decisive evidence for a vaccine effect is the *sustained* fall
+  to near-zero through the 1960s, which neither epidemic cycling nor a one-time
+  definition change explains.
+- **Not determinable:** a precise percentage decomposition ("X% definition, Y%
+  vaccine, Z% epidemic variation") cannot be recovered from these aggregate
+  series.
+
 ## 1.3 Population-adjusted rates
 
 *Observed (chart: [`charts/polio_incidence.png`](charts/polio_incidence.png)).*
@@ -487,6 +560,7 @@ incidence comparison across the post-licensure era.
 | Early-century death rates 1900–1960 (measles, pertussis) | [`charts/early_mortality_rates.png`](charts/early_mortality_rates.png) |
 | Childhood vaccination coverage (CDC NIS, 2011+) | [`charts/coverage.png`](charts/coverage.png) |
 | Polio — cases / incidence / deaths | [`charts/polio_cases.png`](charts/polio_cases.png) · [`charts/polio_incidence.png`](charts/polio_incidence.png) · [`charts/polio_deaths.png`](charts/polio_deaths.png) |
+| **Polio — isolating the definition-change effect** | [`charts/polio_definition_effect.png`](charts/polio_definition_effect.png) |
 | Pertussis — cases / incidence / deaths | [`charts/pertussis_cases.png`](charts/pertussis_cases.png) · [`charts/pertussis_incidence.png`](charts/pertussis_incidence.png) · [`charts/pertussis_deaths.png`](charts/pertussis_deaths.png) |
 | Measles — cases / incidence / deaths / CFR | [`charts/measles_cases.png`](charts/measles_cases.png) · [`charts/measles_incidence.png`](charts/measles_incidence.png) · [`charts/measles_deaths.png`](charts/measles_deaths.png) · [`charts/measles_cfr.png`](charts/measles_cfr.png) |
 

@@ -92,6 +92,22 @@
 
   <div id="panels"></div>
 
+  <div class="card">
+    <h3 style="margin:2px 2px 10px;font-size:15px;">Polio: isolating the effect of the 1950s case-definition change</h3>
+    <p class="metric-note" style="margin:0 0 10px;">The definition change and the
+      Salk vaccine both arrived in <strong>1955</strong>, so they overlap on the
+      main chart. To separate them we use a <strong>definition-immune anchor:
+      deaths</strong> (which cannot be reclassified). Normalized to 1952 = 100,
+      deaths fall as fast as — or faster than — paralytic cases, and the
+      case-fatality rate does <em>not</em> jump. That means the definition change
+      is real but accounts for only a <strong>minority</strong> of the decline;
+      the bulk is genuine. (It still cannot, by itself, split the real decline
+      between vaccine and other factors at the 1955 inflection — see the
+      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/README.md#12b-capturing-the-effect-of-the-polio-definition-change">README write-up</a>.)</p>
+    <img src="polio_definition_effect.png" alt="Polio definition-change effect: normalized cases vs definition-immune deaths"
+         style="width:100%;border-radius:8px;display:block;" />
+  </div>
+
   <div class="card small">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
     <div class="chart-box"><canvas id="early"></canvas></div>
