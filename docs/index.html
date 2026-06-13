@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>U.S. Disease Trends — Polio · Pertussis · Measles</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+<style>
+  :root {
+    --polio: #27ae60; --pertussis: #e67e22; --measles: #c0392b;
+    --bg: #0f1419; --panel: #1a2129; --ink: #e6edf3; --muted: #9aa7b2;
+    --line: #2a333d; --accent: #4aa3df;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         background: var(--bg); color: var(--ink); }
+  header { padding: 28px 24px 14px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0 0 6px; font-size: 22px; }
+  header p { margin: 0; color: var(--muted); max-width: 70ch; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-end;
+              padding: 18px 0; }
+  .group { display: flex; flex-direction: column; gap: 6px; }
+  .group h3 { margin: 0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .opts { display: flex; gap: 14px; flex-wrap: wrap; }
+  label.chk { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; }
+  .swatch { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+  select, button { background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+                   border-radius: 7px; padding: 7px 10px; font-size: 14px; }
+  button { cursor: pointer; }
+  button.toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+          padding: 16px; margin: 14px 0; }
+  .chart-box { position: relative; height: 460px; }
+  .small .chart-box { height: 300px; }
+  .grid { display: grid; grid-template-columns: 1fr 280px; gap: 14px; }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+  .facts h3 { margin: 2px 0 10px; font-size: 13px; }
+  .facts ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .facts li { margin-bottom: 8px; }
+  .metric-note { color: var(--muted); font-size: 13px; margin: 6px 2px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  a { color: var(--accent); }
+  footer { color: var(--muted); font-size: 13px; padding: 24px; text-align: center; }
+  .pill { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Long-Term U.S. Disease Trends</h1>
+    <p>Polio, pertussis, and measles — reported burden over time, from
+    CDC/MMWR, NCHS Vital Statistics, and U.S. Census data. Toggle diseases and
+    metrics below. Dashed lines mark vaccine introductions. Pre-1950 figures are
+    approximate — read the <strong>trend shape</strong>, not exact digits.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="group">
+      <h3>Diseases</h3>
+      <div class="opts" id="diseaseOpts">
+        <label class="chk"><input type="checkbox" value="polio" checked><span class="swatch" style="background:var(--polio)"></span>Polio</label>
+        <label class="chk"><input type="checkbox" value="pertussis" checked><span class="swatch" style="background:var(--pertussis)"></span>Pertussis</label>
+        <label class="chk"><input type="checkbox" value="measles" checked><span class="swatch" style="background:var(--measles)"></span>Measles</label>
+      </div>
+    </div>
+    <div class="group">
+      <h3>Metric</h3>
+      <select id="metric">
+        <option value="incidence">Incidence per 100,000</option>
+        <option value="cases">Reported cases</option>
+        <option value="deaths">Reported deaths</option>
+        <option value="cfr">Case fatality rate (%)</option>
+      </select>
+    </div>
+    <div class="group">
+      <h3>Y-axis scale</h3>
+      <button class="toggle" id="logToggle" aria-pressed="true">Logarithmic</button>
+    </div>
+    <div class="group">
+      <h3>Vaccine markers</h3>
+      <button class="toggle" id="vaxToggle" aria-pressed="true">Shown</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="chart-box"><canvas id="main"></canvas></div>
+      <p class="metric-note" id="metricNote"></p>
+    </div>
+    <div class="card facts" id="facts"></div>
+  </div>
+
+  <div class="card small">
+    <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
+    <div class="chart-box"><canvas id="early"></canvas></div>
+    <p class="metric-note">Approximate, from NCHS/Historical Statistics mortality-decline series via the partial Death Registration Area. Shows that case fatality fell sharply <em>before</em> vaccines (antibiotics, nutrition, supportive care). Both measles and pertussis death rates dropped ~95%+ over this window; the measles vaccine (1963) came <em>after</em> it.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:2px 2px 12px;font-size:15px;">Summary: best metric &amp; trend by disease</h3>
+    <table>
+      <thead><tr><th>Disease</th><th>Best metric</th><th>Before vaccine</th><th>After vaccine</th><th>Major caveat</th></tr></thead>
+      <tbody>
+        <tr><td>Polio</td><td>Deaths &amp; paralytic cases per 100k</td><td>Rising, severe epidemic peaks (1952: ~57.6k cases, ~3,145 deaths)</td><td>Fell &gt;99% in a decade; wild virus eliminated 1979</td><td>Late-1950s definition tightening + enterovirus reclassification deflate later counts</td></tr>
+        <tr><td>Pertussis</td><td>Infant mortality &amp; hospitalization</td><td>Very high (~265k cases 1934)</td><td>Fell ~99% to 1976, then partial resurgence in cases</td><td>Resurgence inflated by PCR detection; waning acellular immunity is real</td></tr>
+        <tr><td>Measles</td><td>Deaths per 100k + incidence</td><td>Near-universal childhood infection (~3–4M true infections/yr)</td><td>Fell ~99%+; eliminated 2000</td><td>Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed</td></tr>
+      </tbody>
+    </table>
+    <p class="metric-note">Full analysis, sources, and evidence grading in the
+      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/README.md">README report</a>.</p>
+  </div>
+</div>
+
+<footer>
+  Sources: CDC/MMWR · NCHS Vital Statistics · U.S. Census Bureau · JAMA 2007 (Roush et al.).
+  Data &amp; code: <a href="https://github.com/markbabbe/us-disease-trends-analysis">github.com/markbabbe/us-disease-trends-analysis</a>.
+  Trends are robust; pre-1950 annual digits are approximate.
+</footer>
+
+<script src="data.js"></script>
+<script>
+const D = window.DISEASE_DATA;
+const COLORS = { polio: "#27ae60", pertussis: "#e67e22", measles: "#c0392b" };
+const NAMES = { polio: "Polio", pertussis: "Pertussis", measles: "Measles" };
+const METRIC_LABEL = {
+  incidence: "Incidence per 100,000",
+  cases: "Reported cases",
+  deaths: "Reported deaths",
+  cfr: "Case fatality rate (%)",
+};
+const METRIC_NOTE = {
+  incidence: "Population-adjusted using interpolated Census counts. Most useful for transmission, but only when case definitions are stable across eras.",
+  cases: "Raw counts are the LEAST comparable across eras — case definitions and diagnostics changed (PCR for pertussis, lab-confirmation for measles, tightened paralytic definition for polio).",
+  deaths: "Mortality is the metric least sensitive to changing case definitions, so it is the most reliable for cross-decade comparison — but medical progress lowered deaths independent of infection rates.",
+  cfr: "Deaths ÷ reported cases. Reveals lethality per case, but conflates virulence with improvements in medical care; also distorted when case ascertainment changes.",
+};
+const FACTS = {
+  polio: ["Largest U.S. epidemic 1952: ~57,600 cases, ~21,000 paralytic, ~3,145 deaths.",
+          "Salk IPV licensed 1955; Sabin OPV 1961–63.",
+          "Last endemic wild outbreak 1979; wild virus eliminated from the Americas by 1994.",
+          "Caveat: paralytic case definition tightened late-1950s; enteroviruses reclassified out of 'polio'."],
+  pertussis: ["Pre-vaccine peak ~265,000 cases (1934); thousands of deaths/yr.",
+              "Whole-cell DTP routine ~1948; acellular DTaP switch 1991–97.",
+              "Reported-case nadir 1976 (~1,010); 2012 peak ~48,300 — highest since 1955.",
+              "Caveat: modern resurgence partly real (waning immunity) and partly detection (PCR). Deaths now ~10–20/yr, mostly infants."],
+  measles: ["Pre-vaccine: ~500k reported cases/yr but ~3–4M estimated infections/yr.",
+            "Vaccine 1963; MMR 1971; 2nd dose 1989 (after 1989–91 resurgence).",
+            "Declared eliminated 2000; outbreaks since via undervaccination (2019: ~1,282).",
+            "Caveat: CFR fell ~90% from 1900→1950 BEFORE the vaccine (antibiotics, nutrition, care)."],
+};
+
+let chart, earlyChart;
+
+function activeDiseases() {
+  return [...document.querySelectorAll("#diseaseOpts input:checked")].map(c => c.value);
+}
+function isLog() { return document.getElementById("logToggle").getAttribute("aria-pressed") === "true"; }
+function showVax() { return document.getElementById("vaxToggle").getAttribute("aria-pressed") === "true"; }
+
+function buildAnnotations(diseases) {
+  if (!showVax()) return {};
+  const ann = {};
+  diseases.forEach(dis => {
+    (D.vaccines[dis] || []).forEach((v, i) => {
+      ann[`${dis}-${i}`] = {
+        type: "line", xMin: v.year, xMax: v.year,
+        borderColor: COLORS[dis], borderWidth: 1, borderDash: [5, 4],
+        label: { display: true, content: `${v.label} ${v.year}`, position: "start",
+                 rotation: 90, backgroundColor: "transparent",
+                 color: COLORS[dis], font: { size: 9 } },
+      };
+    });
+  });
+  return ann;
+}
+
+function render() {
+  const metric = document.getElementById("metric").value;
+  const diseases = activeDiseases();
+  const datasets = diseases.map(dis => {
+    const pts = D[dis]
+      .filter(r => r[metric] !== null && r[metric] !== undefined && !(isLog() && r[metric] <= 0))
+      .map(r => ({ x: r.year, y: r[metric] }));
+    return { label: NAMES[dis], data: pts, borderColor: COLORS[dis],
+             backgroundColor: COLORS[dis], tension: 0.15, pointRadius: 2.5, borderWidth: 2 };
+  });
+
+  const cfg = {
+    type: "line",
+    data: { datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: "nearest", intersect: false },
+      scales: {
+        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+        y: { type: isLog() ? "logarithmic" : "linear",
+             title: { display: true, text: METRIC_LABEL[metric], color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+      },
+      plugins: {
+        legend: { labels: { color: "#e6edf3" } },
+        annotation: { annotations: buildAnnotations(diseases) },
+        tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
+      },
+    },
+  };
+
+  if (chart) chart.destroy();
+  chart = new Chart(document.getElementById("main"), cfg);
+
+  document.getElementById("metricNote").textContent = METRIC_NOTE[metric];
+
+  const facts = document.getElementById("facts");
+  facts.innerHTML = diseases.map(dis =>
+    `<h3 style="color:${COLORS[dis]}">${NAMES[dis]}</h3><ul>${FACTS[dis].map(f => `<li>${f}</li>`).join("")}</ul>`
+  ).join("") || "<p class='metric-note'>Select a disease to see key facts.</p>";
+}
+
+function renderEarly() {
+  const em = D.earlyMortality;
+  earlyChart = new Chart(document.getElementById("early"), {
+    type: "line",
+    data: { datasets: [
+      { label: "Measles", data: em.map(r => ({ x: r.year, y: r.measles })),
+        borderColor: COLORS.measles, backgroundColor: COLORS.measles, tension: 0.2, pointRadius: 3 },
+      { label: "Pertussis", data: em.map(r => ({ x: r.year, y: r.pertussis })),
+        borderColor: COLORS.pertussis, backgroundColor: COLORS.pertussis, tension: 0.2, pointRadius: 3 },
+    ]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+        y: { title: { display: true, text: "Deaths per 100,000", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+      },
+      plugins: {
+        legend: { labels: { color: "#e6edf3" } },
+        annotation: { annotations: { dtp: {
+          type: "line", xMin: 1948, xMax: 1948, borderColor: "#888", borderWidth: 1, borderDash: [5, 4],
+          label: { display: true, content: "DTP routine ~1948", position: "start", rotation: 90,
+                   backgroundColor: "transparent", color: "#9aa7b2", font: { size: 9 } } } } },
+      },
+    },
+  });
+}
+
+document.querySelectorAll("#diseaseOpts input").forEach(c => c.addEventListener("change", render));
+document.getElementById("metric").addEventListener("change", render);
+function wireToggle(id) {
+  const b = document.getElementById(id);
+  b.addEventListener("click", () => {
+    const on = b.getAttribute("aria-pressed") === "true";
+    b.setAttribute("aria-pressed", String(!on));
+    b.textContent = id === "logToggle" ? (!on ? "Logarithmic" : "Linear")
+                                       : (!on ? "Shown" : "Hidden");
+    render();
+  });
+}
+wireToggle("logToggle");
+wireToggle("vaxToggle");
+
+render();
+renderEarly();
+</script>
+</body>
+</html>

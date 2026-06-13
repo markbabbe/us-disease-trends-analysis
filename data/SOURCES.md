@@ -49,6 +49,37 @@ annual digits — especially before 1950 — carry real uncertainty.
   series. Use for trend shape, not precise values. Early years reflect partial
   Death Registration Area coverage.
 
+## Live CDC API connection (recent years)
+
+Recent national counts (2022–present) are pulled **live** from the CDC NNDSS
+open-data API and saved to `cdc_nndss_recent.csv` by
+[`scripts/fetch_cdc_nndss.py`](../scripts/fetch_cdc_nndss.py):
+
+- **Endpoint:** `https://data.cdc.gov/resource/x9gk-5huc.json` (Socrata API
+  behind the MMWR weekly notifiable-disease tables, "NNDSS Weekly Data").
+- **Method:** sum the year-end cumulative column (`m3`) across sub-labels
+  (e.g., "Measles, Imported" + "Measles, Indigenous"), restricted to
+  `states = Total` to avoid double-counting state/region/national rows.
+
+**What the CDC API can and cannot do — important:**
+
+- ✅ It provides authoritative *recent* national surveillance counts. Validation:
+  the API returns measles 2022 = 122, matching the finalized MMWR figure (~121).
+- ⚠️ It is **weekly provisional** data. Provisional cumulative counts can differ
+  a few percent from the finalized MMWR annual summary, and the current year is
+  partial (excluded from the trend charts).
+- ❌ It does **not** contain the deep historical series (1900–2020) this project
+  depends on. The consolidated weekly dataset only goes back to ~2022. The
+  long historical record exists only as **scanned MMWR annual summaries, the
+  Pink Book Appendix E (PDF), and NCHS Vital Statistics volumes** — none of
+  which is exposed as a clean time-series API. (The closest machine-readable
+  digitization of the historical U.S. record is the academic *Project Tycho*
+  dataset, derived from these same U.S. government reports.)
+
+The 2022–2025 rows in `measles.csv` and `pertussis.csv` are therefore labeled as
+CDC NNDSS API (provisional). They capture the recent measles resurgence (2025)
+and pertussis resurgence (2024) that the historical compilation alone would miss.
+
 ## Reproducing the charts
 
 ```

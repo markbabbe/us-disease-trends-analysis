@@ -28,3 +28,7 @@ year,reported_cases,deaths,notes
 2014,667,0,
 2019,1282,0,Largest post-elimination year
 2020,13,0,
+2022,122,,CDC NNDSS API (provisional cumulative)
+2023,47,,CDC NNDSS API (provisional cumulative)
+2024,266,,CDC NNDSS API (provisional cumulative)
+2025,2026,,CDC NNDSS API (provisional; large outbreak year)

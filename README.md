@@ -16,6 +16,15 @@
 > [`data/SOURCES.md`](data/SOURCES.md). Annual figures before 1950 carry
 > substantial uncertainty; the **shape** of the trends is far more reliable than
 > any single year's digits.
+>
+> **Recent years are pulled live from the CDC NNDSS open-data API** (see
+> [`scripts/fetch_cdc_nndss.py`](scripts/fetch_cdc_nndss.py)). That API only
+> reaches back to ~2022 and is *provisional*, so it supplements — it cannot
+> replace — the historical record (which exists only as scanned MMWR annual
+> summaries, the Pink Book PDF, and NCHS volumes). The live pull captures the
+> **2024 pertussis resurgence (~35,500 reported)** and the **large 2025 measles
+> year (~2,000+ reported, provisional)** — recent context the pre-2020
+> compilation would miss.
 
 ---
 
