@@ -388,6 +388,46 @@ medical-treatment improvements.
 
 ---
 
+# 8b. Vaccine availability vs. coverage — a necessary companion metric
+
+Incidence and mortality trends cannot be interpreted correctly using a vaccine's
+**licensure year** alone. What protects a population is **coverage**, which rises
+over years to decades and is often uneven across age groups and communities.
+Coverage gaps explain much of the *residual* disease and the *resurgences* that
+occur even after a vaccine exists.
+
+*Observed (chart: [`charts/coverage.png`](charts/coverage.png); live data:
+[`data/coverage.csv`](data/coverage.csv) from the CDC NIS API).* Modern U.S.
+childhood coverage by age 24 months sits on a plateau of roughly **80–93%**
+(MMR ≥1 dose ~90%, polio ~92%, DTaP ≥4 doses ~81%).
+
+**The key limitation, stated plainly:** there is **no clean national annual
+coverage series before ~1994**, when the CDC National Immunization Survey began.
+The most decision-relevant period for the "availability ≠ protection" question —
+the early uptake decades (polio 1955+, measles 1963+) — is therefore documented
+as **cited milestones and anchor estimates**, not a continuous series. Full
+detail and sources: [`data/coverage_milestones.md`](data/coverage_milestones.md).
+Highlights:
+
+- **Polio:** uptake was relatively fast after 1955, so the case decline tracks
+  coverage closely — though the 1955 **Cutter incident** shows it was not
+  frictionless.
+- **Measles:** the clearest illustration of the point. The vaccine existed from
+  1963, but **incomplete preschool coverage** (estimated ~50–70% in some urban
+  areas in the late 1980s) allowed the **1989–91 resurgence (~55,000 cases)**
+  among unvaccinated preschoolers. School-entry laws (1970s), the second dose
+  (1989), and Vaccines for Children (1994) closed the gap and drove elimination
+  (2000).
+- **Pertussis:** high childhood DTP coverage from the 1960s–80s; the modern
+  resurgence is tied less to *coverage* than to **waning acellular-vaccine
+  immunity** plus **PCR detection** (§2).
+
+**Interpretive consequence:** when a case trend does *not* fall immediately after
+a vaccine's licensure (measles in the 1960s–80s; pertussis recently), the
+explanation is usually found in **coverage and vaccine-type dynamics**, not in
+the vaccine's mere existence. Coverage is thus an essential companion to any
+incidence comparison across the post-licensure era.
+
 # 9. Summary
 
 ## 9.1 Summary table
@@ -404,6 +444,7 @@ medical-treatment improvements.
 |---|---|
 | Combined incidence per 100,000 (all three) | [`charts/combined_incidence.png`](charts/combined_incidence.png) |
 | Early-century death rates 1900–1960 (measles, pertussis) | [`charts/early_mortality_rates.png`](charts/early_mortality_rates.png) |
+| Childhood vaccination coverage (CDC NIS, 2011+) | [`charts/coverage.png`](charts/coverage.png) |
 | Polio — cases / incidence / deaths | [`charts/polio_cases.png`](charts/polio_cases.png) · [`charts/polio_incidence.png`](charts/polio_incidence.png) · [`charts/polio_deaths.png`](charts/polio_deaths.png) |
 | Pertussis — cases / incidence / deaths | [`charts/pertussis_cases.png`](charts/pertussis_cases.png) · [`charts/pertussis_incidence.png`](charts/pertussis_incidence.png) · [`charts/pertussis_deaths.png`](charts/pertussis_deaths.png) |
 | Measles — cases / incidence / deaths / CFR | [`charts/measles_cases.png`](charts/measles_cases.png) · [`charts/measles_incidence.png`](charts/measles_incidence.png) · [`charts/measles_deaths.png`](charts/measles_deaths.png) · [`charts/measles_cfr.png`](charts/measles_cfr.png) |

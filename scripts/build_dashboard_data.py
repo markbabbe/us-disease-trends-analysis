@@ -54,6 +54,16 @@ def early():
              "pertussis": float(r["pertussis_death_rate"])} for r in rows]
 
 
+def coverage():
+    rows = read_csv("coverage.csv")
+    def f(v):
+        v = (v or "").strip()
+        return float(v) if v else None
+    return [{"year": int(r["year"]), "measles": f(r["measles_mmr"]),
+             "pertussis": f(r["pertussis_dtap"]), "polio": f(r["polio"])}
+            for r in rows]
+
+
 def main():
     data = {
         "vaccines": {
@@ -69,6 +79,7 @@ def main():
         "pertussis": build(read_csv("pertussis.csv"), "reported_cases"),
         "measles": build(read_csv("measles.csv"), "reported_cases"),
         "earlyMortality": early(),
+        "coverage": coverage(),
     }
     path = os.path.join(DOCS, "data.js")
     with open(path, "w") as f:

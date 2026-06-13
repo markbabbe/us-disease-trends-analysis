@@ -734,5 +734,79 @@ window.DISEASE_DATA = {
       "measles": 0.2,
       "pertussis": 0.15
     }
+  ],
+  "coverage": [
+    {
+      "year": 2011,
+      "measles": 90.1,
+      "pertussis": 80.7,
+      "polio": 92.0
+    },
+    {
+      "year": 2012,
+      "measles": 90.6,
+      "pertussis": 81.4,
+      "polio": 93.0
+    },
+    {
+      "year": 2013,
+      "measles": 90.3,
+      "pertussis": 81.2,
+      "polio": 92.3
+    },
+    {
+      "year": 2014,
+      "measles": 89.8,
+      "pertussis": 80.1,
+      "polio": 91.0
+    },
+    {
+      "year": 2015,
+      "measles": 90.8,
+      "pertussis": 80.7,
+      "polio": 92.6
+    },
+    {
+      "year": 2016,
+      "measles": 90.8,
+      "pertussis": 80.4,
+      "polio": 92.5
+    },
+    {
+      "year": 2017,
+      "measles": 90.4,
+      "pertussis": 80.9,
+      "polio": 91.5
+    },
+    {
+      "year": 2018,
+      "measles": 92.3,
+      "pertussis": 82.3,
+      "polio": 93.8
+    },
+    {
+      "year": 2019,
+      "measles": 91.5,
+      "pertussis": 81.3,
+      "polio": 92.9
+    },
+    {
+      "year": 2020,
+      "measles": 90.2,
+      "pertussis": 79.6,
+      "polio": 92.1
+    },
+    {
+      "year": 2021,
+      "measles": 90.2,
+      "pertussis": 80.4,
+      "polio": 92.0
+    },
+    {
+      "year": 2022,
+      "measles": 91.4,
+      "pertussis": 80.9,
+      "polio": 92.3
+    }
   ]
 };

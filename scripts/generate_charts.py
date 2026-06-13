@@ -199,6 +199,29 @@ def early_mortality_chart():
     return p
 
 
+def coverage_chart():
+    rows = read_csv("coverage.csv")
+    yrs = [int(r["year"]) for r in rows]
+    def col(name):
+        return [float(r[name]) if r[name].strip() else None for r in rows]
+    fig, ax = plt.subplots(figsize=(10, 5.5))
+    ax.plot(yrs, col("measles_mmr"), "-o", color="#c0392b", label="Measles (MMR ≥1)")
+    ax.plot(yrs, col("pertussis_dtap"), "-o", color="#e67e22", label="Pertussis (DTaP ≥4)")
+    ax.plot(yrs, col("polio"), "-o", color="#27ae60", label="Polio (≥3)")
+    ax.set_ylim(0, 100)
+    ax.set_title("U.S. childhood vaccination coverage by age 24 months\n"
+                 "(CDC NIS — only available ~2011+; modern plateau ~80-93%)")
+    ax.set_xlabel("Birth year")
+    ax.set_ylabel("Coverage (%)")
+    ax.grid(True, alpha=0.3)
+    ax.legend(loc="lower left")
+    fig.tight_layout()
+    p = os.path.join(OUT, "coverage.png")
+    fig.savefig(p, dpi=130)
+    plt.close(fig)
+    return p
+
+
 def main():
     pyrs, pop = load_population()
     measles = read_csv("measles.csv")
@@ -227,6 +250,7 @@ def main():
     made.append(deaths_chart("pertussis", pertussis, "Pertussis — reported deaths, U.S."))
 
     made.append(early_mortality_chart())
+    made.append(coverage_chart())
 
     made.append(combined_incidence(pyrs, pop, [
         ("polio", polio, "total_cases", "Polio (total)"),

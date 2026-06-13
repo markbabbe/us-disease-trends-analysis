@@ -97,6 +97,19 @@
     <p class="metric-note">Approximate, from NCHS/Historical Statistics mortality-decline series via the partial Death Registration Area. Shows that case fatality fell sharply <em>before</em> vaccines (antibiotics, nutrition, supportive care). Both measles and pertussis death rates dropped ~95%+ over this window; the measles vaccine (1963) came <em>after</em> it.</p>
   </div>
 
+  <div class="card small">
+    <h3 style="margin:2px 2px 10px;font-size:14px;">Vaccination coverage by age 24 months (CDC National Immunization Survey)</h3>
+    <div class="chart-box"><canvas id="coverage"></canvas></div>
+    <p class="metric-note"><strong>Availability ≠ coverage.</strong> A vaccine's
+      licensure year is not when the population became protected — coverage rises
+      over years, and gaps drive residual disease and resurgences (e.g., the
+      1989–91 measles resurgence struck <em>unvaccinated preschoolers</em> ~26
+      years after the 1963 vaccine). The NIS only measures coverage from ~1994
+      on (this chart: 2011+), so the critical early-uptake decades are documented
+      as milestones, not a clean series — see
+      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/coverage_milestones.md">coverage_milestones.md</a>.</p>
+  </div>
+
   <div class="card">
     <h3 style="margin:2px 2px 12px;font-size:15px;">Summary: best metric &amp; trend by disease</h3>
     <table>
@@ -264,9 +277,35 @@ function wireToggle(id) {
 wireToggle("logToggle");
 wireToggle("vaxToggle");
 
+function renderCoverage() {
+  const cov = D.coverage;
+  new Chart(document.getElementById("coverage"), {
+    type: "line",
+    data: { datasets: [
+      { label: "Measles (MMR ≥1)", data: cov.map(r => ({ x: r.year, y: r.measles })),
+        borderColor: COLORS.measles, backgroundColor: COLORS.measles, tension: 0.2, pointRadius: 3 },
+      { label: "Pertussis (DTaP ≥4)", data: cov.map(r => ({ x: r.year, y: r.pertussis })),
+        borderColor: COLORS.pertussis, backgroundColor: COLORS.pertussis, tension: 0.2, pointRadius: 3 },
+      { label: "Polio (≥3)", data: cov.map(r => ({ x: r.year, y: r.polio })),
+        borderColor: COLORS.polio, backgroundColor: COLORS.polio, tension: 0.2, pointRadius: 3 },
+    ]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { type: "linear", title: { display: true, text: "Birth year", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+        y: { min: 0, max: 100, title: { display: true, text: "Coverage (%)", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+      },
+      plugins: { legend: { labels: { color: "#e6edf3" } } },
+    },
+  });
+}
+
 buildPanels();
 render();
 renderEarly();
+renderCoverage();
 </script>
 </body>
 </html>

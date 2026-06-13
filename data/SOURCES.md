@@ -80,6 +80,23 @@ The 2022–2025 rows in `measles.csv` and `pertussis.csv` are therefore labeled 
 CDC NNDSS API (provisional). They capture the recent measles resurgence (2025)
 and pertussis resurgence (2024) that the historical compilation alone would miss.
 
+## Vaccination coverage (live CDC NIS API)
+
+`coverage.csv` is pulled live from the CDC National Immunization Survey via
+[`scripts/fetch_cdc_coverage.py`](../scripts/fetch_cdc_coverage.py):
+
+- **Endpoint:** `https://data.cdc.gov/resource/fhky-rtsk.json` — "Vaccination
+  Coverage among Young Children (0-35 Months)."
+- **Metrics:** MMR ≥1 dose, DTaP ≥4 doses, polio ≥3 doses, by age 24 months,
+  national, "Overall" by birth year.
+- **Limit:** this dataset begins ~birth-year 2011; the NIS itself started 1994.
+  There is **no clean national annual coverage series before ~1994** — the
+  early-uptake decades are documented as milestones in `coverage_milestones.md`
+  (from published CDC/MMWR historical reports), not as an API series.
+
+See `coverage_milestones.md` for the historical coverage narrative and the
+"availability ≠ coverage" discussion.
+
 ## Reproducing the charts
 
 ```
