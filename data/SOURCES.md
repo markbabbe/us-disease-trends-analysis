@@ -41,7 +41,21 @@ annual digits — especially before 1950 — carry real uncertainty.
 - `polio.csv` — "total_cases" = all reported poliomyelitis; "paralytic_cases"
   reported where available. The 1916 row is an approximate national figure for
   the Northeast-centered epidemic. The case definition for paralytic polio was
-  tightened in the late 1950s (see report §1, §7).
+  tightened in the late 1950s (see report §1, §7). **Data density:** the annual
+  case series is fairly complete for ~1944–1965 (the drop-off era); **deaths are
+  annual only for 1949–1961**, so the 1916→1949 segment on the deaths chart is
+  interpolation, not data. Charts mark actual data with points; long straight
+  segments between distant points are visual interpolation, not yearly records.
+
+### Chart scale
+
+Static charts use a **linear** y-axis (from 0) so the absolute drop-off is
+visible at true scale. The trade-off: values far below the peak (modern
+resurgences, the long low tail) compress toward the axis and are hard to read.
+The interactive dashboard has a **log/linear toggle** for when you need to see
+those small values; the static incidence/deaths charts favor the linear view of
+the decline. (The polio definition-effect chart stays on a log axis because its
+argument is about *proportional* tracking — equal ratios as equal distances.)
 - `pertussis.csv` — Reported cases from CDC MMWR/Pink Book; deaths from NCHS.
   PCR-based diagnosis expanded ascertainment in the 2000s (see report §7).
 - `early_mortality_rates.csv` — **Approximate** death rates per 100,000,

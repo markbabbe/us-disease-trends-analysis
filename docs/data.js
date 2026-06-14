@@ -56,6 +56,42 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
+      "year": 1945,
+      "cases": 13624,
+      "deaths": null,
+      "incidence": 9.6116,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1946,
+      "cases": 25191,
+      "deaths": null,
+      "incidence": 17.535,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1947,
+      "cases": 10737,
+      "deaths": null,
+      "incidence": 7.3755,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1948,
+      "cases": 27680,
+      "deaths": null,
+      "incidence": 18.7669,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
       "year": 1949,
       "cases": 42033,
       "deaths": 2720,
@@ -71,6 +107,15 @@ window.DISEASE_DATA = {
       "incidence": 22.0055,
       "cfr": 5.7177,
       "death_rate": 1.2582,
+      "note": ""
+    },
+    {
+      "year": 1951,
+      "cases": 28386,
+      "deaths": null,
+      "incidence": 18.4175,
+      "cfr": null,
+      "death_rate": null,
       "note": ""
     },
     {
@@ -137,6 +182,15 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
+      "year": 1959,
+      "cases": 8425,
+      "deaths": null,
+      "incidence": 4.7727,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
       "year": 1960,
       "cases": 3190,
       "deaths": 230,
@@ -153,6 +207,15 @@ window.DISEASE_DATA = {
       "cfr": 6.8598,
       "death_rate": 0.0495,
       "note": "OPV licensed"
+    },
+    {
+      "year": 1962,
+      "cases": 910,
+      "deaths": null,
+      "incidence": 0.4943,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
     },
     {
       "year": 1963,

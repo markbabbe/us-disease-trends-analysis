@@ -38,6 +38,14 @@ def tidy_log_yaxis(ax):
     ax.grid(True, which="major", alpha=0.4)
     ax.grid(True, which="minor", alpha=0.08)
 
+
+def tidy_linear_yaxis(ax):
+    """Linear y-axis from 0 with thousands separators — shows the true drop-off."""
+    ax.set_ylim(bottom=0)
+    ax.yaxis.set_major_formatter(
+        FuncFormatter(lambda v, _: f"{v:,.0f}" if (abs(v) >= 1 or v == 0) else ("%g" % v)))
+    ax.grid(True, alpha=0.3)
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
 OUT = os.path.join(HERE, "..", "charts")
@@ -139,13 +147,12 @@ def drop_zeros(yrs, vals):
 
 def cases_chart(disease, rows, case_field, title):
     yrs, cases = series(rows, case_field)
-    yrs, cases = drop_zeros(yrs, cases)
     fig, ax = plt.subplots(figsize=(10, 5.5))
     ax.plot(yrs, cases, "-o", color="#c0392b", markersize=4, linewidth=1.5)
     ax.set_title(title)
     ax.set_xlabel("Year")
-    ax.set_ylabel("Reported cases (log scale)")
-    tidy_log_yaxis(ax)
+    ax.set_ylabel("Reported cases")
+    tidy_linear_yaxis(ax)
     add_vaccine_lines(ax, disease)
     add_definition_marker(ax, disease)
     fig.tight_layout()
@@ -157,14 +164,13 @@ def cases_chart(disease, rows, case_field, title):
 
 def incidence_chart(disease, rows, case_field, title, pyrs, pop):
     yrs, cases = series(rows, case_field)
-    yrs, cases = drop_zeros(yrs, cases)
     inc = [c / pop_for(y, pyrs, pop) * 100000 for y, c in zip(yrs, cases)]
     fig, ax = plt.subplots(figsize=(10, 5.5))
     ax.plot(yrs, inc, "-o", color="#2c6fbb", markersize=4, linewidth=1.5)
     ax.set_title(title)
     ax.set_xlabel("Year")
-    ax.set_ylabel("Incidence per 100,000 (log scale)")
-    tidy_log_yaxis(ax)
+    ax.set_ylabel("Incidence per 100,000")
+    tidy_linear_yaxis(ax)
     add_vaccine_lines(ax, disease)
     add_definition_marker(ax, disease)
     fig.tight_layout()
@@ -225,14 +231,13 @@ def combined_incidence(pyrs, pop, configs):
     colors = {"polio": "#27ae60", "pertussis": "#e67e22", "measles": "#c0392b"}
     for disease, rows, field, label in configs:
         yrs, cases = series(rows, field)
-        yrs, cases = drop_zeros(yrs, cases)
         inc = [c / pop_for(y, pyrs, pop) * 100000 for y, c in zip(yrs, cases)]
         ax.plot(yrs, inc, "-o", markersize=3, linewidth=1.5,
                 color=colors[disease], label=label)
     ax.set_title("Reported incidence per 100,000, U.S. — three diseases")
     ax.set_xlabel("Year")
-    ax.set_ylabel("Incidence per 100,000 (log scale)")
-    tidy_log_yaxis(ax)
+    ax.set_ylabel("Incidence per 100,000")
+    tidy_linear_yaxis(ax)
     ax.legend()
     fig.tight_layout()
     p = os.path.join(OUT, "combined_incidence.png")
@@ -404,14 +409,18 @@ def deaths_per_100k_chart(pyrs, pop):
     ax.set_title("Deaths per 100,000 population, U.S. — three diseases (1900-present)\n"
                  "Treatment milestones (teal) lowered deaths independent of infection rates")
     ax.set_xlabel("Year")
-    ax.set_ylabel("Deaths per 100,000 (log scale — each gridline is 10x)")
-    tidy_log_yaxis(ax)
+    ax.set_ylabel("Deaths per 100,000")
+    tidy_linear_yaxis(ax)
     add_antibiotic_band(ax)            # measles/pertussis: secondary-infection deaths
     ax.axvline(1952, color="#159a8c", linestyle=":", linewidth=1.6)
     ax.text(1952, 0.55, " Polio: ventilation/ICU 1952", rotation=90, ha="left",
             va="bottom", fontsize=7, color="#0e6b61", transform=ax.get_xaxis_transform())
     ax.legend()
-    fig.tight_layout()
+    fig.text(0.01, 0.005,
+             "Markers = years with data; lines interpolate between them. Pre-1949 "
+             "polio death data is sparse; measles/pertussis pre-1930 are decade anchors.",
+             fontsize=7, color="#777")
+    fig.tight_layout(rect=[0, 0.03, 1, 1])
     p = os.path.join(OUT, "deaths_per_100k.png")
     fig.savefig(p, dpi=130)
     plt.close(fig)
