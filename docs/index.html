@@ -19,6 +19,13 @@
   h1 { margin: 0 0 6px; font-size: 22px; }
   header p { margin: 0; color: var(--muted); max-width: 70ch; }
   .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .tabbar { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 0 4px; border-bottom: 1px solid var(--line); }
+  .tab { background: var(--panel); color: var(--muted); border: 1px solid var(--line);
+         border-bottom: none; border-radius: 9px 9px 0 0; padding: 10px 16px; cursor: pointer;
+         font-size: 14px; line-height: 1.2; }
+  .tab small { display: block; font-size: 10px; opacity: 0.7; margin-top: 2px; }
+  .tab[aria-selected="true"] { color: var(--ink); border-color: var(--accent); background: #18222c; font-weight: 600; }
+  .tab[aria-selected="true"] small { color: var(--accent); opacity: 1; }
   .controls { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-end;
               padding: 18px 0; }
   .group { display: flex; flex-direction: column; gap: 6px; }
@@ -59,17 +66,21 @@
   <div class="wrap">
     <h1>Long-Term U.S. Disease Trends</h1>
     <p>Polio, pertussis, and measles — reported burden over time, from
-    CDC/MMWR, NCHS Vital Statistics, and U.S. Census data. Each disease has its
-    own chart (auto-scaled); pick a metric and scale below. Dashed lines mark
-    vaccine introductions. Pre-1950 figures are approximate — read the
-    <strong>trend shape</strong>, not exact digits.</p>
+    CDC/MMWR, NCHS Vital Statistics, OWID (PHS+CDC), and U.S. Census data.
+    <strong>Pick a vaccine tab</strong> (ordered by the childhood immunization
+    schedule) — DTaP and MMR show their three diseases each. Then choose a metric
+    and scale; dashed lines mark vaccine introductions. Some series start late
+    (e.g., mumps 1968, rubella 1966, Hep B ~1980) where that is when the disease
+    became reportable. Read the <strong>trend shape</strong>, not exact digits.</p>
   </div>
 </header>
 
 <div class="wrap">
+  <div class="tabbar" id="tabbar"></div>
+
   <div class="controls">
     <div class="group">
-      <h3>Metric (applies to all three)</h3>
+      <h3>Metric (applies to all charts in tab)</h3>
       <select id="metric">
         <option value="incidence">Incidence per 100,000</option>
         <option value="death_rate">Deaths per 100,000</option>
@@ -92,7 +103,7 @@
 
   <div id="panels"></div>
 
-  <div class="card">
+  <div id="polioExtra" class="card" style="display:none;">
     <h3 style="margin:2px 2px 10px;font-size:15px;">Polio: isolating the effect of the 1950s case-definition change</h3>
     <p class="metric-note" style="margin:0 0 10px;">The definition change and the
       Salk vaccine both arrived in <strong>1955</strong>, so they overlap on the
@@ -138,9 +149,14 @@
     <table>
       <thead><tr><th>Disease</th><th>Best metric</th><th>Before vaccine</th><th>After vaccine</th><th>Major caveat</th></tr></thead>
       <tbody>
-        <tr><td>Polio</td><td>Deaths &amp; paralytic cases per 100k</td><td>Rising, severe epidemic peaks (1952: ~57.6k cases, ~3,145 deaths)</td><td>Fell &gt;99% in a decade; wild virus eliminated 1979</td><td>Late-1950s definition tightening + enterovirus reclassification deflate later counts</td></tr>
+        <tr><td>Hepatitis B</td><td>Reported acute cases</td><td>Rose to ~26,654 (1985)</td><td>Down ~90%+ after infant vaccination (1991)</td><td>Reportable only ~1966; acute surveillance misses chronic infection &amp; later liver deaths</td></tr>
+        <tr><td>Diphtheria</td><td>Cases &amp; deaths</td><td>&gt;100k cases/yr in the 1920s</td><td>Essentially eliminated</td><td>OWID series starts 1937; antitoxin cut fatality pre-vaccine</td></tr>
+        <tr><td>Tetanus</td><td>Cases &amp; CFR</td><td>~560 cases/yr (1947)</td><td>~25/yr; deaths &gt;99% lower</td><td>NOT contagious (no herd immunity); pre-2009 anchors approximate</td></tr>
         <tr><td>Pertussis</td><td>Infant mortality &amp; hospitalization</td><td>Very high (~265k cases 1934)</td><td>Fell ~99% to 1976, then partial resurgence in cases</td><td>Resurgence inflated by PCR detection; waning acellular immunity is real</td></tr>
+        <tr><td>Polio</td><td>Deaths &amp; paralytic cases per 100k</td><td>Rising, severe epidemic peaks (1952: ~57.6k cases, ~3,145 deaths)</td><td>Fell &gt;99% in a decade; wild virus eliminated 1979</td><td>Late-1950s definition tightening + enterovirus reclassification deflate later counts</td></tr>
         <tr><td>Measles</td><td>Deaths per 100k + incidence</td><td>Near-universal childhood infection (~3–4M true infections/yr)</td><td>Fell ~99%+; eliminated 2000</td><td>Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed</td></tr>
+        <tr><td>Mumps</td><td>Reported cases</td><td>Common childhood illness</td><td>Down &gt;99%; periodic resurgences</td><td>Notifiable only from 1968; waning immunity drives outbreaks</td></tr>
+        <tr><td>Rubella</td><td>Cases + CRS births</td><td>1964–65: ~12.5M cases, ~20k CRS</td><td>Eliminated 2004</td><td>Harm is birth defects (CRS), not deaths; notifiable 1966</td></tr>
       </tbody>
     </table>
     <p class="metric-note">Full analysis, sources, and evidence grading in the
@@ -157,8 +173,11 @@
 <script src="data.js"></script>
 <script>
 const D = window.DISEASE_DATA;
-const COLORS = { polio: "#27ae60", pertussis: "#e67e22", measles: "#c0392b" };
-const NAMES = { polio: "Polio", pertussis: "Pertussis", measles: "Measles" };
+const COLORS = {
+  hepb: "#a569bd", diphtheria: "#5dade2", tetanus: "#dc7633", pertussis: "#e67e22",
+  polio: "#27ae60", measles: "#c0392b", mumps: "#f4d03f", rubella: "#48c9b0",
+};
+const NAMES = D.names;
 const METRIC_LABEL = {
   incidence: "Incidence per 100,000",
   death_rate: "Deaths per 100,000",
@@ -174,23 +193,42 @@ const METRIC_NOTE = {
   cfr: "Deaths ÷ reported cases. Reveals lethality per case, but conflates virulence with improvements in medical care; also distorted when case ascertainment changes.",
 };
 const FACTS = {
-  polio: ["Largest U.S. epidemic 1952: ~57,600 cases, ~21,000 paralytic, ~3,145 deaths.",
-          "Salk IPV licensed 1955; Sabin OPV 1961–63.",
-          "Last endemic wild outbreak 1979; wild virus eliminated from the Americas by 1994.",
-          "Caveat: paralytic case definition tightened late-1950s; enteroviruses reclassified out of 'polio'."],
+  hepb: ["Vaccine 1981 (adults); routine infant vaccination 1991.",
+         "Reported acute cases peaked ~26,654 in 1985, down ~90%+ since.",
+         "Reportable only from ~1966; chronic infection and underreporting not shown (true infections ~6–10× reported).",
+         "Acute-case surveillance misses later chronic-HBV deaths (cirrhosis, liver cancer)."],
+  diphtheria: ["Toxoid from the 1920s; combined into DTP ~1948.",
+               "A top childhood killer once: >100,000 cases/yr in the early 1920s (series here starts 1937).",
+               "Now essentially gone — a handful of cases.",
+               "Antitoxin (1890s) cut fatality even before the vaccine."],
+  tetanus: ["NOT contagious — from environmental spores, so herd immunity doesn't apply.",
+            "Toxoid (1920s); into DTP ~1948; notifiable 1947.",
+            "Cases down >95%, deaths >99% since 1947 (~560 → ~25/yr).",
+            "Pre-2009 points are approximate anchors; 2009–2023 are annual (CDC)."],
   pertussis: ["Pre-vaccine peak ~265,000 cases (1934); thousands of deaths/yr.",
               "Whole-cell DTP routine ~1948; acellular DTaP switch 1991–97.",
               "Reported-case nadir 1976 (~1,010); 2012 peak ~48,300 — highest since 1955.",
-              "Caveat: modern resurgence partly real (waning immunity) and partly detection (PCR). Deaths now ~10–20/yr, mostly infants."],
+              "Caveat: modern resurgence partly real (waning immunity) and partly detection (PCR)."],
+  polio: ["Largest U.S. epidemic 1952: ~57,600 cases, ~21,000 paralytic, ~3,145 deaths.",
+          "Salk IPV licensed 1955; Sabin OPV 1961–63.",
+          "Last endemic wild outbreak 1979; wild virus eliminated from the Americas by 1994.",
+          "Caveat: paralytic case definition tightened late-1950s; enteroviruses reclassified out."],
   measles: ["Pre-vaccine: ~500k reported cases/yr but ~3–4M estimated infections/yr.",
             "Vaccine 1963; MMR 1971; 2nd dose 1989 (after 1989–91 resurgence).",
-            "Declared eliminated 2000; outbreaks since via undervaccination (2019: ~1,282).",
+            "Declared eliminated 2000; outbreaks since via undervaccination.",
             "Caveat: CFR fell ~90% from 1900→1950 BEFORE the vaccine (antibiotics, nutrition, care)."],
+  mumps: ["Vaccine 1967; into MMR 1971; nationally notifiable from 1968.",
+          "Cases down >99%, but resurgences occur (2006; 2016–17) in close-contact settings / waning immunity.",
+          "Rarely fatal; complications include orchitis, meningitis, deafness."],
+  rubella: ["Vaccine 1969; into MMR 1971; notifiable 1966.",
+            "Main harm is Congenital Rubella Syndrome (birth defects), NOT deaths.",
+            "1964–65 epidemic: ~12.5M cases, ~20,000 CRS births.",
+            "Declared eliminated in the U.S. in 2004."],
 };
 
-const DISEASES = ["polio", "pertussis", "measles"];
 const charts = {};
-let earlyChart;
+let earlyChart, activeTab = D.tabs[0].id;
+function activeDiseases() { return D.tabs.find(t => t.id === activeTab).diseases; }
 
 // On a log axis, label only exact powers of 10, as plain numbers (evenly spaced).
 function logTickLabel(value) {
@@ -235,12 +273,31 @@ function buildAnnotations(dis) {
   return ann;
 }
 
+function buildTabbar() {
+  const bar = document.getElementById("tabbar");
+  bar.innerHTML = D.tabs.map(t =>
+    `<button class="tab" role="tab" data-tab="${t.id}" aria-selected="${t.id === activeTab}">
+       ${t.label}<small>${t.sub}</small></button>`).join("");
+  bar.querySelectorAll(".tab").forEach(b =>
+    b.addEventListener("click", () => selectTab(b.dataset.tab)));
+}
+
+function selectTab(id) {
+  activeTab = id;
+  document.querySelectorAll("#tabbar .tab").forEach(b =>
+    b.setAttribute("aria-selected", String(b.dataset.tab === id)));
+  document.getElementById("polioExtra").style.display =
+    activeDiseases().includes("polio") ? "" : "none";
+  buildPanels();
+  render();
+}
+
 function buildPanels() {
   const host = document.getElementById("panels");
-  host.innerHTML = DISEASES.map(dis => `
+  host.innerHTML = activeDiseases().map(dis => `
     <div class="card disease-card">
       <div>
-        <h3 style="color:${COLORS[dis]}">${NAMES[dis]}</h3>
+        <h3 style="color:${COLORS[dis]}">${NAMES[dis]}<span class="nodata" id="nd-${dis}" style="color:var(--muted);font-weight:400;font-size:12px;"></span></h3>
         <div class="disease-chart"><canvas id="chart-${dis}"></canvas></div>
       </div>
       <div>
@@ -253,6 +310,8 @@ function renderDisease(dis, metric) {
   const pts = D[dis]
     .filter(r => r[metric] !== null && r[metric] !== undefined && !(isLog() && r[metric] <= 0))
     .map(r => ({ x: r.year, y: r[metric] }));
+  document.getElementById(`nd-${dis}`).textContent =
+    pts.length ? "" : ` — no ${METRIC_LABEL[metric].toLowerCase()} data`;
   const cfg = {
     type: "line",
     data: { datasets: [{ label: NAMES[dis], data: pts, borderColor: COLORS[dis],
@@ -281,7 +340,7 @@ function renderDisease(dis, metric) {
 function render() {
   const metric = document.getElementById("metric").value;
   document.getElementById("metricNote").textContent = METRIC_NOTE[metric];
-  DISEASES.forEach(dis => renderDisease(dis, metric));
+  activeDiseases().forEach(dis => renderDisease(dis, metric));
 }
 
 function renderEarly() {
@@ -363,8 +422,8 @@ function renderCoverage() {
   });
 }
 
-buildPanels();
-render();
+buildTabbar();
+selectTab(activeTab);
 renderEarly();
 renderCoverage();
 </script>

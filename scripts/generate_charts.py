@@ -55,6 +55,11 @@ VACCINE = {
     "polio": [(1955, "Salk IPV"), (1961, "Sabin OPV")],
     "pertussis": [(1948, "Whole-cell DTP"), (1997, "DTaP switch")],
     "measles": [(1963, "Measles vaccine"), (1971, "MMR"), (1989, "2-dose")],
+    "hepb": [(1981, "HepB vaccine"), (1991, "Infant/universal")],
+    "diphtheria": [(1948, "DTP")],
+    "tetanus": [(1948, "DTP (toxoid)")],
+    "mumps": [(1967, "Mumps vaccine"), (1971, "MMR")],
+    "rubella": [(1969, "Rubella vaccine"), (1971, "MMR")],
 }
 
 
@@ -453,6 +458,13 @@ def main():
     made.append(incidence_chart("pertussis", pertussis, "reported_cases",
                                 "Pertussis — incidence per 100,000, U.S.", pyrs, pop))
     made.append(deaths_chart("pertussis", pertussis, "Pertussis — reported deaths, U.S."))
+
+    # New diseases (cases + deaths where the column exists)
+    for key, title in [("hepb", "Hepatitis B"), ("diphtheria", "Diphtheria"),
+                       ("tetanus", "Tetanus"), ("mumps", "Mumps"), ("rubella", "Rubella")]:
+        rows = read_csv(f"{key}.csv")
+        made.append(cases_chart(key, rows, "cases", f"{title} — reported cases, U.S."))
+        made.append(deaths_chart(key, rows, f"{title} — reported deaths, U.S."))
 
     made.append(early_mortality_chart())
     made.append(coverage_chart())

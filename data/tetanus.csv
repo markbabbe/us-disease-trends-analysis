@@ -1,0 +1,20 @@
+year,cases,deaths,notes
+1947,560,,Notifiable from 1947 (3.9 per million); historical CFR ~30%
+1976,75,,Approx; "50-100 cases/yr since mid-1970s" (CDC)
+1990,64,,Approx anchor
+2005,27,,2001-2008 averaged 29 cases/yr (CFR ~13%)
+2009,18,2,Annual data 2009-2023 from CDC MMWR SS7501
+2010,26,2,
+2011,36,5,
+2012,37,4,
+2013,26,3,
+2014,25,5,
+2015,29,4,
+2016,34,3,
+2017,33,2,
+2018,23,0,
+2019,26,4,
+2020,17,0,
+2021,28,2,
+2022,26,0,
+2023,18,1,

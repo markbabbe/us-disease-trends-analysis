@@ -104,6 +104,28 @@ The 2022–2025 rows in `measles.csv` and `pertussis.csv` are therefore labeled 
 CDC NNDSS API (provisional). They capture the recent measles resurgence (2025)
 and pertussis resurgence (2024) that the historical compilation alone would miss.
 
+## Additional diseases (DTaP, HepB, MMR tabs)
+
+- `diphtheria.csv`, `mumps.csv`, `rubella.csv` — built by
+  [`scripts/build_new_diseases.py`](../scripts/build_new_diseases.py) from saved
+  OWID raw files (`owid_diphtheria.csv`, `owid_mumps.csv`, `owid_rubella.csv`;
+  OWID's underlying sources are U.S. Public Health Reports + CDC). Series start
+  where the disease became reportable / data exists: **diphtheria 1937**
+  (>100k cases/yr in the 1920s predate the series), **mumps 1968** (vaccine
+  1967), **rubella 1966** (vaccine 1969). Rubella's main harm is congenital
+  rubella syndrome (birth defects), not deaths, so no death series is shown.
+- `tetanus.csv` — annual 2009–2023 from **CDC MMWR Tetanus Surveillance
+  (SS-7501, 2009–2023)**; pre-2009 are approximate anchors (1947 ~560 cases at
+  3.9/million; "50–100/yr since the mid-1970s"; 2001–2008 averaged 29/yr).
+  Tetanus is **not contagious** (environmental spores), so herd immunity does
+  not apply — included because it is part of DTaP.
+- `hepb.csv` — reported **acute** hepatitis B cases (CDC MMWR / Viral Hepatitis
+  Surveillance): 1985 peak 26,654; 1990 21,102; 2002 8,064; 2010 3,350; 2020
+  2,157 (1980 approximate). Reportable only from ~1966; vaccine 1981, infant/
+  universal 1991. Acute-case surveillance **misses chronic infection** and the
+  later cirrhosis/liver-cancer deaths it causes, and undercounts true infections
+  (~6–10×).
+
 ## Deaths per 100,000 over time
 
 Computed in `scripts/build_dashboard_data.py` and `generate_charts.py` as death
