@@ -172,6 +172,15 @@ Two observations that *constrain* the artifact:
   definition. The decisive evidence for a vaccine effect is the *sustained* fall
   to near-zero through the 1960s, which neither epidemic cycling nor a one-time
   definition change explains.
+- **Honest limitation #3 (deaths aren't treatment-immune):** the death anchor
+  rules out a *reclassification* artifact, but deaths are still lowered by
+  **improved treatment** (positive-pressure ventilation / ICU after 1952; see
+  §1.5). That is precisely *why* deaths fell slightly faster than paralytic cases
+  here — better critical care, plus 1952 being an unusually lethal epidemic year.
+  The implication: **deaths somewhat overstate the decline in true infections**,
+  the opposite-direction confounder to the case-definition change. Reading cases
+  and deaths *together*, with both confounders in mind, is the only honest
+  approach.
 - **Not determinable:** a precise percentage decomposition ("X% definition, Y%
   vaccine, Z% epidemic variation") cannot be recovered from these aggregate
   series.
@@ -204,11 +213,19 @@ clean age breakdowns needed to do this rigorously.
   [`charts/polio_deaths.png`](charts/polio_deaths.png)).
 - **Paralysis with residual deficit:** the clinical hallmark; tracked closely
   with deaths.
-- **Case fatality rate:** paralytic polio CFR was roughly **5–10%** (higher for
-  bulbar disease), and itself improved with the advent of mechanical ventilation
-  (the "iron lung," 1930s onward) and intensive respiratory care — i.e., *better
-  treatment lowered CFR even before vaccination*, an important confounder when
-  comparing severity across eras.
+- **Case fatality rate:** paralytic polio CFR was roughly **5–10%** (much higher
+  for bulbar disease). Critically, **a large independent reason polio deaths fell
+  was better treatment, not just fewer infections.** The negative-pressure "iron
+  lung" (1928 onward) kept respiratory-paralysis patients alive, and the **1952
+  Copenhagen epidemic** introduced **positive-pressure ventilation** — widely
+  regarded as the birth of the modern intensive-care unit — which cut bulbar-polio
+  mortality dramatically. In the U.S. data, CFR (deaths ÷ paralytic cases)
+  roughly **halved from ~15% in the 1952 epidemic peak to ~7% by 1954–55** and
+  stayed there. So deaths were falling partly because *treatment improved*, a
+  confounder that operates in the **opposite direction** from the case-definition
+  artifact: the definition change makes the case decline look bigger, while
+  better treatment makes the death decline look bigger than the underlying
+  decline in infections.
 - **IFR:** not reliably estimable historically — the great majority of polio
   infections were asymptomatic or minor, and the asymptomatic denominator was
   never measured at population scale before serosurveys.
@@ -581,9 +598,12 @@ incidence comparison across the post-licensure era.
 - **Wild poliovirus transmission and endemic measles transmission were
   eliminated in the U.S.** (1979 and 2000 respectively) — discrete, well-
   documented events.
-- **Case fatality fell substantially *before* vaccines** for measles and
-  pertussis, driven by antibiotics, nutrition, and supportive/critical care.
-  Medical progress is a genuine, independent contributor to falling deaths.
+- **Case fatality fell substantially because of medical progress, partly
+  independent of vaccines** — antibiotics, nutrition, and supportive care for
+  measles and pertussis, and, for polio, **mechanical ventilation and the first
+  intensive-care units (positive-pressure ventilation, 1952)**. Medical progress
+  is a genuine, independent contributor to falling deaths, so death declines
+  overstate the decline in infections.
 - **Raw case counts are not comparable across eras** for any of the three
   diseases, because case definitions and diagnostics changed materially.
 

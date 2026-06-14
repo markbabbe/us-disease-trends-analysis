@@ -83,6 +83,20 @@ def add_definition_marker(ax, disease):
             fontsize=7, color="#5b2270", transform=trans, zorder=5)
 
 
+# Treatment milestones that lowered case fatality independent of incidence.
+TREATMENT = {
+    "polio": [(1952, "Positive-pressure ventilation / ICU\nlowered CFR (1952 Copenhagen)")],
+}
+
+
+def add_treatment_marker(ax, disease):
+    trans = ax.get_xaxis_transform()
+    for yr, label in TREATMENT.get(disease, []):
+        ax.axvline(yr, color="#159a8c", linestyle=":", linewidth=1.6)
+        ax.text(yr, 0.04, " " + label, rotation=90, ha="left", va="bottom",
+                fontsize=7, color="#0e6b61", transform=trans, zorder=5)
+
+
 def drop_zeros(yrs, vals):
     """Log scale cannot show zeros; drop those points."""
     pairs = [(y, v) for y, v in zip(yrs, vals) if v and v > 0]
@@ -140,6 +154,7 @@ def deaths_chart(disease, rows, title):
     ax.grid(True, alpha=0.3)
     add_vaccine_lines(ax, disease)
     add_definition_marker(ax, disease)
+    add_treatment_marker(ax, disease)
     fig.tight_layout()
     p = os.path.join(OUT, f"{disease}_deaths.png")
     fig.savefig(p, dpi=130)
@@ -312,6 +327,7 @@ def polio_definition_effect():
                 label=label, markersize=4, linewidth=lw)
     ax.set_yscale("log")
     add_definition_marker(ax, "polio")
+    add_treatment_marker(ax, "polio")
     for yr, lab in [(1955, "Salk IPV"), (1961, "Sabin OPV")]:
         ax.axvline(yr, color="#555", linestyle="--", linewidth=1)
         ax.text(yr, 0.96, f" {lab} {yr}", rotation=90, va="top", fontsize=8,
@@ -323,8 +339,8 @@ def polio_definition_effect():
     ax.grid(True, which="both", alpha=0.3)
     ax.legend(loc="lower left", fontsize=9)
     ax.text(0.985, 0.97,
-            "Deaths can't be reclassified.\nThey fell as fast as cases →\nthe decline is largely real,\nnot a definitional artifact.",
-            transform=ax.transAxes, ha="right", va="top", fontsize=8.5,
+            "Deaths can't be reclassified →\nthe decline is largely real,\nnot a definitional artifact.\nBut deaths aren't treatment-immune:\nventilation/ICU cut CFR, so deaths\nslightly OVERSTATE the drop in infections.",
+            transform=ax.transAxes, ha="right", va="top", fontsize=8,
             bbox=dict(boxstyle="round", fc="#fdf2f2", ec="#c0392b", alpha=0.9))
     fig.tight_layout()
     p = os.path.join(OUT, "polio_definition_effect.png")
