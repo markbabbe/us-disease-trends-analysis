@@ -30,6 +30,10 @@ annual digits — especially before 1950 — carry real uncertainty.
   `us_population.csv`.
 - **CDC measles, pertussis, and polio surveillance pages and outbreak reports**
   for the post-elimination era and modern case definitions.
+- **Our World in Data — U.S. polio case-rate and death-rate series (1910–2023).**
+  Used to build the complete annual polio series. OWID's underlying sources are
+  U.S. Public Health Reports (1942) and the CDC; population from various sources.
+  https://ourworldindata.org/polio
 
 ## File-by-file notes
 
@@ -38,14 +42,20 @@ annual digits — especially before 1950 — carry real uncertainty.
   Pre-1950 figures are less complete. CDC estimates that pre-vaccine reported
   cases (~500k/yr) represented only a fraction of an estimated 3–4 million
   actual infections per year.
-- `polio.csv` — "total_cases" = all reported poliomyelitis; "paralytic_cases"
-  reported where available. The 1916 row is an approximate national figure for
-  the Northeast-centered epidemic. The case definition for paralytic polio was
-  tightened in the late 1950s (see report §1, §7). **Data density:** the annual
-  case series is fairly complete for ~1944–1965 (the drop-off era); **deaths are
-  annual only for 1949–1961**, so the 1916→1949 segment on the deaths chart is
-  interpolation, not data. Charts mark actual data with points; long straight
-  segments between distant points are visual interpolation, not yearly records.
+- `polio.csv` — **Complete annual series, 1910–1971**, rebuilt by
+  [`scripts/build_polio_from_owid.py`](../scripts/build_polio_from_owid.py) from
+  `polio_owid_rates.csv` (Our World in Data's U.S. polio death-rate and case-rate
+  series; underlying sources: **U.S. Public Health Reports (1942) and the CDC**,
+  processed by OWID), converted to counts using interpolated Census population.
+  "paralytic_cases" are retained from the prior CDC-anchored compilation where
+  available (dropped in the few late years where source rounding put them above
+  the annual total). Post-1971 rows (1979, 1990, 2000, 2005, 2022) are kept as
+  documented specific events rather than annual rates. The case definition for
+  paralytic polio was tightened in the late 1950s (see report §1, §7).
+  *Earlier versions used sparse anchor years; this rebuild eliminates the long
+  straight-line interpolations (e.g., the former 1916→1949 gap in deaths).*
+- `polio_owid_rates.csv` — raw download of the OWID U.S. polio death-rate and
+  case-rate series (per 100,000), 1910–2023. Source as above.
 
 ### Chart scale
 

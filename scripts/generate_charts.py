@@ -417,8 +417,8 @@ def deaths_per_100k_chart(pyrs, pop):
             va="bottom", fontsize=7, color="#0e6b61", transform=ax.get_xaxis_transform())
     ax.legend()
     fig.text(0.01, 0.005,
-             "Markers = years with data; lines interpolate between them. Pre-1949 "
-             "polio death data is sparse; measles/pertussis pre-1930 are decade anchors.",
+             "Markers = years with data. Polio is now annual (1910-1971, OWID/U.S. "
+             "Public Health Reports + CDC); measles/pertussis pre-1930 are decade anchors.",
              fontsize=7, color="#777")
     fig.tight_layout(rect=[0, 0.03, 1, 1])
     p = os.path.join(OUT, "deaths_per_100k.png")

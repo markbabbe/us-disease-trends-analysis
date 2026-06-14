@@ -80,7 +80,13 @@ The single most important methodological fact in this report:
 
 *Observed (chart: [`charts/polio_cases.png`](charts/polio_cases.png)).* Reported
 poliomyelitis rose through the first half of the century, peaked in 1952
-(~57,600 total), and fell to single digits by the mid-1960s.
+(~57,600 total), and fell to single digits by the mid-1960s. The polio series
+here is now **complete annual data, 1910–1971** (from OWID's U.S. Public Health
+Reports + CDC compilation; see [`data/SOURCES.md`](data/SOURCES.md)), which makes
+an important pattern visible: polio was **highly epidemic**, with large
+year-to-year swings (a huge 1916 spike, recurrent peaks in 1927, 1931, 1944,
+1948–49) rather than a smooth rise — so the post-1952 fall must be read against a
+naturally jagged, cyclic baseline, not a steady trend.
 
 *Interpretation / caveat.* Polio raw counts are **especially treacherous** for
 two reasons:
