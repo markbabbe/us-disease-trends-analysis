@@ -225,7 +225,9 @@ clean age breakdowns needed to do this rigorously.
   confounder that operates in the **opposite direction** from the case-definition
   artifact: the definition change makes the case decline look bigger, while
   better treatment makes the death decline look bigger than the underlying
-  decline in infections.
+  decline in infections. **Where and when treatment improved is documented with
+  dates in [`data/treatment_milestones.md`](data/treatment_milestones.md)** and
+  marked (in teal) on the deaths charts.
 - **IFR:** not reliably estimable historically — the great majority of polio
   infections were asymptomatic or minor, and the asymptomatic denominator was
   never measured at population scale before serosurveys.

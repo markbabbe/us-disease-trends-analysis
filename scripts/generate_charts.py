@@ -15,6 +15,28 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter, LogLocator, NullFormatter
+
+
+def _plain(v, _pos):
+    """Format a log tick as a plain number: 0.001, 0.01, 0.1, 1, 10, 1,000."""
+    if v <= 0:
+        return ""
+    if v >= 1:
+        return f"{v:,.0f}"
+    return ("%g" % v)
+
+
+def tidy_log_yaxis(ax):
+    """Make a log y-axis readable: evenly spaced decade ticks, plain-number
+    labels, bold major gridlines, faint minor ones."""
+    ax.set_yscale("log")
+    ax.yaxis.set_major_locator(LogLocator(base=10))
+    ax.yaxis.set_major_formatter(FuncFormatter(_plain))
+    ax.yaxis.set_minor_locator(LogLocator(base=10, subs=tuple(np.arange(2, 10) * 0.1)))
+    ax.yaxis.set_minor_formatter(NullFormatter())
+    ax.grid(True, which="major", alpha=0.4)
+    ax.grid(True, which="minor", alpha=0.08)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
@@ -84,8 +106,12 @@ def add_definition_marker(ax, disease):
 
 
 # Treatment milestones that lowered case fatality independent of incidence.
+# (year, short label) — full detail in data/treatment_milestones.md
 TREATMENT = {
-    "polio": [(1952, "Positive-pressure ventilation / ICU\nlowered CFR (1952 Copenhagen)")],
+    "polio": [(1928, "Iron lung (Boston)"),
+              (1952, "Positive-pressure ventilation /\nfirst ICU (Copenhagen)")],
+    "measles": [(1945, "Antibiotics widespread\n(penicillin)")],
+    "pertussis": [(1945, "Antibiotics"), (1965, "Infant intensive care\n(NICU)")],
 }
 
 
@@ -95,6 +121,14 @@ def add_treatment_marker(ax, disease):
         ax.axvline(yr, color="#159a8c", linestyle=":", linewidth=1.6)
         ax.text(yr, 0.04, " " + label, rotation=90, ha="left", va="bottom",
                 fontsize=7, color="#0e6b61", transform=trans, zorder=5)
+
+
+def add_antibiotic_band(ax):
+    """Shade the era when antibiotics became widely available (sulfa -> penicillin)."""
+    ax.axvspan(1936, 1948, color="#159a8c", alpha=0.10, zorder=0)
+    ax.text(1942, 0.04, " Antibiotics arrive\n sulfa 1935 → penicillin 1940s",
+            rotation=90, ha="left", va="bottom", fontsize=7, color="#0e6b61",
+            transform=ax.get_xaxis_transform(), zorder=5)
 
 
 def drop_zeros(yrs, vals):
@@ -111,8 +145,7 @@ def cases_chart(disease, rows, case_field, title):
     ax.set_title(title)
     ax.set_xlabel("Year")
     ax.set_ylabel("Reported cases (log scale)")
-    ax.set_yscale("log")
-    ax.grid(True, which="both", alpha=0.3)
+    tidy_log_yaxis(ax)
     add_vaccine_lines(ax, disease)
     add_definition_marker(ax, disease)
     fig.tight_layout()
@@ -131,8 +164,7 @@ def incidence_chart(disease, rows, case_field, title, pyrs, pop):
     ax.set_title(title)
     ax.set_xlabel("Year")
     ax.set_ylabel("Incidence per 100,000 (log scale)")
-    ax.set_yscale("log")
-    ax.grid(True, which="both", alpha=0.3)
+    tidy_log_yaxis(ax)
     add_vaccine_lines(ax, disease)
     add_definition_marker(ax, disease)
     fig.tight_layout()
@@ -197,11 +229,10 @@ def combined_incidence(pyrs, pop, configs):
         inc = [c / pop_for(y, pyrs, pop) * 100000 for y, c in zip(yrs, cases)]
         ax.plot(yrs, inc, "-o", markersize=3, linewidth=1.5,
                 color=colors[disease], label=label)
-    ax.set_yscale("log")
     ax.set_title("Reported incidence per 100,000, U.S. — three diseases")
     ax.set_xlabel("Year")
     ax.set_ylabel("Incidence per 100,000 (log scale)")
-    ax.grid(True, which="both", alpha=0.3)
+    tidy_log_yaxis(ax)
     ax.legend()
     fig.tight_layout()
     p = os.path.join(OUT, "combined_incidence.png")
@@ -218,11 +249,12 @@ def early_mortality_chart():
     fig, ax = plt.subplots(figsize=(10, 5.5))
     ax.plot(yrs, measles, "-o", color="#c0392b", label="Measles")
     ax.plot(yrs, pertussis, "-o", color="#e67e22", label="Pertussis")
+    add_antibiotic_band(ax)
     ax.axvline(1948, color="#888", linestyle="--", linewidth=1)
     ax.text(1948, ax.get_ylim()[1] * 0.9, " DTP routine ~1948",
             rotation=90, va="top", fontsize=8, color="#444")
     ax.set_title("Approximate death rate per 100,000, U.S., 1900-1960\n"
-                 "(both vaccines licensed after this window: measles 1963)")
+                 "death rates fell ~95% BEFORE vaccines — note the antibiotic era")
     ax.set_xlabel("Year")
     ax.set_ylabel("Deaths per 100,000 population")
     ax.grid(True, alpha=0.3)
@@ -325,7 +357,7 @@ def polio_definition_effect():
         pts = norm(d)
         ax.plot([y for y, _ in pts], [v for _, v in pts], "-o", color=color,
                 label=label, markersize=4, linewidth=lw)
-    ax.set_yscale("log")
+    tidy_log_yaxis(ax)
     add_definition_marker(ax, "polio")
     add_treatment_marker(ax, "polio")
     for yr, lab in [(1955, "Salk IPV"), (1961, "Sabin OPV")]:
@@ -336,7 +368,6 @@ def polio_definition_effect():
                  "Normalized to 1952 = 100 (log scale)")
     ax.set_xlabel("Year")
     ax.set_ylabel("Percent of 1952 level (log scale)")
-    ax.grid(True, which="both", alpha=0.3)
     ax.legend(loc="lower left", fontsize=9)
     ax.text(0.985, 0.97,
             "Deaths can't be reclassified →\nthe decline is largely real,\nnot a definitional artifact.\nBut deaths aren't treatment-immune:\nventilation/ICU cut CFR, so deaths\nslightly OVERSTATE the drop in infections.",
@@ -370,11 +401,15 @@ def deaths_per_100k_chart(pyrs, pop):
                     pts[y] = float(r[early_col])
         yrs = sorted(y for y in pts if pts[y] > 0)
         ax.plot(yrs, [pts[y] for y in yrs], "-o", color=color, markersize=4, label=label)
-    ax.set_yscale("log")
-    ax.set_title("Deaths per 100,000 population, U.S. — three diseases (1900-present)")
+    ax.set_title("Deaths per 100,000 population, U.S. — three diseases (1900-present)\n"
+                 "Treatment milestones (teal) lowered deaths independent of infection rates")
     ax.set_xlabel("Year")
-    ax.set_ylabel("Deaths per 100,000 (log scale)")
-    ax.grid(True, which="both", alpha=0.3)
+    ax.set_ylabel("Deaths per 100,000 (log scale — each gridline is 10x)")
+    tidy_log_yaxis(ax)
+    add_antibiotic_band(ax)            # measles/pertussis: secondary-infection deaths
+    ax.axvline(1952, color="#159a8c", linestyle=":", linewidth=1.6)
+    ax.text(1952, 0.55, " Polio: ventilation/ICU 1952", rotation=90, ha="left",
+            va="bottom", fontsize=7, color="#0e6b61", transform=ax.get_xaxis_transform())
     ax.legend()
     fig.tight_layout()
     p = os.path.join(OUT, "deaths_per_100k.png")

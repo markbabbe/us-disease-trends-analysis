@@ -88,6 +88,15 @@ count ÷ interpolated Census population × 100,000. Early measles/pertussis poin
 `early_mortality_rates.csv`; later points are derived from the death counts in
 the disease CSVs. This is the recommended long-run severity metric.
 
+## Treatment milestones (`treatment_milestones.md`)
+
+Documents *where and when* medical treatment improved (iron lung 1928; positive-
+pressure ventilation / first ICU, Copenhagen 1952; antibiotics — sulfa 1935,
+penicillin 1940s; infant intensive care from the 1960s) and the effect on
+case-fatality. These are marked in teal on the deaths charts. Adoption dates are
+approximate (technologies diffused over years). This matters because a falling
+death rate can reflect better care, not only less disease.
+
 ## Hospitalizations (`hospitalizations.csv`)
 
 **There is no continuous national hospitalization rate for these diseases across

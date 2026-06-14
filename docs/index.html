@@ -192,6 +192,14 @@ const DISEASES = ["polio", "pertussis", "measles"];
 const charts = {};
 let earlyChart;
 
+// On a log axis, label only exact powers of 10, as plain numbers (evenly spaced).
+function logTickLabel(value) {
+  if (!isLog()) return value;
+  const l = Math.log10(value);
+  if (Math.abs(l - Math.round(l)) > 1e-6) return "";   // hide non-decade ticks
+  return value >= 1 ? value.toLocaleString() : String(value);
+}
+
 function isLog() { return document.getElementById("logToggle").getAttribute("aria-pressed") === "true"; }
 function showVax() { return document.getElementById("vaxToggle").getAttribute("aria-pressed") === "true"; }
 
@@ -256,8 +264,8 @@ function renderDisease(dis, metric) {
         x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
              ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
         y: { type: isLog() ? "logarithmic" : "linear",
-             title: { display: true, text: METRIC_LABEL[metric], color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+             title: { display: true, text: METRIC_LABEL[metric] + (isLog() ? " (log: each line ×10)" : ""), color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2", callback: logTickLabel }, grid: { color: "#222b34" } },
       },
       plugins: {
         legend: { display: false },
