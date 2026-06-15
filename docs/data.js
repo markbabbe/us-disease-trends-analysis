@@ -682,6 +682,24 @@ window.DISEASE_DATA = {
         "year": 2019,
         "value": 13.0
       }
+    ],
+    "devdisability": [
+      {
+        "year": 1998,
+        "value": 12.8
+      },
+      {
+        "year": 2007,
+        "value": 15.0
+      },
+      {
+        "year": 2009,
+        "value": 16.2
+      },
+      {
+        "year": 2017,
+        "value": 17.8
+      }
     ]
   },
   "hepb": [

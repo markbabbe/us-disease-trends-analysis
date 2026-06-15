@@ -35,3 +35,7 @@ eczema,1970,5.0,percent,Approx; ~2-3x rise since 1970s (literature)
 eczema,2000,10.0,percent,Approx (NHIS-era)
 eczema,2010,11.0,percent,Approx
 eczema,2019,13.0,percent,Approx (~10-13% US children)
+devdisability,1998,12.8,percent,NHIS any developmental disability 3-17 (Boyle 2011; 1997-99 avg)
+devdisability,2007,15.0,percent,NHIS (Boyle 2011; 2006-08 avg)
+devdisability,2009,16.2,percent,NHIS (Zablotsky 2019)
+devdisability,2017,17.8,percent,NHIS (Zablotsky 2019; note 2014 questionnaire redesign)
