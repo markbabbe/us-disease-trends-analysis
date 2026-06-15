@@ -127,6 +127,22 @@
          style="width:100%;border-radius:8px;display:block;" />
   </div>
 
+  <div id="hibExtra" class="card" style="display:none;">
+    <h3 style="margin:2px 2px 10px;font-size:15px;">Hib: the mortality signal (via childhood meningitis)</h3>
+    <p class="metric-note" style="margin:0 0 10px;">Hib-specific deaths aren't recorded
+      in standard U.S. mortality tables — Hib deaths were coded under
+      <strong>meningitis</strong> and septicemia, not broken out. Since Hib was the
+      leading cause of bacterial meningitis in young children before the vaccine,
+      the childhood meningitis death rate is the best available proxy. The
+      <strong>1–4 year</strong> rate fell from ~1.0 per 100,000 (1987) to ~0.2
+      after the <strong>1990 infant Hib vaccine</strong>. (The under-1 decline
+      began earlier, largely from better meningitis treatment, then dropped further
+      post-1990.) Source: NCHS Table HIST001R (1979–1998); this is all-cause
+      meningitis, so it overstates Hib's share somewhat.</p>
+    <img src="childhood_meningitis.png" alt="Childhood meningitis death rate 1979-1998, a Hib proxy"
+         style="width:100%;border-radius:8px;display:block;" />
+  </div>
+
   <div class="card small" id="earlyCard">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
     <div class="chart-box"><canvas id="early"></canvas></div>
@@ -318,6 +334,7 @@ function selectTab(id) {
   // Tab-specific extras: only show where they're relevant (fixes charts that
   // otherwise appeared under every tab).
   document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
+  document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
   document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
   document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
   buildPanels();

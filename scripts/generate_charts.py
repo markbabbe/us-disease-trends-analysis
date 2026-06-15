@@ -393,6 +393,37 @@ def polio_definition_effect():
     return p
 
 
+def childhood_meningitis_chart():
+    """Childhood meningitis death rate (a Hib proxy) — NCHS HIST001R, 1979-1998."""
+    rows = read_csv("childhood_meningitis_death_rates.csv")
+    yrs = [int(r["year"]) for r in rows]
+    u1 = [float(r["under1"]) for r in rows]
+    a14 = [float(r["age1_4"]) for r in rows]
+    fig, ax = plt.subplots(figsize=(10, 5.5))
+    ax.plot(yrs, u1, "-o", color="#bb8fce", markersize=4, label="Under 1 year")
+    ax.plot(yrs, a14, "-o", color="#27ae60", markersize=4, label="1-4 years")
+    ax.axvline(1990, color="#159a8c", linestyle=":", linewidth=1.6)
+    ax.text(1990, 0.93, " Hib infant vaccine 1990", rotation=90, va="top",
+            fontsize=8, color="#0e6b61", transform=ax.get_xaxis_transform())
+    ax.set_ylim(bottom=0)
+    ax.set_title("Childhood meningitis death rate, U.S., 1979-1998 (a Hib proxy)\n"
+                 "All-cause meningitis (NCHS); Hib was the top cause in young children pre-vaccine")
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Deaths per 100,000 (age group)")
+    ax.xaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+    fig.text(0.01, 0.005,
+             "Under-1 decline pre-1990 reflects better meningitis treatment; the 1-4yr drop "
+             "after the 1990 Hib vaccine is the cleaner Hib signal. Source: NCHS Table HIST001R.",
+             fontsize=7, color="#777")
+    fig.tight_layout(rect=[0, 0.03, 1, 1])
+    p = os.path.join(OUT, "childhood_meningitis.png")
+    fig.savefig(p, dpi=130)
+    plt.close(fig)
+    return p
+
+
 def deaths_per_100k_chart(pyrs, pop):
     cfgs = [("measles.csv", "#c0392b", "Measles", "measles_death_rate"),
             ("pertussis.csv", "#e67e22", "Pertussis", "pertussis_death_rate"),
@@ -477,6 +508,7 @@ def main():
     made.append(coverage_chart())
     made.append(deaths_per_100k_chart(pyrs, pop))
     made.append(hospitalization_chart())
+    made.append(childhood_meningitis_chart())
     made.append(polio_definition_effect())
 
     made.append(combined_incidence(pyrs, pop, [

@@ -159,7 +159,7 @@ def main():
     print("wrote", os.path.relpath(path, os.path.join(HERE, "..")))
 
     # Copy analytical charts that the dashboard embeds directly (must live in docs/).
-    for fname in ["polio_definition_effect.png"]:
+    for fname in ["polio_definition_effect.png", "childhood_meningitis.png"]:
         src = os.path.join(HERE, "..", "charts", fname)
         if os.path.exists(src):
             shutil.copy(src, os.path.join(DOCS, fname))

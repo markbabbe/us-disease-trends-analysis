@@ -133,6 +133,25 @@ and pertussis resurgence (2024) that the historical compilation alone would miss
   later cirrhosis/liver-cancer deaths it causes, and undercounts true infections
   (~6–10×).
 
+## Childhood meningitis death rate (Hib proxy) — NCHS HIST001R
+
+`childhood_meningitis_death_rates.csv` is transcribed from **NCHS Table HIST001R**
+("Death rates by 10-year age groups and age-adjusted death rates for 113 selected
+causes, United States, 1979–1998," ICD-9), cause **Meningitis (320–322)**, all
+races/both sexes. `https://www.cdc.gov/nchs/data/statab/hist001r.pdf` (p. 287).
+
+Why it's here: **Hib-specific deaths are not in standard U.S. mortality tables** —
+that 113-cause list has no Haemophilus line; Hib deaths were coded under
+meningitis/septicemia. Since Hib was the leading cause of childhood bacterial
+meningitis pre-vaccine, the childhood meningitis death rate is the best available
+mortality proxy. The 1–4-year rate fell from ~1.0/100,000 (1987) to ~0.2 after
+the 1990 infant Hib vaccine. Caveat: all-cause meningitis, so it overstates Hib's
+share; the under-1 pre-1990 decline largely reflects improved treatment.
+
+The same table confirms that **measles, pertussis, and polio death rates were
+already below the reportable threshold (shown as "*") by 1979** — i.e.,
+near-eliminated as causes of death by then.
+
 ## Hib, PCV, Rotavirus (recent-vaccine diseases — anchor-based)
 
 These three lack long annual notifiable-case series; their burden is measured
