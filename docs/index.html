@@ -343,28 +343,53 @@ function buildPanels() {
     </div>`).join("");
 }
 
+const DEATH_COLOR = "#ff6b6b";
+// When viewing cases/incidence, also overlay deaths on a right-hand axis.
+const SECONDARY = { cases: ["deaths", "Deaths"], incidence: ["death_rate", "Deaths per 100,000"] };
+
 function renderDisease(dis, metric) {
-  const pts = D[dis]
-    .filter(r => r[metric] !== null && r[metric] !== undefined && !(isLog() && r[metric] <= 0))
-    .map(r => ({ x: r.year, y: r[metric] }));
+  const series = f => D[dis]
+    .filter(r => r[f] !== null && r[f] !== undefined && !(isLog() && r[f] <= 0))
+    .map(r => ({ x: r.year, y: r[f] }));
+  const pts = series(metric);
+  const sec = SECONDARY[metric];
+  const secPts = sec ? series(sec[0]) : [];
+  const hasSec = secPts.length > 0;
+
   document.getElementById(`nd-${dis}`).textContent =
     pts.length ? "" : ` — no ${METRIC_LABEL[metric].toLowerCase()} data`;
+
+  const datasets = [{ label: METRIC_LABEL[metric], data: pts, borderColor: COLORS[dis],
+                      backgroundColor: COLORS[dis], tension: 0.15, pointRadius: 2.5,
+                      borderWidth: 2, yAxisID: "y" }];
+  if (hasSec) {
+    datasets.push({ label: sec[1], data: secPts, borderColor: DEATH_COLOR,
+                    backgroundColor: DEATH_COLOR, borderDash: [5, 3], tension: 0.15,
+                    pointRadius: 2, borderWidth: 1.8, yAxisID: "y1" });
+  }
+  const axType = isLog() ? "logarithmic" : "linear";
+  const scales = {
+    x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
+         ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+    y: { type: axType, position: "left",
+         title: { display: true, text: METRIC_LABEL[metric] + (isLog() ? " (log ×10)" : ""), color: COLORS[dis] },
+         ticks: { color: "#9aa7b2", callback: logTickLabel }, grid: { color: "#222b34" } },
+  };
+  if (hasSec) {
+    scales.y1 = { type: axType, position: "right",
+                  title: { display: true, text: sec[1], color: DEATH_COLOR },
+                  ticks: { color: DEATH_COLOR, callback: logTickLabel },
+                  grid: { drawOnChartArea: false } };
+  }
   const cfg = {
     type: "line",
-    data: { datasets: [{ label: NAMES[dis], data: pts, borderColor: COLORS[dis],
-                         backgroundColor: COLORS[dis], tension: 0.15, pointRadius: 2.5, borderWidth: 2 }] },
+    data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
-      scales: {
-        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
-        y: { type: isLog() ? "logarithmic" : "linear",
-             title: { display: true, text: METRIC_LABEL[metric] + (isLog() ? " (log: each line ×10)" : ""), color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2", callback: logTickLabel }, grid: { color: "#222b34" } },
-      },
+      scales,
       plugins: {
-        legend: { display: false },
+        legend: { display: hasSec, labels: { color: "#e6edf3", boxWidth: 12 } },
         annotation: { annotations: buildAnnotations(dis) },
         tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
       },
@@ -376,7 +401,9 @@ function renderDisease(dis, metric) {
 
 function render() {
   const metric = document.getElementById("metric").value;
-  document.getElementById("metricNote").textContent = METRIC_NOTE[metric];
+  let note = METRIC_NOTE[metric];
+  if (SECONDARY[metric]) note += "  •  Red dashed line = deaths (right axis), where data exists.";
+  document.getElementById("metricNote").textContent = note;
   activeDiseases().forEach(dis => renderDisease(dis, metric));
 }
 
