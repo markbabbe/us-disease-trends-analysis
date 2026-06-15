@@ -179,6 +179,11 @@ window.DISEASE_DATA = {
     "mumps": "Mumps",
     "rubella": "Rubella"
   },
+  "under5": [
+    "hib",
+    "pcv",
+    "rotavirus"
+  ],
   "earlyMortality": [
     {
       "year": 1900,
@@ -598,8 +603,8 @@ window.DISEASE_DATA = {
       "deaths": 40,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.0136,
-      "hosp_rate": 20.3332,
+      "death_rate": 0.2032,
+      "hosp_rate": 304.7452,
       "note": "Hospitalizations in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
     },
     {
@@ -608,8 +613,8 @@ window.DISEASE_DATA = {
       "deaths": 38,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.0128,
-      "hosp_rate": 19.4751,
+      "death_rate": 0.192,
+      "hosp_rate": 293.0605,
       "note": "Vaccine introduced mid-2006; little impact yet"
     },
     {
@@ -618,8 +623,8 @@ window.DISEASE_DATA = {
       "deaths": 20,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.0066,
-      "hosp_rate": 10.881,
+      "death_rate": 0.1,
+      "hosp_rate": 165.0309,
       "note": "Approx; ~45% fewer hospitalizations after the vaccine"
     },
     {
@@ -628,8 +633,8 @@ window.DISEASE_DATA = {
       "deaths": 8,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.0026,
-      "hosp_rate": 4.788,
+      "death_rate": 0.0403,
+      "hosp_rate": 75.6109,
       "note": "Approx; sustained ~60-80% reduction"
     },
     {
@@ -638,8 +643,8 @@ window.DISEASE_DATA = {
       "deaths": 8,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.0024,
-      "hosp_rate": 4.5568,
+      "death_rate": 0.0431,
+      "hosp_rate": 80.7841,
       "note": "Approx"
     }
   ],
@@ -2774,9 +2779,9 @@ window.DISEASE_DATA = {
       "year": 1987,
       "cases": 7600,
       "deaths": 380,
-      "incidence": 3.1397,
+      "incidence": 42.8107,
       "cfr": 5.0,
-      "death_rate": 0.157,
+      "death_rate": 2.1405,
       "hosp_rate": null,
       "note": "~41/100k in children <5 (CDC); deaths approx (~5% fatal)"
     },
@@ -2784,9 +2789,9 @@ window.DISEASE_DATA = {
       "year": 1989,
       "cases": 6800,
       "deaths": 340,
-      "incidence": 2.7587,
+      "incidence": 37.4577,
       "cfr": 5.0,
-      "death_rate": 0.1379,
+      "death_rate": 1.8729,
       "hosp_rate": null,
       "note": "~37/100k \u2014 still high just before the 1990 infant vaccine"
     },
@@ -2794,9 +2799,9 @@ window.DISEASE_DATA = {
       "year": 1991,
       "cases": 2040,
       "deaths": 100,
-      "incidence": 0.8096,
+      "incidence": 11.065,
       "cfr": 4.902,
-      "death_rate": 0.0397,
+      "death_rate": 0.5424,
       "hosp_rate": null,
       "note": "~11/100k \u2014 sharp drop AFTER the 1990 infant conjugate vaccine"
     },
@@ -2804,9 +2809,9 @@ window.DISEASE_DATA = {
       "year": 1995,
       "cases": 300,
       "deaths": 15,
-      "incidence": 0.1132,
+      "incidence": 1.5987,
       "cfr": 5.0,
-      "death_rate": 0.0057,
+      "death_rate": 0.0799,
       "hosp_rate": null,
       "note": "~1.6/100k"
     },
@@ -2814,9 +2819,9 @@ window.DISEASE_DATA = {
       "year": 1997,
       "cases": 280,
       "deaths": 14,
-      "incidence": 0.1031,
+      "incidence": 1.4792,
       "cfr": 5.0,
-      "death_rate": 0.0052,
+      "death_rate": 0.074,
       "hosp_rate": null,
       "note": "280 reported cases (~1.5/100k)"
     },
@@ -2824,9 +2829,9 @@ window.DISEASE_DATA = {
       "year": 2005,
       "cases": 40,
       "deaths": 2,
-      "incidence": 0.0136,
+      "incidence": 0.2032,
       "cfr": 5.0,
-      "death_rate": 0.0007,
+      "death_rate": 0.0102,
       "hosp_rate": null,
       "note": "Approx"
     },
@@ -2834,9 +2839,9 @@ window.DISEASE_DATA = {
       "year": 2019,
       "cases": 18,
       "deaths": 1,
-      "incidence": 0.0055,
+      "incidence": 0.0969,
       "cfr": 5.5556,
-      "death_rate": 0.0003,
+      "death_rate": 0.0054,
       "hosp_rate": null,
       "note": "18 reported cases in children =<5"
     }
@@ -2846,9 +2851,9 @@ window.DISEASE_DATA = {
       "year": 1997,
       "cases": 15707,
       "deaths": 200,
-      "incidence": 5.783,
+      "incidence": 82.9768,
       "cfr": 1.2733,
-      "death_rate": 0.0736,
+      "death_rate": 1.0566,
       "hosp_rate": null,
       "note": "Invasive pneumococcal disease in children <5 (CDC ABCs); deaths approx (~1.3% fatal)"
     },
@@ -2856,9 +2861,9 @@ window.DISEASE_DATA = {
       "year": 1999,
       "cases": 16000,
       "deaths": 205,
-      "incidence": 5.7523,
+      "incidence": 83.7974,
       "cfr": 1.2812,
-      "death_rate": 0.0737,
+      "death_rate": 1.0737,
       "hosp_rate": null,
       "note": "Approx; level held before PCV7 (2000)"
     },
@@ -2866,9 +2871,9 @@ window.DISEASE_DATA = {
       "year": 2007,
       "cases": 4500,
       "deaths": 55,
-      "incidence": 1.4973,
+      "incidence": 22.6202,
       "cfr": 1.2222,
-      "death_rate": 0.0183,
+      "death_rate": 0.2765,
       "hosp_rate": null,
       "note": "Approx; after PCV7 cut <5 invasive disease ~76%"
     },
@@ -2876,9 +2881,9 @@ window.DISEASE_DATA = {
       "year": 2019,
       "cases": 1382,
       "deaths": 18,
-      "incidence": 0.4198,
+      "incidence": 7.4429,
       "cfr": 1.3025,
-      "death_rate": 0.0055,
+      "death_rate": 0.0969,
       "hosp_rate": null,
       "note": "After PCV13 (2010); -91% vs 1997"
     }

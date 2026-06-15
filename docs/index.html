@@ -391,9 +391,12 @@ function makeLineChart(canvasId, dis, field, color, labelText) {
 
 function renderDisease(dis, metric) {
   const color = metric === "death_rate" ? DEATH_COLOR : COLORS[dis];
-  const n = makeLineChart(`chart-${dis}`, dis, metric, color, METRIC_LABEL[metric]);
+  const u5 = (D.under5 || []).includes(dis);
+  const label = METRIC_LABEL[metric] + (u5 ? " (children <5)" : "");
+  const n = makeLineChart(`chart-${dis}`, dis, metric, color, label);
   document.getElementById(`nd-${dis}`).textContent =
-    n ? "" : ` — no ${METRIC_LABEL[metric].toLowerCase()} data`;
+    n ? (u5 ? " — per 100,000 children <5" : "")
+      : ` — no ${METRIC_LABEL[metric].toLowerCase()} data`;
 }
 
 function render() {

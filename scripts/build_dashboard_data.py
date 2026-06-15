@@ -41,8 +41,18 @@ def early_rates(disease):
     return {int(r["year"]): float(r[col]) for r in read_csv("early_mortality_rates.csv")}
 
 
+# Diseases whose counts are children-under-5 only -> use the <5 population as denominator.
+UNDER5 = {"hib", "pcv", "rotavirus"}
+
+
+def load_pop_under5():
+    rows = read_csv("us_population_under5.csv")
+    return (np.array([int(r["year"]) for r in rows]),
+            np.array([int(r["population"]) for r in rows]))
+
+
 def build(rows, case_field, disease):
-    pyrs, pop = load_pop()
+    pyrs, pop = load_pop_under5() if disease in UNDER5 else load_pop()
     early = early_rates(disease)
     out = {}
     for r in rows:
@@ -145,6 +155,7 @@ def main():
         "vaccines": VACCINES,
         "tabs": TABS,
         "names": {k: v[2] for k, v in DISEASE_CFG.items()},
+        "under5": sorted(UNDER5),
         "earlyMortality": early(),
         "coverage": coverage(),
     }
