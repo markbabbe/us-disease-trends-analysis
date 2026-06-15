@@ -49,6 +49,10 @@
   .disease-chart { position: relative; height: 290px; }
   .facts-mini { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
   .facts-mini li { margin-bottom: 7px; }
+  .affected { background: #14202b; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+              border-radius: 6px; padding: 9px 11px; margin: 0 0 10px; font-size: 12.5px; color: var(--ink); }
+  .affected b { color: var(--accent); display: block; font-size: 10px; letter-spacing: .06em;
+                text-transform: uppercase; margin-bottom: 3px; }
   .facts h3 { margin: 2px 0 10px; font-size: 13px; }
   .facts ul { margin: 0; padding-left: 18px; color: var(--muted); }
   .facts li { margin-bottom: 8px; }
@@ -226,6 +230,17 @@ const FACTS = {
             "Declared eliminated in the U.S. in 2004."],
 };
 
+const AFFECTED = {
+  hepb: "Mostly adults, not children — transmitted by blood and sex. Acute cases concentrate in people who inject drugs and those with multiple sexual partners. Infants are vaccinated at birth to block mother-to-baby (perinatal) transmission, which usually becomes a lifelong chronic infection, and for protection before later exposure.",
+  diphtheria: "Historically young children (respiratory diphtheria). Today essentially absent; the rare cases occur in undervaccinated people and adults with waning immunity.",
+  tetanus: "Not contagious — acquired from contaminated wounds. Now mostly older adults (waning immunity, missed boosters) and people who inject drugs; globally, newborns of unvaccinated mothers (neonatal tetanus).",
+  pertussis: "Bimodal — most reported cases are adolescents (waning immunity), but nearly all severe disease and deaths occur in infants under 1 year, especially under 2 months (too young to be fully vaccinated).",
+  polio: "Primarily children ('infantile paralysis'), but mid-century U.S. epidemics shifted toward older children and young adults, in whom paralysis was more likely.",
+  measles: "Pre-vaccine, a near-universal childhood infection (peak ~5–9 yrs). Today: unvaccinated children and undervaccinated communities; infants too young to vaccinate and immunocompromised people face the highest risk of severe disease.",
+  mumps: "Historically school-age children. Recent outbreaks cluster in adolescents and young adults in close-contact settings (e.g., colleges), driven by waning immunity.",
+  rubella: "Usually mild in children and adults — the critical risk is to the fetus: infection in early pregnancy causes congenital rubella syndrome (birth defects). The key target is unvaccinated women of childbearing age.",
+};
+
 const charts = {};
 let earlyChart, activeTab = D.tabs[0].id;
 function activeDiseases() { return D.tabs.find(t => t.id === activeTab).diseases; }
@@ -301,6 +316,7 @@ function buildPanels() {
         <div class="disease-chart"><canvas id="chart-${dis}"></canvas></div>
       </div>
       <div>
+        <div class="affected"><b>Most affected</b>${AFFECTED[dis]}</div>
         <ul class="facts-mini">${FACTS[dis].map(f => `<li>${f}</li>`).join("")}</ul>
       </div>
     </div>`).join("");
