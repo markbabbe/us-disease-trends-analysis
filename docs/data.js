@@ -2776,6 +2776,26 @@ window.DISEASE_DATA = {
   ],
   "hib": [
     {
+      "year": 1980,
+      "cases": 6900,
+      "deaths": 345,
+      "incidence": 42.2063,
+      "cfr": 5.0,
+      "death_rate": 2.1103,
+      "hosp_rate": null,
+      "note": "Pre-vaccine plateau (est. ~42/100k <5); burden estimates cite ~20k cases/yr"
+    },
+    {
+      "year": 1985,
+      "cases": 7300,
+      "deaths": 365,
+      "incidence": 42.0717,
+      "cfr": 5.0,
+      "death_rate": 2.1036,
+      "hosp_rate": null,
+      "note": "Pre-vaccine plateau (est.); polysaccharide vaccine 1985 had little population effect"
+    },
+    {
       "year": 1987,
       "cases": 7600,
       "deaths": 380,

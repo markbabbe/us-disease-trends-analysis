@@ -160,8 +160,11 @@ differently and mostly recently, so the CSVs are **documented anchors with clear
 
 - `hib.csv` — invasive **Haemophilus influenzae type b** disease in children <5.
   Pre-vaccine ~20,000 cases/yr and ~1,000 deaths (CDC/Roush 2007); conjugate
-  vaccine 1987–1990 → >99% decline (18 cases in <5 in 2019). Intermediate points
-  approximate.
+  vaccine 1987–1990 → >99% decline (18 cases in <5 in 2019). The 1987 anchor uses
+  CDC's measured baseline (~41/100,000 <5); **1980 and 1985 are a pre-vaccine
+  plateau estimate** at that surveillance level (no granular early-1980s annual
+  data is published). Rate is per 100,000 children <5 (see under-5 denominator
+  below). Intermediate points approximate.
 - `pcv.csv` — invasive **pneumococcal** disease in children <5 (CDC Active
   Bacterial Core surveillance): 15,707 (1997) → 1,382 (2019), −91%. PCV7 2000,
   PCV13 2010. (Pneumococcus also heavily affects older adults — not shown.)
