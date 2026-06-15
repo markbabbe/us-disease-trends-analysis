@@ -1,8 +1,8 @@
 year,cases,deaths,notes
-1987,7600,,~41 per 100,000 in children <5 (CDC); level held into 1989
-1989,6800,,~37 per 100,000 — still high just before the 1990 infant vaccine
-1991,2040,,~11 per 100,000 — sharp drop AFTER the 1990 infant conjugate vaccine
-1995,300,,~1.6 per 100,000
-1997,280,,280 reported cases (~1.5 per 100,000)
-2005,40,,Approx
-2019,18,,18 reported cases in children =<5
+1987,7600,380,~41/100k in children <5 (CDC); deaths approx (~5% fatal)
+1989,6800,340,~37/100k — still high just before the 1990 infant vaccine
+1991,2040,100,~11/100k — sharp drop AFTER the 1990 infant conjugate vaccine
+1995,300,15,~1.6/100k
+1997,280,14,280 reported cases (~1.5/100k)
+2005,40,2,Approx
+2019,18,1,18 reported cases in children =<5

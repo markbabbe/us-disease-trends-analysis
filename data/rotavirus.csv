@@ -1,6 +1,6 @@
 year,cases,deaths,notes
-2005,60000,40,This series = HOSPITALIZATIONS in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)
-2006,58000,,Vaccine introduced mid-2006; little impact yet
-2008,33000,,Approx; ~45% fewer hospitalizations after the vaccine
-2012,15000,,Approx; sustained ~60-80% reduction (biennial pattern)
-2019,15000,,Approx
+2005,60000,40,Series = HOSPITALIZATIONS in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)
+2006,58000,38,Vaccine introduced mid-2006; little impact yet
+2008,33000,20,Approx; ~45% fewer hospitalizations after the vaccine
+2012,15000,8,Approx; sustained ~60-80% reduction
+2019,15000,8,Approx

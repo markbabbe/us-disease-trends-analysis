@@ -592,42 +592,42 @@ window.DISEASE_DATA = {
       "incidence": 20.3332,
       "cfr": 0.0667,
       "death_rate": 0.0136,
-      "note": "This series = HOSPITALIZATIONS in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
+      "note": "Series = HOSPITALIZATIONS in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
     },
     {
       "year": 2006,
       "cases": 58000,
-      "deaths": null,
+      "deaths": 38,
       "incidence": 19.4751,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.0655,
+      "death_rate": 0.0128,
       "note": "Vaccine introduced mid-2006; little impact yet"
     },
     {
       "year": 2008,
       "cases": 33000,
-      "deaths": null,
+      "deaths": 20,
       "incidence": 10.881,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.0606,
+      "death_rate": 0.0066,
       "note": "Approx; ~45% fewer hospitalizations after the vaccine"
     },
     {
       "year": 2012,
       "cases": 15000,
-      "deaths": null,
+      "deaths": 8,
       "incidence": 4.788,
-      "cfr": null,
-      "death_rate": null,
-      "note": "Approx; sustained ~60-80% reduction (biennial pattern)"
+      "cfr": 0.0533,
+      "death_rate": 0.0026,
+      "note": "Approx; sustained ~60-80% reduction"
     },
     {
       "year": 2019,
       "cases": 15000,
-      "deaths": null,
+      "deaths": 8,
       "incidence": 4.5568,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.0533,
+      "death_rate": 0.0024,
       "note": "Approx"
     }
   ],
@@ -2549,64 +2549,64 @@ window.DISEASE_DATA = {
     {
       "year": 1987,
       "cases": 7600,
-      "deaths": null,
+      "deaths": 380,
       "incidence": 3.1397,
-      "cfr": null,
-      "death_rate": null,
-      "note": "~41 per 100"
+      "cfr": 5.0,
+      "death_rate": 0.157,
+      "note": "~41/100k in children <5 (CDC); deaths approx (~5% fatal)"
     },
     {
       "year": 1989,
       "cases": 6800,
-      "deaths": null,
+      "deaths": 340,
       "incidence": 2.7587,
-      "cfr": null,
-      "death_rate": null,
-      "note": "~37 per 100"
+      "cfr": 5.0,
+      "death_rate": 0.1379,
+      "note": "~37/100k \u2014 still high just before the 1990 infant vaccine"
     },
     {
       "year": 1991,
       "cases": 2040,
-      "deaths": null,
+      "deaths": 100,
       "incidence": 0.8096,
-      "cfr": null,
-      "death_rate": null,
-      "note": "~11 per 100"
+      "cfr": 4.902,
+      "death_rate": 0.0397,
+      "note": "~11/100k \u2014 sharp drop AFTER the 1990 infant conjugate vaccine"
     },
     {
       "year": 1995,
       "cases": 300,
-      "deaths": null,
+      "deaths": 15,
       "incidence": 0.1132,
-      "cfr": null,
-      "death_rate": null,
-      "note": "~1.6 per 100"
+      "cfr": 5.0,
+      "death_rate": 0.0057,
+      "note": "~1.6/100k"
     },
     {
       "year": 1997,
       "cases": 280,
-      "deaths": null,
+      "deaths": 14,
       "incidence": 0.1031,
-      "cfr": null,
-      "death_rate": null,
-      "note": "280 reported cases (~1.5 per 100"
+      "cfr": 5.0,
+      "death_rate": 0.0052,
+      "note": "280 reported cases (~1.5/100k)"
     },
     {
       "year": 2005,
       "cases": 40,
-      "deaths": null,
+      "deaths": 2,
       "incidence": 0.0136,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 5.0,
+      "death_rate": 0.0007,
       "note": "Approx"
     },
     {
       "year": 2019,
       "cases": 18,
-      "deaths": null,
+      "deaths": 1,
       "incidence": 0.0055,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 5.5556,
+      "death_rate": 0.0003,
       "note": "18 reported cases in children =<5"
     }
   ],
@@ -2614,37 +2614,37 @@ window.DISEASE_DATA = {
     {
       "year": 1997,
       "cases": 15707,
-      "deaths": null,
+      "deaths": 200,
       "incidence": 5.783,
-      "cfr": null,
-      "death_rate": null,
-      "note": "Invasive pneumococcal disease in children <5 (CDC ABCs)"
+      "cfr": 1.2733,
+      "death_rate": 0.0736,
+      "note": "Invasive pneumococcal disease in children <5 (CDC ABCs); deaths approx (~1.3% fatal)"
     },
     {
       "year": 1999,
       "cases": 16000,
-      "deaths": null,
+      "deaths": 205,
       "incidence": 5.7523,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 1.2812,
+      "death_rate": 0.0737,
       "note": "Approx; level held before PCV7 (2000)"
     },
     {
       "year": 2007,
       "cases": 4500,
-      "deaths": null,
+      "deaths": 55,
       "incidence": 1.4973,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 1.2222,
+      "death_rate": 0.0183,
       "note": "Approx; after PCV7 cut <5 invasive disease ~76%"
     },
     {
       "year": 2019,
       "cases": 1382,
-      "deaths": null,
+      "deaths": 18,
       "incidence": 0.4198,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 1.3025,
+      "death_rate": 0.0055,
       "note": "After PCV13 (2010); -91% vs 1997"
     }
   ],
