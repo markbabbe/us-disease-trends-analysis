@@ -1519,16 +1519,106 @@ window.DISEASE_DATA = {
       "incidence": 98.1867,
       "cfr": null,
       "death_rate": null,
-      "note": "Reporting becoming national"
+      "note": ""
+    },
+    {
+      "year": 1923,
+      "cases": 164191,
+      "deaths": null,
+      "incidence": 147.6858,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1924,
+      "cases": 165418,
+      "deaths": null,
+      "incidence": 146.5251,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1925,
+      "cases": 152003,
+      "deaths": null,
+      "incidence": 132.6239,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1926,
+      "cases": 202210,
+      "deaths": null,
+      "incidence": 173.8242,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1927,
+      "cases": 181411,
+      "deaths": null,
+      "incidence": 153.6752,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1928,
+      "cases": 161799,
+      "deaths": null,
+      "incidence": 135.0955,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1929,
+      "cases": 197371,
+      "deaths": null,
+      "incidence": 162.466,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
     },
     {
       "year": 1930,
-      "cases": null,
+      "cases": 166914,
       "deaths": null,
-      "incidence": null,
+      "incidence": 135.4793,
       "cfr": null,
       "death_rate": 4.8,
-      "note": "Early death rate (approx)"
+      "note": ""
+    },
+    {
+      "year": 1931,
+      "cases": 172559,
+      "deaths": null,
+      "incidence": 139.0497,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1932,
+      "cases": 215343,
+      "deaths": null,
+      "incidence": 172.2813,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1933,
+      "cases": 179135,
+      "deaths": null,
+      "incidence": 142.2935,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
     },
     {
       "year": 1934,
@@ -1537,34 +1627,142 @@ window.DISEASE_DATA = {
       "incidence": 209.2235,
       "cfr": null,
       "death_rate": null,
-      "note": "Largest reported year"
+      "note": ""
+    },
+    {
+      "year": 1935,
+      "cases": 180518,
+      "deaths": null,
+      "incidence": 141.3792,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1936,
+      "cases": 147237,
+      "deaths": null,
+      "incidence": 114.5102,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1937,
+      "cases": 214652,
+      "deaths": null,
+      "incidence": 165.7852,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1938,
+      "cases": 227319,
+      "deaths": null,
+      "incidence": 174.3616,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1939,
+      "cases": 103188,
+      "deaths": null,
+      "incidence": 78.6084,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
     },
     {
       "year": 1940,
       "cases": 183866,
-      "deaths": 2538,
+      "deaths": null,
       "incidence": 139.119,
-      "cfr": 1.3804,
-      "death_rate": 1.9203,
+      "cfr": null,
+      "death_rate": 2.0,
+      "note": ""
+    },
+    {
+      "year": 1941,
+      "cases": 222202,
+      "deaths": null,
+      "incidence": 165.7226,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1942,
+      "cases": 191383,
+      "deaths": null,
+      "incidence": 140.7261,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1943,
+      "cases": 191890,
+      "deaths": null,
+      "incidence": 139.1385,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1944,
+      "cases": 109873,
+      "deaths": 1878,
+      "incidence": 78.5767,
+      "cfr": 1.7092,
+      "death_rate": 1.3431,
       "note": ""
     },
     {
       "year": 1945,
       "cases": 133792,
-      "deaths": 1675,
+      "deaths": 1752,
       "incidence": 94.3891,
-      "cfr": 1.2519,
-      "death_rate": 1.1817,
+      "cfr": 1.3095,
+      "death_rate": 1.236,
+      "note": ""
+    },
+    {
+      "year": 1946,
+      "cases": 109860,
+      "deaths": 1241,
+      "incidence": 76.4715,
+      "cfr": 1.1296,
+      "death_rate": 0.8638,
+      "note": ""
+    },
+    {
+      "year": 1947,
+      "cases": 156517,
+      "deaths": 1954,
+      "incidence": 107.5146,
+      "cfr": 1.2484,
+      "death_rate": 1.3422,
       "note": ""
     },
     {
       "year": 1948,
       "cases": 74715,
-      "deaths": null,
+      "deaths": 1146,
       "incidence": 50.6565,
+      "cfr": 1.5338,
+      "death_rate": 0.777,
+      "note": "Whole-cell DTP routine"
+    },
+    {
+      "year": 1949,
+      "cases": 69479,
+      "deaths": null,
+      "incidence": 46.5023,
       "cfr": null,
       "death_rate": null,
-      "note": "Whole-cell DTP entering routine use"
+      "note": ""
     },
     {
       "year": 1950,
@@ -1576,30 +1774,174 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
+      "year": 1951,
+      "cases": 68687,
+      "deaths": 951,
+      "incidence": 44.5656,
+      "cfr": 1.3845,
+      "death_rate": 0.617,
+      "note": ""
+    },
+    {
+      "year": 1952,
+      "cases": 45030,
+      "deaths": 402,
+      "incidence": 28.6952,
+      "cfr": 0.8927,
+      "death_rate": 0.2562,
+      "note": ""
+    },
+    {
+      "year": 1953,
+      "cases": 37129,
+      "deaths": 270,
+      "incidence": 23.2456,
+      "cfr": 0.7272,
+      "death_rate": 0.169,
+      "note": ""
+    },
+    {
+      "year": 1954,
+      "cases": 60886,
+      "deaths": 373,
+      "incidence": 37.4626,
+      "cfr": 0.6126,
+      "death_rate": 0.2295,
+      "note": ""
+    },
+    {
       "year": 1955,
       "cases": 62786,
-      "deaths": null,
+      "deaths": 467,
       "incidence": 37.9774,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.7438,
+      "death_rate": 0.2825,
+      "note": ""
+    },
+    {
+      "year": 1956,
+      "cases": 31732,
+      "deaths": 266,
+      "incidence": 18.8741,
+      "cfr": 0.8383,
+      "death_rate": 0.1582,
+      "note": ""
+    },
+    {
+      "year": 1957,
+      "cases": 28295,
+      "deaths": 183,
+      "incidence": 16.5541,
+      "cfr": 0.6468,
+      "death_rate": 0.1071,
+      "note": ""
+    },
+    {
+      "year": 1958,
+      "cases": 32148,
+      "deaths": 177,
+      "incidence": 18.5052,
+      "cfr": 0.5506,
+      "death_rate": 0.1019,
+      "note": ""
+    },
+    {
+      "year": 1959,
+      "cases": 40005,
+      "deaths": 269,
+      "incidence": 22.6627,
+      "cfr": 0.6724,
+      "death_rate": 0.1524,
       "note": ""
     },
     {
       "year": 1960,
       "cases": 14809,
-      "deaths": 269,
+      "deaths": 118,
       "incidence": 8.2583,
-      "cfr": 1.8165,
-      "death_rate": 0.15,
+      "cfr": 0.7968,
+      "death_rate": 0.0658,
+      "note": ""
+    },
+    {
+      "year": 1961,
+      "cases": 11468,
+      "deaths": 76,
+      "incidence": 6.3111,
+      "cfr": 0.6627,
+      "death_rate": 0.0418,
+      "note": ""
+    },
+    {
+      "year": 1962,
+      "cases": 17749,
+      "deaths": 83,
+      "incidence": 9.6409,
+      "cfr": 0.4676,
+      "death_rate": 0.0451,
+      "note": ""
+    },
+    {
+      "year": 1963,
+      "cases": 17135,
+      "deaths": 115,
+      "incidence": 9.1882,
+      "cfr": 0.6711,
+      "death_rate": 0.0617,
+      "note": ""
+    },
+    {
+      "year": 1964,
+      "cases": 13005,
+      "deaths": 93,
+      "incidence": 6.8854,
+      "cfr": 0.7151,
+      "death_rate": 0.0492,
       "note": ""
     },
     {
       "year": 1965,
       "cases": 6799,
-      "deaths": null,
+      "deaths": 55,
       "incidence": 3.5547,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.8089,
+      "death_rate": 0.0288,
+      "note": ""
+    },
+    {
+      "year": 1966,
+      "cases": 7717,
+      "deaths": 49,
+      "incidence": 3.9849,
+      "cfr": 0.635,
+      "death_rate": 0.0253,
+      "note": ""
+    },
+    {
+      "year": 1967,
+      "cases": 9718,
+      "deaths": 37,
+      "incidence": 4.957,
+      "cfr": 0.3807,
+      "death_rate": 0.0189,
+      "note": ""
+    },
+    {
+      "year": 1968,
+      "cases": 4810,
+      "deaths": 36,
+      "incidence": 2.424,
+      "cfr": 0.7484,
+      "death_rate": 0.0181,
+      "note": ""
+    },
+    {
+      "year": 1969,
+      "cases": 3285,
+      "deaths": 13,
+      "incidence": 1.6358,
+      "cfr": 0.3957,
+      "death_rate": 0.0065,
       "note": ""
     },
     {
@@ -1609,51 +1951,267 @@ window.DISEASE_DATA = {
       "incidence": 2.0909,
       "cfr": 0.2824,
       "death_rate": 0.0059,
-      "note": "Record-low era begins"
+      "note": ""
+    },
+    {
+      "year": 1971,
+      "cases": 3036,
+      "deaths": 18,
+      "incidence": 1.477,
+      "cfr": 0.5929,
+      "death_rate": 0.0088,
+      "note": ""
+    },
+    {
+      "year": 1972,
+      "cases": 3287,
+      "deaths": 6,
+      "incidence": 1.5812,
+      "cfr": 0.1825,
+      "death_rate": 0.0029,
+      "note": ""
+    },
+    {
+      "year": 1973,
+      "cases": 1759,
+      "deaths": 5,
+      "incidence": 0.8368,
+      "cfr": 0.2843,
+      "death_rate": 0.0024,
+      "note": ""
+    },
+    {
+      "year": 1974,
+      "cases": 2402,
+      "deaths": 14,
+      "incidence": 1.1301,
+      "cfr": 0.5828,
+      "death_rate": 0.0066,
+      "note": ""
+    },
+    {
+      "year": 1975,
+      "cases": 1738,
+      "deaths": 8,
+      "incidence": 0.8088,
+      "cfr": 0.4603,
+      "death_rate": 0.0037,
+      "note": ""
     },
     {
       "year": 1976,
       "cases": 1010,
-      "deaths": null,
+      "deaths": 7,
       "incidence": 0.465,
-      "cfr": null,
-      "death_rate": null,
-      "note": "All-time reported low"
+      "cfr": 0.6931,
+      "death_rate": 0.0032,
+      "note": ""
+    },
+    {
+      "year": 1977,
+      "cases": 2177,
+      "deaths": 10,
+      "incidence": 0.9916,
+      "cfr": 0.4593,
+      "death_rate": 0.0046,
+      "note": ""
+    },
+    {
+      "year": 1978,
+      "cases": 2063,
+      "deaths": 6,
+      "incidence": 0.9298,
+      "cfr": 0.2908,
+      "death_rate": 0.0027,
+      "note": ""
+    },
+    {
+      "year": 1979,
+      "cases": 1623,
+      "deaths": 6,
+      "incidence": 0.7239,
+      "cfr": 0.3697,
+      "death_rate": 0.0027,
+      "note": ""
     },
     {
       "year": 1980,
       "cases": 1730,
-      "deaths": null,
+      "deaths": 11,
       "incidence": 0.7636,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.6358,
+      "death_rate": 0.0049,
+      "note": ""
+    },
+    {
+      "year": 1981,
+      "cases": 1248,
+      "deaths": 6,
+      "incidence": 0.5455,
+      "cfr": 0.4808,
+      "death_rate": 0.0026,
+      "note": ""
+    },
+    {
+      "year": 1982,
+      "cases": 1895,
+      "deaths": 4,
+      "incidence": 0.8204,
+      "cfr": 0.2111,
+      "death_rate": 0.0017,
+      "note": ""
+    },
+    {
+      "year": 1983,
+      "cases": 2463,
+      "deaths": 5,
+      "incidence": 1.0562,
+      "cfr": 0.203,
+      "death_rate": 0.0021,
+      "note": ""
+    },
+    {
+      "year": 1984,
+      "cases": 2276,
+      "deaths": 7,
+      "incidence": 0.9668,
+      "cfr": 0.3076,
+      "death_rate": 0.003,
       "note": ""
     },
     {
       "year": 1985,
       "cases": 3589,
-      "deaths": null,
+      "deaths": 4,
       "incidence": 1.5103,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.1115,
+      "death_rate": 0.0017,
+      "note": ""
+    },
+    {
+      "year": 1986,
+      "cases": 4195,
+      "deaths": 6,
+      "incidence": 1.7491,
+      "cfr": 0.143,
+      "death_rate": 0.0025,
+      "note": ""
+    },
+    {
+      "year": 1987,
+      "cases": 2823,
+      "deaths": 1,
+      "incidence": 1.1662,
+      "cfr": 0.0354,
+      "death_rate": 0.0004,
+      "note": ""
+    },
+    {
+      "year": 1988,
+      "cases": 3450,
+      "deaths": 4,
+      "incidence": 1.4123,
+      "cfr": 0.1159,
+      "death_rate": 0.0016,
+      "note": ""
+    },
+    {
+      "year": 1989,
+      "cases": 4157,
+      "deaths": 12,
+      "incidence": 1.6865,
+      "cfr": 0.2887,
+      "death_rate": 0.0049,
       "note": ""
     },
     {
       "year": 1990,
       "cases": 4570,
-      "deaths": null,
+      "deaths": 12,
       "incidence": 1.8375,
-      "cfr": null,
-      "death_rate": null,
-      "note": "Acellular DTaP transition begins"
+      "cfr": 0.2626,
+      "death_rate": 0.0048,
+      "note": ""
+    },
+    {
+      "year": 1991,
+      "cases": 2719,
+      "deaths": 0,
+      "incidence": 1.079,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 1992,
+      "cases": 4083,
+      "deaths": 5,
+      "incidence": 1.5996,
+      "cfr": 0.1225,
+      "death_rate": 0.002,
+      "note": ""
     },
     {
       "year": 1993,
       "cases": 6586,
-      "deaths": null,
+      "deaths": 7,
       "incidence": 2.5475,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.1063,
+      "death_rate": 0.0027,
+      "note": ""
+    },
+    {
+      "year": 1994,
+      "cases": 4617,
+      "deaths": 8,
+      "incidence": 1.7636,
+      "cfr": 0.1733,
+      "death_rate": 0.0031,
+      "note": ""
+    },
+    {
+      "year": 1995,
+      "cases": 5137,
+      "deaths": 6,
+      "incidence": 1.938,
+      "cfr": 0.1168,
+      "death_rate": 0.0023,
+      "note": ""
+    },
+    {
+      "year": 1996,
+      "cases": 7796,
+      "deaths": 4,
+      "incidence": 2.9053,
+      "cfr": 0.0513,
+      "death_rate": 0.0015,
+      "note": ""
+    },
+    {
+      "year": 1997,
+      "cases": 6564,
+      "deaths": 6,
+      "incidence": 2.4167,
+      "cfr": 0.0914,
+      "death_rate": 0.0022,
+      "note": "Acellular DTaP switch"
+    },
+    {
+      "year": 1998,
+      "cases": 7405,
+      "deaths": 5,
+      "incidence": 2.6939,
+      "cfr": 0.0675,
+      "death_rate": 0.0018,
+      "note": ""
+    },
+    {
+      "year": 1999,
+      "cases": 7298,
+      "deaths": 7,
+      "incidence": 2.6238,
+      "cfr": 0.0959,
+      "death_rate": 0.0025,
       "note": ""
     },
     {
@@ -1666,76 +2224,202 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
+      "year": 2001,
+      "cases": 7580,
+      "deaths": 17,
+      "incidence": 2.6676,
+      "cfr": 0.2243,
+      "death_rate": 0.006,
+      "note": ""
+    },
+    {
+      "year": 2002,
+      "cases": 9771,
+      "deaths": 18,
+      "incidence": 3.4059,
+      "cfr": 0.1842,
+      "death_rate": 0.0063,
+      "note": ""
+    },
+    {
+      "year": 2003,
+      "cases": 11647,
+      "deaths": 11,
+      "incidence": 4.0215,
+      "cfr": 0.0944,
+      "death_rate": 0.0038,
+      "note": ""
+    },
+    {
       "year": 2004,
       "cases": 25827,
-      "deaths": 27,
+      "deaths": 16,
       "incidence": 8.8342,
-      "cfr": 0.1045,
-      "death_rate": 0.0092,
-      "note": "PCR testing expands"
+      "cfr": 0.062,
+      "death_rate": 0.0055,
+      "note": ""
     },
     {
       "year": 2005,
       "cases": 25616,
-      "deaths": null,
+      "deaths": 31,
       "incidence": 8.6809,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.121,
+      "death_rate": 0.0105,
+      "note": ""
+    },
+    {
+      "year": 2006,
+      "cases": 15632,
+      "deaths": 9,
+      "incidence": 5.2489,
+      "cfr": 0.0576,
+      "death_rate": 0.003,
+      "note": ""
+    },
+    {
+      "year": 2007,
+      "cases": 10454,
+      "deaths": 9,
+      "incidence": 3.4783,
+      "cfr": 0.0861,
+      "death_rate": 0.003,
+      "note": ""
+    },
+    {
+      "year": 2008,
+      "cases": 13278,
+      "deaths": 20,
+      "incidence": 4.3781,
+      "cfr": 0.1506,
+      "death_rate": 0.0066,
+      "note": ""
+    },
+    {
+      "year": 2009,
+      "cases": 16858,
+      "deaths": 15,
+      "incidence": 5.5089,
+      "cfr": 0.089,
+      "death_rate": 0.0049,
       "note": ""
     },
     {
       "year": 2010,
       "cases": 27550,
-      "deaths": 27,
+      "deaths": 26,
       "incidence": 8.9232,
-      "cfr": 0.098,
-      "death_rate": 0.0087,
-      "note": "California epidemic"
+      "cfr": 0.0944,
+      "death_rate": 0.0084,
+      "note": ""
+    },
+    {
+      "year": 2011,
+      "cases": 18719,
+      "deaths": 7,
+      "incidence": 6.0187,
+      "cfr": 0.0374,
+      "death_rate": 0.0023,
+      "note": ""
     },
     {
       "year": 2012,
       "cases": 48277,
-      "deaths": 20,
+      "deaths": 17,
       "incidence": 15.4099,
-      "cfr": 0.0414,
-      "death_rate": 0.0064,
+      "cfr": 0.0352,
+      "death_rate": 0.0054,
       "note": "Highest since 1955"
+    },
+    {
+      "year": 2013,
+      "cases": 28639,
+      "deaths": 12,
+      "incidence": 9.0757,
+      "cfr": 0.0419,
+      "death_rate": 0.0038,
+      "note": ""
     },
     {
       "year": 2014,
       "cases": 32971,
-      "deaths": null,
+      "deaths": 14,
       "incidence": 10.3739,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.0425,
+      "death_rate": 0.0044,
+      "note": ""
+    },
+    {
+      "year": 2015,
+      "cases": 20762,
+      "deaths": 7,
+      "incidence": 6.4862,
+      "cfr": 0.0337,
+      "death_rate": 0.0022,
+      "note": ""
+    },
+    {
+      "year": 2016,
+      "cases": 17972,
+      "deaths": 11,
+      "incidence": 5.575,
+      "cfr": 0.0612,
+      "death_rate": 0.0034,
+      "note": ""
+    },
+    {
+      "year": 2017,
+      "cases": 18975,
+      "deaths": 9,
+      "incidence": 5.845,
+      "cfr": 0.0474,
+      "death_rate": 0.0028,
       "note": ""
     },
     {
       "year": 2018,
       "cases": 15609,
-      "deaths": null,
+      "deaths": 9,
       "incidence": 4.7747,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.0577,
+      "death_rate": 0.0028,
       "note": ""
     },
     {
       "year": 2019,
       "cases": 18617,
-      "deaths": null,
+      "deaths": 10,
       "incidence": 5.6556,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.0537,
+      "death_rate": 0.003,
+      "note": ""
+    },
+    {
+      "year": 2020,
+      "cases": 6124,
+      "deaths": 5,
+      "incidence": 1.8476,
+      "cfr": 0.0816,
+      "death_rate": 0.0015,
+      "note": ""
+    },
+    {
+      "year": 2021,
+      "cases": 2116,
+      "deaths": 4,
+      "incidence": 0.6343,
+      "cfr": 0.189,
+      "death_rate": 0.0012,
       "note": ""
     },
     {
       "year": 2022,
-      "cases": 2388,
-      "deaths": null,
-      "incidence": 0.7112,
-      "cfr": null,
-      "death_rate": null,
-      "note": "CDC NNDSS API (provisional cumulative)"
+      "cases": 3044,
+      "deaths": 2,
+      "incidence": 0.9065,
+      "cfr": 0.0657,
+      "death_rate": 0.0006,
+      "note": ""
     },
     {
       "year": 2023,
@@ -1744,7 +2428,7 @@ window.DISEASE_DATA = {
       "incidence": 1.6603,
       "cfr": null,
       "death_rate": null,
-      "note": "CDC NNDSS API (provisional cumulative)"
+      "note": ""
     },
     {
       "year": 2024,
@@ -1753,7 +2437,7 @@ window.DISEASE_DATA = {
       "incidence": 10.4357,
       "cfr": null,
       "death_rate": null,
-      "note": "CDC NNDSS API (provisional; resurgence year)"
+      "note": "Resurgence (CDC NNDSS, provisional)"
     },
     {
       "year": 2025,
@@ -1762,7 +2446,7 @@ window.DISEASE_DATA = {
       "incidence": 8.5143,
       "cfr": null,
       "death_rate": null,
-      "note": "CDC NNDSS API (provisional cumulative)"
+      "note": ""
     }
   ],
   "polio": [
@@ -2381,13 +3065,103 @@ window.DISEASE_DATA = {
       "note": "Early death rate (approx)"
     },
     {
+      "year": 1919,
+      "cases": 179829,
+      "deaths": 13274,
+      "incidence": 171.8513,
+      "cfr": 7.3815,
+      "death_rate": 12.6851,
+      "note": ""
+    },
+    {
       "year": 1920,
-      "cases": 469924,
-      "deaths": 7575,
-      "incidence": 443.2345,
-      "cfr": 1.612,
-      "death_rate": 7.1448,
-      "note": "High-mortality early era"
+      "cases": null,
+      "deaths": null,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 8.8,
+      "note": "Early death rate (approx)"
+    },
+    {
+      "year": 1921,
+      "cases": 280930,
+      "deaths": 3914,
+      "incidence": 260.749,
+      "cfr": 1.3932,
+      "death_rate": 3.6328,
+      "note": ""
+    },
+    {
+      "year": 1922,
+      "cases": null,
+      "deaths": 4106,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 3.7512,
+      "note": ""
+    },
+    {
+      "year": 1923,
+      "cases": null,
+      "deaths": 10706,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 9.6298,
+      "note": ""
+    },
+    {
+      "year": 1924,
+      "cases": 511305,
+      "deaths": 8581,
+      "incidence": 452.9073,
+      "cfr": 1.6783,
+      "death_rate": 7.6009,
+      "note": ""
+    },
+    {
+      "year": 1925,
+      "cases": 225027,
+      "deaths": 2369,
+      "incidence": 196.3379,
+      "cfr": 1.0528,
+      "death_rate": 2.067,
+      "note": ""
+    },
+    {
+      "year": 1926,
+      "cases": null,
+      "deaths": 8831,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 7.5913,
+      "note": ""
+    },
+    {
+      "year": 1927,
+      "cases": null,
+      "deaths": 4549,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 3.8535,
+      "note": ""
+    },
+    {
+      "year": 1928,
+      "cases": null,
+      "deaths": 6306,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 5.2652,
+      "note": ""
+    },
+    {
+      "year": 1929,
+      "cases": null,
+      "deaths": 3003,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 2.4719,
+      "note": ""
     },
     {
       "year": 1930,
@@ -2399,13 +3173,94 @@ window.DISEASE_DATA = {
       "note": "Early death rate (approx)"
     },
     {
+      "year": 1931,
+      "cases": null,
+      "deaths": 3673,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 2.9597,
+      "note": ""
+    },
+    {
+      "year": 1932,
+      "cases": null,
+      "deaths": 1991,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 1.5929,
+      "note": ""
+    },
+    {
+      "year": 1933,
+      "cases": null,
+      "deaths": 2886,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 2.2925,
+      "note": ""
+    },
+    {
+      "year": 1934,
+      "cases": null,
+      "deaths": 7167,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 5.6528,
+      "note": ""
+    },
+    {
+      "year": 1935,
+      "cases": null,
+      "deaths": 4009,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 3.1398,
+      "note": ""
+    },
+    {
+      "year": 1936,
+      "cases": null,
+      "deaths": 1300,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 1.011,
+      "note": ""
+    },
+    {
+      "year": 1937,
+      "cases": null,
+      "deaths": 1431,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 1.1052,
+      "note": ""
+    },
+    {
+      "year": 1938,
+      "cases": 822811,
+      "deaths": 3310,
+      "incidence": 631.1247,
+      "cfr": 0.4023,
+      "death_rate": 2.5389,
+      "note": ""
+    },
+    {
+      "year": 1939,
+      "cases": 403317,
+      "deaths": 1199,
+      "incidence": 307.2461,
+      "cfr": 0.2973,
+      "death_rate": 0.9134,
+      "note": ""
+    },
+    {
       "year": 1940,
       "cases": 291162,
-      "deaths": 1100,
+      "deaths": 695,
       "incidence": 220.3026,
-      "cfr": 0.3778,
-      "death_rate": 0.8323,
-      "note": "Antibiotics not yet widespread"
+      "cfr": 0.2387,
+      "death_rate": 0.5259,
+      "note": ""
     },
     {
       "year": 1941,
@@ -2414,106 +3269,304 @@ window.DISEASE_DATA = {
       "incidence": 666.8626,
       "cfr": null,
       "death_rate": null,
-      "note": "Large epidemic year"
+      "note": ""
+    },
+    {
+      "year": 1942,
+      "cases": 547393,
+      "deaths": null,
+      "incidence": 402.5043,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1943,
+      "cases": 633627,
+      "deaths": null,
+      "incidence": 459.4399,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1944,
+      "cases": 630291,
+      "deaths": null,
+      "incidence": 450.7582,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1945,
+      "cases": 146013,
+      "deaths": null,
+      "incidence": 103.0109,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1946,
+      "cases": 649843,
+      "deaths": null,
+      "incidence": 452.3438,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1947,
+      "cases": 222375,
+      "deaths": null,
+      "incidence": 152.7538,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1948,
+      "cases": 615104,
+      "deaths": null,
+      "incidence": 417.0379,
+      "cfr": null,
+      "death_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1949,
+      "cases": 625281,
+      "deaths": 971,
+      "incidence": 418.501,
+      "cfr": 0.1553,
+      "death_rate": 0.6499,
+      "note": ""
     },
     {
       "year": 1950,
       "cases": 319124,
-      "deaths": 468,
+      "deaths": 459,
       "incidence": 210.8854,
-      "cfr": 0.1467,
-      "death_rate": 0.3093,
+      "cfr": 0.1438,
+      "death_rate": 0.3033,
+      "note": ""
+    },
+    {
+      "year": 1951,
+      "cases": 530118,
+      "deaths": 673,
+      "incidence": 343.9521,
+      "cfr": 0.127,
+      "death_rate": 0.4367,
+      "note": ""
+    },
+    {
+      "year": 1952,
+      "cases": 683077,
+      "deaths": 611,
+      "incidence": 435.2881,
+      "cfr": 0.0894,
+      "death_rate": 0.3894,
+      "note": ""
+    },
+    {
+      "year": 1953,
+      "cases": 449146,
+      "deaths": 458,
+      "incidence": 281.1995,
+      "cfr": 0.102,
+      "death_rate": 0.2867,
       "note": ""
     },
     {
       "year": 1954,
       "cases": 682720,
-      "deaths": null,
+      "deaths": 514,
       "incidence": 420.0714,
-      "cfr": null,
-      "death_rate": null,
-      "note": "Pre-vaccine peak-type year"
+      "cfr": 0.0753,
+      "death_rate": 0.3163,
+      "note": ""
     },
     {
       "year": 1955,
       "cases": 555156,
-      "deaths": 345,
+      "deaths": 343,
       "incidence": 335.7978,
-      "cfr": 0.0621,
-      "death_rate": 0.2087,
+      "cfr": 0.0618,
+      "death_rate": 0.2075,
+      "note": ""
+    },
+    {
+      "year": 1956,
+      "cases": 611936,
+      "deaths": 528,
+      "incidence": 363.9785,
+      "cfr": 0.0863,
+      "death_rate": 0.3141,
+      "note": ""
+    },
+    {
+      "year": 1957,
+      "cases": 486799,
+      "deaths": 388,
+      "incidence": 284.8044,
+      "cfr": 0.0797,
+      "death_rate": 0.227,
       "note": ""
     },
     {
       "year": 1958,
       "cases": 763094,
-      "deaths": 552,
+      "deaths": 550,
       "incidence": 439.2573,
-      "cfr": 0.0723,
-      "death_rate": 0.3177,
-      "note": "Largest reported postwar year"
+      "cfr": 0.0721,
+      "death_rate": 0.3166,
+      "note": ""
+    },
+    {
+      "year": 1959,
+      "cases": 406162,
+      "deaths": 384,
+      "incidence": 230.0896,
+      "cfr": 0.0945,
+      "death_rate": 0.2175,
+      "note": ""
     },
     {
       "year": 1960,
       "cases": 441703,
-      "deaths": 380,
+      "deaths": 378,
       "incidence": 246.3167,
-      "cfr": 0.086,
-      "death_rate": 0.2119,
+      "cfr": 0.0856,
+      "death_rate": 0.2108,
+      "note": ""
+    },
+    {
+      "year": 1961,
+      "cases": 423919,
+      "deaths": 430,
+      "incidence": 233.2916,
+      "cfr": 0.1014,
+      "death_rate": 0.2366,
       "note": ""
     },
     {
       "year": 1962,
       "cases": 481530,
-      "deaths": null,
+      "deaths": 402,
       "incidence": 261.5576,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.0835,
+      "death_rate": 0.2184,
       "note": ""
     },
     {
       "year": 1963,
       "cases": 385156,
-      "deaths": 364,
+      "deaths": 358,
       "incidence": 206.5293,
-      "cfr": 0.0945,
-      "death_rate": 0.1952,
-      "note": "Edmonston-B vaccine licensed"
+      "cfr": 0.0929,
+      "death_rate": 0.192,
+      "note": "Measles vaccine licensed"
+    },
+    {
+      "year": 1964,
+      "cases": 458083,
+      "deaths": 412,
+      "incidence": 242.5276,
+      "cfr": 0.0899,
+      "death_rate": 0.2181,
+      "note": ""
     },
     {
       "year": 1965,
       "cases": 261904,
-      "deaths": 276,
+      "deaths": 270,
       "incidence": 136.9307,
-      "cfr": 0.1054,
-      "death_rate": 0.1443,
+      "cfr": 0.1031,
+      "death_rate": 0.1412,
+      "note": ""
+    },
+    {
+      "year": 1966,
+      "cases": 204136,
+      "deaths": 255,
+      "incidence": 105.4114,
+      "cfr": 0.1249,
+      "death_rate": 0.1317,
       "note": ""
     },
     {
       "year": 1967,
       "cases": 62705,
-      "deaths": null,
+      "deaths": 79,
       "incidence": 31.985,
-      "cfr": null,
-      "death_rate": null,
-      "note": "Vaccine uptake rising"
+      "cfr": 0.126,
+      "death_rate": 0.0403,
+      "note": ""
     },
     {
       "year": 1968,
       "cases": 22231,
-      "deaths": 24,
+      "deaths": 23,
       "incidence": 11.2032,
-      "cfr": 0.108,
-      "death_rate": 0.0121,
+      "cfr": 0.1035,
+      "death_rate": 0.0116,
+      "note": ""
+    },
+    {
+      "year": 1969,
+      "cases": 25826,
+      "deaths": 40,
+      "incidence": 12.8601,
+      "cfr": 0.1549,
+      "death_rate": 0.0199,
       "note": ""
     },
     {
       "year": 1970,
       "cases": 47351,
-      "deaths": 89,
+      "deaths": 87,
       "incidence": 23.3013,
-      "cfr": 0.188,
-      "death_rate": 0.0438,
-      "note": "Post-1968 rebound"
+      "cfr": 0.1837,
+      "death_rate": 0.0428,
+      "note": ""
+    },
+    {
+      "year": 1971,
+      "cases": 75290,
+      "deaths": 88,
+      "incidence": 36.6294,
+      "cfr": 0.1169,
+      "death_rate": 0.0428,
+      "note": "MMR licensed"
+    },
+    {
+      "year": 1972,
+      "cases": 32275,
+      "deaths": 23,
+      "incidence": 15.5259,
+      "cfr": 0.0713,
+      "death_rate": 0.0111,
+      "note": ""
+    },
+    {
+      "year": 1973,
+      "cases": 26690,
+      "deaths": 22,
+      "incidence": 12.6967,
+      "cfr": 0.0824,
+      "death_rate": 0.0105,
+      "note": ""
+    },
+    {
+      "year": 1974,
+      "cases": 22094,
+      "deaths": 20,
+      "incidence": 10.395,
+      "cfr": 0.0905,
+      "death_rate": 0.0094,
+      "note": ""
     },
     {
       "year": 1975,
@@ -2522,6 +3575,42 @@ window.DISEASE_DATA = {
       "incidence": 11.3431,
       "cfr": 0.0821,
       "death_rate": 0.0093,
+      "note": ""
+    },
+    {
+      "year": 1976,
+      "cases": 41126,
+      "deaths": 12,
+      "incidence": 18.9336,
+      "cfr": 0.0292,
+      "death_rate": 0.0055,
+      "note": ""
+    },
+    {
+      "year": 1977,
+      "cases": 57345,
+      "deaths": 15,
+      "incidence": 26.1199,
+      "cfr": 0.0262,
+      "death_rate": 0.0068,
+      "note": ""
+    },
+    {
+      "year": 1978,
+      "cases": 26871,
+      "deaths": 11,
+      "incidence": 12.1107,
+      "cfr": 0.0409,
+      "death_rate": 0.005,
+      "note": ""
+    },
+    {
+      "year": 1979,
+      "cases": 13597,
+      "deaths": 6,
+      "incidence": 6.0643,
+      "cfr": 0.0441,
+      "death_rate": 0.0027,
       "note": ""
     },
     {
@@ -2534,48 +3623,111 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
+      "year": 1981,
+      "cases": 3124,
+      "deaths": 2,
+      "incidence": 1.3656,
+      "cfr": 0.064,
+      "death_rate": 0.0009,
+      "note": ""
+    },
+    {
+      "year": 1982,
+      "cases": 1714,
+      "deaths": 2,
+      "incidence": 0.7421,
+      "cfr": 0.1167,
+      "death_rate": 0.0009,
+      "note": ""
+    },
+    {
       "year": 1983,
       "cases": 1497,
       "deaths": 4,
       "incidence": 0.642,
       "cfr": 0.2672,
       "death_rate": 0.0017,
-      "note": "Record low pre-resurgence"
+      "note": ""
+    },
+    {
+      "year": 1984,
+      "cases": 2587,
+      "deaths": 1,
+      "incidence": 1.0989,
+      "cfr": 0.0387,
+      "death_rate": 0.0004,
+      "note": ""
     },
     {
       "year": 1985,
       "cases": 2822,
-      "deaths": null,
+      "deaths": 4,
       "incidence": 1.1876,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 0.1417,
+      "death_rate": 0.0017,
+      "note": ""
+    },
+    {
+      "year": 1986,
+      "cases": 6255,
+      "deaths": 2,
+      "incidence": 2.6079,
+      "cfr": 0.032,
+      "death_rate": 0.0008,
+      "note": ""
+    },
+    {
+      "year": 1987,
+      "cases": 3652,
+      "deaths": 2,
+      "incidence": 1.5087,
+      "cfr": 0.0548,
+      "death_rate": 0.0008,
+      "note": ""
+    },
+    {
+      "year": 1988,
+      "cases": 3410,
+      "deaths": 3,
+      "incidence": 1.396,
+      "cfr": 0.088,
+      "death_rate": 0.0012,
       "note": ""
     },
     {
       "year": 1989,
-      "cases": 18193,
-      "deaths": 41,
-      "incidence": 7.3807,
-      "cfr": 0.2254,
-      "death_rate": 0.0166,
-      "note": "Resurgence begins"
+      "cases": 17914,
+      "deaths": 31,
+      "incidence": 7.2675,
+      "cfr": 0.173,
+      "death_rate": 0.0126,
+      "note": "2nd dose recommended (after 1989-91 resurgence)"
     },
     {
       "year": 1990,
-      "cases": 27786,
-      "deaths": 64,
-      "incidence": 11.1721,
-      "cfr": 0.2303,
-      "death_rate": 0.0257,
-      "note": "Resurgence peak"
+      "cases": 27808,
+      "deaths": 63,
+      "incidence": 11.1809,
+      "cfr": 0.2266,
+      "death_rate": 0.0253,
+      "note": ""
     },
     {
       "year": 1991,
       "cases": 9643,
-      "deaths": 9,
+      "deaths": 27,
       "incidence": 3.8269,
-      "cfr": 0.0933,
-      "death_rate": 0.0036,
+      "cfr": 0.28,
+      "death_rate": 0.0107,
+      "note": ""
+    },
+    {
+      "year": 1992,
+      "cases": 2126,
+      "deaths": 4,
+      "incidence": 0.8329,
+      "cfr": 0.1881,
+      "death_rate": 0.0016,
       "note": ""
     },
     {
@@ -2588,22 +3740,94 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
+      "year": 1994,
+      "cases": 899,
+      "deaths": 0,
+      "incidence": 0.3434,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
       "year": 1995,
-      "cases": 309,
-      "deaths": null,
-      "incidence": 0.1166,
-      "cfr": null,
-      "death_rate": null,
+      "cases": 308,
+      "deaths": 2,
+      "incidence": 0.1162,
+      "cfr": 0.6494,
+      "death_rate": 0.0008,
+      "note": ""
+    },
+    {
+      "year": 1996,
+      "cases": 492,
+      "deaths": 1,
+      "incidence": 0.1834,
+      "cfr": 0.2033,
+      "death_rate": 0.0004,
+      "note": ""
+    },
+    {
+      "year": 1997,
+      "cases": 141,
+      "deaths": 2,
+      "incidence": 0.0519,
+      "cfr": 1.4184,
+      "death_rate": 0.0007,
+      "note": ""
+    },
+    {
+      "year": 1998,
+      "cases": 100,
+      "deaths": 0,
+      "incidence": 0.0364,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 1999,
+      "cases": 99,
+      "deaths": 2,
+      "incidence": 0.0356,
+      "cfr": 2.0202,
+      "death_rate": 0.0007,
       "note": ""
     },
     {
       "year": 2000,
-      "cases": 86,
+      "cases": 85,
       "deaths": 1,
-      "incidence": 0.0306,
-      "cfr": 1.1628,
+      "incidence": 0.0302,
+      "cfr": 1.1765,
       "death_rate": 0.0004,
       "note": "Elimination declared"
+    },
+    {
+      "year": 2001,
+      "cases": 116,
+      "deaths": 1,
+      "incidence": 0.0408,
+      "cfr": 0.8621,
+      "death_rate": 0.0004,
+      "note": ""
+    },
+    {
+      "year": 2002,
+      "cases": 44,
+      "deaths": 0,
+      "incidence": 0.0153,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 2003,
+      "cases": 56,
+      "deaths": 1,
+      "incidence": 0.0193,
+      "cfr": 1.7857,
+      "death_rate": 0.0003,
+      "note": ""
     },
     {
       "year": 2004,
@@ -2612,13 +3836,85 @@ window.DISEASE_DATA = {
       "incidence": 0.0127,
       "cfr": 0.0,
       "death_rate": 0.0,
-      "note": "Record low"
+      "note": ""
+    },
+    {
+      "year": 2005,
+      "cases": 66,
+      "deaths": 1,
+      "incidence": 0.0224,
+      "cfr": 1.5152,
+      "death_rate": 0.0003,
+      "note": ""
+    },
+    {
+      "year": 2006,
+      "cases": 55,
+      "deaths": 0,
+      "incidence": 0.0185,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 2007,
+      "cases": 43,
+      "deaths": 0,
+      "incidence": 0.0143,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
     },
     {
       "year": 2008,
       "cases": 140,
       "deaths": 0,
       "incidence": 0.0462,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 2009,
+      "cases": 72,
+      "deaths": 2,
+      "incidence": 0.0235,
+      "cfr": 2.7778,
+      "death_rate": 0.0007,
+      "note": ""
+    },
+    {
+      "year": 2010,
+      "cases": 63,
+      "deaths": 2,
+      "incidence": 0.0204,
+      "cfr": 3.1746,
+      "death_rate": 0.0006,
+      "note": ""
+    },
+    {
+      "year": 2011,
+      "cases": 220,
+      "deaths": 0,
+      "incidence": 0.0707,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 2012,
+      "cases": 55,
+      "deaths": 2,
+      "incidence": 0.0176,
+      "cfr": 3.6364,
+      "death_rate": 0.0006,
+      "note": ""
+    },
+    {
+      "year": 2013,
+      "cases": 187,
+      "deaths": 0,
+      "incidence": 0.0593,
       "cfr": 0.0,
       "death_rate": 0.0,
       "note": ""
@@ -2633,13 +3929,49 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
-      "year": 2019,
-      "cases": 1282,
+      "year": 2015,
+      "cases": 191,
       "deaths": 0,
-      "incidence": 0.3895,
+      "incidence": 0.0597,
       "cfr": 0.0,
       "death_rate": 0.0,
-      "note": "Largest post-elimination year"
+      "note": ""
+    },
+    {
+      "year": 2016,
+      "cases": 86,
+      "deaths": 0,
+      "incidence": 0.0267,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 2017,
+      "cases": 120,
+      "deaths": 0,
+      "incidence": 0.037,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 2018,
+      "cases": 381,
+      "deaths": 0,
+      "incidence": 0.1165,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
+      "year": 2019,
+      "cases": 1274,
+      "deaths": 1,
+      "incidence": 0.387,
+      "cfr": 0.0785,
+      "death_rate": 0.0003,
+      "note": ""
     },
     {
       "year": 2020,
@@ -2651,40 +3983,49 @@ window.DISEASE_DATA = {
       "note": ""
     },
     {
+      "year": 2021,
+      "cases": 49,
+      "deaths": 0,
+      "incidence": 0.0147,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
+    },
+    {
       "year": 2022,
-      "cases": 122,
-      "deaths": null,
-      "incidence": 0.0363,
-      "cfr": null,
-      "death_rate": null,
-      "note": "CDC NNDSS API (provisional cumulative)"
+      "cases": 121,
+      "deaths": 0,
+      "incidence": 0.036,
+      "cfr": 0.0,
+      "death_rate": 0.0,
+      "note": ""
     },
     {
       "year": 2023,
-      "cases": 47,
+      "cases": 59,
       "deaths": null,
-      "incidence": 0.0139,
+      "incidence": 0.0175,
       "cfr": null,
       "death_rate": null,
-      "note": "CDC NNDSS API (provisional cumulative)"
+      "note": ""
     },
     {
       "year": 2024,
-      "cases": 266,
+      "cases": 285,
       "deaths": null,
-      "incidence": 0.0782,
+      "incidence": 0.0838,
       "cfr": null,
       "death_rate": null,
-      "note": "CDC NNDSS API (provisional cumulative)"
+      "note": ""
     },
     {
       "year": 2025,
-      "cases": 2026,
+      "cases": 2288,
       "deaths": null,
-      "incidence": 0.5957,
+      "incidence": 0.6727,
       "cfr": null,
       "death_rate": null,
-      "note": "CDC NNDSS API (provisional; large outbreak year)"
+      "note": "Large outbreak year"
     }
   ],
   "mumps": [

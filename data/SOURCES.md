@@ -38,10 +38,14 @@ annual digits — especially before 1950 — carry real uncertainty.
 ## File-by-file notes
 
 - `us_population.csv` — Decennial census counts; 2024 is a Census estimate.
-- `measles.csv` — Reported cases from CDC MMWR/Pink Book; deaths from NCHS.
-  Pre-1950 figures are less complete. CDC estimates that pre-vaccine reported
-  cases (~500k/yr) represented only a fraction of an estimated 3–4 million
-  actual infections per year.
+- `measles.csv` — **Complete annual series, 1919–2025**, rebuilt by
+  [`scripts/build_measles_pertussis_from_owid.py`](../scripts/build_measles_pertussis_from_owid.py)
+  from OWID (`owid_combined_cases.csv` for case counts, `owid_measles_rate.csv`
+  death rate × Census population for deaths; underlying U.S. Public Health
+  Reports + CDC). **Known gap: OWID lacks measles case counts for 1926–1937**
+  (deaths are present), so the cases chart interpolates across that window —
+  markers show where real data exists. CDC estimates pre-vaccine reported cases
+  (~500k/yr) were a fraction of an estimated 3–4 million actual infections/yr.
 - `polio.csv` — **Complete annual series, 1910–1971**, rebuilt by
   [`scripts/build_polio_from_owid.py`](../scripts/build_polio_from_owid.py) from
   `polio_owid_rates.csv` (Our World in Data's U.S. polio death-rate and case-rate
@@ -66,7 +70,10 @@ The interactive dashboard has a **log/linear toggle** for when you need to see
 those small values; the static incidence/deaths charts favor the linear view of
 the decline. (The polio definition-effect chart stays on a log axis because its
 argument is about *proportional* tracking — equal ratios as equal distances.)
-- `pertussis.csv` — Reported cases from CDC MMWR/Pink Book; deaths from NCHS.
+- `pertussis.csv` — **Complete annual series, 1922–2025** (cases) and 1944–2022
+  (deaths), rebuilt from OWID `owid_pertussis.csv` (U.S. Public Health Reports +
+  CDC); 2023–2025 cases appended from CDC NNDSS (provisional, captures the 2024
+  resurgence). Pre-1930 death *rates* remain in `early_mortality_rates.csv`.
   PCR-based diagnosis expanded ascertainment in the 2000s (see report §7).
 - `early_mortality_rates.csv` — **Approximate** death rates per 100,000,
   digitized/rounded from published NCHS/Historical Statistics mortality-decline
