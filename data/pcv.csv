@@ -1,4 +1,5 @@
 year,cases,deaths,notes
 1997,15707,,Invasive pneumococcal disease in children <5 (CDC ABCs)
-2007,4500,,Approx; after PCV7 (2000) cut <5 invasive disease ~76%
-2019,1382,,Children <5 (CDC ABCs); -91% vs 1997
+1999,16000,,Approx; level held before PCV7 (2000)
+2007,4500,,Approx; after PCV7 cut <5 invasive disease ~76%
+2019,1382,,After PCV13 (2010); -91% vs 1997

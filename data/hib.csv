@@ -1,6 +1,8 @@
 year,cases,deaths,notes
-1985,20000,1000,Pre-vaccine estimate; invasive Hib disease in children <5. Conjugate vaccine 1987-1990
-1991,1700,,Approx; >90% decline within years of the conjugate vaccine
-2000,200,,Approx
-2010,30,,Approx
-2019,18,,Reported cases in children =<5 (CDC)
+1987,7600,,~41 per 100,000 in children <5 (CDC); level held into 1989
+1989,6800,,~37 per 100,000 — still high just before the 1990 infant vaccine
+1991,2040,,~11 per 100,000 — sharp drop AFTER the 1990 infant conjugate vaccine
+1995,300,,~1.6 per 100,000
+1997,280,,280 reported cases (~1.5 per 100,000)
+2005,40,,Approx
+2019,18,,18 reported cases in children =<5

@@ -595,19 +595,28 @@ window.DISEASE_DATA = {
       "note": "This series = HOSPITALIZATIONS in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
     },
     {
+      "year": 2006,
+      "cases": 58000,
+      "deaths": null,
+      "incidence": 19.4751,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Vaccine introduced mid-2006; little impact yet"
+    },
+    {
       "year": 2008,
       "cases": 33000,
       "deaths": null,
       "incidence": 10.881,
       "cfr": null,
       "death_rate": null,
-      "note": "Approx; ~45% fewer hospitalizations than pre-vaccine"
+      "note": "Approx; ~45% fewer hospitalizations after the vaccine"
     },
     {
-      "year": 2015,
-      "cases": 12000,
+      "year": 2012,
+      "cases": 15000,
       "deaths": null,
-      "incidence": 3.7489,
+      "incidence": 4.788,
       "cfr": null,
       "death_rate": null,
       "note": "Approx; sustained ~60-80% reduction (biennial pattern)"
@@ -2538,37 +2547,55 @@ window.DISEASE_DATA = {
   ],
   "hib": [
     {
-      "year": 1985,
-      "cases": 20000,
-      "deaths": 1000,
-      "incidence": 8.4165,
-      "cfr": 5.0,
-      "death_rate": 0.4208,
-      "note": "Pre-vaccine estimate; invasive Hib disease in children <5. Conjugate vaccine 1987-1990"
+      "year": 1987,
+      "cases": 7600,
+      "deaths": null,
+      "incidence": 3.1397,
+      "cfr": null,
+      "death_rate": null,
+      "note": "~41 per 100"
+    },
+    {
+      "year": 1989,
+      "cases": 6800,
+      "deaths": null,
+      "incidence": 2.7587,
+      "cfr": null,
+      "death_rate": null,
+      "note": "~37 per 100"
     },
     {
       "year": 1991,
-      "cases": 1700,
+      "cases": 2040,
       "deaths": null,
-      "incidence": 0.6747,
+      "incidence": 0.8096,
       "cfr": null,
       "death_rate": null,
-      "note": "Approx; >90% decline within years of the conjugate vaccine"
+      "note": "~11 per 100"
     },
     {
-      "year": 2000,
-      "cases": 200,
+      "year": 1995,
+      "cases": 300,
       "deaths": null,
-      "incidence": 0.0711,
+      "incidence": 0.1132,
       "cfr": null,
       "death_rate": null,
-      "note": "Approx"
+      "note": "~1.6 per 100"
     },
     {
-      "year": 2010,
-      "cases": 30,
+      "year": 1997,
+      "cases": 280,
       "deaths": null,
-      "incidence": 0.0097,
+      "incidence": 0.1031,
+      "cfr": null,
+      "death_rate": null,
+      "note": "280 reported cases (~1.5 per 100"
+    },
+    {
+      "year": 2005,
+      "cases": 40,
+      "deaths": null,
+      "incidence": 0.0136,
       "cfr": null,
       "death_rate": null,
       "note": "Approx"
@@ -2580,7 +2607,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0055,
       "cfr": null,
       "death_rate": null,
-      "note": "Reported cases in children =<5 (CDC)"
+      "note": "18 reported cases in children =<5"
     }
   ],
   "pcv": [
@@ -2594,13 +2621,22 @@ window.DISEASE_DATA = {
       "note": "Invasive pneumococcal disease in children <5 (CDC ABCs)"
     },
     {
+      "year": 1999,
+      "cases": 16000,
+      "deaths": null,
+      "incidence": 5.7523,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx; level held before PCV7 (2000)"
+    },
+    {
       "year": 2007,
       "cases": 4500,
       "deaths": null,
       "incidence": 1.4973,
       "cfr": null,
       "death_rate": null,
-      "note": "Approx; after PCV7 (2000) cut <5 invasive disease ~76%"
+      "note": "Approx; after PCV7 cut <5 invasive disease ~76%"
     },
     {
       "year": 2019,
@@ -2609,7 +2645,7 @@ window.DISEASE_DATA = {
       "incidence": 0.4198,
       "cfr": null,
       "death_rate": null,
-      "note": "Children <5 (CDC ABCs); -91% vs 1997"
+      "note": "After PCV13 (2010); -91% vs 1997"
     }
   ],
   "polio": [
