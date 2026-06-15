@@ -164,6 +164,12 @@ window.DISEASE_DATA = {
         "mumps",
         "rubella"
       ]
+    },
+    {
+      "id": "chronic",
+      "label": "Chronic illness",
+      "sub": "correlation \u2260 causation",
+      "diseases": []
     }
   ],
   "names": {
@@ -521,6 +527,160 @@ window.DISEASE_DATA = {
         "year": 2022,
         "value": 92.3,
         "approx": false
+      }
+    ]
+  },
+  "chronic": {
+    "vaccines": [
+      {
+        "year": 1950,
+        "value": 4.0
+      },
+      {
+        "year": 1955,
+        "value": 5.0
+      },
+      {
+        "year": 1965,
+        "value": 6.0
+      },
+      {
+        "year": 1971,
+        "value": 8.0
+      },
+      {
+        "year": 1975,
+        "value": 7.0
+      },
+      {
+        "year": 1990,
+        "value": 8.0
+      },
+      {
+        "year": 1991,
+        "value": 9.0
+      },
+      {
+        "year": 1996,
+        "value": 10.0
+      },
+      {
+        "year": 2000,
+        "value": 11.0
+      },
+      {
+        "year": 2006,
+        "value": 14.0
+      },
+      {
+        "year": 2010,
+        "value": 16.0
+      },
+      {
+        "year": 2021,
+        "value": 17.0
+      }
+    ],
+    "autism": [
+      {
+        "year": 2000,
+        "value": 6.7
+      },
+      {
+        "year": 2002,
+        "value": 6.6
+      },
+      {
+        "year": 2004,
+        "value": 8.0
+      },
+      {
+        "year": 2006,
+        "value": 9.0
+      },
+      {
+        "year": 2008,
+        "value": 11.3
+      },
+      {
+        "year": 2010,
+        "value": 14.7
+      },
+      {
+        "year": 2012,
+        "value": 14.5
+      },
+      {
+        "year": 2014,
+        "value": 16.8
+      },
+      {
+        "year": 2016,
+        "value": 18.5
+      },
+      {
+        "year": 2018,
+        "value": 23.0
+      },
+      {
+        "year": 2020,
+        "value": 27.6
+      },
+      {
+        "year": 2022,
+        "value": 32.2
+      }
+    ],
+    "asthma": [
+      {
+        "year": 1980,
+        "value": 3.6
+      },
+      {
+        "year": 1995,
+        "value": 7.5
+      },
+      {
+        "year": 2001,
+        "value": 8.7
+      },
+      {
+        "year": 2007,
+        "value": 9.1
+      },
+      {
+        "year": 2009,
+        "value": 9.6
+      },
+      {
+        "year": 2014,
+        "value": 8.6
+      },
+      {
+        "year": 2018,
+        "value": 7.5
+      },
+      {
+        "year": 2019,
+        "value": 7.0
+      }
+    ],
+    "eczema": [
+      {
+        "year": 1970,
+        "value": 5.0
+      },
+      {
+        "year": 2000,
+        "value": 10.0
+      },
+      {
+        "year": 2010,
+        "value": 11.0
+      },
+      {
+        "year": 2019,
+        "value": 13.0
       }
     ]
   },

@@ -87,6 +87,15 @@ def early():
              "pertussis": float(r["pertussis_death_rate"])} for r in rows]
 
 
+def chronic():
+    """Chronic-illness prevalence + childhood vaccine count, by year (long format)."""
+    out = {}
+    for r in read_csv("chronic_illness.csv"):
+        out.setdefault(r["series"], []).append(
+            {"year": int(r["year"]), "value": float(r["value"])})
+    return out
+
+
 def coverage():
     """Merge approximate historical anchors with live modern NIS data."""
     def f(v):
@@ -147,6 +156,7 @@ TABS = [
     {"id": "pcv", "label": "PCV", "sub": "2 months", "diseases": ["pcv"]},
     {"id": "ipv", "label": "Polio (IPV)", "sub": "2 months", "diseases": ["polio"]},
     {"id": "mmr", "label": "MMR", "sub": "12-15 months", "diseases": ["measles", "mumps", "rubella"]},
+    {"id": "chronic", "label": "Chronic illness", "sub": "correlation ≠ causation", "diseases": []},
 ]
 
 
@@ -158,6 +168,7 @@ def main():
         "under5": sorted(UNDER5),
         "earlyMortality": early(),
         "coverage": coverage(),
+        "chronic": chronic(),
     }
     for key, (csvf, field, _name) in DISEASE_CFG.items():
         data[key] = build(read_csv(csvf), field, key)

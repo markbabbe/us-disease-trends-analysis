@@ -177,6 +177,41 @@ Because these count disease **in children <5**, the dashboard's "per 100,000"
 (which uses total U.S. population) understates the true childhood rate — read the
 **counts**, and see each disease's facts.
 
+## Chronic illness tab (`chronic_illness.csv`) — read the caveats
+
+This tab plots three chronic conditions over time next to the **count of diseases
+on the routine childhood/adolescent immunization schedule**. It exists to show the
+data honestly, **not** to imply a causal link — the evidence is firmly against one.
+
+- **Autism** — CDC Autism and Developmental Disabilities Monitoring (ADDM)
+  network, identified prevalence among 8-year-olds, surveillance years 2000–2022
+  (6.7 → 32.2 per 1,000; "1 in 150" → "1 in 31").
+- **Asthma** — NHIS current childhood asthma prevalence, ~1980–2019. A 1997 NHIS
+  redesign breaks pre/post comparability.
+- **Eczema** — atopic dermatitis in children; **approximate** anchors (no clean
+  long U.S. annual series; literature reports a ~2–3× rise since the 1970s to
+  ~10–13% today).
+- **Vaccine count** — number of *diseases* protected against on the routine
+  schedule (definition-dependent; antigen/dose counts differ).
+
+**Why correlation here is not evidence of causation:**
+1. **Data can't reach 1950.** Autism wasn't a distinct diagnosis until 1980
+   (DSM-III) or systematically measured until ~2000; asthma starts ~1980. Only
+   the vaccine count spans the full period.
+2. **The autism rise is largely ascertainment**: broadened criteria
+   (DSM-III 1980 → DSM-IV 1994 spectrum/Asperger → DSM-5 2013), diagnostic
+   substitution, awareness, screening, and service eligibility.
+3. **Asthma/eczema** rises are studied via the hygiene hypothesis, environment,
+   obesity, and urbanization.
+4. **Vaccines specifically have been tested and found NOT associated with
+   autism**: Hviid et al., Ann Intern Med 2019 (657,461 children); DeStefano et
+   al., J Pediatr 2013 (antigen number/timing); Madsen et al., NEJM 2002; U.S.
+   Institute of Medicine reviews (2004, 2011); Cochrane review. The 1998
+   Wakefield paper alleging an MMR–autism link was **retracted for fraud**.
+
+So shared upward time-trends reflect **confounding by secular trends**, the
+classic correlation-not-causation pitfall this whole project is built to avoid.
+
 ## Deaths per 100,000 over time
 
 Computed in `scripts/build_dashboard_data.py` and `generate_charts.py` as death

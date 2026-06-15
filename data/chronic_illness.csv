@@ -1,0 +1,37 @@
+series,year,value,unit,note
+vaccines,1950,4,diseases,"D,T,P + smallpox on routine childhood schedule"
+vaccines,1955,5,diseases,+polio
+vaccines,1965,6,diseases,+measles
+vaccines,1971,8,diseases,+mumps +rubella (smallpox still on)
+vaccines,1975,7,diseases,smallpox removed (1972)
+vaccines,1990,8,diseases,+Hib
+vaccines,1991,9,diseases,+hepatitis B
+vaccines,1996,10,diseases,+varicella
+vaccines,2000,11,diseases,+pneumococcal
+vaccines,2006,14,diseases,+hepatitis A +rotavirus +influenza
+vaccines,2010,16,diseases,+HPV +meningococcal (adolescent)
+vaccines,2021,17,diseases,+COVID-19
+autism,2000,6.7,per_1000,CDC ADDM (8-year-olds) ~1 in 150
+autism,2002,6.6,per_1000,CDC ADDM ~1 in 150
+autism,2004,8.0,per_1000,CDC ADDM ~1 in 125
+autism,2006,9.0,per_1000,CDC ADDM ~1 in 110
+autism,2008,11.3,per_1000,CDC ADDM ~1 in 88
+autism,2010,14.7,per_1000,CDC ADDM ~1 in 68
+autism,2012,14.5,per_1000,CDC ADDM ~1 in 69
+autism,2014,16.8,per_1000,CDC ADDM ~1 in 59
+autism,2016,18.5,per_1000,CDC ADDM ~1 in 54
+autism,2018,23.0,per_1000,CDC ADDM ~1 in 44
+autism,2020,27.6,per_1000,CDC ADDM ~1 in 36
+autism,2022,32.2,per_1000,CDC ADDM ~1 in 31
+asthma,1980,3.6,percent,NHIS current childhood asthma
+asthma,1995,7.5,percent,NHIS (peak of pre-1997 method)
+asthma,2001,8.7,percent,NHIS (post-1997 method)
+asthma,2007,9.1,percent,NHIS
+asthma,2009,9.6,percent,NHIS
+asthma,2014,8.6,percent,NHIS
+asthma,2018,7.5,percent,NHIS
+asthma,2019,7.0,percent,NHIS
+eczema,1970,5.0,percent,Approx; ~2-3x rise since 1970s (literature)
+eczema,2000,10.0,percent,Approx (NHIS-era)
+eczema,2010,11.0,percent,Approx
+eczema,2019,13.0,percent,Approx (~10-13% US children)

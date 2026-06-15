@@ -84,7 +84,7 @@
 <div class="wrap">
   <div class="tabbar" id="tabbar"></div>
 
-  <div class="controls">
+  <div class="controls" id="controls">
     <div class="group">
       <h3>Metric (applies to all charts in tab)</h3>
       <select id="metric">
@@ -106,6 +106,7 @@
   <p class="metric-note" id="metricNote" style="margin:0 2px 12px;"></p>
 
   <div id="panels"></div>
+  <div id="chronicPanels" style="display:none;"></div>
 
   <div id="polioExtra" class="card" style="display:none;">
     <h3 style="margin:2px 2px 10px;font-size:15px;">Polio: isolating the effect of the 1950s case-definition change</h3>
@@ -164,7 +165,7 @@
       for sources and caveats.</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="summaryCard">
     <h3 style="margin:2px 2px 12px;font-size:15px;">Summary: best metric &amp; trend by disease</h3>
     <table>
       <thead><tr><th>Disease</th><th>Best metric</th><th>Before vaccine</th><th>After vaccine</th><th>Major caveat</th></tr></thead>
@@ -331,14 +332,84 @@ function selectTab(id) {
     b.setAttribute("aria-selected", String(b.dataset.tab === id)));
   const act = activeDiseases();
   const has = arr => arr.some(d => act.includes(d));
-  // Tab-specific extras: only show where they're relevant (fixes charts that
-  // otherwise appeared under every tab).
+  const isChronic = id === "chronic";
+  // The chronic tab has its own layout; hide the disease controls/panels.
+  document.getElementById("controls").style.display = isChronic ? "none" : "";
+  document.getElementById("metricNote").style.display = isChronic ? "none" : "";
+  document.getElementById("panels").style.display = isChronic ? "none" : "";
+  document.getElementById("summaryCard").style.display = isChronic ? "none" : "";
+  document.getElementById("chronicPanels").style.display = isChronic ? "" : "none";
+  // Tab-specific extras: only show where they're relevant.
   document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
   document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
   document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
+  if (isChronic) { renderChronic(); return; }
   buildPanels();
   render();
+}
+
+const CHRONIC_CAVEAT =
+  "⚠️ Correlation is NOT causation. These conditions are shown over time alongside the growing " +
+  "vaccine schedule, but shared upward trends do not show one caused the other — many things changed " +
+  "over these decades. Key context: (1) Data limits — autism wasn't a distinct diagnosis until 1980 " +
+  "(DSM-III) or systematically measured until ~2000 (CDC ADDM); asthma data starts ~1980; eczema is " +
+  "approximate. None can be plotted back to 1950. (2) The autism rise is largely explained by broadened " +
+  "diagnostic criteria (DSM-III→IV→5), diagnostic substitution (children formerly labeled intellectual " +
+  "disability), awareness, screening, and services — not necessarily a true increase in occurrence. " +
+  "(3) Asthma/eczema rises are studied via the hygiene hypothesis, environment, and obesity. " +
+  "(4) Vaccines specifically have been tested and found NOT associated with autism: Hviid et al. 2019 " +
+  "(657,461 children), DeStefano et al. 2013 (antigen number/timing), Madsen et al. 2002; U.S. Institute " +
+  "of Medicine reviews (2004, 2011); Cochrane. The 1998 Wakefield claim was retracted for fraud. " +
+  "(5) '# vaccines' counts diseases on the routine childhood/adolescent schedule (definition-dependent).";
+
+const chronicCharts = {};
+
+function renderChronic() {
+  const host = document.getElementById("chronicPanels");
+  const conds = [
+    { key: "autism", title: "Neurodevelopmental — Autism (CDC ADDM, age 8)", unit: "per 1,000 children", color: "#c0392b" },
+    { key: "asthma", title: "Asthma (children, NHIS)", unit: "% of children", color: "#2980b9" },
+    { key: "eczema", title: "Eczema / atopic dermatitis (children)", unit: "% of children (approx)", color: "#27ae60" },
+  ];
+  host.innerHTML =
+    `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;color:var(--ink);">${CHRONIC_CAVEAT}</div>` +
+    conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
+        <div class="disease-chart" style="height:320px;"><canvas id="chronic-${c.key}"></canvas></div></div>`).join("");
+
+  const vax = D.chronic.vaccines.map(p => ({ x: p.year, y: p.value }));
+  conds.forEach(c => {
+    const pts = D.chronic[c.key].map(p => ({ x: p.year, y: p.value }));
+    const id = "chronic-" + c.key;
+    if (chronicCharts[id]) chronicCharts[id].destroy();
+    chronicCharts[id] = new Chart(document.getElementById(id), {
+      type: "line",
+      data: { datasets: [
+        { label: c.unit, data: pts, borderColor: c.color, backgroundColor: c.color,
+          tension: 0.2, pointRadius: 3, borderWidth: 2, yAxisID: "y" },
+        { label: "# vaccines on schedule (diseases)", data: vax, borderColor: "#9aa7b2",
+          backgroundColor: "#9aa7b2", borderDash: [5, 4], tension: 0.1, pointRadius: 2, borderWidth: 1.5, yAxisID: "y1" },
+      ]},
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: "nearest", intersect: false },
+        scales: {
+          x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
+               ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+          y: { position: "left", beginAtZero: true,
+               title: { display: true, text: c.unit, color: c.color },
+               ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+          y1: { position: "right", beginAtZero: true,
+                title: { display: true, text: "# vaccines (diseases)", color: "#9aa7b2" },
+                ticks: { color: "#9aa7b2" }, grid: { drawOnChartArea: false } },
+        },
+        plugins: {
+          legend: { labels: { color: "#e6edf3", boxWidth: 12 } },
+          tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
+        },
+      },
+    });
+  });
 }
 
 function buildPanels() {
