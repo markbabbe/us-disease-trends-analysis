@@ -49,18 +49,22 @@ def build(rows, case_field, disease):
         y = int(r["year"])
         cases = to_int(r.get(case_field))
         deaths = to_int(r.get("deaths"))
+        hosp = to_int(r.get("hospitalizations"))
         p = float(np.interp(y, pyrs, pop))
         inc = round(cases / p * 100000, 4) if cases is not None else None
         cfr = round(deaths / cases * 100, 4) if (cases and deaths is not None and cases > 0) else None
         death_rate = round(deaths / p * 100000, 4) if deaths is not None else None
+        hosp_rate = round(hosp / p * 100000, 4) if hosp is not None else None
         out[y] = {"year": y, "cases": cases, "deaths": deaths, "incidence": inc,
-                  "cfr": cfr, "death_rate": death_rate, "note": r.get("notes", "")}
+                  "cfr": cfr, "death_rate": death_rate, "hosp_rate": hosp_rate,
+                  "note": r.get("notes", "")}
     # Backfill early-era death rates (1900-1930) where the count series lacks them.
     for y, rate in early.items():
         rec = out.get(y)
         if rec is None:
             out[y] = {"year": y, "cases": None, "deaths": None, "incidence": None,
-                      "cfr": None, "death_rate": rate, "note": "Early death rate (approx)"}
+                      "cfr": None, "death_rate": rate, "hosp_rate": None,
+                      "note": "Early death rate (approx)"}
         elif rec["death_rate"] is None:
             rec["death_rate"] = rate
     return [out[y] for y in sorted(out)]

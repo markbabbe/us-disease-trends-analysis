@@ -46,7 +46,9 @@
   .disease-card { display: grid; grid-template-columns: 1fr 270px; gap: 16px; align-items: start; }
   @media (max-width: 820px) { .disease-card { grid-template-columns: 1fr; } }
   .disease-card h3 { margin: 0 0 8px; font-size: 16px; }
-  .disease-chart { position: relative; height: 290px; }
+  .disease-chart { position: relative; height: 215px; }
+  .chart-label { font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+                 color: var(--muted); margin: 4px 0 2px; }
   .facts-mini { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
   .facts-mini li { margin-bottom: 7px; }
   .affected { background: #14202b; border: 1px solid var(--line); border-left: 3px solid var(--accent);
@@ -86,11 +88,9 @@
     <div class="group">
       <h3>Metric (applies to all charts in tab)</h3>
       <select id="metric">
-        <option value="incidence">Incidence per 100,000</option>
+        <option value="incidence">Cases per 100,000</option>
         <option value="death_rate">Deaths per 100,000</option>
-        <option value="cases">Reported cases</option>
-        <option value="deaths">Reported deaths</option>
-        <option value="cfr">Case fatality rate (%)</option>
+        <option value="hosp_rate">Hospitalizations per 100,000</option>
       </select>
     </div>
     <div class="group">
@@ -184,18 +184,14 @@ const COLORS = {
 };
 const NAMES = D.names;
 const METRIC_LABEL = {
-  incidence: "Incidence per 100,000",
+  incidence: "Cases per 100,000",
   death_rate: "Deaths per 100,000",
-  cases: "Reported cases",
-  deaths: "Reported deaths",
-  cfr: "Case fatality rate (%)",
+  hosp_rate: "Hospitalizations per 100,000",
 };
 const METRIC_NOTE = {
-  incidence: "Population-adjusted using interpolated Census counts. Most useful for transmission, but only when case definitions are stable across eras.",
-  death_rate: "Deaths per 100,000 population — the recommended metric for long-term severity comparison (least sensitive to changing case definitions). Spans ~1900-present; early measles/pertussis points are approximate Death Registration Area rates. Note medical progress lowered deaths independent of infection rates.",
-  cases: "Raw counts are the LEAST comparable across eras — case definitions and diagnostics changed (PCR for pertussis, lab-confirmation for measles, tightened paralytic definition for polio).",
-  deaths: "Mortality is the metric least sensitive to changing case definitions, so it is the most reliable for cross-decade comparison — but medical progress lowered deaths independent of infection rates.",
-  cfr: "Deaths ÷ reported cases. Reveals lethality per case, but conflates virulence with improvements in medical care; also distorted when case ascertainment changes.",
+  incidence: "Reported cases per 100,000 (interpolated Census population). Case ascertainment changed over time (case definitions, PCR, lab confirmation), so compare eras cautiously.",
+  death_rate: "Deaths per 100,000 — the most era-comparable severity metric (least sensitive to changing case definitions). Note medical progress lowered deaths independent of infection rates.",
+  hosp_rate: "Hospitalizations per 100,000. DATA GAP: there is no national hospitalization time series for most of these diseases — only rotavirus (a hospitalization-based series) has it here; others show “no data.” See README §7b.",
 };
 const FACTS = {
   hepb: ["Vaccine 1981 (adults); routine infant vaccination 1991.",
@@ -344,66 +340,48 @@ function buildPanels() {
 }
 
 const DEATH_COLOR = "#ff6b6b";
-// When viewing cases/incidence, also overlay deaths on a right-hand axis.
-const SECONDARY = { cases: ["deaths", "Deaths"], incidence: ["death_rate", "Deaths per 100,000"] };
 
-function renderDisease(dis, metric) {
-  const series = f => D[dis]
-    .filter(r => r[f] !== null && r[f] !== undefined && !(isLog() && r[f] <= 0))
-    .map(r => ({ x: r.year, y: r[f] }));
-  const pts = series(metric);
-  const sec = SECONDARY[metric];
-  const secPts = sec ? series(sec[0]) : [];
-  const hasSec = secPts.length > 0;
-
-  document.getElementById(`nd-${dis}`).textContent =
-    pts.length ? "" : ` — no ${METRIC_LABEL[metric].toLowerCase()} data`;
-
-  const datasets = [{ label: METRIC_LABEL[metric], data: pts, borderColor: COLORS[dis],
-                      backgroundColor: COLORS[dis], tension: 0.15, pointRadius: 2.5,
-                      borderWidth: 2, yAxisID: "y" }];
-  if (hasSec) {
-    datasets.push({ label: sec[1], data: secPts, borderColor: DEATH_COLOR,
-                    backgroundColor: DEATH_COLOR, borderDash: [5, 3], tension: 0.15,
-                    pointRadius: 2, borderWidth: 1.8, yAxisID: "y1" });
-  }
-  const axType = isLog() ? "logarithmic" : "linear";
-  const scales = {
-    x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-         ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
-    y: { type: axType, position: "left",
-         title: { display: true, text: METRIC_LABEL[metric] + (isLog() ? " (log ×10)" : ""), color: COLORS[dis] },
-         ticks: { color: "#9aa7b2", callback: logTickLabel }, grid: { color: "#222b34" } },
-  };
-  if (hasSec) {
-    scales.y1 = { type: axType, position: "right",
-                  title: { display: true, text: sec[1], color: DEATH_COLOR },
-                  ticks: { color: DEATH_COLOR, callback: logTickLabel },
-                  grid: { drawOnChartArea: false } };
-  }
+// One single-series line chart (deaths and incidence are kept in separate charts).
+function makeLineChart(canvasId, dis, field, color, labelText) {
+  const pts = D[dis]
+    .filter(r => r[field] !== null && r[field] !== undefined && !(isLog() && r[field] <= 0))
+    .map(r => ({ x: r.year, y: r[field] }));
   const cfg = {
     type: "line",
-    data: { datasets },
+    data: { datasets: [{ label: labelText, data: pts, borderColor: color,
+                         backgroundColor: color, tension: 0.15, pointRadius: 2.2, borderWidth: 2 }] },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
-      scales,
+      scales: {
+        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+        y: { type: isLog() ? "logarithmic" : "linear",
+             title: { display: true, text: labelText + (isLog() ? " (log ×10)" : ""), color: color },
+             ticks: { color: "#9aa7b2", callback: logTickLabel }, grid: { color: "#222b34" } },
+      },
       plugins: {
-        legend: { display: hasSec, labels: { color: "#e6edf3", boxWidth: 12 } },
+        legend: { display: false },
         annotation: { annotations: buildAnnotations(dis) },
         tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
       },
     },
   };
-  if (charts[dis]) charts[dis].destroy();
-  charts[dis] = new Chart(document.getElementById(`chart-${dis}`), cfg);
+  if (charts[canvasId]) charts[canvasId].destroy();
+  charts[canvasId] = new Chart(document.getElementById(canvasId), cfg);
+  return pts.length;
+}
+
+function renderDisease(dis, metric) {
+  const color = metric === "death_rate" ? DEATH_COLOR : COLORS[dis];
+  const n = makeLineChart(`chart-${dis}`, dis, metric, color, METRIC_LABEL[metric]);
+  document.getElementById(`nd-${dis}`).textContent =
+    n ? "" : ` — no ${METRIC_LABEL[metric].toLowerCase()} data`;
 }
 
 function render() {
   const metric = document.getElementById("metric").value;
-  let note = METRIC_NOTE[metric];
-  if (SECONDARY[metric]) note += "  •  Red dashed line = deaths (right axis), where data exists.";
-  document.getElementById("metricNote").textContent = note;
+  document.getElementById("metricNote").textContent = METRIC_NOTE[metric];
   activeDiseases().forEach(dis => renderDisease(dis, metric));
 }
 

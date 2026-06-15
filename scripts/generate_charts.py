@@ -463,12 +463,14 @@ def main():
     made.append(deaths_chart("pertussis", pertussis, "Pertussis — reported deaths, U.S."))
 
     # New diseases (cases + deaths where the column exists)
-    for key, title in [("hepb", "Hepatitis B"), ("rotavirus", "Rotavirus (hospitalizations)"),
-                       ("diphtheria", "Diphtheria"), ("tetanus", "Tetanus"),
-                       ("hib", "Hib (invasive, <5)"), ("pcv", "Pneumococcal (invasive, <5)"),
-                       ("mumps", "Mumps"), ("rubella", "Rubella")]:
+    for key, title, field in [("hepb", "Hepatitis B", "cases"),
+                              ("rotavirus", "Rotavirus (hospitalizations)", "hospitalizations"),
+                              ("diphtheria", "Diphtheria", "cases"), ("tetanus", "Tetanus", "cases"),
+                              ("hib", "Hib (invasive, <5)", "cases"),
+                              ("pcv", "Pneumococcal (invasive, <5)", "cases"),
+                              ("mumps", "Mumps", "cases"), ("rubella", "Rubella", "cases")]:
         rows = read_csv(f"{key}.csv")
-        made.append(cases_chart(key, rows, "cases", f"{title} — reported cases, U.S."))
+        made.append(cases_chart(key, rows, field, f"{title} — U.S."))
         made.append(deaths_chart(key, rows, f"{title} — reported deaths, U.S."))
 
     made.append(early_mortality_chart())

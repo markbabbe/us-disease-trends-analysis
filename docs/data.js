@@ -527,6 +527,7 @@ window.DISEASE_DATA = {
       "incidence": 8.3934,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Approx; reportable from ~1966"
     },
     {
@@ -536,6 +537,7 @@ window.DISEASE_DATA = {
       "incidence": 11.2167,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Peak reported acute hepatitis B"
     },
     {
@@ -545,6 +547,7 @@ window.DISEASE_DATA = {
       "incidence": 10.7064,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "10.7 per 100000"
     },
     {
@@ -554,6 +557,7 @@ window.DISEASE_DATA = {
       "incidence": 8.4846,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Infant/universal vaccination recommended 1991"
     },
     {
@@ -563,6 +567,7 @@ window.DISEASE_DATA = {
       "incidence": 2.8109,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "-67% since 1990 (CDC)"
     },
     {
@@ -572,6 +577,7 @@ window.DISEASE_DATA = {
       "incidence": 1.085,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "-87% since the 1985 peak"
     },
     {
@@ -581,53 +587,59 @@ window.DISEASE_DATA = {
       "incidence": 0.6508,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     }
   ],
   "rotavirus": [
     {
       "year": 2005,
-      "cases": 60000,
+      "cases": null,
       "deaths": 40,
-      "incidence": 20.3332,
-      "cfr": 0.0667,
+      "incidence": null,
+      "cfr": null,
       "death_rate": 0.0136,
-      "note": "Series = HOSPITALIZATIONS in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
+      "hosp_rate": 20.3332,
+      "note": "Hospitalizations in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
     },
     {
       "year": 2006,
-      "cases": 58000,
+      "cases": null,
       "deaths": 38,
-      "incidence": 19.4751,
-      "cfr": 0.0655,
+      "incidence": null,
+      "cfr": null,
       "death_rate": 0.0128,
+      "hosp_rate": 19.4751,
       "note": "Vaccine introduced mid-2006; little impact yet"
     },
     {
       "year": 2008,
-      "cases": 33000,
+      "cases": null,
       "deaths": 20,
-      "incidence": 10.881,
-      "cfr": 0.0606,
+      "incidence": null,
+      "cfr": null,
       "death_rate": 0.0066,
+      "hosp_rate": 10.881,
       "note": "Approx; ~45% fewer hospitalizations after the vaccine"
     },
     {
       "year": 2012,
-      "cases": 15000,
+      "cases": null,
       "deaths": 8,
-      "incidence": 4.788,
-      "cfr": 0.0533,
+      "incidence": null,
+      "cfr": null,
       "death_rate": 0.0026,
+      "hosp_rate": 4.788,
       "note": "Approx; sustained ~60-80% reduction"
     },
     {
       "year": 2019,
-      "cases": 15000,
+      "cases": null,
       "deaths": 8,
-      "incidence": 4.5568,
-      "cfr": 0.0533,
+      "incidence": null,
+      "cfr": null,
       "death_rate": 0.0024,
+      "hosp_rate": 4.5568,
       "note": "Approx"
     }
   ],
@@ -639,6 +651,7 @@ window.DISEASE_DATA = {
       "incidence": 21.9006,
       "cfr": 9.222,
       "death_rate": 2.0197,
+      "hosp_rate": null,
       "note": "OWID series starts 1937; pre-1937 had >100k cases/yr in the 1920s"
     },
     {
@@ -648,6 +661,7 @@ window.DISEASE_DATA = {
       "incidence": 15.7303,
       "cfr": 12.4829,
       "death_rate": 1.9636,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -657,6 +671,7 @@ window.DISEASE_DATA = {
       "incidence": 18.3235,
       "cfr": 8.4064,
       "death_rate": 1.5404,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -666,6 +681,7 @@ window.DISEASE_DATA = {
       "incidence": 11.755,
       "cfr": 9.3782,
       "death_rate": 1.1024,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -675,6 +691,7 @@ window.DISEASE_DATA = {
       "incidence": 13.4151,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -684,6 +701,7 @@ window.DISEASE_DATA = {
       "incidence": 11.9562,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -693,6 +711,7 @@ window.DISEASE_DATA = {
       "incidence": 10.7394,
       "cfr": 8.0751,
       "death_rate": 0.8672,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -702,6 +721,7 @@ window.DISEASE_DATA = {
       "incidence": 10.1195,
       "cfr": 8.0919,
       "death_rate": 0.8189,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -711,6 +731,7 @@ window.DISEASE_DATA = {
       "incidence": 13.1751,
       "cfr": 8.5569,
       "death_rate": 1.1274,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -720,6 +741,7 @@ window.DISEASE_DATA = {
       "incidence": 11.3837,
       "cfr": 7.6984,
       "death_rate": 0.8764,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -729,6 +751,7 @@ window.DISEASE_DATA = {
       "incidence": 8.423,
       "cfr": 6.5161,
       "death_rate": 0.5488,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -738,6 +761,7 @@ window.DISEASE_DATA = {
       "incidence": 6.4362,
       "cfr": 6.6786,
       "death_rate": 0.4298,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -747,6 +771,7 @@ window.DISEASE_DATA = {
       "incidence": 5.3337,
       "cfr": 7.2029,
       "death_rate": 0.3842,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -756,6 +781,7 @@ window.DISEASE_DATA = {
       "incidence": 3.8301,
       "cfr": 7.0738,
       "death_rate": 0.2709,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -765,6 +791,7 @@ window.DISEASE_DATA = {
       "incidence": 2.5843,
       "cfr": 7.5822,
       "death_rate": 0.1959,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -774,6 +801,7 @@ window.DISEASE_DATA = {
       "incidence": 1.8862,
       "cfr": 7.3311,
       "death_rate": 0.1383,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -783,6 +811,7 @@ window.DISEASE_DATA = {
       "incidence": 1.4744,
       "cfr": 6.6242,
       "death_rate": 0.0977,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -792,6 +821,7 @@ window.DISEASE_DATA = {
       "incidence": 1.2558,
       "cfr": 7.1044,
       "death_rate": 0.0892,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -801,6 +831,7 @@ window.DISEASE_DATA = {
       "incidence": 1.2001,
       "cfr": 7.5605,
       "death_rate": 0.0907,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -810,6 +841,7 @@ window.DISEASE_DATA = {
       "incidence": 0.9326,
       "cfr": 6.5689,
       "death_rate": 0.0613,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -819,6 +851,7 @@ window.DISEASE_DATA = {
       "incidence": 0.7085,
       "cfr": 6.6887,
       "death_rate": 0.0474,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -828,6 +861,7 @@ window.DISEASE_DATA = {
       "incidence": 0.5284,
       "cfr": 8.061,
       "death_rate": 0.0426,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -837,6 +871,7 @@ window.DISEASE_DATA = {
       "incidence": 0.5291,
       "cfr": 7.7088,
       "death_rate": 0.0408,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -846,6 +881,7 @@ window.DISEASE_DATA = {
       "incidence": 0.5119,
       "cfr": 7.5163,
       "death_rate": 0.0385,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -855,6 +891,7 @@ window.DISEASE_DATA = {
       "incidence": 0.3395,
       "cfr": 11.0211,
       "death_rate": 0.0374,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -864,6 +901,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2412,
       "cfr": 9.2342,
       "death_rate": 0.0223,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -873,6 +911,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1684,
       "cfr": 14.3312,
       "death_rate": 0.0241,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -882,6 +921,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1551,
       "cfr": 14.3345,
       "death_rate": 0.0222,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -891,6 +931,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0857,
       "cfr": 10.9756,
       "death_rate": 0.0094,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -900,6 +941,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1079,
       "cfr": 9.5694,
       "death_rate": 0.0103,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -909,6 +951,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1117,
       "cfr": 14.6119,
       "death_rate": 0.0163,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -918,6 +961,7 @@ window.DISEASE_DATA = {
       "incidence": 0.131,
       "cfr": 11.5385,
       "death_rate": 0.0151,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -927,6 +971,7 @@ window.DISEASE_DATA = {
       "incidence": 0.12,
       "cfr": 10.3734,
       "death_rate": 0.0124,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -936,6 +981,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2141,
       "cfr": 6.8966,
       "death_rate": 0.0148,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -945,6 +991,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1046,
       "cfr": 6.0465,
       "death_rate": 0.0063,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -954,6 +1001,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0731,
       "cfr": 6.5789,
       "death_rate": 0.0048,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -963,6 +1011,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1085,
       "cfr": 4.386,
       "death_rate": 0.0048,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -972,6 +1021,7 @@ window.DISEASE_DATA = {
       "incidence": 0.128,
       "cfr": 1.8382,
       "death_rate": 0.0024,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -981,6 +1031,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1429,
       "cfr": 1.6287,
       "death_rate": 0.0023,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -990,6 +1041,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0589,
       "cfr": 5.4688,
       "death_rate": 0.0032,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -999,6 +1051,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0383,
       "cfr": 5.9524,
       "death_rate": 0.0023,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1008,6 +1061,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0343,
       "cfr": 5.2632,
       "death_rate": 0.0018,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1017,6 +1071,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0263,
       "cfr": 1.6949,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1026,6 +1081,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0013,
       "cfr": 33.3333,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1035,6 +1091,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0022,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1044,6 +1101,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0009,
       "cfr": 50.0,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1053,6 +1111,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0021,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1062,6 +1121,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0004,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1071,6 +1131,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0013,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1080,6 +1141,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1089,6 +1151,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0012,
       "cfr": 33.3333,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1098,6 +1161,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0008,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1107,6 +1171,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0012,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1116,6 +1181,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0016,
       "cfr": 25.0,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1125,6 +1191,7 @@ window.DISEASE_DATA = {
       "incidence": 0.002,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1134,6 +1201,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0016,
       "cfr": 25.0,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1143,6 +1211,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1152,6 +1221,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0008,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1161,6 +1231,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1170,6 +1241,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0007,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1179,6 +1251,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0015,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1188,6 +1261,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0004,
       "cfr": 100.0,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1197,6 +1271,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0004,
       "cfr": 100.0,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1206,6 +1281,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0004,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1215,6 +1291,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0007,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1224,6 +1301,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1233,6 +1311,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 100.0,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1242,6 +1321,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1251,6 +1331,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1260,6 +1341,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1269,6 +1351,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1278,6 +1361,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1287,6 +1371,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1296,6 +1381,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1305,6 +1391,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1314,6 +1401,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1323,6 +1411,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1332,6 +1421,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1341,6 +1431,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1350,6 +1441,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1359,6 +1451,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1368,6 +1461,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 100.0,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1377,6 +1471,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0006,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1386,6 +1481,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1395,6 +1491,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1404,6 +1501,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     }
   ],
@@ -1415,6 +1513,7 @@ window.DISEASE_DATA = {
       "incidence": 0.3847,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Notifiable from 1947 (3.9 per million); historical CFR ~30%"
     },
     {
@@ -1424,6 +1523,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0345,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Approx; \"50-100 cases/yr since mid-1970s\" (CDC)"
     },
     {
@@ -1433,6 +1533,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0257,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Approx anchor"
     },
     {
@@ -1442,6 +1543,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0091,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "2001-2008 averaged 29 cases/yr (CFR ~13%)"
     },
     {
@@ -1451,6 +1553,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0059,
       "cfr": 11.1111,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": "Annual data 2009-2023 from CDC MMWR SS7501"
     },
     {
@@ -1460,6 +1563,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0084,
       "cfr": 7.6923,
       "death_rate": 0.0006,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1469,6 +1573,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0116,
       "cfr": 13.8889,
       "death_rate": 0.0016,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1478,6 +1583,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0118,
       "cfr": 10.8108,
       "death_rate": 0.0013,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1487,6 +1593,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0082,
       "cfr": 11.5385,
       "death_rate": 0.001,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1496,6 +1603,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0079,
       "cfr": 20.0,
       "death_rate": 0.0016,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1505,6 +1613,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0091,
       "cfr": 13.7931,
       "death_rate": 0.0012,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1514,6 +1623,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0105,
       "cfr": 8.8235,
       "death_rate": 0.0009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1523,6 +1633,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0102,
       "cfr": 6.0606,
       "death_rate": 0.0006,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1532,6 +1643,7 @@ window.DISEASE_DATA = {
       "incidence": 0.007,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1541,6 +1653,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0079,
       "cfr": 15.3846,
       "death_rate": 0.0012,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1550,6 +1663,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0051,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1559,6 +1673,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0084,
       "cfr": 7.1429,
       "death_rate": 0.0006,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1568,6 +1683,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0077,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1577,6 +1693,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0053,
       "cfr": 5.5556,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     }
   ],
@@ -1588,6 +1705,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 12.2,
+      "hosp_rate": null,
       "note": "Early death rate (approx)"
     },
     {
@@ -1597,6 +1715,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 11.8,
+      "hosp_rate": null,
       "note": "Early death rate (approx)"
     },
     {
@@ -1606,6 +1725,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 9.0,
+      "hosp_rate": null,
       "note": "Early death rate (approx)"
     },
     {
@@ -1615,6 +1735,7 @@ window.DISEASE_DATA = {
       "incidence": 98.1867,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1624,6 +1745,7 @@ window.DISEASE_DATA = {
       "incidence": 147.6858,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1633,6 +1755,7 @@ window.DISEASE_DATA = {
       "incidence": 146.5251,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1642,6 +1765,7 @@ window.DISEASE_DATA = {
       "incidence": 132.6239,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1651,6 +1775,7 @@ window.DISEASE_DATA = {
       "incidence": 173.8242,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1660,6 +1785,7 @@ window.DISEASE_DATA = {
       "incidence": 153.6752,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1669,6 +1795,7 @@ window.DISEASE_DATA = {
       "incidence": 135.0955,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1678,6 +1805,7 @@ window.DISEASE_DATA = {
       "incidence": 162.466,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1687,6 +1815,7 @@ window.DISEASE_DATA = {
       "incidence": 135.4793,
       "cfr": null,
       "death_rate": 4.8,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1696,6 +1825,7 @@ window.DISEASE_DATA = {
       "incidence": 139.0497,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1705,6 +1835,7 @@ window.DISEASE_DATA = {
       "incidence": 172.2813,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1714,6 +1845,7 @@ window.DISEASE_DATA = {
       "incidence": 142.2935,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1723,6 +1855,7 @@ window.DISEASE_DATA = {
       "incidence": 209.2235,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1732,6 +1865,7 @@ window.DISEASE_DATA = {
       "incidence": 141.3792,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1741,6 +1875,7 @@ window.DISEASE_DATA = {
       "incidence": 114.5102,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1750,6 +1885,7 @@ window.DISEASE_DATA = {
       "incidence": 165.7852,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1759,6 +1895,7 @@ window.DISEASE_DATA = {
       "incidence": 174.3616,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1768,6 +1905,7 @@ window.DISEASE_DATA = {
       "incidence": 78.6084,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1777,6 +1915,7 @@ window.DISEASE_DATA = {
       "incidence": 139.119,
       "cfr": null,
       "death_rate": 2.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1786,6 +1925,7 @@ window.DISEASE_DATA = {
       "incidence": 165.7226,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1795,6 +1935,7 @@ window.DISEASE_DATA = {
       "incidence": 140.7261,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1804,6 +1945,7 @@ window.DISEASE_DATA = {
       "incidence": 139.1385,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1813,6 +1955,7 @@ window.DISEASE_DATA = {
       "incidence": 78.5767,
       "cfr": 1.7092,
       "death_rate": 1.3431,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1822,6 +1965,7 @@ window.DISEASE_DATA = {
       "incidence": 94.3891,
       "cfr": 1.3095,
       "death_rate": 1.236,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1831,6 +1975,7 @@ window.DISEASE_DATA = {
       "incidence": 76.4715,
       "cfr": 1.1296,
       "death_rate": 0.8638,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1840,6 +1985,7 @@ window.DISEASE_DATA = {
       "incidence": 107.5146,
       "cfr": 1.2484,
       "death_rate": 1.3422,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1849,6 +1995,7 @@ window.DISEASE_DATA = {
       "incidence": 50.6565,
       "cfr": 1.5338,
       "death_rate": 0.777,
+      "hosp_rate": null,
       "note": "Whole-cell DTP routine"
     },
     {
@@ -1858,6 +2005,7 @@ window.DISEASE_DATA = {
       "incidence": 46.5023,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1867,6 +2015,7 @@ window.DISEASE_DATA = {
       "incidence": 79.7736,
       "cfr": 0.9261,
       "death_rate": 0.7388,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1876,6 +2025,7 @@ window.DISEASE_DATA = {
       "incidence": 44.5656,
       "cfr": 1.3845,
       "death_rate": 0.617,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1885,6 +2035,7 @@ window.DISEASE_DATA = {
       "incidence": 28.6952,
       "cfr": 0.8927,
       "death_rate": 0.2562,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1894,6 +2045,7 @@ window.DISEASE_DATA = {
       "incidence": 23.2456,
       "cfr": 0.7272,
       "death_rate": 0.169,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1903,6 +2055,7 @@ window.DISEASE_DATA = {
       "incidence": 37.4626,
       "cfr": 0.6126,
       "death_rate": 0.2295,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1912,6 +2065,7 @@ window.DISEASE_DATA = {
       "incidence": 37.9774,
       "cfr": 0.7438,
       "death_rate": 0.2825,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1921,6 +2075,7 @@ window.DISEASE_DATA = {
       "incidence": 18.8741,
       "cfr": 0.8383,
       "death_rate": 0.1582,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1930,6 +2085,7 @@ window.DISEASE_DATA = {
       "incidence": 16.5541,
       "cfr": 0.6468,
       "death_rate": 0.1071,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1939,6 +2095,7 @@ window.DISEASE_DATA = {
       "incidence": 18.5052,
       "cfr": 0.5506,
       "death_rate": 0.1019,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1948,6 +2105,7 @@ window.DISEASE_DATA = {
       "incidence": 22.6627,
       "cfr": 0.6724,
       "death_rate": 0.1524,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1957,6 +2115,7 @@ window.DISEASE_DATA = {
       "incidence": 8.2583,
       "cfr": 0.7968,
       "death_rate": 0.0658,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1966,6 +2125,7 @@ window.DISEASE_DATA = {
       "incidence": 6.3111,
       "cfr": 0.6627,
       "death_rate": 0.0418,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1975,6 +2135,7 @@ window.DISEASE_DATA = {
       "incidence": 9.6409,
       "cfr": 0.4676,
       "death_rate": 0.0451,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1984,6 +2145,7 @@ window.DISEASE_DATA = {
       "incidence": 9.1882,
       "cfr": 0.6711,
       "death_rate": 0.0617,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -1993,6 +2155,7 @@ window.DISEASE_DATA = {
       "incidence": 6.8854,
       "cfr": 0.7151,
       "death_rate": 0.0492,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2002,6 +2165,7 @@ window.DISEASE_DATA = {
       "incidence": 3.5547,
       "cfr": 0.8089,
       "death_rate": 0.0288,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2011,6 +2175,7 @@ window.DISEASE_DATA = {
       "incidence": 3.9849,
       "cfr": 0.635,
       "death_rate": 0.0253,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2020,6 +2185,7 @@ window.DISEASE_DATA = {
       "incidence": 4.957,
       "cfr": 0.3807,
       "death_rate": 0.0189,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2029,6 +2195,7 @@ window.DISEASE_DATA = {
       "incidence": 2.424,
       "cfr": 0.7484,
       "death_rate": 0.0181,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2038,6 +2205,7 @@ window.DISEASE_DATA = {
       "incidence": 1.6358,
       "cfr": 0.3957,
       "death_rate": 0.0065,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2047,6 +2215,7 @@ window.DISEASE_DATA = {
       "incidence": 2.0909,
       "cfr": 0.2824,
       "death_rate": 0.0059,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2056,6 +2225,7 @@ window.DISEASE_DATA = {
       "incidence": 1.477,
       "cfr": 0.5929,
       "death_rate": 0.0088,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2065,6 +2235,7 @@ window.DISEASE_DATA = {
       "incidence": 1.5812,
       "cfr": 0.1825,
       "death_rate": 0.0029,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2074,6 +2245,7 @@ window.DISEASE_DATA = {
       "incidence": 0.8368,
       "cfr": 0.2843,
       "death_rate": 0.0024,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2083,6 +2255,7 @@ window.DISEASE_DATA = {
       "incidence": 1.1301,
       "cfr": 0.5828,
       "death_rate": 0.0066,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2092,6 +2265,7 @@ window.DISEASE_DATA = {
       "incidence": 0.8088,
       "cfr": 0.4603,
       "death_rate": 0.0037,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2101,6 +2275,7 @@ window.DISEASE_DATA = {
       "incidence": 0.465,
       "cfr": 0.6931,
       "death_rate": 0.0032,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2110,6 +2285,7 @@ window.DISEASE_DATA = {
       "incidence": 0.9916,
       "cfr": 0.4593,
       "death_rate": 0.0046,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2119,6 +2295,7 @@ window.DISEASE_DATA = {
       "incidence": 0.9298,
       "cfr": 0.2908,
       "death_rate": 0.0027,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2128,6 +2305,7 @@ window.DISEASE_DATA = {
       "incidence": 0.7239,
       "cfr": 0.3697,
       "death_rate": 0.0027,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2137,6 +2315,7 @@ window.DISEASE_DATA = {
       "incidence": 0.7636,
       "cfr": 0.6358,
       "death_rate": 0.0049,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2146,6 +2325,7 @@ window.DISEASE_DATA = {
       "incidence": 0.5455,
       "cfr": 0.4808,
       "death_rate": 0.0026,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2155,6 +2335,7 @@ window.DISEASE_DATA = {
       "incidence": 0.8204,
       "cfr": 0.2111,
       "death_rate": 0.0017,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2164,6 +2345,7 @@ window.DISEASE_DATA = {
       "incidence": 1.0562,
       "cfr": 0.203,
       "death_rate": 0.0021,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2173,6 +2355,7 @@ window.DISEASE_DATA = {
       "incidence": 0.9668,
       "cfr": 0.3076,
       "death_rate": 0.003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2182,6 +2365,7 @@ window.DISEASE_DATA = {
       "incidence": 1.5103,
       "cfr": 0.1115,
       "death_rate": 0.0017,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2191,6 +2375,7 @@ window.DISEASE_DATA = {
       "incidence": 1.7491,
       "cfr": 0.143,
       "death_rate": 0.0025,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2200,6 +2385,7 @@ window.DISEASE_DATA = {
       "incidence": 1.1662,
       "cfr": 0.0354,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2209,6 +2395,7 @@ window.DISEASE_DATA = {
       "incidence": 1.4123,
       "cfr": 0.1159,
       "death_rate": 0.0016,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2218,6 +2405,7 @@ window.DISEASE_DATA = {
       "incidence": 1.6865,
       "cfr": 0.2887,
       "death_rate": 0.0049,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2227,6 +2415,7 @@ window.DISEASE_DATA = {
       "incidence": 1.8375,
       "cfr": 0.2626,
       "death_rate": 0.0048,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2236,6 +2425,7 @@ window.DISEASE_DATA = {
       "incidence": 1.079,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2245,6 +2435,7 @@ window.DISEASE_DATA = {
       "incidence": 1.5996,
       "cfr": 0.1225,
       "death_rate": 0.002,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2254,6 +2445,7 @@ window.DISEASE_DATA = {
       "incidence": 2.5475,
       "cfr": 0.1063,
       "death_rate": 0.0027,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2263,6 +2455,7 @@ window.DISEASE_DATA = {
       "incidence": 1.7636,
       "cfr": 0.1733,
       "death_rate": 0.0031,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2272,6 +2465,7 @@ window.DISEASE_DATA = {
       "incidence": 1.938,
       "cfr": 0.1168,
       "death_rate": 0.0023,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2281,6 +2475,7 @@ window.DISEASE_DATA = {
       "incidence": 2.9053,
       "cfr": 0.0513,
       "death_rate": 0.0015,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2290,6 +2485,7 @@ window.DISEASE_DATA = {
       "incidence": 2.4167,
       "cfr": 0.0914,
       "death_rate": 0.0022,
+      "hosp_rate": null,
       "note": "Acellular DTaP switch"
     },
     {
@@ -2299,6 +2495,7 @@ window.DISEASE_DATA = {
       "incidence": 2.6939,
       "cfr": 0.0675,
       "death_rate": 0.0018,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2308,6 +2505,7 @@ window.DISEASE_DATA = {
       "incidence": 2.6238,
       "cfr": 0.0959,
       "death_rate": 0.0025,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2317,6 +2515,7 @@ window.DISEASE_DATA = {
       "incidence": 2.7954,
       "cfr": 0.1525,
       "death_rate": 0.0043,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2326,6 +2525,7 @@ window.DISEASE_DATA = {
       "incidence": 2.6676,
       "cfr": 0.2243,
       "death_rate": 0.006,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2335,6 +2535,7 @@ window.DISEASE_DATA = {
       "incidence": 3.4059,
       "cfr": 0.1842,
       "death_rate": 0.0063,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2344,6 +2545,7 @@ window.DISEASE_DATA = {
       "incidence": 4.0215,
       "cfr": 0.0944,
       "death_rate": 0.0038,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2353,6 +2555,7 @@ window.DISEASE_DATA = {
       "incidence": 8.8342,
       "cfr": 0.062,
       "death_rate": 0.0055,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2362,6 +2565,7 @@ window.DISEASE_DATA = {
       "incidence": 8.6809,
       "cfr": 0.121,
       "death_rate": 0.0105,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2371,6 +2575,7 @@ window.DISEASE_DATA = {
       "incidence": 5.2489,
       "cfr": 0.0576,
       "death_rate": 0.003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2380,6 +2585,7 @@ window.DISEASE_DATA = {
       "incidence": 3.4783,
       "cfr": 0.0861,
       "death_rate": 0.003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2389,6 +2595,7 @@ window.DISEASE_DATA = {
       "incidence": 4.3781,
       "cfr": 0.1506,
       "death_rate": 0.0066,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2398,6 +2605,7 @@ window.DISEASE_DATA = {
       "incidence": 5.5089,
       "cfr": 0.089,
       "death_rate": 0.0049,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2407,6 +2615,7 @@ window.DISEASE_DATA = {
       "incidence": 8.9232,
       "cfr": 0.0944,
       "death_rate": 0.0084,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2416,6 +2625,7 @@ window.DISEASE_DATA = {
       "incidence": 6.0187,
       "cfr": 0.0374,
       "death_rate": 0.0023,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2425,6 +2635,7 @@ window.DISEASE_DATA = {
       "incidence": 15.4099,
       "cfr": 0.0352,
       "death_rate": 0.0054,
+      "hosp_rate": null,
       "note": "Highest since 1955"
     },
     {
@@ -2434,6 +2645,7 @@ window.DISEASE_DATA = {
       "incidence": 9.0757,
       "cfr": 0.0419,
       "death_rate": 0.0038,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2443,6 +2655,7 @@ window.DISEASE_DATA = {
       "incidence": 10.3739,
       "cfr": 0.0425,
       "death_rate": 0.0044,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2452,6 +2665,7 @@ window.DISEASE_DATA = {
       "incidence": 6.4862,
       "cfr": 0.0337,
       "death_rate": 0.0022,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2461,6 +2675,7 @@ window.DISEASE_DATA = {
       "incidence": 5.575,
       "cfr": 0.0612,
       "death_rate": 0.0034,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2470,6 +2685,7 @@ window.DISEASE_DATA = {
       "incidence": 5.845,
       "cfr": 0.0474,
       "death_rate": 0.0028,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2479,6 +2695,7 @@ window.DISEASE_DATA = {
       "incidence": 4.7747,
       "cfr": 0.0577,
       "death_rate": 0.0028,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2488,6 +2705,7 @@ window.DISEASE_DATA = {
       "incidence": 5.6556,
       "cfr": 0.0537,
       "death_rate": 0.003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2497,6 +2715,7 @@ window.DISEASE_DATA = {
       "incidence": 1.8476,
       "cfr": 0.0816,
       "death_rate": 0.0015,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2506,6 +2725,7 @@ window.DISEASE_DATA = {
       "incidence": 0.6343,
       "cfr": 0.189,
       "death_rate": 0.0012,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2515,6 +2735,7 @@ window.DISEASE_DATA = {
       "incidence": 0.9065,
       "cfr": 0.0657,
       "death_rate": 0.0006,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2524,6 +2745,7 @@ window.DISEASE_DATA = {
       "incidence": 1.6603,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2533,6 +2755,7 @@ window.DISEASE_DATA = {
       "incidence": 10.4357,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Resurgence (CDC NNDSS, provisional)"
     },
     {
@@ -2542,6 +2765,7 @@ window.DISEASE_DATA = {
       "incidence": 8.5143,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     }
   ],
@@ -2553,6 +2777,7 @@ window.DISEASE_DATA = {
       "incidence": 3.1397,
       "cfr": 5.0,
       "death_rate": 0.157,
+      "hosp_rate": null,
       "note": "~41/100k in children <5 (CDC); deaths approx (~5% fatal)"
     },
     {
@@ -2562,6 +2787,7 @@ window.DISEASE_DATA = {
       "incidence": 2.7587,
       "cfr": 5.0,
       "death_rate": 0.1379,
+      "hosp_rate": null,
       "note": "~37/100k \u2014 still high just before the 1990 infant vaccine"
     },
     {
@@ -2571,6 +2797,7 @@ window.DISEASE_DATA = {
       "incidence": 0.8096,
       "cfr": 4.902,
       "death_rate": 0.0397,
+      "hosp_rate": null,
       "note": "~11/100k \u2014 sharp drop AFTER the 1990 infant conjugate vaccine"
     },
     {
@@ -2580,6 +2807,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1132,
       "cfr": 5.0,
       "death_rate": 0.0057,
+      "hosp_rate": null,
       "note": "~1.6/100k"
     },
     {
@@ -2589,6 +2817,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1031,
       "cfr": 5.0,
       "death_rate": 0.0052,
+      "hosp_rate": null,
       "note": "280 reported cases (~1.5/100k)"
     },
     {
@@ -2598,6 +2827,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0136,
       "cfr": 5.0,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": "Approx"
     },
     {
@@ -2607,6 +2837,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0055,
       "cfr": 5.5556,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": "18 reported cases in children =<5"
     }
   ],
@@ -2618,6 +2849,7 @@ window.DISEASE_DATA = {
       "incidence": 5.783,
       "cfr": 1.2733,
       "death_rate": 0.0736,
+      "hosp_rate": null,
       "note": "Invasive pneumococcal disease in children <5 (CDC ABCs); deaths approx (~1.3% fatal)"
     },
     {
@@ -2627,6 +2859,7 @@ window.DISEASE_DATA = {
       "incidence": 5.7523,
       "cfr": 1.2812,
       "death_rate": 0.0737,
+      "hosp_rate": null,
       "note": "Approx; level held before PCV7 (2000)"
     },
     {
@@ -2636,6 +2869,7 @@ window.DISEASE_DATA = {
       "incidence": 1.4973,
       "cfr": 1.2222,
       "death_rate": 0.0183,
+      "hosp_rate": null,
       "note": "Approx; after PCV7 cut <5 invasive disease ~76%"
     },
     {
@@ -2645,6 +2879,7 @@ window.DISEASE_DATA = {
       "incidence": 0.4198,
       "cfr": 1.3025,
       "death_rate": 0.0055,
+      "hosp_rate": null,
       "note": "After PCV13 (2010); -91% vs 1997"
     }
   ],
@@ -2656,6 +2891,7 @@ window.DISEASE_DATA = {
       "incidence": 6.5012,
       "cfr": 16.2108,
       "death_rate": 1.0539,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2665,6 +2901,7 @@ window.DISEASE_DATA = {
       "incidence": 2.1088,
       "cfr": 22.7964,
       "death_rate": 0.4807,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2674,6 +2911,7 @@ window.DISEASE_DATA = {
       "incidence": 2.0526,
       "cfr": 21.7897,
       "death_rate": 0.4473,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2683,6 +2921,7 @@ window.DISEASE_DATA = {
       "incidence": 1.2768,
       "cfr": 27.0032,
       "death_rate": 0.3448,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2692,6 +2931,7 @@ window.DISEASE_DATA = {
       "incidence": 1.6868,
       "cfr": 42.2847,
       "death_rate": 0.7132,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2701,6 +2941,7 @@ window.DISEASE_DATA = {
       "incidence": 27.8665,
       "cfr": 26.0578,
       "death_rate": 7.2614,
+      "hosp_rate": null,
       "note": "NYC-centered epidemic (approx national)"
     },
     {
@@ -2710,6 +2951,7 @@ window.DISEASE_DATA = {
       "incidence": 4.1008,
       "cfr": 28.9612,
       "death_rate": 1.1876,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2719,6 +2961,7 @@ window.DISEASE_DATA = {
       "incidence": 2.4694,
       "cfr": 38.5098,
       "death_rate": 0.951,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2728,6 +2971,7 @@ window.DISEASE_DATA = {
       "incidence": 1.8864,
       "cfr": 38.6525,
       "death_rate": 0.7292,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2737,6 +2981,7 @@ window.DISEASE_DATA = {
       "incidence": 2.2382,
       "cfr": 33.0805,
       "death_rate": 0.7404,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2746,6 +2991,7 @@ window.DISEASE_DATA = {
       "incidence": 5.9449,
       "cfr": 25.4801,
       "death_rate": 1.5148,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2755,6 +3001,7 @@ window.DISEASE_DATA = {
       "incidence": 2.0775,
       "cfr": 35.5761,
       "death_rate": 0.7391,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2764,6 +3011,7 @@ window.DISEASE_DATA = {
       "incidence": 3.0096,
       "cfr": 26.0311,
       "death_rate": 0.7834,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2773,6 +3021,7 @@ window.DISEASE_DATA = {
       "incidence": 4.7212,
       "cfr": 20.7505,
       "death_rate": 0.9797,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2782,6 +3031,7 @@ window.DISEASE_DATA = {
       "incidence": 5.304,
       "cfr": 25.1686,
       "death_rate": 1.3349,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2791,6 +3041,7 @@ window.DISEASE_DATA = {
       "incidence": 2.2299,
       "cfr": 33.6546,
       "death_rate": 0.7505,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2800,6 +3051,7 @@ window.DISEASE_DATA = {
       "incidence": 9.1556,
       "cfr": 19.1155,
       "death_rate": 1.7501,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2809,6 +3061,7 @@ window.DISEASE_DATA = {
       "incidence": 4.3802,
       "cfr": 27.0111,
       "death_rate": 1.1831,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2818,6 +3071,7 @@ window.DISEASE_DATA = {
       "incidence": 2.3987,
       "cfr": 28.6205,
       "death_rate": 0.6865,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2827,6 +3081,7 @@ window.DISEASE_DATA = {
       "incidence": 7.68,
       "cfr": 14.9123,
       "death_rate": 1.1453,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2836,6 +3091,7 @@ window.DISEASE_DATA = {
       "incidence": 13.0678,
       "cfr": 13.2762,
       "death_rate": 1.7349,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2845,6 +3101,7 @@ window.DISEASE_DATA = {
       "incidence": 3.1001,
       "cfr": 21.9097,
       "death_rate": 0.6792,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2854,6 +3111,7 @@ window.DISEASE_DATA = {
       "incidence": 4.0606,
       "cfr": 16.0016,
       "death_rate": 0.6498,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2863,6 +3121,7 @@ window.DISEASE_DATA = {
       "incidence": 6.0842,
       "cfr": 11.33,
       "death_rate": 0.6893,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2872,6 +3131,7 @@ window.DISEASE_DATA = {
       "incidence": 8.7098,
       "cfr": 9.5945,
       "death_rate": 0.8357,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2881,6 +3141,7 @@ window.DISEASE_DATA = {
       "incidence": 3.6094,
       "cfr": 17.2377,
       "death_rate": 0.6222,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2890,6 +3151,7 @@ window.DISEASE_DATA = {
       "incidence": 7.5365,
       "cfr": 15.0646,
       "death_rate": 1.1353,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2899,6 +3161,7 @@ window.DISEASE_DATA = {
       "incidence": 1.3469,
       "cfr": 27.9043,
       "death_rate": 0.3758,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2908,6 +3171,7 @@ window.DISEASE_DATA = {
       "incidence": 5.7295,
       "cfr": 10.2912,
       "death_rate": 0.5896,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2917,6 +3181,7 @@ window.DISEASE_DATA = {
       "incidence": 7.5928,
       "cfr": 10.2143,
       "death_rate": 0.7755,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2926,6 +3191,7 @@ window.DISEASE_DATA = {
       "incidence": 6.9428,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2935,6 +3201,7 @@ window.DISEASE_DATA = {
       "incidence": 3.0435,
       "cfr": 13.9164,
       "death_rate": 0.4235,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2944,6 +3211,7 @@ window.DISEASE_DATA = {
       "incidence": 9.266,
       "cfr": 9.2496,
       "death_rate": 0.8571,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2953,6 +3221,7 @@ window.DISEASE_DATA = {
       "incidence": 13.9692,
       "cfr": 7.152,
       "death_rate": 0.9991,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2962,6 +3231,7 @@ window.DISEASE_DATA = {
       "incidence": 9.8607,
       "cfr": 8.7072,
       "death_rate": 0.8586,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2971,6 +3241,7 @@ window.DISEASE_DATA = {
       "incidence": 17.9895,
       "cfr": 7.3247,
       "death_rate": 1.3177,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2980,6 +3251,7 @@ window.DISEASE_DATA = {
       "incidence": 7.5602,
       "cfr": 5.4061,
       "death_rate": 0.4087,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2989,6 +3261,7 @@ window.DISEASE_DATA = {
       "incidence": 19.2286,
       "cfr": 7.7324,
       "death_rate": 1.4868,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -2998,6 +3271,7 @@ window.DISEASE_DATA = {
       "incidence": 28.7793,
       "cfr": 6.4722,
       "death_rate": 1.8627,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3007,6 +3281,7 @@ window.DISEASE_DATA = {
       "incidence": 21.5971,
       "cfr": 5.7157,
       "death_rate": 1.2344,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3016,6 +3291,7 @@ window.DISEASE_DATA = {
       "incidence": 18.1404,
       "cfr": 5.4651,
       "death_rate": 0.9914,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3025,6 +3301,7 @@ window.DISEASE_DATA = {
       "incidence": 36.4492,
       "cfr": 5.4338,
       "death_rate": 1.9806,
+      "hosp_rate": null,
       "note": "Largest US epidemic on record"
     },
     {
@@ -3034,6 +3311,7 @@ window.DISEASE_DATA = {
       "incidence": 22.0836,
       "cfr": 4.0739,
       "death_rate": 0.8997,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3043,6 +3321,7 @@ window.DISEASE_DATA = {
       "incidence": 23.5133,
       "cfr": 3.5562,
       "death_rate": 0.8362,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3052,6 +3331,7 @@ window.DISEASE_DATA = {
       "incidence": 17.4396,
       "cfr": 3.6002,
       "death_rate": 0.6279,
+      "hosp_rate": null,
       "note": "Salk IPV licensed April 1955"
     },
     {
@@ -3061,6 +3341,7 @@ window.DISEASE_DATA = {
       "incidence": 8.9678,
       "cfr": 3.7408,
       "death_rate": 0.3355,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3070,6 +3351,7 @@ window.DISEASE_DATA = {
       "incidence": 3.1985,
       "cfr": 4.0241,
       "death_rate": 0.1287,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3079,6 +3361,7 @@ window.DISEASE_DATA = {
       "incidence": 3.3219,
       "cfr": 4.4013,
       "death_rate": 0.1462,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3088,6 +3371,7 @@ window.DISEASE_DATA = {
       "incidence": 4.7557,
       "cfr": 5.3842,
       "death_rate": 0.2561,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3097,6 +3381,7 @@ window.DISEASE_DATA = {
       "incidence": 1.7694,
       "cfr": 7.2171,
       "death_rate": 0.1277,
+      "hosp_rate": null,
       "note": "Sabin OPV rollout beginning"
     },
     {
@@ -3106,6 +3391,7 @@ window.DISEASE_DATA = {
       "incidence": 0.5382,
       "cfr": 9.1002,
       "death_rate": 0.049,
+      "hosp_rate": null,
       "note": "OPV licensed"
     },
     {
@@ -3115,6 +3401,7 @@ window.DISEASE_DATA = {
       "incidence": 0.4079,
       "cfr": 7.8562,
       "death_rate": 0.032,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3124,6 +3411,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2086,
       "cfr": 10.2828,
       "death_rate": 0.0214,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3133,6 +3421,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0551,
       "cfr": 16.3462,
       "death_rate": 0.009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3142,6 +3431,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0314,
       "cfr": 26.6667,
       "death_rate": 0.0084,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3151,6 +3441,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0537,
       "cfr": 8.6538,
       "death_rate": 0.0046,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3160,6 +3451,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0199,
       "cfr": 41.0256,
       "death_rate": 0.0082,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3169,6 +3461,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0262,
       "cfr": 44.2308,
       "death_rate": 0.0116,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3178,6 +3471,7 @@ window.DISEASE_DATA = {
       "incidence": 0.009,
       "cfr": 72.2222,
       "death_rate": 0.0065,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3187,6 +3481,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0148,
       "cfr": 23.3333,
       "death_rate": 0.0034,
+      "hosp_rate": null,
       "note": "Only sporadic/imported and VAPP"
     },
     {
@@ -3196,6 +3491,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0083,
       "cfr": 105.8824,
       "death_rate": 0.0088,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3205,6 +3501,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0116,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Last endemic wild-virus outbreak (Amish)"
     },
     {
@@ -3214,6 +3511,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0028,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Vaccine-associated paralytic polio era"
     },
     {
@@ -3223,6 +3521,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0,
       "cfr": null,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": "OPV discontinued in US"
     },
     {
@@ -3232,6 +3531,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0014,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": "Importation into unvaccinated community"
     },
     {
@@ -3241,6 +3541,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": "Vaccine-derived case (Rockland County NY)"
     }
   ],
@@ -3252,6 +3553,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 13.3,
+      "hosp_rate": null,
       "note": "Early death rate (approx)"
     },
     {
@@ -3261,6 +3563,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 12.4,
+      "hosp_rate": null,
       "note": "Early death rate (approx)"
     },
     {
@@ -3270,6 +3573,7 @@ window.DISEASE_DATA = {
       "incidence": 171.8513,
       "cfr": 7.3815,
       "death_rate": 12.6851,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3279,6 +3583,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 8.8,
+      "hosp_rate": null,
       "note": "Early death rate (approx)"
     },
     {
@@ -3288,6 +3593,7 @@ window.DISEASE_DATA = {
       "incidence": 260.749,
       "cfr": 1.3932,
       "death_rate": 3.6328,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3297,6 +3603,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 3.7512,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3306,6 +3613,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 9.6298,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3315,6 +3623,7 @@ window.DISEASE_DATA = {
       "incidence": 452.9073,
       "cfr": 1.6783,
       "death_rate": 7.6009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3324,6 +3633,7 @@ window.DISEASE_DATA = {
       "incidence": 196.3379,
       "cfr": 1.0528,
       "death_rate": 2.067,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3333,6 +3643,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 7.5913,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3342,6 +3653,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 3.8535,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3351,6 +3663,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 5.2652,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3360,6 +3673,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 2.4719,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3369,6 +3683,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 3.2,
+      "hosp_rate": null,
       "note": "Early death rate (approx)"
     },
     {
@@ -3378,6 +3693,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 2.9597,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3387,6 +3703,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 1.5929,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3396,6 +3713,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 2.2925,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3405,6 +3723,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 5.6528,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3414,6 +3733,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 3.1398,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3423,6 +3743,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 1.011,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3432,6 +3753,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 1.1052,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3441,6 +3763,7 @@ window.DISEASE_DATA = {
       "incidence": 631.1247,
       "cfr": 0.4023,
       "death_rate": 2.5389,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3450,6 +3773,7 @@ window.DISEASE_DATA = {
       "incidence": 307.2461,
       "cfr": 0.2973,
       "death_rate": 0.9134,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3459,6 +3783,7 @@ window.DISEASE_DATA = {
       "incidence": 220.3026,
       "cfr": 0.2387,
       "death_rate": 0.5259,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3468,6 +3793,7 @@ window.DISEASE_DATA = {
       "incidence": 666.8626,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3477,6 +3803,7 @@ window.DISEASE_DATA = {
       "incidence": 402.5043,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3486,6 +3813,7 @@ window.DISEASE_DATA = {
       "incidence": 459.4399,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3495,6 +3823,7 @@ window.DISEASE_DATA = {
       "incidence": 450.7582,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3504,6 +3833,7 @@ window.DISEASE_DATA = {
       "incidence": 103.0109,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3513,6 +3843,7 @@ window.DISEASE_DATA = {
       "incidence": 452.3438,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3522,6 +3853,7 @@ window.DISEASE_DATA = {
       "incidence": 152.7538,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3531,6 +3863,7 @@ window.DISEASE_DATA = {
       "incidence": 417.0379,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3540,6 +3873,7 @@ window.DISEASE_DATA = {
       "incidence": 418.501,
       "cfr": 0.1553,
       "death_rate": 0.6499,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3549,6 +3883,7 @@ window.DISEASE_DATA = {
       "incidence": 210.8854,
       "cfr": 0.1438,
       "death_rate": 0.3033,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3558,6 +3893,7 @@ window.DISEASE_DATA = {
       "incidence": 343.9521,
       "cfr": 0.127,
       "death_rate": 0.4367,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3567,6 +3903,7 @@ window.DISEASE_DATA = {
       "incidence": 435.2881,
       "cfr": 0.0894,
       "death_rate": 0.3894,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3576,6 +3913,7 @@ window.DISEASE_DATA = {
       "incidence": 281.1995,
       "cfr": 0.102,
       "death_rate": 0.2867,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3585,6 +3923,7 @@ window.DISEASE_DATA = {
       "incidence": 420.0714,
       "cfr": 0.0753,
       "death_rate": 0.3163,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3594,6 +3933,7 @@ window.DISEASE_DATA = {
       "incidence": 335.7978,
       "cfr": 0.0618,
       "death_rate": 0.2075,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3603,6 +3943,7 @@ window.DISEASE_DATA = {
       "incidence": 363.9785,
       "cfr": 0.0863,
       "death_rate": 0.3141,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3612,6 +3953,7 @@ window.DISEASE_DATA = {
       "incidence": 284.8044,
       "cfr": 0.0797,
       "death_rate": 0.227,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3621,6 +3963,7 @@ window.DISEASE_DATA = {
       "incidence": 439.2573,
       "cfr": 0.0721,
       "death_rate": 0.3166,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3630,6 +3973,7 @@ window.DISEASE_DATA = {
       "incidence": 230.0896,
       "cfr": 0.0945,
       "death_rate": 0.2175,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3639,6 +3983,7 @@ window.DISEASE_DATA = {
       "incidence": 246.3167,
       "cfr": 0.0856,
       "death_rate": 0.2108,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3648,6 +3993,7 @@ window.DISEASE_DATA = {
       "incidence": 233.2916,
       "cfr": 0.1014,
       "death_rate": 0.2366,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3657,6 +4003,7 @@ window.DISEASE_DATA = {
       "incidence": 261.5576,
       "cfr": 0.0835,
       "death_rate": 0.2184,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3666,6 +4013,7 @@ window.DISEASE_DATA = {
       "incidence": 206.5293,
       "cfr": 0.0929,
       "death_rate": 0.192,
+      "hosp_rate": null,
       "note": "Measles vaccine licensed"
     },
     {
@@ -3675,6 +4023,7 @@ window.DISEASE_DATA = {
       "incidence": 242.5276,
       "cfr": 0.0899,
       "death_rate": 0.2181,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3684,6 +4033,7 @@ window.DISEASE_DATA = {
       "incidence": 136.9307,
       "cfr": 0.1031,
       "death_rate": 0.1412,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3693,6 +4043,7 @@ window.DISEASE_DATA = {
       "incidence": 105.4114,
       "cfr": 0.1249,
       "death_rate": 0.1317,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3702,6 +4053,7 @@ window.DISEASE_DATA = {
       "incidence": 31.985,
       "cfr": 0.126,
       "death_rate": 0.0403,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3711,6 +4063,7 @@ window.DISEASE_DATA = {
       "incidence": 11.2032,
       "cfr": 0.1035,
       "death_rate": 0.0116,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3720,6 +4073,7 @@ window.DISEASE_DATA = {
       "incidence": 12.8601,
       "cfr": 0.1549,
       "death_rate": 0.0199,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3729,6 +4083,7 @@ window.DISEASE_DATA = {
       "incidence": 23.3013,
       "cfr": 0.1837,
       "death_rate": 0.0428,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3738,6 +4093,7 @@ window.DISEASE_DATA = {
       "incidence": 36.6294,
       "cfr": 0.1169,
       "death_rate": 0.0428,
+      "hosp_rate": null,
       "note": "MMR licensed"
     },
     {
@@ -3747,6 +4103,7 @@ window.DISEASE_DATA = {
       "incidence": 15.5259,
       "cfr": 0.0713,
       "death_rate": 0.0111,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3756,6 +4113,7 @@ window.DISEASE_DATA = {
       "incidence": 12.6967,
       "cfr": 0.0824,
       "death_rate": 0.0105,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3765,6 +4123,7 @@ window.DISEASE_DATA = {
       "incidence": 10.395,
       "cfr": 0.0905,
       "death_rate": 0.0094,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3774,6 +4133,7 @@ window.DISEASE_DATA = {
       "incidence": 11.3431,
       "cfr": 0.0821,
       "death_rate": 0.0093,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3783,6 +4143,7 @@ window.DISEASE_DATA = {
       "incidence": 18.9336,
       "cfr": 0.0292,
       "death_rate": 0.0055,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3792,6 +4153,7 @@ window.DISEASE_DATA = {
       "incidence": 26.1199,
       "cfr": 0.0262,
       "death_rate": 0.0068,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3801,6 +4163,7 @@ window.DISEASE_DATA = {
       "incidence": 12.1107,
       "cfr": 0.0409,
       "death_rate": 0.005,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3810,6 +4173,7 @@ window.DISEASE_DATA = {
       "incidence": 6.0643,
       "cfr": 0.0441,
       "death_rate": 0.0027,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3819,6 +4183,7 @@ window.DISEASE_DATA = {
       "incidence": 5.9617,
       "cfr": 0.0814,
       "death_rate": 0.0049,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3828,6 +4193,7 @@ window.DISEASE_DATA = {
       "incidence": 1.3656,
       "cfr": 0.064,
       "death_rate": 0.0009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3837,6 +4203,7 @@ window.DISEASE_DATA = {
       "incidence": 0.7421,
       "cfr": 0.1167,
       "death_rate": 0.0009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3846,6 +4213,7 @@ window.DISEASE_DATA = {
       "incidence": 0.642,
       "cfr": 0.2672,
       "death_rate": 0.0017,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3855,6 +4223,7 @@ window.DISEASE_DATA = {
       "incidence": 1.0989,
       "cfr": 0.0387,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3864,6 +4233,7 @@ window.DISEASE_DATA = {
       "incidence": 1.1876,
       "cfr": 0.1417,
       "death_rate": 0.0017,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3873,6 +4243,7 @@ window.DISEASE_DATA = {
       "incidence": 2.6079,
       "cfr": 0.032,
       "death_rate": 0.0008,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3882,6 +4253,7 @@ window.DISEASE_DATA = {
       "incidence": 1.5087,
       "cfr": 0.0548,
       "death_rate": 0.0008,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3891,6 +4263,7 @@ window.DISEASE_DATA = {
       "incidence": 1.396,
       "cfr": 0.088,
       "death_rate": 0.0012,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3900,6 +4273,7 @@ window.DISEASE_DATA = {
       "incidence": 7.2675,
       "cfr": 0.173,
       "death_rate": 0.0126,
+      "hosp_rate": null,
       "note": "2nd dose recommended (after 1989-91 resurgence)"
     },
     {
@@ -3909,6 +4283,7 @@ window.DISEASE_DATA = {
       "incidence": 11.1809,
       "cfr": 0.2266,
       "death_rate": 0.0253,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3918,6 +4293,7 @@ window.DISEASE_DATA = {
       "incidence": 3.8269,
       "cfr": 0.28,
       "death_rate": 0.0107,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3927,6 +4303,7 @@ window.DISEASE_DATA = {
       "incidence": 0.8329,
       "cfr": 0.1881,
       "death_rate": 0.0016,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3936,6 +4313,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1207,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3945,6 +4323,7 @@ window.DISEASE_DATA = {
       "incidence": 0.3434,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3954,6 +4333,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1162,
       "cfr": 0.6494,
       "death_rate": 0.0008,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3963,6 +4343,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1834,
       "cfr": 0.2033,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3972,6 +4353,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0519,
       "cfr": 1.4184,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3981,6 +4363,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0364,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3990,6 +4373,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0356,
       "cfr": 2.0202,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -3999,6 +4383,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0302,
       "cfr": 1.1765,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": "Elimination declared"
     },
     {
@@ -4008,6 +4393,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0408,
       "cfr": 0.8621,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4017,6 +4403,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0153,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4026,6 +4413,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0193,
       "cfr": 1.7857,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4035,6 +4423,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0127,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4044,6 +4433,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0224,
       "cfr": 1.5152,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4053,6 +4443,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0185,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4062,6 +4453,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0143,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4071,6 +4463,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0462,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4080,6 +4473,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0235,
       "cfr": 2.7778,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4089,6 +4483,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0204,
       "cfr": 3.1746,
       "death_rate": 0.0006,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4098,6 +4493,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0707,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4107,6 +4503,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0176,
       "cfr": 3.6364,
       "death_rate": 0.0006,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4116,6 +4513,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0593,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4125,6 +4523,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2099,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4134,6 +4533,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0597,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4143,6 +4543,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0267,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4152,6 +4553,7 @@ window.DISEASE_DATA = {
       "incidence": 0.037,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4161,6 +4563,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1165,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4170,6 +4573,7 @@ window.DISEASE_DATA = {
       "incidence": 0.387,
       "cfr": 0.0785,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4179,6 +4583,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0039,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4188,6 +4593,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0147,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4197,6 +4603,7 @@ window.DISEASE_DATA = {
       "incidence": 0.036,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4206,6 +4613,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0175,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4215,6 +4623,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0838,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4224,6 +4633,7 @@ window.DISEASE_DATA = {
       "incidence": 0.6727,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Large outbreak year"
     }
   ],
@@ -4235,6 +4645,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0289,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4244,6 +4655,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0234,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4253,6 +4665,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0292,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4262,6 +4675,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0234,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4271,6 +4685,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0257,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4280,6 +4695,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0265,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4289,6 +4705,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0162,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4298,6 +4715,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0222,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4307,6 +4725,7 @@ window.DISEASE_DATA = {
       "incidence": null,
       "cfr": null,
       "death_rate": 0.0189,
+      "hosp_rate": null,
       "note": "Mumps vaccine licensed"
     },
     {
@@ -4316,6 +4735,7 @@ window.DISEASE_DATA = {
       "incidence": 76.705,
       "cfr": 0.0164,
       "death_rate": 0.0126,
+      "hosp_rate": null,
       "note": "Nationally notifiable; into MMR 1971"
     },
     {
@@ -4325,6 +4745,7 @@ window.DISEASE_DATA = {
       "incidence": 45.2727,
       "cfr": 0.0242,
       "death_rate": 0.011,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4334,6 +4755,7 @@ window.DISEASE_DATA = {
       "incidence": 51.6471,
       "cfr": 0.0152,
       "death_rate": 0.0079,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4343,6 +4765,7 @@ window.DISEASE_DATA = {
       "incidence": 60.7842,
       "cfr": 0.012,
       "death_rate": 0.0073,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4352,6 +4775,7 @@ window.DISEASE_DATA = {
       "incidence": 35.7011,
       "cfr": 0.0216,
       "death_rate": 0.0077,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4361,6 +4785,7 @@ window.DISEASE_DATA = {
       "incidence": 33.1151,
       "cfr": 0.0172,
       "death_rate": 0.0057,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4370,6 +4795,7 @@ window.DISEASE_DATA = {
       "incidence": 27.819,
       "cfr": 0.0101,
       "death_rate": 0.0028,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4379,6 +4805,7 @@ window.DISEASE_DATA = {
       "incidence": 27.7584,
       "cfr": 0.0134,
       "death_rate": 0.0037,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4388,6 +4815,7 @@ window.DISEASE_DATA = {
       "incidence": 17.7209,
       "cfr": 0.0208,
       "death_rate": 0.0037,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4397,6 +4825,7 @@ window.DISEASE_DATA = {
       "incidence": 9.7638,
       "cfr": 0.0233,
       "death_rate": 0.0023,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4406,6 +4835,7 @@ window.DISEASE_DATA = {
       "incidence": 7.5794,
       "cfr": 0.0178,
       "death_rate": 0.0014,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4415,6 +4845,7 @@ window.DISEASE_DATA = {
       "incidence": 6.3444,
       "cfr": 0.0141,
       "death_rate": 0.0009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4424,6 +4855,7 @@ window.DISEASE_DATA = {
       "incidence": 3.7855,
       "cfr": 0.0233,
       "death_rate": 0.0009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4433,6 +4865,7 @@ window.DISEASE_DATA = {
       "incidence": 2.1599,
       "cfr": 0.0202,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4442,6 +4875,7 @@ window.DISEASE_DATA = {
       "incidence": 2.2816,
       "cfr": 0.038,
       "death_rate": 0.0009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4451,6 +4885,7 @@ window.DISEASE_DATA = {
       "incidence": 1.4387,
       "cfr": 0.0596,
       "death_rate": 0.0009,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4460,6 +4895,7 @@ window.DISEASE_DATA = {
       "incidence": 1.2833,
       "cfr": 0.0331,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4469,6 +4905,7 @@ window.DISEASE_DATA = {
       "incidence": 1.2549,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4478,6 +4915,7 @@ window.DISEASE_DATA = {
       "incidence": 3.2479,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4487,6 +4925,7 @@ window.DISEASE_DATA = {
       "incidence": 5.3078,
       "cfr": 0.0156,
       "death_rate": 0.0008,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4496,6 +4935,7 @@ window.DISEASE_DATA = {
       "incidence": 1.992,
       "cfr": 0.0411,
       "death_rate": 0.0008,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4505,6 +4945,7 @@ window.DISEASE_DATA = {
       "incidence": 2.3173,
       "cfr": 0.0525,
       "death_rate": 0.0012,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4514,6 +4955,7 @@ window.DISEASE_DATA = {
       "incidence": 2.1278,
       "cfr": 0.0189,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4523,6 +4965,7 @@ window.DISEASE_DATA = {
       "incidence": 1.6922,
       "cfr": 0.0235,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4532,6 +4975,7 @@ window.DISEASE_DATA = {
       "incidence": 1.0076,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4541,6 +4985,7 @@ window.DISEASE_DATA = {
       "incidence": 0.6545,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4550,6 +4995,7 @@ window.DISEASE_DATA = {
       "incidence": 0.5871,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4559,6 +5005,7 @@ window.DISEASE_DATA = {
       "incidence": 0.3418,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4568,6 +5015,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2799,
       "cfr": 0.1332,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4577,6 +5025,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2515,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4586,6 +5035,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2423,
       "cfr": 0.1502,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4595,6 +5045,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1391,
       "cfr": 0.2584,
       "death_rate": 0.0004,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4604,6 +5055,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1201,
       "cfr": 0.5917,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4613,6 +5065,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0936,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4622,6 +5075,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0941,
       "cfr": 0.3704,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4631,6 +5085,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0798,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4640,6 +5095,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0882,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4649,6 +5105,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1064,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4658,6 +5115,7 @@ window.DISEASE_DATA = {
       "incidence": 2.2108,
       "cfr": 0.0152,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4667,6 +5125,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2662,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4676,6 +5135,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1497,
       "cfr": 0.4405,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4685,6 +5145,7 @@ window.DISEASE_DATA = {
       "incidence": 0.6506,
       "cfr": 0.1005,
       "death_rate": 0.0007,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4694,6 +5155,7 @@ window.DISEASE_DATA = {
       "incidence": 0.846,
       "cfr": 0.0383,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4703,6 +5165,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1299,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4712,6 +5175,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0731,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4721,6 +5185,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1851,
       "cfr": 0.1712,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4730,6 +5195,7 @@ window.DISEASE_DATA = {
       "incidence": 0.3848,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4739,6 +5205,7 @@ window.DISEASE_DATA = {
       "incidence": 0.4152,
       "cfr": 0.0752,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4748,6 +5215,7 @@ window.DISEASE_DATA = {
       "incidence": 1.9757,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4757,6 +5225,7 @@ window.DISEASE_DATA = {
       "incidence": 1.8818,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4766,6 +5235,7 @@ window.DISEASE_DATA = {
       "incidence": 0.7693,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4775,6 +5245,7 @@ window.DISEASE_DATA = {
       "incidence": 1.1483,
       "cfr": 0.0265,
       "death_rate": 0.0003,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4784,6 +5255,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2094,
       "cfr": 0.0,
       "death_rate": 0.0,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4793,6 +5265,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0567,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4802,6 +5275,7 @@ window.DISEASE_DATA = {
       "incidence": 0.115,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     }
   ],
@@ -4813,6 +5287,7 @@ window.DISEASE_DATA = {
       "incidence": 24.2569,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Notifiable from 1966; main harm is CRS, not deaths"
     },
     {
@@ -4822,6 +5297,7 @@ window.DISEASE_DATA = {
       "incidence": 23.9169,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4831,6 +5307,7 @@ window.DISEASE_DATA = {
       "incidence": 24.8803,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4840,6 +5317,7 @@ window.DISEASE_DATA = {
       "incidence": 28.7248,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": "Rubella vaccine licensed; into MMR 1971"
     },
     {
@@ -4849,6 +5327,7 @@ window.DISEASE_DATA = {
       "incidence": 27.8291,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4858,6 +5337,7 @@ window.DISEASE_DATA = {
       "incidence": 21.9348,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4867,6 +5347,7 @@ window.DISEASE_DATA = {
       "incidence": 12.2701,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4876,6 +5357,7 @@ window.DISEASE_DATA = {
       "incidence": 13.2266,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4885,6 +5367,7 @@ window.DISEASE_DATA = {
       "incidence": 5.6068,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4894,6 +5377,7 @@ window.DISEASE_DATA = {
       "incidence": 7.7495,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4903,6 +5387,7 @@ window.DISEASE_DATA = {
       "incidence": 5.7506,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4912,6 +5397,7 @@ window.DISEASE_DATA = {
       "incidence": 9.2896,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4921,6 +5407,7 @@ window.DISEASE_DATA = {
       "incidence": 8.2338,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4930,6 +5417,7 @@ window.DISEASE_DATA = {
       "incidence": 5.2606,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4939,6 +5427,7 @@ window.DISEASE_DATA = {
       "incidence": 1.7233,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4948,6 +5437,7 @@ window.DISEASE_DATA = {
       "incidence": 0.9079,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4957,6 +5447,7 @@ window.DISEASE_DATA = {
       "incidence": 1.0066,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4966,6 +5457,7 @@ window.DISEASE_DATA = {
       "incidence": 0.416,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4975,6 +5467,7 @@ window.DISEASE_DATA = {
       "incidence": 0.3194,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4984,6 +5477,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2651,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -4993,6 +5487,7 @@ window.DISEASE_DATA = {
       "incidence": 0.2297,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5002,6 +5497,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1264,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5011,6 +5507,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0921,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5020,6 +5517,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1607,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5029,6 +5527,7 @@ window.DISEASE_DATA = {
       "incidence": 0.4523,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5038,6 +5537,7 @@ window.DISEASE_DATA = {
       "incidence": 0.556,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5047,6 +5547,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0627,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5056,6 +5557,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0743,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5065,6 +5567,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0867,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5074,6 +5577,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0483,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5083,6 +5587,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0887,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5092,6 +5597,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0666,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5101,6 +5607,7 @@ window.DISEASE_DATA = {
       "incidence": 0.1324,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5110,6 +5617,7 @@ window.DISEASE_DATA = {
       "incidence": 0.096,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5119,6 +5627,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0625,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5128,6 +5637,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0081,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5137,6 +5647,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0063,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5146,6 +5657,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0024,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5155,6 +5667,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0034,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5164,6 +5677,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0037,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5173,6 +5687,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0037,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5182,6 +5697,7 @@ window.DISEASE_DATA = {
       "incidence": 0.004,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5191,6 +5707,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0053,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5200,6 +5717,7 @@ window.DISEASE_DATA = {
       "incidence": 0.001,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5209,6 +5727,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0016,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5218,6 +5737,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0013,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5227,6 +5747,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0029,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5236,6 +5757,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0029,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5245,6 +5767,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0019,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5254,6 +5777,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0016,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5263,6 +5787,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0003,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5272,6 +5797,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0022,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5281,6 +5807,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0012,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5290,6 +5817,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0018,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5299,6 +5827,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0018,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5308,6 +5837,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0021,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     },
     {
@@ -5317,6 +5847,7 @@ window.DISEASE_DATA = {
       "incidence": 0.0021,
       "cfr": null,
       "death_rate": null,
+      "hosp_rate": null,
       "note": ""
     }
   ]
