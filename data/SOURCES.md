@@ -133,6 +133,28 @@ and pertussis resurgence (2024) that the historical compilation alone would miss
   later cirrhosis/liver-cancer deaths it causes, and undercounts true infections
   (~6–10×).
 
+## Hib, PCV, Rotavirus (recent-vaccine diseases — anchor-based)
+
+These three lack long annual notifiable-case series; their burden is measured
+differently and mostly recently, so the CSVs are **documented anchors with clear
+"what's measured" notes**, not annual counts:
+
+- `hib.csv` — invasive **Haemophilus influenzae type b** disease in children <5.
+  Pre-vaccine ~20,000 cases/yr and ~1,000 deaths (CDC/Roush 2007); conjugate
+  vaccine 1987–1990 → >99% decline (18 cases in <5 in 2019). Intermediate points
+  approximate.
+- `pcv.csv` — invasive **pneumococcal** disease in children <5 (CDC Active
+  Bacterial Core surveillance): 15,707 (1997) → 1,382 (2019), −91%. PCV7 2000,
+  PCV13 2010. (Pneumococcus also heavily affects older adults — not shown.)
+- `rotavirus.csv` — this series is **hospitalizations** in children <5, not
+  reported cases (rotavirus has no long notifiable record). Pre-vaccine
+  ~55,000–70,000 hospitalizations and 20–60 deaths/yr; vaccine 2006 → large
+  declines. Intermediate points approximate.
+
+Because these count disease **in children <5**, the dashboard's "per 100,000"
+(which uses total U.S. population) understates the true childhood rate — read the
+**counts**, and see each disease's facts.
+
 ## Deaths per 100,000 over time
 
 Computed in `scripts/build_dashboard_data.py` and `generate_charts.py` as death

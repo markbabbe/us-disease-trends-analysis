@@ -127,13 +127,13 @@
          style="width:100%;border-radius:8px;display:block;" />
   </div>
 
-  <div class="card small">
+  <div class="card small" id="earlyCard">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
     <div class="chart-box"><canvas id="early"></canvas></div>
     <p class="metric-note">Approximate, from NCHS/Historical Statistics mortality-decline series via the partial Death Registration Area. Shows that case fatality fell sharply <em>before</em> vaccines (antibiotics, nutrition, supportive care). Both measles and pertussis death rates dropped ~95%+ over this window; the measles vaccine (1963) came <em>after</em> it.</p>
   </div>
 
-  <div class="card small">
+  <div class="card small" id="coverageCard">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Childhood vaccination coverage over time</h3>
     <div class="chart-box"><canvas id="coverage"></canvas></div>
     <p class="metric-note"><strong>Availability ≠ coverage.</strong> A vaccine's
@@ -178,8 +178,9 @@
 <script>
 const D = window.DISEASE_DATA;
 const COLORS = {
-  hepb: "#a569bd", diphtheria: "#5dade2", tetanus: "#dc7633", pertussis: "#e67e22",
-  polio: "#27ae60", measles: "#c0392b", mumps: "#f4d03f", rubella: "#48c9b0",
+  hepb: "#a569bd", rotavirus: "#5499c7", diphtheria: "#5dade2", tetanus: "#dc7633",
+  pertussis: "#e67e22", hib: "#bb8fce", pcv: "#58d68d", polio: "#27ae60",
+  measles: "#c0392b", mumps: "#f4d03f", rubella: "#48c9b0",
 };
 const NAMES = D.names;
 const METRIC_LABEL = {
@@ -201,6 +202,18 @@ const FACTS = {
          "Reported acute cases peaked ~26,654 in 1985, down ~90%+ since.",
          "Reportable only from ~1966; chronic infection and underreporting not shown (true infections ~6–10× reported).",
          "Acute-case surveillance misses later chronic-HBV deaths (cirrhosis, liver cancer)."],
+  rotavirus: ["Causes severe infant/toddler diarrhea (gastroenteritis).",
+              "Pre-vaccine (U.S.): ~2.7M cases, 55,000–70,000 hospitalizations, 20–60 deaths/yr in children <5.",
+              "Vaccine 2006 (RotaTeq); 2008 (Rotarix). Earlier RotaShield (1998) withdrawn 1999.",
+              "This series shows HOSPITALIZATIONS, not reported cases — rotavirus has no long notifiable-case record; points are approximate."],
+  hib: ["Haemophilus influenzae type b — once the top cause of bacterial meningitis in young children.",
+        "Pre-vaccine: ~20,000 invasive cases/yr in children <5, ~1,000 deaths.",
+        "Conjugate vaccine 1987–1990 → invasive Hib fell >99% (18 cases in <5 in 2019).",
+        "Counts are invasive disease in children <5; intermediate points are approximate."],
+  pcv: ["Pneumococcus (Streptococcus pneumoniae) — meningitis, bloodstream infection, pneumonia.",
+        "Invasive disease in children <5 fell ~91%: 15,707 (1997) → 1,382 (2019).",
+        "PCV7 in 2000; PCV13 in 2010.",
+        "Also a major cause of disease in older adults; this series is children <5 (CDC ABCs)."],
   diphtheria: ["Toxoid from the 1920s; combined into DTP ~1948.",
                "A top childhood killer once: >100,000 cases/yr in the early 1920s (series here starts 1937).",
                "Now essentially gone — a handful of cases.",
@@ -232,6 +245,9 @@ const FACTS = {
 
 const AFFECTED = {
   hepb: "Mostly adults, not children — transmitted by blood and sex. Acute cases concentrate in people who inject drugs and those with multiple sexual partners. Infants are vaccinated at birth to block mother-to-baby (perinatal) transmission, which usually becomes a lifelong chronic infection, and for protection before later exposure.",
+  rotavirus: "Infants and young children (peak ~6 months–2 years) — nearly every child was infected by age 5 before the vaccine. Severe dehydration is the danger; deaths are rare in the U.S. but rotavirus is a major killer of young children in low-income countries.",
+  hib: "Young children, almost entirely under 5 (peak ~6–12 months) — it was the leading cause of bacterial meningitis in that age group before the vaccine.",
+  pcv: "Two peaks — young children (<2) and older adults (65+). The childhood vaccine targets the under-5 burden shown here; invasive pneumococcal disease remains common in the elderly and people with chronic conditions.",
   diphtheria: "Historically young children (respiratory diphtheria). Today essentially absent; the rare cases occur in undervaccinated people and adults with waning immunity.",
   tetanus: "Not contagious — acquired from contaminated wounds. Now mostly older adults (waning immunity, missed boosters) and people who inject drugs; globally, newborns of unvaccinated mothers (neonatal tetanus).",
   pertussis: "Bimodal — most reported cases are adolescents (waning immunity), but nearly all severe disease and deaths occur in infants under 1 year, especially under 2 months (too young to be fully vaccinated).",
@@ -301,8 +317,13 @@ function selectTab(id) {
   activeTab = id;
   document.querySelectorAll("#tabbar .tab").forEach(b =>
     b.setAttribute("aria-selected", String(b.dataset.tab === id)));
-  document.getElementById("polioExtra").style.display =
-    activeDiseases().includes("polio") ? "" : "none";
+  const act = activeDiseases();
+  const has = arr => arr.some(d => act.includes(d));
+  // Tab-specific extras: only show where they're relevant (fixes charts that
+  // otherwise appeared under every tab).
+  document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
+  document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
+  document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
   buildPanels();
   render();
 }

@@ -97,9 +97,12 @@ def coverage():
 # disease key -> (csv file, case-count column, display name)
 DISEASE_CFG = {
     "hepb": ("hepb.csv", "cases", "Hepatitis B"),
+    "rotavirus": ("rotavirus.csv", "cases", "Rotavirus"),
     "diphtheria": ("diphtheria.csv", "cases", "Diphtheria"),
     "tetanus": ("tetanus.csv", "cases", "Tetanus"),
     "pertussis": ("pertussis.csv", "reported_cases", "Pertussis"),
+    "hib": ("hib.csv", "cases", "Hib"),
+    "pcv": ("pcv.csv", "cases", "Pneumococcal (PCV)"),
     "polio": ("polio.csv", "total_cases", "Polio"),
     "measles": ("measles.csv", "reported_cases", "Measles"),
     "mumps": ("mumps.csv", "cases", "Mumps"),
@@ -108,6 +111,9 @@ DISEASE_CFG = {
 
 VACCINES = {
     "hepb": [{"year": 1981, "label": "HepB vaccine"}, {"year": 1991, "label": "Infant/universal"}],
+    "rotavirus": [{"year": 2006, "label": "Rotavirus vaccine"}],
+    "hib": [{"year": 1990, "label": "Hib conjugate (infant)"}],
+    "pcv": [{"year": 2000, "label": "PCV7"}, {"year": 2010, "label": "PCV13"}],
     "diphtheria": [{"year": 1926, "label": "Toxoid"}, {"year": 1948, "label": "DTP"}],
     "tetanus": [{"year": 1948, "label": "DTP (toxoid)"}],
     "pertussis": [{"year": 1948, "label": "Whole-cell DTP"}, {"year": 1997, "label": "DTaP switch"}],
@@ -121,7 +127,10 @@ VACCINES = {
 # Tabs ordered by the childhood immunization schedule (birth -> 2mo -> 12-15mo)
 TABS = [
     {"id": "hepb", "label": "HepB", "sub": "birth", "diseases": ["hepb"]},
+    {"id": "rv", "label": "Rotavirus", "sub": "2 months", "diseases": ["rotavirus"]},
     {"id": "dtap", "label": "DTaP", "sub": "2 months", "diseases": ["diphtheria", "tetanus", "pertussis"]},
+    {"id": "hib", "label": "Hib", "sub": "2 months", "diseases": ["hib"]},
+    {"id": "pcv", "label": "PCV", "sub": "2 months", "diseases": ["pcv"]},
     {"id": "ipv", "label": "Polio (IPV)", "sub": "2 months", "diseases": ["polio"]},
     {"id": "mmr", "label": "MMR", "sub": "12-15 months", "diseases": ["measles", "mumps", "rubella"]},
 ]

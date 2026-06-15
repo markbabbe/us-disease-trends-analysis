@@ -11,6 +11,28 @@ window.DISEASE_DATA = {
         "label": "Infant/universal"
       }
     ],
+    "rotavirus": [
+      {
+        "year": 2006,
+        "label": "Rotavirus vaccine"
+      }
+    ],
+    "hib": [
+      {
+        "year": 1990,
+        "label": "Hib conjugate (infant)"
+      }
+    ],
+    "pcv": [
+      {
+        "year": 2000,
+        "label": "PCV7"
+      },
+      {
+        "year": 2010,
+        "label": "PCV13"
+      }
+    ],
     "diphtheria": [
       {
         "year": 1926,
@@ -92,6 +114,14 @@ window.DISEASE_DATA = {
       ]
     },
     {
+      "id": "rv",
+      "label": "Rotavirus",
+      "sub": "2 months",
+      "diseases": [
+        "rotavirus"
+      ]
+    },
+    {
       "id": "dtap",
       "label": "DTaP",
       "sub": "2 months",
@@ -99,6 +129,22 @@ window.DISEASE_DATA = {
         "diphtheria",
         "tetanus",
         "pertussis"
+      ]
+    },
+    {
+      "id": "hib",
+      "label": "Hib",
+      "sub": "2 months",
+      "diseases": [
+        "hib"
+      ]
+    },
+    {
+      "id": "pcv",
+      "label": "PCV",
+      "sub": "2 months",
+      "diseases": [
+        "pcv"
       ]
     },
     {
@@ -122,9 +168,12 @@ window.DISEASE_DATA = {
   ],
   "names": {
     "hepb": "Hepatitis B",
+    "rotavirus": "Rotavirus",
     "diphtheria": "Diphtheria",
     "tetanus": "Tetanus",
     "pertussis": "Pertussis",
+    "hib": "Hib",
+    "pcv": "Pneumococcal (PCV)",
     "polio": "Polio",
     "measles": "Measles",
     "mumps": "Mumps",
@@ -533,6 +582,44 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": null,
       "note": ""
+    }
+  ],
+  "rotavirus": [
+    {
+      "year": 2005,
+      "cases": 60000,
+      "deaths": 40,
+      "incidence": 20.3332,
+      "cfr": 0.0667,
+      "death_rate": 0.0136,
+      "note": "This series = HOSPITALIZATIONS in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
+    },
+    {
+      "year": 2008,
+      "cases": 33000,
+      "deaths": null,
+      "incidence": 10.881,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx; ~45% fewer hospitalizations than pre-vaccine"
+    },
+    {
+      "year": 2015,
+      "cases": 12000,
+      "deaths": null,
+      "incidence": 3.7489,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx; sustained ~60-80% reduction (biennial pattern)"
+    },
+    {
+      "year": 2019,
+      "cases": 15000,
+      "deaths": null,
+      "incidence": 4.5568,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx"
     }
   ],
   "diphtheria": [
@@ -2447,6 +2534,82 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": null,
       "note": ""
+    }
+  ],
+  "hib": [
+    {
+      "year": 1985,
+      "cases": 20000,
+      "deaths": 1000,
+      "incidence": 8.4165,
+      "cfr": 5.0,
+      "death_rate": 0.4208,
+      "note": "Pre-vaccine estimate; invasive Hib disease in children <5. Conjugate vaccine 1987-1990"
+    },
+    {
+      "year": 1991,
+      "cases": 1700,
+      "deaths": null,
+      "incidence": 0.6747,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx; >90% decline within years of the conjugate vaccine"
+    },
+    {
+      "year": 2000,
+      "cases": 200,
+      "deaths": null,
+      "incidence": 0.0711,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx"
+    },
+    {
+      "year": 2010,
+      "cases": 30,
+      "deaths": null,
+      "incidence": 0.0097,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx"
+    },
+    {
+      "year": 2019,
+      "cases": 18,
+      "deaths": null,
+      "incidence": 0.0055,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Reported cases in children =<5 (CDC)"
+    }
+  ],
+  "pcv": [
+    {
+      "year": 1997,
+      "cases": 15707,
+      "deaths": null,
+      "incidence": 5.783,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Invasive pneumococcal disease in children <5 (CDC ABCs)"
+    },
+    {
+      "year": 2007,
+      "cases": 4500,
+      "deaths": null,
+      "incidence": 1.4973,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Approx; after PCV7 (2000) cut <5 invasive disease ~76%"
+    },
+    {
+      "year": 2019,
+      "cases": 1382,
+      "deaths": null,
+      "incidence": 0.4198,
+      "cfr": null,
+      "death_rate": null,
+      "note": "Children <5 (CDC ABCs); -91% vs 1997"
     }
   ],
   "polio": [
