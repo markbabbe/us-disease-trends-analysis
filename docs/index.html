@@ -47,6 +47,8 @@
   @media (max-width: 820px) { .disease-card { grid-template-columns: 1fr; } }
   .disease-card h3 { margin: 0 0 8px; font-size: 16px; }
   .disease-chart { position: relative; height: 215px; }
+  .nodata-msg { position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+                text-align: center; padding: 10px 18px; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
   .chart-label { font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
                  color: var(--muted); margin: 4px 0 2px; }
   .facts-mini { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
@@ -493,7 +495,7 @@ function buildPanels() {
     <div class="card disease-card">
       <div>
         <h3 style="color:${COLORS[dis]}">${NAMES[dis]}<span class="nodata" id="nd-${dis}" style="color:var(--muted);font-weight:400;font-size:12px;"></span></h3>
-        <div class="disease-chart"><canvas id="chart-${dis}"></canvas></div>
+        <div class="disease-chart"><canvas id="chart-${dis}"></canvas><div class="nodata-msg" id="msg-${dis}"></div></div>
       </div>
       <div>
         <div class="affected"><b>Most affected</b>${AFFECTED[dis]}</div>
@@ -535,14 +537,29 @@ function makeLineChart(canvasId, dis, field, color, labelText) {
   return pts.length;
 }
 
+function noDataReason(dis, metric) {
+  if (metric === "hosp_rate")
+    return `No hospitalization time series exists for ${NAMES[dis]}. Of these diseases only rotavirus is hospitalization-tracked; the others have no national hospitalization record. Try the Cases or Deaths metric.`;
+  if (dis === "rubella" && metric === "death_rate")
+    return "Rubella's serious harm is congenital rubella syndrome (birth defects), not deaths — so there's no death-rate series. Use the Cases metric.";
+  return `No ${METRIC_LABEL[metric].toLowerCase()} data is collected for ${NAMES[dis]}.`;
+}
+
 function renderDisease(dis, metric) {
   const color = metric === "death_rate" ? DEATH_COLOR : COLORS[dis];
   const u5 = (D.under5 || []).includes(dis);
   const label = METRIC_LABEL[metric] + (u5 ? " (children <5)" : "");
   const n = makeLineChart(`chart-${dis}`, dis, metric, color, label);
-  document.getElementById(`nd-${dis}`).textContent =
-    n ? (u5 ? " — per 100,000 children <5" : "")
-      : ` — no ${METRIC_LABEL[metric].toLowerCase()} data`;
+  const canvas = document.getElementById(`chart-${dis}`);
+  const msg = document.getElementById(`msg-${dis}`);
+  if (n) {
+    canvas.style.visibility = "visible"; msg.style.display = "none";
+    document.getElementById(`nd-${dis}`).textContent = u5 ? " — per 100,000 children <5" : "";
+  } else {
+    canvas.style.visibility = "hidden"; msg.style.display = "flex";
+    msg.textContent = noDataReason(dis, metric);
+    document.getElementById(`nd-${dis}`).textContent = "";
+  }
 }
 
 function render() {
