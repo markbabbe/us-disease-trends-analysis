@@ -239,6 +239,18 @@ Documented on the dashboard's Chronic-illness tab and summarized here:
   observational *asthma* — not autism — signal needing replication; injected vs.
   ingested aluminum differ in bioavailability). Not ruled out to the same
   standard as MMR/thimerosal.
+- **Pivotal pediatric vaccine RCTs often use an active comparator, not a
+  placebo.** Example: the Phase III MMR-RIT vs. MMR II trial (Klein et al.,
+  *J Pediatric Infect Dis Soc* 2019; PMC7192400; ~5,000 children aged 12–15 mo)
+  compared two MMR vaccines, not vaccine vs. saline. Reported safety was similar
+  between arms — serious adverse events 2.1% vs. 1.9%, new-onset chronic diseases
+  3.4% vs. 3.7%, ER-prompting AEs 10.1% vs. 10.4%, febrile convulsions 0.3% vs.
+  0.2% (Suppl. Tables 5–6). This establishes the new MMR ≈ the established one,
+  but with no placebo arm it can't measure effects common to both. Active
+  comparison is standard/appropriate for a new formulation of a licensed vaccine
+  (a saline arm would withhold proven protection); it's a limitation for the
+  "vaccine vs. none" question, not evidence of harm. (MMR is a live vaccine — no
+  aluminum or thimerosal.)
 - **Net:** strongly supported — MMR, thimerosal, antigen load not associated with
   autism. Not directly tested — whole schedule vs. none, aluminum adjuvants and
   neurodevelopment, a saturating cumulative effect. "Not tested" ≠ "evidence of
