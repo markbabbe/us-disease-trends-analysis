@@ -358,10 +358,45 @@ const CHRONIC_CAVEAT =
   "diagnostic criteria (DSM-III→IV→5), diagnostic substitution (children formerly labeled intellectual " +
   "disability), awareness, screening, and services — not necessarily a true increase in occurrence. " +
   "(3) Asthma/eczema rises are studied via the hygiene hypothesis, environment, and obesity. " +
-  "(4) Vaccines specifically have been tested and found NOT associated with autism: Hviid et al. 2019 " +
-  "(657,461 children), DeStefano et al. 2013 (antigen number/timing), Madsen et al. 2002; U.S. Institute " +
-  "of Medicine reviews (2004, 2011); Cochrane. The 1998 Wakefield claim was retracted for fraud. " +
+  "(4) MMR, thimerosal, and cumulative antigen exposure have been tested and found NOT associated with " +
+  "autism (Hviid 2019, 657,461 children; DeStefano 2013; Madsen 2002; U.S. Institute of Medicine 2004/2011; " +
+  "Cochrane). The 1998 Wakefield claim was retracted for fraud. A fully-vaccinated-vs-never-vaccinated " +
+  "comparison has NOT been done — see 'What hasn't been tested' below. " +
   "(5) '# vaccines' counts diseases on the routine childhood/adolescent schedule (definition-dependent).";
+
+const CHRONIC_LIMITATIONS = `
+<h3 style="margin:2px 0 8px;font-size:15px;">What hasn't been tested — limitations of the main vaccine–autism studies</h3>
+<p style="margin:0 0 8px;"><strong>No fully-vaccinated vs. never-vaccinated study exists.</strong>
+A randomized trial is ethically impossible (you can't withhold protection from deadly diseases). An
+observational version is feasible — databases (immunization registries, EHRs, claims, the Vaccine Safety
+Datalink) <em>can</em> identify never-vaccinated children — but it is heavily confounded for an autism
+endpoint: <strong>confounding by indication</strong> (families often skip vaccines <em>after</em> an autism
+diagnosis in an older child, enriching the unvaccinated group for genetic risk) and <strong>ascertainment
+bias</strong> (unvaccinated children have fewer medical visits → less screening/diagnosis). The few
+"vaxxed vs. unvaxxed" studies that exist are small or flawed (e.g., Mawson 2017, retracted).</p>
+<p style="margin:0 0 6px;"><strong>Limitations of the most-cited studies:</strong></p>
+<ul style="margin:0 0 8px;padding-left:18px;">
+  <li><strong>Madsen 2002 &amp; Hviid 2019</strong> (Denmark; 537k &amp; 657k children): observational; the
+      comparison is <em>MMR vs. no-MMR</em>, and the no-MMR children still received the other routine
+      vaccines. So they isolate MMR's marginal effect — they do <em>not</em> test vaccination-vs-none and
+      cannot detect a shared or "saturating" whole-schedule effect. Diagnoses are registry-based.</li>
+  <li><strong>DeStefano 2013</strong> (antigen load): case-control, only 256 ASD cases; tests a dose
+      gradient <em>within</em> vaccinated children (no zero-vaccine arm); "antigen count" doesn't capture
+      adjuvants such as aluminum.</li>
+  <li>Most of this evidence is from <strong>Scandinavian registry or U.S. managed-care</strong>
+      populations — observational, with residual confounding and diagnosis tied to medical contact.</li>
+</ul>
+<p style="margin:0 0 8px;"><strong>Mercury vs. aluminum.</strong> Thimerosal (mercury) is well-studied and
+its removal (~2001 in the U.S.) did not lower autism — but that addresses <em>mercury only</em>. Aluminum
+adjuvants were <em>not</em> removed, and cumulative vaccine aluminum <em>rose</em> as the schedule grew.
+Aluminum has far less autism-specific epidemiology; existing data (FDA toxicokinetic modeling; an
+observational <em>asthma</em> signal, Glanz 2023, needing replication) don't show an autism link but don't
+rule it out to the same standard. Note injected vs. ingested aluminum differ in bioavailability.</p>
+<p style="margin:0;"><strong>Net:</strong> strongly supported — MMR, thimerosal, and antigen load are
+<em>not</em> associated with autism. Not directly tested — whole schedule vs. none, aluminum adjuvants and
+neurodevelopment, and a "saturating" cumulative effect. "Not tested" is not "evidence of harm": indirect
+evidence (no dose-response, autism rising after thimerosal removal, ~80% genetic/prenatal heritability)
+weighs against a vaccine cause.</p>`;
 
 const chronicCharts = {};
 
@@ -375,6 +410,7 @@ function renderChronic() {
   ];
   host.innerHTML =
     `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;color:var(--ink);">${CHRONIC_CAVEAT}</div>` +
+    `<div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;color:var(--ink);">${CHRONIC_LIMITATIONS}</div>` +
     conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="chronic-${c.key}"></canvas></div></div>`).join("");
 

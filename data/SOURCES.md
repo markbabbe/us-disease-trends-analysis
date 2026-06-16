@@ -212,6 +212,39 @@ data honestly, **not** to imply a causal link — the evidence is firmly against
 So shared upward time-trends reflect **confounding by secular trends**, the
 classic correlation-not-causation pitfall this whole project is built to avoid.
 
+### What hasn't been tested — limitations of the main vaccine–autism studies
+
+Documented on the dashboard's Chronic-illness tab and summarized here:
+
+- **No fully-vaccinated vs. never-vaccinated study exists.** A randomized trial is
+  ethically impossible. An observational version is feasible (databases can
+  identify never-vaccinated children) but heavily confounded for an autism
+  endpoint — **confounding by indication** (families skip vaccines after an
+  autism diagnosis in an older child → enriches the unvaccinated group for
+  genetic risk) and **ascertainment bias** (unvaccinated children have fewer
+  visits → less screening/diagnosis). Existing "vaxxed vs. unvaxxed" studies are
+  small/flawed (e.g., Mawson 2017, retracted).
+- **Madsen 2002 & Hviid 2019** (Denmark; 537k & 657k): observational; compare
+  *MMR vs. no-MMR*, and the no-MMR children still received other routine vaccines.
+  They isolate MMR's marginal effect; they do not test vaccination-vs-none and
+  cannot detect a shared/"saturating" whole-schedule effect. Registry-based
+  diagnosis.
+- **DeStefano 2013** (antigen load): case-control, 256 ASD cases; tests a dose
+  gradient within vaccinated children (no zero-vaccine arm); antigen count
+  doesn't capture adjuvants like aluminum.
+- **Mercury vs. aluminum:** thimerosal removal (~2001) didn't lower autism, but
+  that addresses mercury only. Aluminum adjuvants were not removed and cumulative
+  vaccine aluminum rose; aluminum has far less autism-specific epidemiology
+  (FDA toxicokinetic modeling, not outcome studies; Glanz 2023 found an
+  observational *asthma* — not autism — signal needing replication; injected vs.
+  ingested aluminum differ in bioavailability). Not ruled out to the same
+  standard as MMR/thimerosal.
+- **Net:** strongly supported — MMR, thimerosal, antigen load not associated with
+  autism. Not directly tested — whole schedule vs. none, aluminum adjuvants and
+  neurodevelopment, a saturating cumulative effect. "Not tested" ≠ "evidence of
+  harm"; indirect evidence (no dose-response, autism rising after thimerosal
+  removal, ~80% genetic/prenatal heritability) weighs against a vaccine cause.
+
 ## Deaths per 100,000 over time
 
 Computed in `scripts/build_dashboard_data.py` and `generate_charts.py` as death
