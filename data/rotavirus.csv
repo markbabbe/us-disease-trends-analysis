@@ -1,5 +1,5 @@
 year,cases,deaths,hospitalizations,notes
-2005,,40,60000,Hospitalizations in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)
+2005,2700000,40,60000,Cases = ESTIMATED illnesses pre-vaccine (~2.7M/yr in <5); not reported-case surveillance. Hospitalizations are the tracked metric
 2006,,38,58000,Vaccine introduced mid-2006; little impact yet
 2008,,20,33000,Approx; ~45% fewer hospitalizations after the vaccine
 2012,,8,15000,Approx; sustained ~60-80% reduction

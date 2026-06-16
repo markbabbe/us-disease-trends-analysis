@@ -129,9 +129,12 @@ and pertussis resurgence (2024) that the historical compilation alone would miss
 - `hepb.csv` — reported **acute** hepatitis B cases (CDC MMWR / Viral Hepatitis
   Surveillance): 1985 peak 26,654; 1990 21,102; 2002 8,064; 2010 3,350; 2020
   2,157 (1980 approximate). Reportable only from ~1966; vaccine 1981, infant/
-  universal 1991. Acute-case surveillance **misses chronic infection** and the
-  later cirrhosis/liver-cancer deaths it causes, and undercounts true infections
-  (~6–10×).
+  universal 1991. Acute-case surveillance undercounts true infections (~6–10×).
+  **The `deaths` field holds chronic-HBV–related mortality** (cirrhosis/liver
+  cancer, death-certificate based: ~1,707 in 2015 → 1,662 in 2019, ~0.45/100,000;
+  CDC Viral Hepatitis Surveillance Table 2.8) — a *delayed* burden from infection
+  decades earlier, distinct from the acute cases plotted. Acute-HBV deaths
+  themselves are few.
 
 ## Childhood meningitis death rate (Hib proxy) — NCHS HIST001R
 
@@ -168,10 +171,12 @@ differently and mostly recently, so the CSVs are **documented anchors with clear
 - `pcv.csv` — invasive **pneumococcal** disease in children <5 (CDC Active
   Bacterial Core surveillance): 15,707 (1997) → 1,382 (2019), −91%. PCV7 2000,
   PCV13 2010. (Pneumococcus also heavily affects older adults — not shown.)
-- `rotavirus.csv` — this series is **hospitalizations** in children <5, not
-  reported cases (rotavirus has no long notifiable record). Pre-vaccine
+- `rotavirus.csv` — primary series is **hospitalizations** in children <5, not
+  reported cases (rotavirus has no notifiable-case record). Pre-vaccine
   ~55,000–70,000 hospitalizations and 20–60 deaths/yr; vaccine 2006 → large
-  declines. Intermediate points approximate.
+  declines. The `cases` field holds **only the pre-vaccine estimate** (~2.7M
+  illnesses/yr in <5, CDC) as a single labeled anchor — no annual case series
+  exists. Intermediate points approximate.
 
 Because these count disease **in children <5**, the dashboard's "per 100,000"
 (which uses total U.S. population) understates the true childhood rate — read the

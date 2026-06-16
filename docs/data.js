@@ -764,6 +764,56 @@ window.DISEASE_DATA = {
       "note": "-87% since the 1985 peak"
     },
     {
+      "year": 2015,
+      "cases": null,
+      "deaths": 1707,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.5333,
+      "hosp_rate": null,
+      "note": "Deaths = chronic HBV-related (cirrhosis/liver cancer); CDC death certificates"
+    },
+    {
+      "year": 2016,
+      "cases": null,
+      "deaths": 1690,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.5242,
+      "hosp_rate": null,
+      "note": "Chronic HBV-related deaths"
+    },
+    {
+      "year": 2017,
+      "cases": null,
+      "deaths": 1727,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.532,
+      "hosp_rate": null,
+      "note": "Chronic HBV-related deaths"
+    },
+    {
+      "year": 2018,
+      "cases": null,
+      "deaths": 1649,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.5044,
+      "hosp_rate": null,
+      "note": "Chronic HBV-related deaths"
+    },
+    {
+      "year": 2019,
+      "cases": null,
+      "deaths": 1662,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.5049,
+      "hosp_rate": null,
+      "note": "Chronic HBV-related deaths"
+    },
+    {
       "year": 2020,
       "cases": 2157,
       "deaths": null,
@@ -777,13 +827,13 @@ window.DISEASE_DATA = {
   "rotavirus": [
     {
       "year": 2005,
-      "cases": null,
+      "cases": 2700000,
       "deaths": 40,
-      "incidence": null,
-      "cfr": null,
+      "incidence": 13713.5334,
+      "cfr": 0.0015,
       "death_rate": 0.2032,
       "hosp_rate": 304.7452,
-      "note": "Hospitalizations in children <5 (pre-vaccine ~55-70k/yr; 20-60 deaths)"
+      "note": "Cases = ESTIMATED illnesses pre-vaccine (~2.7M/yr in <5); not reported-case surveillance. Hospitalizations are the tracked metric"
     },
     {
       "year": 2006,
