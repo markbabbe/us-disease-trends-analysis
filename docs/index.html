@@ -144,6 +144,35 @@
          style="width:100%;border-radius:8px;display:block;" />
   </div>
 
+  <div id="dtapExtra" class="card" style="display:none;border-left:4px solid #e0a800;">
+    <h3 style="margin:2px 2px 8px;font-size:15px;">⚠ DTP and all-cause mortality — an unresolved "non-specific effects" concern</h3>
+    <p class="metric-note" style="margin:0;line-height:1.65;">
+      Beyond protecting against their target diseases, vaccines may have
+      <strong>"non-specific effects"</strong> on overall mortality. Observational
+      studies from the Bandim Health Project (Guinea-Bissau) report that
+      <strong>live</strong> vaccines (BCG, measles) are associated with <em>lower</em>
+      all-cause child mortality, while <strong>inactivated whole-cell DTP</strong> has
+      been associated with <em>higher</em> all-cause mortality — especially in girls —
+      in high-mortality, low-income settings. The most-cited study (Mogensen, Aaby et
+      al., <em>EBioMedicine</em> 2017; a 1980s natural experiment) found DTP-vaccinated
+      infants had roughly <strong>5× higher all-cause mortality</strong> than
+      unvaccinated infants despite fewer target-disease cases; the authors wrote DTP
+      "may kill more children from other causes than it saves."<br><br>
+      A WHO/SAGE-commissioned systematic review (Higgins et al. 2016) likewise found
+      <strong>most DTP studies pointed toward higher mortality</strong> — but rated the
+      evidence <strong>very low quality</strong> (high risk of bias, e.g. frailty/
+      selection bias) and called for randomized trials. The evidence is observational,
+      largely from one research group, and unresolved; WHO reviewed it and
+      <strong>maintained its DTP recommendation</strong> while supporting more research.
+      It concerns whole-cell DTP in high-mortality settings and does <em>not</em> mean
+      DTP fails against diphtheria/tetanus/pertussis (it doesn't).<br><br>
+      <strong>Why it's here:</strong> this is the clearest real-world reason to track
+      <strong>all-cause mortality</strong>, not only disease-specific deaths — a
+      disease-specific metric would miss an off-target effect entirely. A genuine open
+      question that warrants the trials that haven't been done.
+    </p>
+  </div>
+
   <div class="card small" id="earlyCard">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
     <div class="chart-box"><canvas id="early"></canvas></div>
@@ -342,6 +371,7 @@ function selectTab(id) {
   // Tab-specific extras: only show where they're relevant.
   document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
+  document.getElementById("dtapExtra").style.display = has(["pertussis"]) ? "" : "none";
   document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
   document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
   if (isChronic) { renderChronic(); return; }

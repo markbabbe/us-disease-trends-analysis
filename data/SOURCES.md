@@ -257,6 +257,29 @@ Documented on the dashboard's Chronic-illness tab and summarized here:
   harm"; indirect evidence (no dose-response, autism rising after thimerosal
   removal, ~80% genetic/prenatal heritability) weighs against a vaccine cause.
 
+## DTP and all-cause mortality (vaccine non-specific effects)
+
+Highlighted in README §2.6b and on the dashboard's DTaP tab. An unresolved but
+genuine question: vaccines may affect overall mortality beyond their target
+diseases ("non-specific effects").
+
+- **Mogensen SO, Aaby P, et al. "The Introduction of DTP and OPV Among Young
+  Infants in an Urban African Community: A Natural Experiment." EBioMedicine
+  2017.** 1980s Guinea-Bissau; whole-cell DTP associated with ~5× higher
+  all-cause infant mortality (esp. girls) despite fewer target-disease cases.
+- **Higgins JPT, et al. "Association of BCG, DTP, and measles containing vaccines
+  with childhood mortality: systematic review." BMJ 2016** (WHO/SAGE-commissioned).
+  Most DTP studies pointed toward higher mortality; BCG/measles toward lower.
+  Evidence rated **very low quality** (high risk of bias); RCTs recommended.
+- **Status:** observational, largely from one research group (Bandim), unresolved;
+  WHO maintained its DTP recommendation while supporting more research. Concerns
+  whole-cell DTP in high-mortality settings; not evidence that DTP fails against
+  diphtheria/tetanus/pertussis. Cited by ICAN (an anti-vaccine advocacy group) in
+  a 2021 letter to the UN Special Rapporteur on Extreme Poverty; the underlying
+  studies are legitimate, but ICAN overstates contested low-quality observational
+  evidence as established causation. This is the clearest illustration of why
+  **all-cause mortality** (not only disease-specific deaths) is a necessary metric.
+
 ## Deaths per 100,000 over time
 
 Computed in `scripts/build_dashboard_data.py` and `generate_charts.py` as death

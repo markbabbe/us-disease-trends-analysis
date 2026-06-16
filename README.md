@@ -338,6 +338,39 @@ Useful mainly for the **early century**, when pertussis was a top-five cause of
 infant death and thus visible in infant all-cause mortality. In the modern era
 its mortality footprint is too small to detect via excess-mortality methods.
 
+### 2.6b DTP and all-cause mortality — an unresolved "non-specific effects" concern
+
+This deserves to be highlighted, because it is the clearest real-world reason the
+**all-cause mortality** metric matters: a vaccine can have effects on overall
+death rates *beyond* its target diseases ("non-specific effects," NSE), which a
+disease-specific count would miss entirely.
+
+- **The signal.** Observational studies from the Bandim Health Project
+  (Guinea-Bissau) report that **live** vaccines (BCG, measles) are associated with
+  *lower* all-cause child mortality, while **inactivated whole-cell DTP** has been
+  associated with *higher* all-cause mortality — especially in girls — in
+  high-mortality, low-income settings. The most-cited study (**Mogensen, Aaby et
+  al., *EBioMedicine* 2017**, a 1980s natural experiment) found DTP-vaccinated
+  infants had roughly **5× higher all-cause mortality** than unvaccinated infants
+  despite fewer target-disease cases; the authors wrote DTP "may kill more
+  children from other causes than it saves."
+- **Independent review found the same direction.** A WHO/SAGE-commissioned
+  systematic review (**Higgins et al., 2016**) found *most* DTP studies pointed
+  toward higher mortality (while BCG/measles pointed toward lower) — but **rated
+  the evidence very low quality** (high risk of bias, especially frailty/selection
+  bias) and called for **randomized trials**.
+- **Status (stated honestly).** The evidence is observational, largely from one
+  research group, and **unresolved**; no RCT has settled it. WHO reviewed it and
+  **maintained its DTP recommendation** while supporting further research. It
+  concerns **whole-cell DTP in high-mortality settings** and does **not** mean DTP
+  fails against diphtheria/tetanus/pertussis (it does prevent them) — the
+  hypothesis is a possible *offsetting* off-target effect, not vaccine failure.
+- **Why it's in this report.** It is a genuine, concerning, and unsettled question
+  that exemplifies why severe-outcome and **all-cause** metrics — not just
+  reported cases — belong at the center of vaccine evaluation, and it is exactly
+  the kind of question the missing randomized "vaccine vs. none" trials would
+  address.
+
 ## 2.7 Surveillance bias assessment
 
 | Factor | Direction | Magnitude |
