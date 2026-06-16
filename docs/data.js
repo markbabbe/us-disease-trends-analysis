@@ -704,114 +704,524 @@ window.DISEASE_DATA = {
   },
   "hepb": [
     {
-      "year": 1980,
-      "cases": 19015,
+      "year": 1966,
+      "cases": 1497,
       "deaths": null,
-      "incidence": 8.3934,
+      "incidence": 0.773,
       "cfr": null,
       "death_rate": null,
       "hosp_rate": null,
-      "note": "Approx; reportable from ~1966"
+      "note": "Hep B reportable from 1966"
+    },
+    {
+      "year": 1967,
+      "cases": 2458,
+      "deaths": null,
+      "incidence": 1.2538,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1968,
+      "cases": 4829,
+      "deaths": null,
+      "incidence": 2.4336,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1969,
+      "cases": 5909,
+      "deaths": null,
+      "incidence": 2.9424,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1970,
+      "cases": 8310,
+      "deaths": null,
+      "incidence": 4.0893,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1971,
+      "cases": 9556,
+      "deaths": null,
+      "incidence": 4.6491,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1972,
+      "cases": 9402,
+      "deaths": null,
+      "incidence": 4.5228,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1973,
+      "cases": 8451,
+      "deaths": null,
+      "incidence": 4.0202,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1974,
+      "cases": 10631,
+      "deaths": null,
+      "incidence": 5.0018,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1975,
+      "cases": 13121,
+      "deaths": null,
+      "incidence": 6.1062,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1976,
+      "cases": 14973,
+      "deaths": null,
+      "incidence": 6.8933,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1977,
+      "cases": 16831,
+      "deaths": null,
+      "incidence": 7.6663,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1978,
+      "cases": 15016,
+      "deaths": null,
+      "incidence": 6.7677,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1979,
+      "cases": 15452,
+      "deaths": 260,
+      "incidence": 6.8917,
+      "cfr": 1.6826,
+      "death_rate": 0.116,
+      "hosp_rate": null,
+      "note": "Deaths = HBV-attributed (Pinkbook underlying); recent multiple-cause ~1,700/yr (CDC Table 2.8)"
+    },
+    {
+      "year": 1980,
+      "cases": 19015,
+      "deaths": 294,
+      "incidence": 8.3934,
+      "cfr": 1.5461,
+      "death_rate": 0.1298,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1981,
+      "cases": 21152,
+      "deaths": 394,
+      "incidence": 9.2463,
+      "cfr": 1.8627,
+      "death_rate": 0.1722,
+      "hosp_rate": null,
+      "note": "HepB vaccine (adults)"
+    },
+    {
+      "year": 1982,
+      "cases": 22177,
+      "deaths": 375,
+      "incidence": 9.6013,
+      "cfr": 1.6909,
+      "death_rate": 0.1624,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1983,
+      "cases": 24318,
+      "deaths": 438,
+      "incidence": 10.4282,
+      "cfr": 1.8011,
+      "death_rate": 0.1878,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1984,
+      "cases": 26115,
+      "deaths": 465,
+      "incidence": 11.0933,
+      "cfr": 1.7806,
+      "death_rate": 0.1975,
+      "hosp_rate": null,
+      "note": ""
     },
     {
       "year": 1985,
-      "cases": 26654,
-      "deaths": null,
-      "incidence": 11.2167,
-      "cfr": null,
-      "death_rate": null,
+      "cases": 26611,
+      "deaths": 490,
+      "incidence": 11.1986,
+      "cfr": 1.8413,
+      "death_rate": 0.2062,
       "hosp_rate": null,
-      "note": "Peak reported acute hepatitis B"
+      "note": "Peak reported acute cases"
+    },
+    {
+      "year": 1986,
+      "cases": 26107,
+      "deaths": 557,
+      "incidence": 10.885,
+      "cfr": 2.1335,
+      "death_rate": 0.2322,
+      "hosp_rate": null,
+      "note": ""
     },
     {
       "year": 1987,
       "cases": 25916,
-      "deaths": null,
+      "deaths": 595,
       "incidence": 10.7064,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 2.2959,
+      "death_rate": 0.2458,
       "hosp_rate": null,
-      "note": "10.7 per 100000"
+      "note": ""
+    },
+    {
+      "year": 1988,
+      "cases": 23177,
+      "deaths": 621,
+      "incidence": 9.488,
+      "cfr": 2.6794,
+      "death_rate": 0.2542,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1989,
+      "cases": 23419,
+      "deaths": 711,
+      "incidence": 9.5009,
+      "cfr": 3.036,
+      "death_rate": 0.2884,
+      "hosp_rate": null,
+      "note": ""
     },
     {
       "year": 1990,
       "cases": 21102,
-      "deaths": null,
+      "deaths": 816,
       "incidence": 8.4846,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 3.8669,
+      "death_rate": 0.3281,
       "hosp_rate": null,
-      "note": "Infant/universal vaccination recommended 1991"
+      "note": ""
+    },
+    {
+      "year": 1991,
+      "cases": 18003,
+      "deaths": 912,
+      "incidence": 7.1446,
+      "cfr": 5.0658,
+      "death_rate": 0.3619,
+      "hosp_rate": null,
+      "note": "Infant/universal vaccination recommended"
+    },
+    {
+      "year": 1992,
+      "cases": 16126,
+      "deaths": 903,
+      "incidence": 6.3177,
+      "cfr": 5.5997,
+      "death_rate": 0.3538,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1993,
+      "cases": 13361,
+      "deaths": 1041,
+      "incidence": 5.1682,
+      "cfr": 7.7913,
+      "death_rate": 0.4027,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1994,
+      "cases": 12517,
+      "deaths": 1120,
+      "incidence": 4.7812,
+      "cfr": 8.9478,
+      "death_rate": 0.4278,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1995,
+      "cases": 10805,
+      "deaths": 1027,
+      "incidence": 4.0763,
+      "cfr": 9.5049,
+      "death_rate": 0.3875,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1996,
+      "cases": 10637,
+      "deaths": 1082,
+      "incidence": 3.964,
+      "cfr": 10.172,
+      "death_rate": 0.4032,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1997,
+      "cases": 10416,
+      "deaths": 1030,
+      "incidence": 3.8349,
+      "cfr": 9.8886,
+      "death_rate": 0.3792,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1998,
+      "cases": 10258,
+      "deaths": 1052,
+      "incidence": 3.7318,
+      "cfr": 10.2554,
+      "death_rate": 0.3827,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1999,
+      "cases": 7694,
+      "deaths": 832,
+      "incidence": 2.7661,
+      "cfr": 10.8136,
+      "death_rate": 0.2991,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2000,
+      "cases": 8036,
+      "deaths": 886,
+      "incidence": 2.8555,
+      "cfr": 11.0254,
+      "death_rate": 0.3148,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2001,
+      "cases": 7843,
+      "deaths": 769,
+      "incidence": 2.7601,
+      "cfr": 9.8049,
+      "death_rate": 0.2706,
+      "hosp_rate": null,
+      "note": ""
     },
     {
       "year": 2002,
-      "cases": 8064,
-      "deaths": null,
-      "incidence": 2.8109,
-      "cfr": null,
-      "death_rate": null,
+      "cases": 7996,
+      "deaths": 762,
+      "incidence": 2.7872,
+      "cfr": 9.5298,
+      "death_rate": 0.2656,
       "hosp_rate": null,
-      "note": "-67% since 1990 (CDC)"
+      "note": ""
+    },
+    {
+      "year": 2003,
+      "cases": 7526,
+      "deaths": 685,
+      "incidence": 2.5986,
+      "cfr": 9.1018,
+      "death_rate": 0.2365,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2004,
+      "cases": 6741,
+      "deaths": 643,
+      "incidence": 2.3058,
+      "cfr": 9.5386,
+      "death_rate": 0.2199,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2005,
+      "cases": 5119,
+      "deaths": 642,
+      "incidence": 1.7348,
+      "cfr": 12.5415,
+      "death_rate": 0.2176,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2006,
+      "cases": 4713,
+      "deaths": 700,
+      "incidence": 1.5825,
+      "cfr": 14.8525,
+      "death_rate": 0.235,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2007,
+      "cases": 4519,
+      "deaths": 719,
+      "incidence": 1.5036,
+      "cfr": 15.9106,
+      "death_rate": 0.2392,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2008,
+      "cases": 4033,
+      "deaths": 671,
+      "incidence": 1.3298,
+      "cfr": 16.6377,
+      "death_rate": 0.2212,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2009,
+      "cases": 3405,
+      "deaths": 597,
+      "incidence": 1.1127,
+      "cfr": 17.533,
+      "death_rate": 0.1951,
+      "hosp_rate": null,
+      "note": ""
     },
     {
       "year": 2010,
-      "cases": 3350,
-      "deaths": null,
-      "incidence": 1.085,
-      "cfr": null,
-      "death_rate": null,
+      "cases": 3374,
+      "deaths": 588,
+      "incidence": 1.0928,
+      "cfr": 17.4274,
+      "death_rate": 0.1904,
       "hosp_rate": null,
-      "note": "-87% since the 1985 peak"
+      "note": ""
+    },
+    {
+      "year": 2011,
+      "cases": 2903,
+      "deaths": 614,
+      "incidence": 0.9334,
+      "cfr": 21.1505,
+      "death_rate": 0.1974,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2012,
+      "cases": 2895,
+      "deaths": 581,
+      "incidence": 0.9241,
+      "cfr": 20.0691,
+      "death_rate": 0.1855,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2013,
+      "cases": 3050,
+      "deaths": 573,
+      "incidence": 0.9665,
+      "cfr": 18.7869,
+      "death_rate": 0.1816,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 2014,
+      "cases": 2791,
+      "deaths": 535,
+      "incidence": 0.8782,
+      "cfr": 19.1688,
+      "death_rate": 0.1683,
+      "hosp_rate": null,
+      "note": ""
     },
     {
       "year": 2015,
-      "cases": null,
-      "deaths": 1707,
-      "incidence": null,
+      "cases": 3370,
+      "deaths": null,
+      "incidence": 1.0528,
       "cfr": null,
-      "death_rate": 0.5333,
+      "death_rate": null,
       "hosp_rate": null,
-      "note": "Deaths = chronic HBV-related (cirrhosis/liver cancer); CDC death certificates"
+      "note": ""
     },
     {
       "year": 2016,
-      "cases": null,
-      "deaths": 1690,
-      "incidence": null,
+      "cases": 3218,
+      "deaths": null,
+      "incidence": 0.9982,
       "cfr": null,
-      "death_rate": 0.5242,
+      "death_rate": null,
       "hosp_rate": null,
-      "note": "Chronic HBV-related deaths"
+      "note": ""
     },
     {
       "year": 2017,
-      "cases": null,
-      "deaths": 1727,
-      "incidence": null,
+      "cases": 3409,
+      "deaths": null,
+      "incidence": 1.0501,
       "cfr": null,
-      "death_rate": 0.532,
+      "death_rate": null,
       "hosp_rate": null,
-      "note": "Chronic HBV-related deaths"
-    },
-    {
-      "year": 2018,
-      "cases": null,
-      "deaths": 1649,
-      "incidence": null,
-      "cfr": null,
-      "death_rate": 0.5044,
-      "hosp_rate": null,
-      "note": "Chronic HBV-related deaths"
-    },
-    {
-      "year": 2019,
-      "cases": null,
-      "deaths": 1662,
-      "incidence": null,
-      "cfr": null,
-      "death_rate": 0.5049,
-      "hosp_rate": null,
-      "note": "Chronic HBV-related deaths"
+      "note": ""
     },
     {
       "year": 2020,
@@ -821,7 +1231,7 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": null,
       "hosp_rate": null,
-      "note": ""
+      "note": "CDC NNDSS (acute cases)"
     }
   ],
   "rotavirus": [

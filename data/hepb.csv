@@ -1,13 +1,54 @@
 year,cases,deaths,notes
-1980,19015,,Approx; reportable from ~1966, rising through 1970s-80s
-1985,26654,,Peak reported acute hepatitis B
-1987,25916,,10.7 per 100000
-1990,21102,,Infant/universal vaccination recommended 1991
-2002,8064,,-67% since 1990 (CDC)
-2010,3350,,-87% since the 1985 peak
-2020,2157,,
-2015,,1707,Deaths = chronic HBV-related (cirrhosis/liver cancer); CDC death certificates
-2016,,1690,Chronic HBV-related deaths
-2017,,1727,Chronic HBV-related deaths
-2018,,1649,Chronic HBV-related deaths
-2019,,1662,Chronic HBV-related deaths
+1966,1497,,Hep B reportable from 1966
+1967,2458,,
+1968,4829,,
+1969,5909,,
+1970,8310,,
+1971,9556,,
+1972,9402,,
+1973,8451,,
+1974,10631,,
+1975,13121,,
+1976,14973,,
+1977,16831,,
+1978,15016,,
+1979,15452,260,"Deaths = HBV-attributed (Pinkbook underlying); recent multiple-cause ~1,700/yr (CDC Table 2.8)"
+1980,19015,294,
+1981,21152,394,HepB vaccine (adults)
+1982,22177,375,
+1983,24318,438,
+1984,26115,465,
+1985,26611,490,Peak reported acute cases
+1986,26107,557,
+1987,25916,595,
+1988,23177,621,
+1989,23419,711,
+1990,21102,816,
+1991,18003,912,Infant/universal vaccination recommended
+1992,16126,903,
+1993,13361,1041,
+1994,12517,1120,
+1995,10805,1027,
+1996,10637,1082,
+1997,10416,1030,
+1998,10258,1052,
+1999,7694,832,
+2000,8036,886,
+2001,7843,769,
+2002,7996,762,
+2003,7526,685,
+2004,6741,643,
+2005,5119,642,
+2006,4713,700,
+2007,4519,719,
+2008,4033,671,
+2009,3405,597,
+2010,3374,588,
+2011,2903,614,
+2012,2895,581,
+2013,3050,573,
+2014,2791,535,
+2015,3370,,
+2016,3218,,
+2017,3409,,
+2020,2157,,CDC NNDSS (acute cases)

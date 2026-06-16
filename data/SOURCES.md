@@ -126,15 +126,18 @@ and pertussis resurgence (2024) that the historical compilation alone would miss
   3.9/million; "50–100/yr since the mid-1970s"; 2001–2008 averaged 29/yr).
   Tetanus is **not contagious** (environmental spores), so herd immunity does
   not apply — included because it is part of DTaP.
-- `hepb.csv` — reported **acute** hepatitis B cases (CDC MMWR / Viral Hepatitis
-  Surveillance): 1985 peak 26,654; 1990 21,102; 2002 8,064; 2010 3,350; 2020
-  2,157 (1980 approximate). Reportable only from ~1966; vaccine 1981, infant/
-  universal 1991. Acute-case surveillance undercounts true infections (~6–10×).
-  **The `deaths` field holds chronic-HBV–related mortality** (cirrhosis/liver
-  cancer, death-certificate based: ~1,707 in 2015 → 1,662 in 2019, ~0.45/100,000;
-  CDC Viral Hepatitis Surveillance Table 2.8) — a *delayed* burden from infection
-  decades earlier, distinct from the acute cases plotted. Acute-HBV deaths
-  themselves are few.
+- `hepb.csv` — **complete annual series** from the **CDC Pink Book Appendix E**
+  (Wayback snapshot 2019-06-18 of the 1950–2017 reported-cases table): reported
+  **acute** hepatitis B cases **1966–2017** (peak 26,611 in 1985) plus **2020**
+  (2,157, CDC NNDSS); and HBV-attributed **deaths 1979–2014** (rose to ~1,100/yr
+  by the mid-1990s as 1970s–80s infections progressed to cirrhosis/liver cancer,
+  then ~535 by 2014). Reportable from 1966; vaccine 1981, infant/universal 1991.
+  Acute-case surveillance undercounts true infections (~6–10×). **Deaths
+  definition caveat:** the Pink Book deaths are HBV-attributed (narrower); CDC's
+  2021 Viral Hepatitis Surveillance **Table 2.8** uses *multiple-cause* coding
+  (HBV listed as any cause, ICD B16–B18) and reports ~1,700/yr for 2017–2021
+  (0.42–0.46/100,000) — a higher figure under a broader definition, not spliced
+  into the series to avoid a false discontinuity.
 
 ## Childhood meningitis death rate (Hib proxy) — NCHS HIST001R
 
