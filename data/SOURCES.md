@@ -113,7 +113,16 @@ and pertussis resurgence (2024) that the historical compilation alone would miss
 
 ## Additional diseases (DTaP, HepB, MMR tabs)
 
-- `diphtheria.csv`, `mumps.csv`, `rubella.csv` — built by
+- `diphtheria.csv` **deaths now extend to 1900**: pre-1937 death counts were
+  derived from **NCHS "Vital Statistics Rates in the United States, 1940–1960,"
+  Table 65** (death rates for detailed causes, "diphtheria & croup"/"diphtheria,"
+  read from the scanned volume) × interpolated Census population — 40.3/100,000
+  (~30,700 deaths) in 1900 declining through the 1920s toxoid era to ~2.4/100,000
+  by 1936, connecting to OWID's 1937 figure (2,615 deaths). Cases remain 1937+
+  (Table 65 is death rates only). 1929 omitted (column cut off in the scan). This
+  same NCHS table independently **confirms** `early_mortality_rates.csv` (e.g.,
+  measles 1900 = 13.3, 1930 = 3.2; whooping cough 1930 = 4.8 — exact matches).
+- `mumps.csv`, `rubella.csv` — built by
   [`scripts/build_new_diseases.py`](../scripts/build_new_diseases.py) from saved
   OWID raw files (`owid_diphtheria.csv`, `owid_mumps.csv`, `owid_rubella.csv`;
   OWID's underlying sources are U.S. Public Health Reports + CDC). Series start

@@ -1288,6 +1288,366 @@ window.DISEASE_DATA = {
   ],
   "diphtheria": [
     {
+      "year": 1900,
+      "cases": null,
+      "deaths": 30714,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 40.3007,
+      "hosp_rate": null,
+      "note": "Diphtheria+croup death rate 40.3/100k (a top infectious killer); NCHS Table 65"
+    },
+    {
+      "year": 1901,
+      "cases": null,
+      "deaths": 26068,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 33.5005,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1902,
+      "cases": null,
+      "deaths": 23666,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 29.8003,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1903,
+      "cases": null,
+      "deaths": 25196,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 31.0996,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1904,
+      "cases": null,
+      "deaths": 24207,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 29.2997,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1905,
+      "cases": null,
+      "deaths": 19792,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 23.5003,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1906,
+      "cases": null,
+      "deaths": 22571,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 26.2998,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1907,
+      "cases": null,
+      "deaths": 21157,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 24.2006,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1908,
+      "cases": null,
+      "deaths": 19497,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 21.9005,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1909,
+      "cases": null,
+      "deaths": 18035,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 19.9003,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1910,
+      "cases": null,
+      "deaths": 19460,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 21.0998,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1911,
+      "cases": null,
+      "deaths": 17224,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 18.4002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1912,
+      "cases": null,
+      "deaths": 16718,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 17.6003,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1913,
+      "cases": null,
+      "deaths": 17442,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 18.0997,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1914,
+      "cases": null,
+      "deaths": 16812,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 17.1997,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1915,
+      "cases": null,
+      "deaths": 15067,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 15.2,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1916,
+      "cases": null,
+      "deaths": 13970,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 13.8999,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1917,
+      "cases": null,
+      "deaths": 15894,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 15.6002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1918,
+      "cases": null,
+      "deaths": 14457,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 14.0002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1919,
+      "cases": null,
+      "deaths": 15592,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 14.9003,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1920,
+      "cases": null,
+      "deaths": 18766,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 17.7002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1921,
+      "cases": null,
+      "deaths": 15730,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 14.6,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1922,
+      "cases": null,
+      "deaths": 13135,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 12.0001,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1923,
+      "cases": null,
+      "deaths": 10339,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 9.2997,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1924,
+      "cases": null,
+      "deaths": 8806,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 7.8002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1925,
+      "cases": null,
+      "deaths": 8481,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 7.3997,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1926,
+      "cases": null,
+      "deaths": 8957,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 7.6996,
+      "hosp_rate": null,
+      "note": "Toxoid widely adopted in the 1920s"
+    },
+    {
+      "year": 1927,
+      "cases": null,
+      "deaths": 8499,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 7.1996,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1928,
+      "cases": null,
+      "deaths": 7785,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 6.5002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1930,
+      "cases": null,
+      "deaths": 6037,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 4.9001,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1931,
+      "cases": null,
+      "deaths": 5957,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 4.8002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1932,
+      "cases": null,
+      "deaths": 5500,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 4.4002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1933,
+      "cases": null,
+      "deaths": 4910,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 3.9002,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1934,
+      "cases": null,
+      "deaths": 4184,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 3.3,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1935,
+      "cases": null,
+      "deaths": 3958,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 3.0999,
+      "hosp_rate": null,
+      "note": ""
+    },
+    {
+      "year": 1936,
+      "cases": null,
+      "deaths": 3086,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 2.4001,
+      "hosp_rate": null,
+      "note": "Pre-1937 = deaths derived from NCHS Table 65 rates x Census pop"
+    },
+    {
       "year": 1937,
       "cases": 28356,
       "deaths": 2615,
