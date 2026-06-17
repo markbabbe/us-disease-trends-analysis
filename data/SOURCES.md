@@ -268,6 +268,16 @@ Documented on the dashboard's Chronic-illness tab and summarized here:
   (a saline arm would withhold proven protection); it's a limitation for the
   "vaccine vs. none" question, not evidence of harm. (MMR is a live vaccine — no
   aluminum or thimerosal.)
+- **Lamerato/Henry Ford vaccinated-vs-unvaccinated study** (presented at the
+  Sept 2025 Senate hearing; re-analyzed by Oller, Broudy & Hulscher, *IJVTPR*
+  Dec 2025). Compared 1,957 zero-dose people vs 16,511 vaccinated (median 18
+  doses); reported ~2.5× higher likelihood of a chronic-condition diagnosis with
+  vaccination. **Key confounder:** vaccinated had ~7 clinic visits/yr vs ~2 for
+  the unvaccinated (~3.5×) — ascertainment/detection bias that can produce a 2.5×
+  difference in *diagnosed* illness on its own; the analysis does not adjust for
+  utilization. Observational (association, not causation); original authors
+  reportedly still support the schedule; promoted via advocacy channels; IJVTPR
+  is a non-MEDLINE advocacy journal. Documented on the Chronic-illness tab.
 - **Net:** strongly supported — MMR, thimerosal, antigen load not associated with
   autism. Not directly tested — whole schedule vs. none, aluminum adjuvants and
   neurodevelopment, a saturating cumulative effect. "Not tested" ≠ "evidence of

@@ -398,14 +398,14 @@ const CHRONIC_CAVEAT =
 
 const CHRONIC_LIMITATIONS = `
 <h3 style="margin:2px 0 8px;font-size:15px;">What hasn't been tested — limitations of the main vaccine–autism studies</h3>
-<p style="margin:0 0 8px;"><strong>No fully-vaccinated vs. never-vaccinated study exists.</strong>
+<p style="margin:0 0 8px;"><strong>No RCT or cleanly-controlled fully-vaccinated-vs-never-vaccinated study exists.</strong>
 A randomized trial is ethically impossible (you can't withhold protection from deadly diseases). An
 observational version is feasible — databases (immunization registries, EHRs, claims, the Vaccine Safety
-Datalink) <em>can</em> identify never-vaccinated children — but it is heavily confounded for an autism
-endpoint: <strong>confounding by indication</strong> (families often skip vaccines <em>after</em> an autism
-diagnosis in an older child, enriching the unvaccinated group for genetic risk) and <strong>ascertainment
-bias</strong> (unvaccinated children have fewer medical visits → less screening/diagnosis). The few
-"vaxxed vs. unvaxxed" studies that exist are small or flawed (e.g., Mawson 2017, retracted).</p>
+Datalink) <em>can</em> identify never-vaccinated children — but it is heavily confounded: <strong>confounding
+by indication</strong> (families often skip vaccines <em>after</em> a diagnosis in an older child) and
+<strong>ascertainment bias</strong> (unvaccinated children have far fewer medical visits → fewer recorded
+diagnoses). Observational zero-dose studies <em>do</em> exist but are confounded (e.g., Mawson 2017,
+retracted; the Lamerato/Henry Ford study — see the detailed box below).</p>
 <p style="margin:0 0 6px;"><strong>Limitations of the most-cited studies:</strong></p>
 <ul style="margin:0 0 8px;padding-left:18px;">
   <li><strong>Madsen 2002 &amp; Hviid 2019</strong> (Denmark; 537k &amp; 657k children): observational; the
@@ -438,6 +438,41 @@ neurodevelopment, and a "saturating" cumulative effect. "Not tested" is not "evi
 evidence (no dose-response, autism rising after thimerosal removal, ~80% genetic/prenatal heritability)
 weighs against a vaccine cause.</p>`;
 
+const CHRONIC_LAMERATO = `
+<h3 style="margin:2px 0 8px;font-size:15px;">A vaccinated-vs-unvaccinated study: Lamerato et al. (Henry Ford Health)</h3>
+<p style="margin:0 0 10px;font-size:13px;line-height:1.6;">Often cited as the "real" vaccinated-vs-unvaccinated
+comparison. A retrospective analysis at Henry Ford Health (Detroit, data ~2020–2022) compared people who
+received <strong>zero</strong> CDC-schedule vaccine doses to vaccinated people, counting chronic-illness
+diagnoses. It was presented at a U.S. Senate hearing (Sept 9, 2025) and re-analyzed in a December 2025
+commentary in <em>IJVTPR</em> (Oller, Broudy &amp; Hulscher, McCullough Foundation), which reported an
+<strong>~2.5× higher likelihood of a chronic condition</strong> associated with vaccination.</p>
+<table style="margin:0 0 12px;">
+  <thead><tr><th>Cohort</th><th>People</th><th>CDC-schedule doses</th><th>Clinic visits / year</th><th>Chronic-condition finding</th></tr></thead>
+  <tbody>
+    <tr><td>Unvaccinated</td><td>1,957</td><td>0</td><td>~2</td><td>reference group</td></tr>
+    <tr><td>Vaccinated</td><td>16,511</td><td>18 (median)</td><td>~7</td><td>~2.5× higher reported likelihood</td></tr>
+  </tbody>
+</table>
+<div style="border-left:4px solid #e0a800;background:#14202b;border-radius:6px;padding:11px 13px;font-size:12.5px;line-height:1.55;">
+  <strong style="color:#e0a800;">⚠ Disclaimer — this does NOT establish that vaccines cause chronic illness.</strong>
+  <ul style="margin:7px 0 0;padding-left:18px;">
+    <li><strong>Ascertainment / detection bias (the decisive one):</strong> the vaccinated were seen ~7×/year
+        vs ~2× for the unvaccinated — about 3.5× more chances to diagnose and record a condition. That alone
+        can produce a ~2.5× difference in <em>diagnosed</em> illness with no real difference in underlying
+        health. The analysis does not resolve this; it would need to adjust for healthcare utilization
+        (e.g., conditions per visit, or matching on visit frequency).</li>
+    <li><strong>Observational → association, not causation.</strong> "Zero doses" also selects for families
+        who rarely use the medical system, deepening the gap.</li>
+    <li><strong>The original Henry Ford authors reportedly still support the vaccine schedule</strong> and do
+        not endorse the causal reading — that interpretation comes from outside re-analysis.</li>
+    <li><strong>Provenance is advocacy:</strong> presented at a partisan Senate hearing, promoted in a
+        documentary, and "peer-reviewed" in a non-MEDLINE advocacy journal (IJVTPR) by McCullough-Foundation
+        authors. The underlying study's formal peer-review/publication status is unclear.</li>
+    <li><strong>What would actually answer it:</strong> a study that matches/adjusts for clinic contact,
+        pre-registered and independent.</li>
+  </ul>
+</div>`;
+
 const chronicCharts = {};
 
 function renderChronic() {
@@ -451,6 +486,7 @@ function renderChronic() {
   host.innerHTML =
     `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;color:var(--ink);">${CHRONIC_CAVEAT}</div>` +
     `<div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;color:var(--ink);">${CHRONIC_LIMITATIONS}</div>` +
+    `<div class="card" style="color:var(--ink);">${CHRONIC_LAMERATO}</div>` +
     conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="chronic-${c.key}"></canvas></div></div>`).join("");
 
