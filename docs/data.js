@@ -702,6 +702,162 @@ window.DISEASE_DATA = {
       }
     ]
   },
+  "lamerato": [
+    {
+      "condition": "Any chronic condition (overall)",
+      "vax": 28.66,
+      "novx": 8.18,
+      "vax_n": 4732,
+      "novx_n": 160
+    },
+    {
+      "condition": "Asthma",
+      "vax": 17.36,
+      "novx": 2.66,
+      "vax_n": 2867,
+      "novx_n": 52
+    },
+    {
+      "condition": "Atopic disease",
+      "vax": 5.73,
+      "novx": 1.18,
+      "vax_n": 946,
+      "novx_n": 23
+    },
+    {
+      "condition": "Autoimmune disease",
+      "vax": 1.22,
+      "novx": 0.1,
+      "vax_n": 201,
+      "novx_n": 2
+    },
+    {
+      "condition": "Brain dysfunction",
+      "vax": 0.05,
+      "novx": 0.0,
+      "vax_n": 8,
+      "novx_n": 0
+    },
+    {
+      "condition": "Cancer",
+      "vax": 1.02,
+      "novx": 0.66,
+      "vax_n": 169,
+      "novx_n": 13
+    },
+    {
+      "condition": "Diabetes",
+      "vax": 0.25,
+      "novx": 0.0,
+      "vax_n": 42,
+      "novx_n": 0
+    },
+    {
+      "condition": "Food allergy",
+      "vax": 3.49,
+      "novx": 1.53,
+      "vax_n": 577,
+      "novx_n": 30
+    },
+    {
+      "condition": "Mental health disorder",
+      "vax": 2.07,
+      "novx": 0.26,
+      "vax_n": 341,
+      "novx_n": 5
+    },
+    {
+      "condition": "Neurodevelopmental disorder",
+      "vax": 6.23,
+      "novx": 0.46,
+      "vax_n": 1029,
+      "novx_n": 9
+    },
+    {
+      "condition": "ADHD",
+      "vax": 1.59,
+      "novx": 0.0,
+      "vax_n": 262,
+      "novx_n": 0
+    },
+    {
+      "condition": "Autism",
+      "vax": 0.14,
+      "novx": 0.05,
+      "vax_n": 23,
+      "novx_n": 1
+    },
+    {
+      "condition": "Behavioral disability",
+      "vax": 1.0,
+      "novx": 0.0,
+      "vax_n": 165,
+      "novx_n": 0
+    },
+    {
+      "condition": "Developmental delay",
+      "vax": 1.33,
+      "novx": 0.26,
+      "vax_n": 219,
+      "novx_n": 5
+    },
+    {
+      "condition": "Learning disability",
+      "vax": 0.39,
+      "novx": 0.0,
+      "vax_n": 65,
+      "novx_n": 0
+    },
+    {
+      "condition": "Intellectual disability",
+      "vax": 0.03,
+      "novx": 0.0,
+      "vax_n": 5,
+      "novx_n": 0
+    },
+    {
+      "condition": "Speech disorder",
+      "vax": 2.8,
+      "novx": 0.31,
+      "vax_n": 463,
+      "novx_n": 6
+    },
+    {
+      "condition": "Motor disability",
+      "vax": 0.91,
+      "novx": 0.1,
+      "vax_n": 150,
+      "novx_n": 2
+    },
+    {
+      "condition": "Tics",
+      "vax": 0.28,
+      "novx": 0.0,
+      "vax_n": 46,
+      "novx_n": 0
+    },
+    {
+      "condition": "Other psychological disability",
+      "vax": 0.05,
+      "novx": 0.0,
+      "vax_n": 9,
+      "novx_n": 0
+    },
+    {
+      "condition": "Neurological disorder",
+      "vax": 0.77,
+      "novx": 0.61,
+      "vax_n": 127,
+      "novx_n": 12
+    },
+    {
+      "condition": "Seizure disorder",
+      "vax": 1.93,
+      "novx": 0.61,
+      "vax_n": 319,
+      "novx_n": 12
+    }
+  ],
   "hepb": [
     {
       "year": 1966,

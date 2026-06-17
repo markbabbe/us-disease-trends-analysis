@@ -1,0 +1,23 @@
+condition,vax_n,novx_n,vax_pct,novx_pct
+Any chronic condition (overall),4732,160,28.66,8.18
+Asthma,2867,52,17.36,2.66
+Atopic disease,946,23,5.73,1.18
+Autoimmune disease,201,2,1.22,0.10
+Brain dysfunction,8,0,0.05,0.00
+Cancer,169,13,1.02,0.66
+Diabetes,42,0,0.25,0.00
+Food allergy,577,30,3.49,1.53
+Mental health disorder,341,5,2.07,0.26
+Neurodevelopmental disorder,1029,9,6.23,0.46
+ADHD,262,0,1.59,0.00
+Autism,23,1,0.14,0.05
+Behavioral disability,165,0,1.00,0.00
+Developmental delay,219,5,1.33,0.26
+Learning disability,65,0,0.39,0.00
+Intellectual disability,5,0,0.03,0.00
+Speech disorder,463,6,2.80,0.31
+Motor disability,150,2,0.91,0.10
+Tics,46,0,0.28,0.00
+Other psychological disability,9,0,0.05,0.00
+Neurological disorder,127,12,0.77,0.61
+Seizure disorder,319,12,1.93,0.61

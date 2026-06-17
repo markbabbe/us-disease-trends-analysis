@@ -96,6 +96,13 @@ def chronic():
     return out
 
 
+def lamerato():
+    """Per-condition prevalence (%) by group, Lamerato/Henry Ford study."""
+    return [{"condition": r["condition"], "vax": float(r["vax_pct"]),
+             "novx": float(r["novx_pct"]), "vax_n": int(r["vax_n"]),
+             "novx_n": int(r["novx_n"])} for r in read_csv("lamerato_conditions.csv")]
+
+
 def coverage():
     """Merge approximate historical anchors with live modern NIS data."""
     def f(v):
@@ -169,6 +176,7 @@ def main():
         "earlyMortality": early(),
         "coverage": coverage(),
         "chronic": chronic(),
+        "lamerato": lamerato(),
     }
     for key, (csvf, field, _name) in DISEASE_CFG.items():
         data[key] = build(read_csv(csvf), field, key)

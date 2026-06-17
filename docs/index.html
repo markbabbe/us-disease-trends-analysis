@@ -453,6 +453,8 @@ commentary in <em>IJVTPR</em> (Oller, Broudy &amp; Hulscher, McCullough Foundati
     <tr><td>Vaccinated</td><td>16,511</td><td>18 (median)</td><td>~7</td><td>~2.5× higher reported likelihood</td></tr>
   </tbody>
 </table>
+<div style="font-size:12px;color:var(--muted);margin:2px 0 4px;">Reported prevalence (%) in each group, by condition (sorted by the vaccinated rate). These are <strong>raw reported rates</strong> — read the disclaimer below before interpreting.</div>
+<div style="position:relative;height:780px;margin:0 0 14px;"><canvas id="lamerato-chart"></canvas></div>
 <div style="border-left:4px solid #e0a800;background:#14202b;border-radius:6px;padding:11px 13px;font-size:12.5px;line-height:1.55;">
   <strong style="color:#e0a800;">⚠ Disclaimer — this does NOT establish that vaccines cause chronic illness.</strong>
   <ul style="margin:7px 0 0;padding-left:18px;">
@@ -489,6 +491,29 @@ function renderChronic() {
     `<div class="card" style="color:var(--ink);">${CHRONIC_LAMERATO}</div>` +
     conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="chronic-${c.key}"></canvas></div></div>`).join("");
+
+  // Lamerato per-condition grouped bar chart (raw reported prevalence by group)
+  const lam = (D.lamerato || []).slice().sort((a, b) => b.vax - a.vax);
+  if (chronicCharts["lamerato"]) chronicCharts["lamerato"].destroy();
+  chronicCharts["lamerato"] = new Chart(document.getElementById("lamerato-chart"), {
+    type: "bar",
+    data: { labels: lam.map(r => r.condition), datasets: [
+      { label: "Vaccinated (n=16,511)", data: lam.map(r => r.vax), backgroundColor: "#c0392b" },
+      { label: "Unvaccinated (n=1,957)", data: lam.map(r => r.novx), backgroundColor: "#5dade2" },
+    ]},
+    options: {
+      indexAxis: "y", responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { title: { display: true, text: "% of group diagnosed with the condition", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+        y: { ticks: { color: "#e6edf3", font: { size: 11 }, autoSkip: false }, grid: { display: false } },
+      },
+      plugins: {
+        legend: { labels: { color: "#e6edf3" } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.x}%` } },
+      },
+    },
+  });
 
   const vax = D.chronic.vaccines.map(p => ({ x: p.year, y: p.value }));
   conds.forEach(c => {
