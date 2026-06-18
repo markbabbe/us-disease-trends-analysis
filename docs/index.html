@@ -260,9 +260,9 @@ const FACTS = {
          "Reportable only from ~1966; chronic infection and underreporting not shown (true infections ~6–10× reported).",
          "'Cases' = ACUTE infections; 'Deaths' = HBV-attributed deaths (mostly CHRONIC cirrhosis/liver cancer), which rose to ~1,100/yr by the 1990s as 1970s–80s infections progressed; recent CDC multiple-cause counts run ~1,700/yr (Table 2.8)."],
   rotavirus: ["Causes severe infant/toddler diarrhea (gastroenteritis).",
-              "Pre-vaccine (U.S.): ~2.7M cases, 55,000–70,000 hospitalizations, 20–60 deaths/yr in children <5.",
-              "Vaccine 2006 (RotaTeq); 2008 (Rotarix). Earlier RotaShield (1998) withdrawn 1999.",
-              "Rotavirus has no reported-case surveillance — it's tracked by HOSPITALIZATIONS (the 'hospitalizations' view). 'Cases' shows only the pre-vaccine ESTIMATE (~2.7M illnesses/yr in <5); all points approximate."],
+              "Pre-vaccine (U.S.): ~2.7M illnesses and 55,000–70,000 hospitalizations/yr in children <5.",
+              "U.S. deaths are too few to count reliably (rarely fatal with rehydration; not separately recorded), so no death series is shown. Vaccine 2006 (RotaTeq); 2008 (Rotarix).",
+              "No reported-case surveillance — tracked by HOSPITALIZATIONS (use that view). 'Cases' shows only the pre-vaccine ESTIMATE (~2.7M illnesses/yr in <5); all points approximate."],
   hib: ["Haemophilus influenzae type b — once the top cause of bacterial meningitis in young children.",
         "Pre-vaccine incidence ~40 per 100,000 in children <5 (older estimates cite up to ~20,000 cases/yr); ~3–6% fatal.",
         "Incidence held steady through 1989, then fell >99% AFTER the 1990 infant conjugate vaccine — not before.",
@@ -699,6 +699,8 @@ function noDataReason(dis, metric) {
     return `No hospitalization time series exists for ${NAMES[dis]}. Of these diseases only rotavirus is hospitalization-tracked; the others have no national hospitalization record. Try the Cases or Deaths metric.`;
   if (dis === "rubella" && metric === "death_rate")
     return "Rubella's serious harm is congenital rubella syndrome (birth defects), not deaths — so there's no death-rate series. Use the Cases metric.";
+  if (dis === "rotavirus" && metric === "death_rate")
+    return "Too few U.S. rotavirus deaths to measure reliably — they aren't separately counted (rarely fatal with rehydration care). Rotavirus's U.S. burden is hospitalizations — use the Hospitalizations metric.";
   return `No ${METRIC_LABEL[metric].toLowerCase()} data is collected for ${NAMES[dis]}.`;
 }
 

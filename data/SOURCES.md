@@ -185,10 +185,13 @@ differently and mostly recently, so the CSVs are **documented anchors with clear
   PCV13 2010. (Pneumococcus also heavily affects older adults — not shown.)
 - `rotavirus.csv` — primary series is **hospitalizations** in children <5, not
   reported cases (rotavirus has no notifiable-case record). Pre-vaccine
-  ~55,000–70,000 hospitalizations and 20–60 deaths/yr; vaccine 2006 → large
-  declines. The `cases` field holds **only the pre-vaccine estimate** (~2.7M
-  illnesses/yr in <5, CDC) as a single labeled anchor — no annual case series
-  exists. Intermediate points approximate.
+  ~55,000–70,000 hospitalizations/yr; vaccine 2006 → large declines. **No death
+  series:** U.S. rotavirus deaths are too few to count reliably (rarely fatal with
+  rehydration; not separately recorded — CDC's ~20–60/yr is a modeled estimate),
+  so the `deaths` field is left empty rather than plot a guess. The `cases` field
+  holds **only the pre-vaccine estimate** (~2.7M illnesses/yr in <5, CDC) as a
+  single labeled anchor — no annual case series exists. Intermediate points
+  approximate.
 
 Because these count disease **in children <5**, the dashboard's "per 100,000"
 (which uses total U.S. population) understates the true childhood rate — read the

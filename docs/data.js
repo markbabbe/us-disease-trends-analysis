@@ -2002,50 +2002,50 @@ window.DISEASE_DATA = {
     {
       "year": 2005,
       "cases": 2700000,
-      "deaths": 40,
+      "deaths": null,
       "incidence": 13713.5334,
-      "cfr": 0.0015,
-      "death_rate": 0.2032,
+      "cfr": null,
+      "death_rate": null,
       "hosp_rate": 304.7452,
-      "note": "Cases = ESTIMATED illnesses pre-vaccine (~2.7M/yr in <5); not reported-case surveillance. Hospitalizations are the tracked metric"
+      "note": "Cases = ESTIMATED illnesses pre-vaccine (~2.7M/yr in <5). Hospitalizations are the tracked metric; U.S. deaths too few to count reliably"
     },
     {
       "year": 2006,
       "cases": null,
-      "deaths": 38,
+      "deaths": null,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.192,
+      "death_rate": null,
       "hosp_rate": 293.0605,
       "note": "Vaccine introduced mid-2006; little impact yet"
     },
     {
       "year": 2008,
       "cases": null,
-      "deaths": 20,
+      "deaths": null,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.1,
+      "death_rate": null,
       "hosp_rate": 165.0309,
       "note": "Approx; ~45% fewer hospitalizations after the vaccine"
     },
     {
       "year": 2012,
       "cases": null,
-      "deaths": 8,
+      "deaths": null,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.0403,
+      "death_rate": null,
       "hosp_rate": 75.6109,
       "note": "Approx; sustained ~60-80% reduction"
     },
     {
       "year": 2019,
       "cases": null,
-      "deaths": 8,
+      "deaths": null,
       "incidence": null,
       "cfr": null,
-      "death_rate": 0.0431,
+      "death_rate": null,
       "hosp_rate": 80.7841,
       "note": "Approx"
     }
