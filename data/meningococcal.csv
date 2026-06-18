@@ -1,0 +1,19 @@
+year,cases,deaths,hospitalizations,notes
+1996,2960,385,,Mid-1990s peak era; incidence ~1.1/100k (ABCs). Cases = incidence x US pop. Deaths = CFR ~13% (estimate)
+2000,2030,265,,Incidence ~0.72/100k; already falling years before any vaccine. Derived from CDC period incidence; deaths estimated (CFR ~13%)
+2003,1770,230,,Midpoint of prevaccine 2000-2005 period (CDC avg 0.61/100k). Derived; deaths estimated
+2005,1480,190,,MenACWY (Menactra) licensed + ACIP routine adolescent recommendation. Incidence ~0.50/100k. Derived; deaths estimated
+2006,1190,155,,CDC-reported incidence 0.40/100k. Cases = incidence x pop. Deaths estimated (CFR ~13%)
+2008,1060,140,,Post-primary-dose period (2006-2010 avg 0.35/100k). Derived; deaths estimated
+2010,930,120,,Booster dose (16y) added to schedule ~2010-2011. Incidence ~0.30/100k. Derived; deaths estimated
+2012,630,82,,Post-booster period (2011-2017 avg 0.15/100k). Derived; deaths estimated
+2014,480,62,,Incidence ~0.15/100k; MenB vaccines licensed 2014-2015. Derived; deaths estimated
+2015,385,49,,CDC-reported incidence 0.12/100k. Cases = incidence x pop. Deaths estimated (CFR ~13%)
+2017,360,46,,2015-2019 enhanced surveillance avg 0.11/100k; CFR 12.8% measured. Derived; deaths estimated
+2019,360,46,,Incidence ~0.11/100k. Derived; deaths estimated
+2020,230,30,,Pandemic low; CDC-reported incidence ~0.07/100k. Deaths estimated
+2021,208,27,,REPORTED cases (NNDSS); record low incidence ~0.06/100k. Deaths estimated (CFR ~13%)
+2022,312,40,,REPORTED cases (NNDSS); serogroup Y rising. Deaths estimated
+2023,438,57,,REPORTED cases (NNDSS); incidence 0.13/100k - most since 2013. Deaths estimated
+2024,477,62,,REPORTED cases (NNDSS, provisional); serogroup Y surge. Deaths estimated
+2025,463,60,,REPORTED cases (NNDSS, preliminary); 2nd-largest since 2013. Deaths estimated

@@ -167,6 +167,39 @@ The same table confirms that **measles, pertussis, and polio death rates were
 already below the reportable threshold (shown as "*") by 1979** — i.e.,
 near-eliminated as causes of death by then.
 
+## Meningococcal disease (`meningococcal.csv`) — Meningococcal tab
+
+*Neisseria meningitidis* invasive disease (meningitis/septicemia). Built as an
+**incidence-driven, anchor-based** series because no single public file gives clean
+annual national counts back to the 1990s.
+
+- **Recent years (2021–2025): reported NNDSS counts** — 208 (2021), 312 (2022),
+  438 (2023), ~477 (2024, provisional), 463 (2025, preliminary). 2023 = 0.13/100k,
+  "most U.S. cases since 2013." Source: CDC Meningococcal Surveillance & Trends
+  (`cdc.gov/meningococcal/php/surveillance/`) and CDC HAN-00505 (2024).
+- **2006 & 2015: CDC-published year incidence** — 0.40/100k (2006) and 0.12/100k
+  (2015). 2020–2021 record low **0.06–0.07/100k**.
+  Source: Mbaeyi et al., *Clin Infect Dis* 2018 (1996–2015); enhanced surveillance
+  2015–2019 (avg **0.11/100k**, 1,806 cases, **CFR 12.8%**).
+- **Period anchors** converted to representative single years via published
+  period-average incidence × U.S. population: prevaccine **2000–2005 = 0.61/100k**,
+  post-primary-dose **2006–2010 = 0.35/100k**, post-booster **2011–2017 = 0.15/100k**.
+  Source: MacNeil/CDC, "Incidence Before and After Quadrivalent Meningococcal
+  Conjugate Vaccine" (PMC7372499).
+- **Mid-1990s peak ~1.1/100k** (infant rate 11.04/100k in 1996).
+- **Deaths are ESTIMATES** = reported/derived cases × ~13% case-fatality (the
+  measured CFR is 12.8% for 2015–19 and 14.9% for 2006–15; CDC cites 10–15%). No
+  separate national meningococcal death count is published annually.
+
+**Key interpretive caveat (stated on the tab):** U.S. incidence was already falling
+for ~a decade *before* routine adolescent **MenACWY (2005)**, and **serogroup B —
+not covered by MenACWY — fell over the same period too**, so much of the overall
+decline is a pre-existing secular trend. The vaccine's *measurable* effect is on
+serogroups **C/W/Y in vaccinated teens** (~89% lower in 11–15y, ~77% in 16–22y,
+prevaccine → post-booster; PMC7372499). Disease has rebounded since 2021 (serogroup
+Y), now above pre-pandemic levels. Vaccine markers: MenACWY 2005, 16y booster ~2011,
+MenB 2014–15. Treat the long-run shape as solid; exact yearly values are approximate.
+
 ## Hib, PCV, Rotavirus (recent-vaccine diseases — anchor-based)
 
 These three lack long annual notifiable-case series; their burden is measured

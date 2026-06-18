@@ -102,6 +102,20 @@ window.DISEASE_DATA = {
         "year": 1971,
         "label": "MMR"
       }
+    ],
+    "meningococcal": [
+      {
+        "year": 2005,
+        "label": "MenACWY (adolescents)"
+      },
+      {
+        "year": 2011,
+        "label": "16y booster"
+      },
+      {
+        "year": 2015,
+        "label": "MenB"
+      }
     ]
   },
   "tabs": [
@@ -172,6 +186,14 @@ window.DISEASE_DATA = {
       ]
     },
     {
+      "id": "menb",
+      "label": "Meningococcal",
+      "sub": "11-12 years",
+      "diseases": [
+        "meningococcal"
+      ]
+    },
+    {
       "id": "chronic",
       "label": "Chronic illness",
       "sub": "correlation \u2260 causation",
@@ -189,7 +211,8 @@ window.DISEASE_DATA = {
     "polio": "Polio",
     "measles": "Measles",
     "mumps": "Mumps",
-    "rubella": "Rubella"
+    "rubella": "Rubella",
+    "meningococcal": "Meningococcal"
   },
   "under5": [
     "hib",
@@ -7636,6 +7659,188 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": ""
+    }
+  ],
+  "meningococcal": [
+    {
+      "year": 1996,
+      "cases": 2960,
+      "deaths": 385,
+      "incidence": 1.1031,
+      "cfr": 13.0068,
+      "death_rate": 0.1435,
+      "hosp_rate": null,
+      "note": "Mid-1990s peak era; incidence ~1.1/100k (ABCs). Cases = incidence x US pop. Deaths = CFR ~13% (estimate)"
+    },
+    {
+      "year": 2000,
+      "cases": 2030,
+      "deaths": 265,
+      "incidence": 0.7213,
+      "cfr": 13.0542,
+      "death_rate": 0.0942,
+      "hosp_rate": null,
+      "note": "Incidence ~0.72/100k; already falling years before any vaccine. Derived from CDC period incidence; deaths estimated (CFR ~13%)"
+    },
+    {
+      "year": 2003,
+      "cases": 1770,
+      "deaths": 230,
+      "incidence": 0.6111,
+      "cfr": 12.9944,
+      "death_rate": 0.0794,
+      "hosp_rate": null,
+      "note": "Midpoint of prevaccine 2000-2005 period (CDC avg 0.61/100k). Derived; deaths estimated"
+    },
+    {
+      "year": 2005,
+      "cases": 1480,
+      "deaths": 190,
+      "incidence": 0.5016,
+      "cfr": 12.8378,
+      "death_rate": 0.0644,
+      "hosp_rate": null,
+      "note": "MenACWY (Menactra) licensed + ACIP routine adolescent recommendation. Incidence ~0.50/100k. Derived; deaths estimated"
+    },
+    {
+      "year": 2006,
+      "cases": 1190,
+      "deaths": 155,
+      "incidence": 0.3996,
+      "cfr": 13.0252,
+      "death_rate": 0.052,
+      "hosp_rate": null,
+      "note": "CDC-reported incidence 0.40/100k. Cases = incidence x pop. Deaths estimated (CFR ~13%)"
+    },
+    {
+      "year": 2008,
+      "cases": 1060,
+      "deaths": 140,
+      "incidence": 0.3495,
+      "cfr": 13.2075,
+      "death_rate": 0.0462,
+      "hosp_rate": null,
+      "note": "Post-primary-dose period (2006-2010 avg 0.35/100k). Derived; deaths estimated"
+    },
+    {
+      "year": 2010,
+      "cases": 930,
+      "deaths": 120,
+      "incidence": 0.3012,
+      "cfr": 12.9032,
+      "death_rate": 0.0389,
+      "hosp_rate": null,
+      "note": "Booster dose (16y) added to schedule ~2010-2011. Incidence ~0.30/100k. Derived; deaths estimated"
+    },
+    {
+      "year": 2012,
+      "cases": 630,
+      "deaths": 82,
+      "incidence": 0.2011,
+      "cfr": 13.0159,
+      "death_rate": 0.0262,
+      "hosp_rate": null,
+      "note": "Post-booster period (2011-2017 avg 0.15/100k). Derived; deaths estimated"
+    },
+    {
+      "year": 2014,
+      "cases": 480,
+      "deaths": 62,
+      "incidence": 0.151,
+      "cfr": 12.9167,
+      "death_rate": 0.0195,
+      "hosp_rate": null,
+      "note": "Incidence ~0.15/100k; MenB vaccines licensed 2014-2015. Derived; deaths estimated"
+    },
+    {
+      "year": 2015,
+      "cases": 385,
+      "deaths": 49,
+      "incidence": 0.1203,
+      "cfr": 12.7273,
+      "death_rate": 0.0153,
+      "hosp_rate": null,
+      "note": "CDC-reported incidence 0.12/100k. Cases = incidence x pop. Deaths estimated (CFR ~13%)"
+    },
+    {
+      "year": 2017,
+      "cases": 360,
+      "deaths": 46,
+      "incidence": 0.1109,
+      "cfr": 12.7778,
+      "death_rate": 0.0142,
+      "hosp_rate": null,
+      "note": "2015-2019 enhanced surveillance avg 0.11/100k; CFR 12.8% measured. Derived; deaths estimated"
+    },
+    {
+      "year": 2019,
+      "cases": 360,
+      "deaths": 46,
+      "incidence": 0.1094,
+      "cfr": 12.7778,
+      "death_rate": 0.014,
+      "hosp_rate": null,
+      "note": "Incidence ~0.11/100k. Derived; deaths estimated"
+    },
+    {
+      "year": 2020,
+      "cases": 230,
+      "deaths": 30,
+      "incidence": 0.0694,
+      "cfr": 13.0435,
+      "death_rate": 0.0091,
+      "hosp_rate": null,
+      "note": "Pandemic low; CDC-reported incidence ~0.07/100k. Deaths estimated"
+    },
+    {
+      "year": 2021,
+      "cases": 208,
+      "deaths": 27,
+      "incidence": 0.0623,
+      "cfr": 12.9808,
+      "death_rate": 0.0081,
+      "hosp_rate": null,
+      "note": "REPORTED cases (NNDSS); record low incidence ~0.06/100k. Deaths estimated (CFR ~13%)"
+    },
+    {
+      "year": 2022,
+      "cases": 312,
+      "deaths": 40,
+      "incidence": 0.0929,
+      "cfr": 12.8205,
+      "death_rate": 0.0119,
+      "hosp_rate": null,
+      "note": "REPORTED cases (NNDSS); serogroup Y rising. Deaths estimated"
+    },
+    {
+      "year": 2023,
+      "cases": 438,
+      "deaths": 57,
+      "incidence": 0.1296,
+      "cfr": 13.0137,
+      "death_rate": 0.0169,
+      "hosp_rate": null,
+      "note": "REPORTED cases (NNDSS); incidence 0.13/100k - most since 2013. Deaths estimated"
+    },
+    {
+      "year": 2024,
+      "cases": 477,
+      "deaths": 62,
+      "incidence": 0.1402,
+      "cfr": 12.9979,
+      "death_rate": 0.0182,
+      "hosp_rate": null,
+      "note": "REPORTED cases (NNDSS"
+    },
+    {
+      "year": 2025,
+      "cases": 463,
+      "deaths": 60,
+      "incidence": 0.1361,
+      "cfr": 12.959,
+      "death_rate": 0.0176,
+      "hosp_rate": null,
+      "note": "REPORTED cases (NNDSS"
     }
   ]
 };

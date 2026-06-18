@@ -190,6 +190,33 @@
       <em>raises</em> mortality from other infections).</p>
   </div>
 
+  <div id="menbExtra" class="card" style="display:none;border-left:4px solid #5dade2;">
+    <h3 style="margin:2px 2px 8px;font-size:15px;">Meningococcal: most of the decline came <em>before</em> the vaccine</h3>
+    <p class="metric-note" style="margin:0;line-height:1.65;">
+      This is a case where the headline ("cases fell after the vaccine") is true but
+      <strong>misleading on its own</strong>. U.S. meningococcal incidence was already
+      falling for roughly a decade <em>before</em> routine adolescent MenACWY arrived in
+      <strong>2005</strong> — from about <strong>1.1 per 100,000 in the mid-1990s</strong>
+      to <strong>0.40 by 2006</strong> — for reasons that are not fully understood (it has
+      long cycled naturally). Tellingly, <strong>serogroup B</strong>, which MenACWY does
+      <em>not</em> cover, declined over the same period too — so a large part of the overall
+      drop is a pre-existing secular trend, not the vaccine.<br><br>
+      Where the vaccine's effect <em>is</em> measurable is narrower and real: serogroups
+      <strong>C, W, and Y</strong> (the ones MenACWY targets) fell about
+      <strong>89% in 11–15-year-olds</strong> and <strong>77% in 16–22-year-olds</strong>
+      from the pre-vaccine to the post-booster era — steeper declines, in exactly the
+      vaccinated age groups, than the background trend alone predicts (CDC, Mbaeyi et al.).<br><br>
+      Since <strong>2021</strong> disease is <strong>rebounding</strong> (driven by serogroup
+      Y), now above pre-pandemic levels and unusually affecting adults 30–60, Black adults,
+      and people with HIV. Case-fatality stays high at <strong>~10–15%</strong>.<br><br>
+      <strong>Reading the chart:</strong> the default Deaths-per-100,000 line uses
+      <em>estimated</em> deaths (reported cases × ~13% case-fatality); pre-2021 case counts
+      are derived from CDC's published incidence × population, and 2021-onward are reported
+      NNDSS counts. Treat the long-run shape as solid and the exact yearly values as
+      approximate.
+    </p>
+  </div>
+
   <div class="card small" id="earlyCard">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
     <div class="chart-box"><canvas id="early"></canvas></div>
@@ -298,6 +325,10 @@ const FACTS = {
             "Main harm is Congenital Rubella Syndrome (birth defects), NOT deaths.",
             "1964–65 epidemic: ~12.5M cases, ~20,000 CRS births.",
             "Declared eliminated in the U.S. in 2004."],
+  meningococcal: ["Neisseria meningitidis — sudden bacterial meningitis/sepsis; rare but ~10–15% fatal even with treatment.",
+                  "MenACWY (Menactra) licensed + routine adolescent recommendation 2005; 16-year booster ~2011; MenB vaccines 2014–15.",
+                  "IMPORTANT: incidence was already falling for years BEFORE the 2005 vaccine — from ~1.1/100k in the mid-1990s to ~0.40 by 2006 — and serogroup B (not covered by MenACWY) fell too, so the overall drop is largely a pre-existing trend. The vaccine's clearest measured effect is on serogroups C/W/Y in vaccinated teens (~80–90% lower).",
+                  "Rebounding since 2021 (serogroup Y): 208 (2021) → 438 (2023) → ~477 (2024). Deaths shown are ESTIMATES (cases × ~13% CFR); pre-2021 case counts derived from CDC published incidence × population, 2021+ are reported NNDSS counts."],
 };
 
 const AFFECTED = {
@@ -312,6 +343,7 @@ const AFFECTED = {
   measles: "Pre-vaccine, a near-universal childhood infection (peak ~5–9 yrs). Today: unvaccinated children and undervaccinated communities; infants too young to vaccinate and immunocompromised people face the highest risk of severe disease.",
   mumps: "Historically school-age children. Recent outbreaks cluster in adolescents and young adults in close-contact settings (e.g., colleges), driven by waning immunity.",
   rubella: "Usually mild in children and adults — the critical risk is to the fetus: infection in early pregnancy causes congenital rubella syndrome (birth defects). The key target is unvaccinated women of childbearing age.",
+  meningococcal: "Two peaks — infants under 1 (highest rates) and adolescents/young adults, especially in close-contact settings like college dorms and military barracks. The routine adolescent vaccine targets that teen peak. The recent (2022+) rise has unusually hit adults 30–60, Black/African American adults, and people with HIV.",
 };
 
 const charts = {};
@@ -391,6 +423,7 @@ function selectTab(id) {
   document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
   document.getElementById("dtapExtra").style.display = has(["pertussis"]) ? "" : "none";
   document.getElementById("mmrExtra").style.display = has(["measles", "mumps", "rubella"]) ? "" : "none";
+  document.getElementById("menbExtra").style.display = has(["meningococcal"]) ? "" : "none";
   document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
   document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
   if (isOverview) { renderOverview(); return; }

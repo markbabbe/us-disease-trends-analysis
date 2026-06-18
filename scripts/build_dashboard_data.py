@@ -150,6 +150,7 @@ DISEASE_CFG = {
     "measles": ("measles.csv", "reported_cases", "Measles"),
     "mumps": ("mumps.csv", "cases", "Mumps"),
     "rubella": ("rubella.csv", "cases", "Rubella"),
+    "meningococcal": ("meningococcal.csv", "cases", "Meningococcal"),
 }
 
 VACCINES = {
@@ -165,6 +166,9 @@ VACCINES = {
                 {"year": 1989, "label": "2nd dose"}],
     "mumps": [{"year": 1967, "label": "Mumps vaccine"}, {"year": 1971, "label": "MMR"}],
     "rubella": [{"year": 1969, "label": "Rubella vaccine"}, {"year": 1971, "label": "MMR"}],
+    "meningococcal": [{"year": 2005, "label": "MenACWY (adolescents)"},
+                      {"year": 2011, "label": "16y booster"},
+                      {"year": 2015, "label": "MenB"}],
 }
 
 # Tabs ordered by the childhood immunization schedule (birth -> 2mo -> 12-15mo)
@@ -177,6 +181,7 @@ TABS = [
     {"id": "pcv", "label": "PCV", "sub": "2 months", "diseases": ["pcv"]},
     {"id": "ipv", "label": "Polio (IPV)", "sub": "2 months", "diseases": ["polio"]},
     {"id": "mmr", "label": "MMR", "sub": "12-15 months", "diseases": ["measles", "mumps", "rubella"]},
+    {"id": "menb", "label": "Meningococcal", "sub": "11-12 years", "diseases": ["meningococcal"]},
     {"id": "chronic", "label": "Chronic illness", "sub": "correlation ≠ causation", "diseases": []},
 ]
 
