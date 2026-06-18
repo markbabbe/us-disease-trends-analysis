@@ -397,7 +397,7 @@ const CHRONIC_CAVEAT =
   "(5) '# vaccines' counts diseases on the routine childhood/adolescent schedule (definition-dependent).";
 
 const CHRONIC_LIMITATIONS = `
-<h3 style="margin:2px 0 8px;font-size:15px;">What hasn't been tested — limitations of the main vaccine–autism studies</h3>
+<h3 style="margin:2px 0 8px;font-size:15px;">What hasn't been tested (and the key confounder)</h3>
 <p style="margin:0 0 8px;"><strong>No RCT or cleanly-controlled fully-vaccinated-vs-never-vaccinated study exists.</strong>
 A randomized trial is ethically impossible (you can't withhold protection from deadly diseases). An
 observational version is feasible — databases (immunization registries, EHRs, claims, the Vaccine Safety
@@ -405,19 +405,10 @@ Datalink) <em>can</em> identify never-vaccinated children — but it is heavily 
 by indication</strong> (families often skip vaccines <em>after</em> a diagnosis in an older child) and
 <strong>ascertainment bias</strong> (unvaccinated children have far fewer medical visits → fewer recorded
 diagnoses). Observational zero-dose studies <em>do</em> exist but are confounded (e.g., Mawson 2017,
-retracted; the Lamerato/Henry Ford study — see the detailed box below).</p>
-<p style="margin:0 0 6px;"><strong>Limitations of the most-cited studies:</strong></p>
-<ul style="margin:0 0 8px;padding-left:18px;">
-  <li><strong>Madsen 2002 &amp; Hviid 2019</strong> (Denmark; 537k &amp; 657k children): observational; the
-      comparison is <em>MMR vs. no-MMR</em>, and the no-MMR children still received the other routine
-      vaccines. So they isolate MMR's marginal effect — they do <em>not</em> test vaccination-vs-none and
-      cannot detect a shared or "saturating" whole-schedule effect. Diagnoses are registry-based.</li>
-  <li><strong>DeStefano 2013</strong> (antigen load): case-control, only 256 ASD cases; tests a dose
-      gradient <em>within</em> vaccinated children (no zero-vaccine arm); "antigen count" doesn't capture
-      adjuvants such as aluminum.</li>
-  <li>Most of this evidence is from <strong>Scandinavian registry or U.S. managed-care</strong>
-      populations — observational, with residual confounding and diagnosis tied to medical contact.</li>
-</ul>
+retracted; the Lamerato/Henry Ford study — see the box at the top of this tab). The mainstream
+"no-link" studies (listed in their own table above) are mostly <strong>Scandinavian registry or
+U.S. managed-care</strong> populations — observational, with residual confounding and diagnosis
+tied to medical contact.</p>
 <p style="margin:0 0 8px;"><strong>Mercury vs. aluminum.</strong> Thimerosal (mercury) is well-studied and
 its removal (~2001 in the U.S.) did not lower autism — but that addresses <em>mercury only</em>. Aluminum
 adjuvants were <em>not</em> removed, and cumulative vaccine aluminum <em>rose</em> as the schedule grew.
@@ -439,12 +430,15 @@ evidence (no dose-response, autism rising after thimerosal removal, ~80% genetic
 weighs against a vaccine cause.</p>`;
 
 const CHRONIC_LAMERATO = `
-<h3 style="margin:2px 0 8px;font-size:15px;">A vaccinated-vs-unvaccinated study: Lamerato et al. (Henry Ford Health)</h3>
-<p style="margin:0 0 10px;font-size:13px;line-height:1.6;">Often cited as the "real" vaccinated-vs-unvaccinated
-comparison. A retrospective analysis at Henry Ford Health (Detroit, data ~2020–2022) compared people who
-received <strong>zero</strong> CDC-schedule vaccine doses to vaccinated people, counting chronic-illness
-diagnoses. It was presented at a U.S. Senate hearing (Sept 9, 2025) and re-analyzed in a December 2025
-commentary in <em>IJVTPR</em> (Oller, Broudy &amp; Hulscher, McCullough Foundation), which reported an
+<h3 style="margin:2px 0 8px;font-size:15px;">The completely-unvaccinated vs. vaccinated study: Lamerato et al. (Henry Ford Health)</h3>
+<p style="margin:0 0 10px;font-size:13px;line-height:1.6;">This is the <strong>only sizable completely-unvaccinated-vs-vaccinated
+comparison from a mainstream U.S. health system to reach the public</strong> — nearly every other study
+(below) compares <em>MMR vs. no-MMR</em> or more-vs-fewer antigens, not vaccinated vs. truly zero doses.
+(Other vaxxed-vs-unvaxxed studies exist but are small, survey-based, or retracted, e.g. Mawson 2017.)
+A retrospective analysis at Henry Ford Health (Detroit, data ~2020–2022) compared people who received
+<strong>zero</strong> CDC-schedule doses to vaccinated people, counting chronic-illness diagnoses. It was
+presented at a U.S. Senate hearing (Sept 9, 2025) and re-analyzed in a December 2025 commentary in
+<em>IJVTPR</em> (Oller, Broudy &amp; Hulscher, McCullough Foundation), which reported an
 <strong>~2.5× higher likelihood of a chronic condition</strong> associated with vaccination.</p>
 <table style="margin:0 0 12px;">
   <thead><tr><th>Cohort</th><th>People</th><th>CDC-schedule doses</th><th>Clinic visits / year</th><th>Chronic-condition finding</th></tr></thead>
@@ -475,6 +469,27 @@ __CONDTABLE__
   </ul>
 </div>`;
 
+const CHRONIC_NOLINK = `
+<h3 style="margin:2px 0 8px;font-size:15px;">Most-cited studies finding NO vaccine–autism link (and their limits)</h3>
+<p style="margin:0 0 10px;font-size:13px;line-height:1.6;">The mainstream conclusion rests largely on these. All are
+observational, and — as the rightmost column shows — <strong>none compares the full schedule vs. no vaccines</strong>
+(the gap the Henry Ford study above tries, imperfectly, to fill). The 1998 Wakefield paper claiming an MMR–autism
+link was retracted for fraud.</p>
+<table style="margin:0;">
+  <thead><tr><th>Study</th><th>What it tested</th><th>Finding</th><th>Key limitations</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Madsen et al. 2002</strong><br><span style="color:var(--muted);font-size:12px;">NEJM · 537,303 children</span></td>
+        <td>MMR vs. no-MMR (Denmark)</td><td>No association (adj. RR 0.92)</td>
+        <td>Both groups got the other routine vaccines → isolates MMR only, not vaccination-vs-none; observational; registry-based diagnoses</td></tr>
+    <tr><td><strong>Hviid et al. 2019</strong><br><span style="color:var(--muted);font-size:12px;">Ann Intern Med · 657,461 children</span></td>
+        <td>MMR vs. no-MMR (Denmark)</td><td>No association (HR 0.93), incl. higher-risk subgroups</td>
+        <td>Same MMR-vs-no-MMR design; can't detect an effect shared by all vaccines; observational/registry</td></tr>
+    <tr><td><strong>DeStefano et al. 2013</strong><br><span style="color:var(--muted);font-size:12px;">J Pediatr · 256 cases / 752 controls</span></td>
+        <td>Cumulative antigen exposure ("too many too soon")</td><td>No dose-response with antigen number/timing</td>
+        <td>Small case-control; tests a gradient <em>within</em> vaccinated children (no zero-vaccine arm); antigen count misses adjuvants such as aluminum</td></tr>
+  </tbody>
+</table>`;
+
 const chronicCharts = {};
 
 function renderChronic() {
@@ -497,9 +512,10 @@ function renderChronic() {
     `<tbody>${lamRows}</tbody></table>`;
 
   host.innerHTML =
+    `<div class="card" style="color:var(--ink);">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>` +
+    `<div class="card" style="color:var(--ink);">${CHRONIC_NOLINK}</div>` +
     `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;color:var(--ink);">${CHRONIC_CAVEAT}</div>` +
     `<div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;color:var(--ink);">${CHRONIC_LIMITATIONS}</div>` +
-    `<div class="card" style="color:var(--ink);">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>` +
     conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="chronic-${c.key}"></canvas></div></div>`).join("");
 
