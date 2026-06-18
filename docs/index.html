@@ -175,6 +175,20 @@
     </p>
   </div>
 
+  <div id="mmrExtra" class="card" style="display:none;">
+    <h3 style="margin:2px 2px 8px;font-size:15px;">Related: natural measles/mumps and later disease (non-specific effects)</h3>
+    <p class="metric-note" style="margin:0;line-height:1.6;">A Japanese cohort (JACC; Kubota et al.,
+      <em>Atherosclerosis</em> 2015; 103,836 adults followed ~20 years) found that adults who had had
+      <strong>both measles and mumps</strong> as children had <strong>lower cardiovascular mortality</strong>
+      (men HR 0.80, women 0.83) — part of the broader, unsettled "non-specific effects" idea (see the DTaP
+      tab). <strong>Caveats:</strong> observational; childhood infection was self-reported decades later
+      (recall/misclassification bias); it's a pre-vaccine birth cohort where these infections were
+      near-universal, so the never-infected comparison group is unusual; association, not causation. It
+      concerns <em>natural infection, not vaccination</em>, and does <em>not</em> argue against vaccinating —
+      acute measles carries real risks (encephalitis, death, and ~2–3 years of "immune amnesia" that
+      <em>raises</em> mortality from other infections).</p>
+  </div>
+
   <div class="card small" id="earlyCard">
     <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
     <div class="chart-box"><canvas id="early"></canvas></div>
@@ -374,6 +388,7 @@ function selectTab(id) {
   document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
   document.getElementById("dtapExtra").style.display = has(["pertussis"]) ? "" : "none";
+  document.getElementById("mmrExtra").style.display = has(["measles", "mumps", "rubella"]) ? "" : "none";
   document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
   document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
   if (isChronic) { renderChronic(); return; }

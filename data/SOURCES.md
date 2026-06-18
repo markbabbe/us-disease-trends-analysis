@@ -307,6 +307,19 @@ diseases ("non-specific effects").
   evidence as established causation. This is the clearest illustration of why
   **all-cause mortality** (not only disease-specific deaths) is a necessary metric.
 
+## Natural measles/mumps and later cardiovascular disease (JACC)
+
+Noted on the MMR tab as part of the non-specific-effects thread: Kubota, Iso &
+Tamakoshi, *Atherosclerosis* 2015 (PMID 26122188), Japan Collaborative Cohort,
+103,836 adults followed ~20 years — adults who had had both measles and mumps in
+childhood had lower cardiovascular mortality (men HR 0.80, women 0.83).
+Observational; childhood infection self-reported decades later (recall bias);
+pre-vaccine birth cohort (these infections near-universal, so the never-infected
+group is unusual); association not causation. Concerns *natural infection, not
+vaccination*; does not argue against vaccinating (acute measles risks include
+encephalitis, death, and ~2–3 years of immune amnesia raising other-infection
+mortality).
+
 ## Deaths per 100,000 over time
 
 Computed in `scripts/build_dashboard_data.py` and `generate_charts.py` as death
