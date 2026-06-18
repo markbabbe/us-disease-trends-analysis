@@ -346,6 +346,19 @@ therefore records the **documented case-hospitalization proportion** (% of
 reported cases hospitalized) by era, from CDC surveillance, not a per-100,000
 time series. See README §7b.
 
+## Vaccination coverage levels 1962–2016 (Overview tab)
+
+`coverage_levels_pinkbook.csv` — transcribed (by word-coordinate parsing) from the
+**CDC Pink Book Appendix E, "Vaccine Coverage Levels — United States, 1962–2016"**
+(13th ed., March 2018; Wayback snapshot 2019-06-18 of
+`.../pinkbook/downloads/appendices/e/coverage-levels.pdf`). Columns: DTP 3+/4+,
+Polio 3+, MMR, Hib 3+, Varicella, PCV 3+, HepB 3+, Rotavirus, and the 4-3-1 /
+4-3-1-3 combined series. Powers the Overview home tab's coverage chart. DTP3+
+coverage rose from 67.3% (1962) to the low-90s; newer vaccines begin when
+introduced. This is authoritative annual coverage and supersedes the approximate
+pre-1994 anchors in `coverage_historical.csv` (still used by the older per-tab
+coverage card).
+
 ## Vaccination coverage (live CDC NIS API)
 
 `coverage.csv` is pulled live from the CDC National Immunization Survey via

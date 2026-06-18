@@ -107,6 +107,7 @@
 
   <p class="metric-note" id="metricNote" style="margin:0 2px 12px;"></p>
 
+  <div id="overviewPanels" style="display:none;"></div>
   <div id="panels"></div>
   <div id="chronicPanels" style="display:none;"></div>
 
@@ -378,12 +379,15 @@ function selectTab(id) {
   const act = activeDiseases();
   const has = arr => arr.some(d => act.includes(d));
   const isChronic = id === "chronic";
-  // The chronic tab has its own layout; hide the disease controls/panels.
-  document.getElementById("controls").style.display = isChronic ? "none" : "";
-  document.getElementById("metricNote").style.display = isChronic ? "none" : "";
-  document.getElementById("panels").style.display = isChronic ? "none" : "";
-  document.getElementById("summaryCard").style.display = isChronic ? "none" : "";
+  const isOverview = id === "overview";
+  const special = isChronic || isOverview;
+  // The overview and chronic tabs have their own layout; hide the disease controls/panels.
+  document.getElementById("controls").style.display = special ? "none" : "";
+  document.getElementById("metricNote").style.display = special ? "none" : "";
+  document.getElementById("panels").style.display = special ? "none" : "";
+  document.getElementById("summaryCard").style.display = isOverview ? "none" : (isChronic ? "none" : "");
   document.getElementById("chronicPanels").style.display = isChronic ? "" : "none";
+  document.getElementById("overviewPanels").style.display = isOverview ? "" : "none";
   // Tab-specific extras: only show where they're relevant.
   document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
@@ -391,9 +395,84 @@ function selectTab(id) {
   document.getElementById("mmrExtra").style.display = has(["measles", "mumps", "rubella"]) ? "" : "none";
   document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
   document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
+  if (isOverview) { renderOverview(); return; }
   if (isChronic) { renderChronic(); return; }
   buildPanels();
   render();
+}
+
+const ovCharts = {};
+
+function renderOverview() {
+  const host = document.getElementById("overviewPanels");
+  const cl = D.coverageLevels || [];
+  const latest = cl[cl.length - 1] || {};
+  const COVSERIES = [
+    ["dtp3", "DTP (3+ doses)", "#e67e22"],
+    ["polio3", "Polio (3+)", "#27ae60"],
+    ["mmr", "MMR (1+)", "#c0392b"],
+    ["hib3", "Hib (3+)", "#bb8fce"],
+    ["hepb3", "Hepatitis B (3+)", "#a569bd"],
+    ["pcv3", "PCV (3+)", "#58d68d"],
+    ["var", "Varicella", "#48c9b0"],
+    ["rota", "Rotavirus", "#5499c7"],
+  ];
+  const covRows = COVSERIES.map(([k, label]) =>
+    `<tr><td>${label}</td><td>${latest[k] != null ? latest[k].toFixed(1) + "%" : "—"}</td></tr>`).join("");
+
+  host.innerHTML = `
+    <div class="card" style="line-height:1.6;">
+      <h3 style="margin:2px 0 8px;font-size:17px;">U.S. vaccine-preventable disease trends &amp; vaccination coverage</h3>
+      <p style="margin:0 0 8px;">An objective look at how the burden of vaccine-preventable diseases changed over the
+      20th–21st centuries, and at vaccination coverage. Pick a <strong>vaccine tab</strong> above (ordered by the
+      childhood schedule); each shows reported <strong>deaths, cases, and hospitalizations per 100,000</strong>
+      over time, with vaccine-introduction markers. Data are from CDC/MMWR, NCHS Vital Statistics, the CDC Pink
+      Book, OWID (U.S. Public Health Reports + CDC), and the U.S. Census.</p>
+      <p style="margin:0;font-size:12.5px;color:var(--muted);">Read the <strong>trend shape</strong>, not exact
+      digits; many series have era-specific caveats (case-definition changes, surveillance start dates,
+      ascertainment). Full sources &amp; caveats:
+      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/SOURCES.md">SOURCES.md</a>.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin:2px 0 8px;font-size:15px;">U.S. childhood vaccination coverage, 1962–2016</h3>
+      <div style="position:relative;height:440px;"><canvas id="ov-coverage"></canvas></div>
+      <p class="metric-note" style="margin:8px 0 0;">Percent of young children vaccinated (newer vaccines begin
+      when introduced). Source: CDC Pink Book Appendix E, "Vaccine Coverage Levels — United States, 1962–2016"
+      (13th ed., 2018). DTP coverage rose from 67% (1962) to the low-90s; coverage now sits ~90% for most
+      long-standing vaccines.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin:2px 0 10px;font-size:15px;">Most recent coverage (${latest.year || ""})</h3>
+      <table style="max-width:420px;"><thead><tr><th>Vaccine</th><th>Coverage</th></tr></thead><tbody>${covRows}</tbody></table>
+    </div>
+    <div class="card" style="line-height:1.6;">
+      <h3 style="margin:2px 0 8px;font-size:15px;">What's in each tab</h3>
+      <ul style="margin:0;padding-left:18px;font-size:13px;">
+        <li><strong>HepB · DTaP · Hib · PCV · Polio · MMR · Rotavirus</strong> — disease tabs (ordered by the childhood schedule). Each: deaths / cases / hospitalizations per 100,000 over time, plus "most affected" notes and key caveats. DTaP, Polio, Hib and MMR also carry deep-dive cards (e.g., the polio case-definition change; the DTP all-cause-mortality debate; the Hib meningitis proxy).</li>
+        <li><strong>Chronic illness</strong> — autism, developmental disability, asthma and eczema prevalence over time vs. the vaccine count, plus the vaccinated-vs-unvaccinated (Lamerato) study and the most-cited "no-link" studies — all with their limitations.</li>
+      </ul>
+    </div>`;
+
+  if (ovCharts["cov"]) ovCharts["cov"].destroy();
+  ovCharts["cov"] = new Chart(document.getElementById("ov-coverage"), {
+    type: "line",
+    data: { datasets: COVSERIES.map(([k, label, color]) => ({
+      label, borderColor: color, backgroundColor: color, tension: 0.2, pointRadius: 1.5, borderWidth: 2,
+      data: cl.filter(r => r[k] != null).map(r => ({ x: r.year, y: r[k] })),
+    })) },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: "nearest", intersect: false },
+      scales: {
+        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+        y: { min: 0, max: 100, title: { display: true, text: "Coverage (%)", color: "#9aa7b2" },
+             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+      },
+      plugins: { legend: { labels: { color: "#e6edf3", boxWidth: 12, font: { size: 11 } } },
+                 tooltip: { callbacks: { title: i => "Year " + i[0].parsed.x } } },
+    },
+  });
 }
 
 const CHRONIC_CAVEAT =

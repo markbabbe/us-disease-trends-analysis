@@ -103,6 +103,19 @@ def lamerato():
              "novx_n": int(r["novx_n"])} for r in read_csv("lamerato_conditions.csv")]
 
 
+def coverage_levels():
+    """CDC Pink Book Appendix E coverage levels, 1962-2016 (all vaccines)."""
+    cols = ("dtp3", "dtp4", "polio3", "mmr", "hib3", "var", "pcv3", "hepb3", "rota")
+    out = []
+    for r in read_csv("coverage_levels_pinkbook.csv"):
+        rec = {"year": int(r["year"])}
+        for k in cols:
+            v = (r.get(k) or "").strip()
+            rec[k] = float(v) if v else None
+        out.append(rec)
+    return out
+
+
 def coverage():
     """Merge approximate historical anchors with live modern NIS data."""
     def f(v):
@@ -156,6 +169,7 @@ VACCINES = {
 
 # Tabs ordered by the childhood immunization schedule (birth -> 2mo -> 12-15mo)
 TABS = [
+    {"id": "overview", "label": "Overview", "sub": "home", "diseases": []},
     {"id": "hepb", "label": "HepB", "sub": "birth", "diseases": ["hepb"]},
     {"id": "rv", "label": "Rotavirus", "sub": "2 months", "diseases": ["rotavirus"]},
     {"id": "dtap", "label": "DTaP", "sub": "2 months", "diseases": ["diphtheria", "tetanus", "pertussis"]},
@@ -175,6 +189,7 @@ def main():
         "under5": sorted(UNDER5),
         "earlyMortality": early(),
         "coverage": coverage(),
+        "coverageLevels": coverage_levels(),
         "chronic": chronic(),
         "lamerato": lamerato(),
     }
