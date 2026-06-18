@@ -202,13 +202,11 @@
     <p class="metric-note"><strong>Availability ≠ coverage.</strong> A vaccine's
       licensure year is not when the population became protected — coverage rises
       over years, and gaps drive residual disease and resurgences (e.g., the
-      1989–91 measles resurgence struck <em>unvaccinated preschoolers</em> ~26
-      years after the 1963 vaccine; note the dip in measles coverage through the
-      1980s). <strong>Hollow markers (pre-1994) are approximate historical
-      anchors</strong> from published reports; filled diamonds are CDC NIS data
-      (the survey began 1994). See
-      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/coverage_milestones.md">coverage_milestones.md</a>
-      for sources and caveats.</p>
+      1989–91 measles resurgence struck <em>unvaccinated preschoolers</em> decades
+      after the 1963 vaccine). Source: <strong>CDC Pink Book Appendix E coverage
+      levels, 1962–2016</strong> (the Overview tab shows all vaccines). Further
+      historical context:
+      <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/coverage_milestones.md">coverage_milestones.md</a>.</p>
   </div>
 
   <div class="card" id="summaryCard">
@@ -771,22 +769,22 @@ wireToggle("logToggle");
 wireToggle("vaxToggle");
 
 function renderCoverage() {
-  const labels = { measles: "Measles (MMR ≥1)", pertussis: "Pertussis (DTP/DTaP ≥3)", polio: "Polio (≥3)" };
-  const datasets = ["measles", "pertussis", "polio"].map(d => ({
-    label: labels[d],
-    data: D.coverage[d].map(r => ({ x: r.year, y: r.value, approx: r.approx })),
-    borderColor: COLORS[d], backgroundColor: COLORS[d], tension: 0.2,
-    // hollow markers for approximate (pre-1994) anchors, filled for CDC NIS data
-    pointRadius: 4,
-    pointStyle: D.coverage[d].map(r => r.approx ? "circle" : "rectRot"),
-    pointBackgroundColor: D.coverage[d].map(r => r.approx ? "#11161c" : COLORS[d]),
-    pointBorderColor: COLORS[d],
+  const cl = D.coverageLevels || [];
+  const series = [
+    ["mmr", "Measles (MMR ≥1)", COLORS.measles],
+    ["dtp3", "DTP (3+ doses)", COLORS.pertussis],
+    ["polio3", "Polio (3+)", COLORS.polio],
+  ];
+  const datasets = series.map(([k, label, color]) => ({
+    label, borderColor: color, backgroundColor: color, tension: 0.2, pointRadius: 2, borderWidth: 2,
+    data: cl.filter(r => r[k] != null).map(r => ({ x: r.year, y: r[k] })),
   }));
   new Chart(document.getElementById("coverage"), {
     type: "line",
     data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
+      interaction: { mode: "nearest", intersect: false },
       scales: {
         x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
              ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
@@ -795,12 +793,7 @@ function renderCoverage() {
       },
       plugins: {
         legend: { labels: { color: "#e6edf3" } },
-        annotation: { annotations: { era: {
-          type: "box", xMin: 1950, xMax: 1994, backgroundColor: "rgba(150,150,150,0.07)",
-          borderWidth: 0 } } },
-        tooltip: { callbacks: {
-          title: items => "Year " + items[0].parsed.x,
-          afterLabel: ctx => ctx.raw.approx ? "(approximate historical anchor)" : "(CDC NIS)" } },
+        tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
       },
     },
   });
