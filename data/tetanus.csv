@@ -1,5 +1,13 @@
 year,cases,deaths,notes
-1947,560,,Notifiable from 1947 (3.9 per million); historical CFR ~30%
+1900,,1776,Death rate 2.33/100k (CDC/Fraser 'Tetanus in the US 1900-1969'). Count = rate x population. Cases not reported until 1947
+1910,,1752,Death rate 1.9/100k (NCHS Grove & Hetzel Table 65). Count = rate x population
+1920,,1696,Death rate 1.6/100k (NCHS Table 65); WWI-era plateau
+1930,,1355,Death rate 1.1/100k (NCHS Table 65)
+1938,,913,Death rate 0.7/100k (NCHS Table 65); decline 1923-40 mainly from antitoxin wound care
+1947,560,,Notifiable from 1947 (3.9 per million reported cases); historical CFR ~30%
+1948,,501,Death rate ~0.34/100k (interp. NCHS 1938-1950); toxoid into routine childhood DTP. Count = rate x pop
+1950,,303,Death rate 0.2/100k (NCHS Table 65); toxoid-era decline 1945-55
+1959,,282,Death rate 0.16/100k (CDC/Fraser); >90% below 1900
 1976,75,,Approx; "50-100 cases/yr since mid-1970s" (CDC)
 1990,64,,Approx anchor
 2005,27,,2001-2008 averaged 29 cases/yr (CFR ~13%)

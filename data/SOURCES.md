@@ -130,11 +130,23 @@ and pertussis resurgence (2024) that the historical compilation alone would miss
   (>100k cases/yr in the 1920s predate the series), **mumps 1968** (vaccine
   1967), **rubella 1966** (vaccine 1969). Rubella's main harm is congenital
   rubella syndrome (birth defects), not deaths, so no death series is shown.
-- `tetanus.csv` — annual 2009–2023 from **CDC MMWR Tetanus Surveillance
-  (SS-7501, 2009–2023)**; pre-2009 are approximate anchors (1947 ~560 cases at
-  3.9/million; "50–100/yr since the mid-1970s"; 2001–2008 averaged 29/yr).
-  Tetanus is **not contagious** (environmental spores), so herd immunity does
-  not apply — included because it is part of DTaP.
+- `tetanus.csv` — **reported cases**: annual 2009–2023 from **CDC MMWR Tetanus
+  Surveillance (SS-7501, 2009–2023)**; pre-2009 are approximate anchors (1947
+  ~560 cases at 3.9/million; "50–100/yr since the mid-1970s"; 2001–2008 averaged
+  29/yr). Tetanus only became nationally **notifiable in 1947**, so there is no
+  earlier *case* count. **Historical death rates** (per 100,000) are added for
+  1900–1959 so the death chart and the Overview "pre-vaccine decline" table can
+  extend back: **1900 = 2.33** and **1959 = 0.16** from CDC / Fraser ("Tetanus in
+  the United States, 1900–1969"), and **1910 = 1.9, 1920 = 1.6, 1930 = 1.1,
+  1938 = 0.7, 1950 = 0.2** read directly from **NCHS Grove & Hetzel, "Vital
+  Statistics Rates in the United States, 1940–1960," Table 65**
+  (`cdc.gov/nchs/data/vsus/vsrates1940_60.pdf`). The 1948 point (~0.34, the
+  toxoid's entry into routine childhood DTP) is interpolated between the 1938 and
+  1950 NCHS values. The `deaths` column stores these as counts (rate ×
+  interpolated population); the dashboard re-derives the original rate. Tetanus is
+  **not contagious** (environmental spores), so herd immunity does not apply — its
+  decline reflects wound care + antitoxin + the toxoid, and it is included in the
+  pre-vaccine table because solid death rates exist back to 1900.
 - `hepb.csv` — **complete annual series** from the **CDC Pink Book Appendix E**
   (Wayback snapshot 2019-06-18 of the 1950–2017 reported-cases table): reported
   **acute** hepatitis B cases **1966–2017** (peak 26,611 in 1985) plus **2020**

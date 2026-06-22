@@ -109,6 +109,9 @@ def pre_vaccine_decline():
         ("diphtheria", "Diphtheria", "Diphtheria toxoid", 1926,
          40.3, "diphtheria.csv",
          "1900 baseline is diphtheria+croup (NCHS); the pre-toxoid drop also reflects 1890s antitoxin."),
+        ("tetanus", "Tetanus", "Tetanus toxoid (DTP)", 1948,
+         2.33, "tetanus.csv",
+         "1900 & 1959 rates from CDC/Fraser; 1910-1950 from NCHS Table 65. Tetanus isn't contagious, so the fall reflects wound care + antitoxin + the toxoid, not herd immunity."),
     ]
     out = []
     for key, label, vax, yr, base, csvf, note in specs:

@@ -286,6 +286,16 @@ window.DISEASE_DATA = {
       "rateRelease": 7.7,
       "pct": 80.9,
       "note": "1900 baseline is diphtheria+croup (NCHS); the pre-toxoid drop also reflects 1890s antitoxin."
+    },
+    {
+      "disease": "tetanus",
+      "label": "Tetanus",
+      "vaccine": "Tetanus toxoid (DTP)",
+      "releaseYear": 1948,
+      "rate1900": 2.33,
+      "rateRelease": 0.34,
+      "pct": 85.4,
+      "note": "1900 & 1959 rates from CDC/Fraser; 1910-1950 from NCHS Table 65. Tetanus isn't contagious, so the fall reflects wound care + antitoxin + the toxoid, not herd immunity."
     }
   ],
   "coverage": {
@@ -3329,6 +3339,56 @@ window.DISEASE_DATA = {
   ],
   "tetanus": [
     {
+      "year": 1900,
+      "cases": null,
+      "deaths": 1776,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 2.3303,
+      "hosp_rate": null,
+      "note": "Death rate 2.33/100k (CDC/Fraser 'Tetanus in the US 1900-1969'). Count = rate x population. Cases not reported until 1947"
+    },
+    {
+      "year": 1910,
+      "cases": null,
+      "deaths": 1752,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 1.8996,
+      "hosp_rate": null,
+      "note": "Death rate 1.9/100k (NCHS Grove & Hetzel Table 65). Count = rate x population"
+    },
+    {
+      "year": 1920,
+      "cases": null,
+      "deaths": 1696,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 1.5997,
+      "hosp_rate": null,
+      "note": "Death rate 1.6/100k (NCHS Table 65); WWI-era plateau"
+    },
+    {
+      "year": 1930,
+      "cases": null,
+      "deaths": 1355,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 1.0998,
+      "hosp_rate": null,
+      "note": "Death rate 1.1/100k (NCHS Table 65)"
+    },
+    {
+      "year": 1938,
+      "cases": null,
+      "deaths": 913,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.7003,
+      "hosp_rate": null,
+      "note": "Death rate 0.7/100k (NCHS Table 65); decline 1923-40 mainly from antitoxin wound care"
+    },
+    {
       "year": 1947,
       "cases": 560,
       "deaths": null,
@@ -3336,7 +3396,37 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": null,
       "hosp_rate": null,
-      "note": "Notifiable from 1947 (3.9 per million); historical CFR ~30%"
+      "note": "Notifiable from 1947 (3.9 per million reported cases); historical CFR ~30%"
+    },
+    {
+      "year": 1948,
+      "cases": null,
+      "deaths": 501,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.3397,
+      "hosp_rate": null,
+      "note": "Death rate ~0.34/100k (interp. NCHS 1938-1950); toxoid into routine childhood DTP. Count = rate x pop"
+    },
+    {
+      "year": 1950,
+      "cases": null,
+      "deaths": 303,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.2002,
+      "hosp_rate": null,
+      "note": "Death rate 0.2/100k (NCHS Table 65); toxoid-era decline 1945-55"
+    },
+    {
+      "year": 1959,
+      "cases": null,
+      "deaths": 282,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.1598,
+      "hosp_rate": null,
+      "note": "Death rate 0.16/100k (CDC/Fraser); >90% below 1900"
     },
     {
       "year": 1976,

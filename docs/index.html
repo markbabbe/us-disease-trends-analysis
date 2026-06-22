@@ -558,7 +558,7 @@ function renderOverview() {
       </table>
       <p class="metric-note" style="margin:10px 0 0;line-height:1.6;">
         <strong>Read carefully — this is the most misunderstood chart here.</strong> These are
-        <strong>death rates</strong> per 100,000. For the three diseases with U.S. death-registration data back to
+        <strong>death rates</strong> per 100,000. For the four diseases with U.S. death-registration data back to
         1900, the <em>large majority of the fall in deaths happened before the vaccine existed</em> — driven mainly by
         better nutrition, sanitation and living conditions, and (after ~1940) antibiotics and modern hospital care.</p>
       <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
@@ -568,14 +568,17 @@ function renderOverview() {
         preventing the remaining deaths plus disability (e.g., congenital rubella, Hib meningitis). High pre-vaccine
         death-<em>rate</em> reduction ≠ "the disease was already beaten."</p>
       <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
-        <strong>Why only three diseases:</strong> <strong>polio is the counterexample</strong> — it was <em>not</em> a
-        major killer in 1900; its deaths <em>rose</em> through the mid-century epidemics and only fell <em>after</em>
+        <strong>A note on tetanus:</strong> its decline is real but works differently — tetanus is <em>not
+        contagious</em> (environmental spores, no herd immunity), so its drop reflects wound care, antitoxin, and the
+        toxoid rather than population immunity. It's included because solid U.S. death rates exist back to 1900
+        (CDC/Fraser + NCHS), and you asked for the number regardless of cause.</p>
+      <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
+        <strong>Why not the other diseases:</strong> <strong>polio is the counterexample</strong> — it was <em>not</em>
+        a major killer in 1900; its deaths <em>rose</em> through the mid-century epidemics and only fell <em>after</em>
         the 1955 vaccine, so a "1900 → release" reduction would be negative and misleading (see the Polio tab for why
-        polio appeared so late). <strong>Tetanus</strong> has no national death-registration data back to 1900 in this
-        dataset and is mechanistically different — it's <em>not contagious</em> (environmental spores, no herd
-        immunity), so its decline reflects wound care plus the toxoid, not population immunity. Mumps, rubella, and the
-        newer-vaccine diseases (Hib, HepB, PCV, rotavirus, meningococcal) likewise have no comparable 1900 baseline —
-        or death isn't their main harm. So a "1900 → release" reduction can't be computed honestly for them.</p>
+        polio appeared so late). Mumps, rubella, and the newer-vaccine diseases (Hib, HepB, PCV, rotavirus,
+        meningococcal) have no comparable 1900 death-rate baseline — or death isn't their main harm — so a
+        "1900 → release" reduction can't be computed honestly for them.</p>
     </div>
     <div class="card" style="line-height:1.6;">
       <h3 style="margin:2px 0 8px;font-size:15px;">What's in each tab</h3>
