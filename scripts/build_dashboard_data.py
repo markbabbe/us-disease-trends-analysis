@@ -87,6 +87,40 @@ def early():
              "pertussis": float(r["pertussis_death_rate"])} for r in rows]
 
 
+def pre_vaccine_decline():
+    """For the diseases with U.S. death-registration data back to 1900, the share of
+    the DEATH-RATE (per 100,000) decline that occurred BEFORE the vaccine's release.
+    Only measles, pertussis, and diphtheria qualify — see notes for why others don't."""
+    pyrs, pop = load_pop()
+    early_rows = {int(r["year"]): r for r in read_csv("early_mortality_rates.csv")}
+
+    def deaths_in(csvf, year):
+        for r in read_csv(csvf):
+            if int(r["year"]) == year and (r.get("deaths") or "").strip():
+                return int(r["deaths"])
+        return None
+
+    # key, label, vaccine label, release year, 1900 rate/100k, csv, footnote
+    specs = [
+        ("measles", "Measles", "Measles vaccine", 1963,
+         float(early_rows[1900]["measles_death_rate"]), "measles.csv", ""),
+        ("pertussis", "Pertussis", "Whole-cell DTP", 1948,
+         float(early_rows[1900]["pertussis_death_rate"]), "pertussis.csv", ""),
+        ("diphtheria", "Diphtheria", "Diphtheria toxoid", 1926,
+         40.3, "diphtheria.csv",
+         "1900 baseline is diphtheria+croup (NCHS); the pre-toxoid drop also reflects 1890s antitoxin."),
+    ]
+    out = []
+    for key, label, vax, yr, base, csvf, note in specs:
+        d = deaths_in(csvf, yr)
+        rel = round(d / float(np.interp(yr, pyrs, pop)) * 100000, 3) if d else None
+        out.append({"disease": key, "label": label, "vaccine": vax, "releaseYear": yr,
+                    "rate1900": round(base, 2), "rateRelease": rel,
+                    "pct": round((base - rel) / base * 100, 1) if rel is not None else None,
+                    "note": note})
+    return out
+
+
 def chronic():
     """Chronic-illness prevalence + childhood vaccine count, by year (long format)."""
     out = {}
@@ -193,6 +227,7 @@ def main():
         "names": {k: v[2] for k, v in DISEASE_CFG.items()},
         "under5": sorted(UNDER5),
         "earlyMortality": early(),
+        "preVaccineDecline": pre_vaccine_decline(),
         "coverage": coverage(),
         "coverageLevels": coverage_levels(),
         "chronic": chronic(),

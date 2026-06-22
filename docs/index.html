@@ -452,6 +452,12 @@ function renderOverview() {
     `<tr><td>${label}</td><td>${latest[k] != null ? latest[k].toFixed(1) + "%" : "—"}</td></tr>`).join("");
   const y85 = cl.find(r => r.year === 1985) || {};
   const pct = v => (v != null ? v.toFixed(1) + "%" : "—");
+  const pvdRows = (D.preVaccineDecline || []).map(r => `<tr>
+      <td>${r.label}</td><td>${r.vaccine} (${r.releaseYear})</td>
+      <td style="text-align:right;">${r.rate1900.toFixed(1)}</td>
+      <td style="text-align:right;">${r.rateRelease != null ? r.rateRelease.toFixed(2) : "—"}</td>
+      <td style="text-align:right;font-weight:600;color:#e0a800;">${r.pct != null ? "−" + r.pct.toFixed(1) + "%" : "—"}</td>
+    </tr>${r.note ? `<tr><td colspan="5" style="padding:0 0 6px;font-size:11px;color:var(--muted);border:0;">${r.note}</td></tr>` : ""}`).join("");
 
   host.innerHTML = `
     <div class="card" style="line-height:1.6;">
@@ -501,6 +507,33 @@ function renderOverview() {
       when introduced). Source: CDC Pink Book Appendix E, "Vaccine Coverage Levels — United States, 1962–2016"
       (13th ed., 2018). DTP coverage rose from 67% (1962) to the low-90s; coverage now sits ~90% for most
       long-standing vaccines.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin:2px 0 8px;font-size:15px;">How much had death rates already fallen <em>before</em> each vaccine? (1900 → release year)</h3>
+      <table style="width:100%;max-width:660px;font-size:13px;">
+        <thead><tr>
+          <th style="text-align:left;">Disease</th><th style="text-align:left;">Vaccine (year)</th>
+          <th style="text-align:right;">Deaths/100k 1900</th><th style="text-align:right;">At release</th>
+          <th style="text-align:right;">Pre-vaccine drop</th>
+        </tr></thead>
+        <tbody>${pvdRows}</tbody>
+      </table>
+      <p class="metric-note" style="margin:10px 0 0;line-height:1.6;">
+        <strong>Read carefully — this is the most misunderstood chart here.</strong> These are
+        <strong>death rates</strong> per 100,000. For the three diseases with U.S. death-registration data back to
+        1900, the <em>large majority of the fall in deaths happened before the vaccine existed</em> — driven mainly by
+        better nutrition, sanitation and living conditions, and (after ~1940) antibiotics and modern hospital care.</p>
+      <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
+        <strong>What it does NOT mean:</strong> that the vaccines were unnecessary. Until vaccination these diseases
+        still <em>infected</em> enormous numbers — measles caused ~3–4 million U.S. infections a year right up to the
+        1963 vaccine — so the vaccines' main job was driving <strong>cases</strong> (not just deaths) toward zero,
+        preventing the remaining deaths plus disability (e.g., congenital rubella, Hib meningitis). High pre-vaccine
+        death-<em>rate</em> reduction ≠ "the disease was already beaten."</p>
+      <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
+        <strong>Why only three diseases:</strong> polio was <em>not</em> a major killer in 1900 (deaths rose with the
+        mid-century epidemics, then fell after the 1955 vaccine), and tetanus, mumps, rubella and the newer-vaccine
+        diseases (Hib, HepB, PCV, rotavirus, meningococcal) have no comparable 1900 U.S. death-rate baseline — or
+        death isn't their main harm — so a "1900 → release" reduction can't be computed honestly for them.</p>
     </div>
     <div class="card">
       <h3 style="margin:2px 0 10px;font-size:15px;">Most recent coverage (${latest.year || ""})</h3>

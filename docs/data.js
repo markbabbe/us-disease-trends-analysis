@@ -256,6 +256,38 @@ window.DISEASE_DATA = {
       "pertussis": 0.15
     }
   ],
+  "preVaccineDecline": [
+    {
+      "disease": "measles",
+      "label": "Measles",
+      "vaccine": "Measles vaccine",
+      "releaseYear": 1963,
+      "rate1900": 13.3,
+      "rateRelease": 0.192,
+      "pct": 98.6,
+      "note": ""
+    },
+    {
+      "disease": "pertussis",
+      "label": "Pertussis",
+      "vaccine": "Whole-cell DTP",
+      "releaseYear": 1948,
+      "rate1900": 12.2,
+      "rateRelease": 0.777,
+      "pct": 93.6,
+      "note": ""
+    },
+    {
+      "disease": "diphtheria",
+      "label": "Diphtheria",
+      "vaccine": "Diphtheria toxoid",
+      "releaseYear": 1926,
+      "rate1900": 40.3,
+      "rateRelease": 7.7,
+      "pct": 80.9,
+      "note": "1900 baseline is diphtheria+croup (NCHS); the pre-toxoid drop also reflects 1890s antitoxin."
+    }
+  ],
   "coverage": {
     "measles": [
       {
