@@ -182,7 +182,9 @@
       after the <strong>1990 infant Hib vaccine</strong>. (The under-1 decline
       began earlier, largely from better meningitis treatment, then dropped further
       post-1990.) Source: NCHS Table HIST001R (1979–1998); this is all-cause
-      meningitis, so it overstates Hib's share somewhat.</p>
+      meningitis, so it overstates Hib's share somewhat. <strong>The main chart's
+      "Deaths per 100,000" view above now plots this same measured 1–4-year series</strong>,
+      so the death view reflects real mortality instead of a back-calculated estimate.</p>
     <img src="childhood_meningitis.png" alt="Childhood meningitis death rate 1979-1998, a Hib proxy"
          style="width:100%;border-radius:8px;display:block;" />
   </div>
@@ -333,7 +335,7 @@ const FACTS = {
   hib: ["Haemophilus influenzae type b — once the top cause of bacterial meningitis in young children.",
         "Pre-vaccine incidence ~40 per 100,000 in children <5 (older estimates cite up to ~20,000 cases/yr); ~3–6% fatal.",
         "Incidence held steady through 1989, then fell >99% AFTER the 1990 infant conjugate vaccine — not before.",
-        "Counts shown are estimated invasive disease in children <5 (CDC surveillance rates); intermediate points approximate."],
+        "Cases = estimated invasive disease in children <5 (CDC surveillance rates). DEATHS view = the MEASURED childhood meningitis death rate (ages 1–4, NCHS) — the real series from the card below — because Hib-specific deaths aren't recorded separately."],
   pcv: ["Pneumococcus (Streptococcus pneumoniae) — meningitis, bloodstream infection, pneumonia.",
         "Invasive disease in children <5 fell ~91%: 15,707 (1997) → 1,382 (2019); ~1–2% fatal (~200 deaths/yr pre-PCV in <5).",
         "PCV7 in 2000; PCV13 in 2010.",
@@ -844,13 +846,20 @@ function noDataReason(dis, metric) {
 function renderDisease(dis, metric) {
   const color = metric === "death_rate" ? DEATH_COLOR : COLORS[dis];
   const u5 = (D.under5 || []).includes(dis);
-  const label = METRIC_LABEL[metric] + (u5 ? " (children <5)" : "");
+  // Hib deaths aren't recorded separately, so the Deaths view is the MEASURED childhood
+  // meningitis death rate (ages 1-4, NCHS) used as the Hib proxy — not deaths in <5.
+  const hibProxy = (dis === "hib" && metric === "death_rate");
+  const label = hibProxy
+    ? "Childhood meningitis death rate, ages 1–4 (Hib proxy)"
+    : METRIC_LABEL[metric] + (u5 ? " (children <5)" : "");
   const n = makeLineChart(`chart-${dis}`, dis, metric, color, label);
   const canvas = document.getElementById(`chart-${dis}`);
   const msg = document.getElementById(`msg-${dis}`);
   if (n) {
     canvas.style.visibility = "visible"; msg.style.display = "none";
-    document.getElementById(`nd-${dis}`).textContent = u5 ? " — per 100,000 children <5" : "";
+    document.getElementById(`nd-${dis}`).textContent = hibProxy
+      ? " — measured all-cause meningitis deaths per 100,000 children aged 1–4 (Hib-specific deaths aren't recorded; NCHS HIST001R)"
+      : (u5 ? " — per 100,000 children <5" : "");
   } else {
     canvas.style.visibility = "hidden"; msg.style.display = "flex";
     msg.textContent = noDataReason(dis, metric);
