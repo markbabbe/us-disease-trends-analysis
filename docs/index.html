@@ -189,6 +189,21 @@
          style="width:100%;border-radius:8px;display:block;" />
   </div>
 
+  <div id="noDeathStatsExtra" class="card" style="display:none;border-left:4px solid #5dade2;">
+    <h3 style="margin:2px 2px 8px;font-size:15px;">Why isn't there a clean death count for this disease?</h3>
+    <p class="metric-note" style="margin:0;line-height:1.65;">
+      Two reasons. <strong>(1) Death was relatively uncommon</strong> — most infections didn't kill (case-fatality
+      was roughly <strong>~5% for Hib</strong> and <strong>~1% for pneumococcus</strong>), so even when the diseases
+      were common the death totals were modest (~1,000/yr for Hib, ~200/yr for pneumococcus in young children before
+      the vaccines). <strong>(2) Deaths are filed by syndrome, not by germ.</strong> A death certificate typically
+      records "meningitis," "pneumonia," or "sepsis" — not the specific bacterium, which often wasn't lab-confirmed by
+      the time the certificate was completed. So national mortality tables never had a clean "Hib" or "pneumococcus"
+      line to add up. Doctors still <em>knew</em> these germs were deadly — they cultured them directly from the blood
+      and spinal fluid of individual dying children — but that bedside proof never became a national death tally.
+      That's why the death figures here are a measured proxy (Hib) or an estimate (pneumococcus), not a direct count.
+    </p>
+  </div>
+
   <div id="dtapExtra" class="card" style="display:none;border-left:4px solid #e0a800;">
     <h3 style="margin:2px 2px 8px;font-size:15px;">⚠ DTP and all-cause mortality — an unresolved "non-specific effects" concern</h3>
     <p class="metric-note" style="margin:0;line-height:1.65;">
@@ -464,6 +479,7 @@ function selectTab(id) {
   document.getElementById("polioOriginExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
+  document.getElementById("noDeathStatsExtra").style.display = has(["hib", "pcv"]) ? "" : "none";
   document.getElementById("dtapExtra").style.display = has(["pertussis"]) ? "" : "none";
   document.getElementById("mmrExtra").style.display = has(["measles", "mumps", "rubella"]) ? "" : "none";
   document.getElementById("menbExtra").style.display = has(["meningococcal"]) ? "" : "none";
