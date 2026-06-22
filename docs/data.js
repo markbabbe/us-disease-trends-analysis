@@ -4912,7 +4912,7 @@ window.DISEASE_DATA = {
       "cfr": 1.2733,
       "death_rate": 1.0566,
       "hosp_rate": null,
-      "note": "Invasive pneumococcal disease in children <5 (CDC ABCs); deaths approx (~1.3% fatal)"
+      "note": "Invasive pneumococcal disease in children <5 (CDC ABCs). Deaths ESTIMATED: matches CDC burden estimate (~200/yr pre-PCV) = cases x measured ~1.3% CFR. Pneumococcal deaths aren't recorded separately"
     },
     {
       "year": 1999,
@@ -4922,7 +4922,7 @@ window.DISEASE_DATA = {
       "cfr": 1.2812,
       "death_rate": 1.0737,
       "hosp_rate": null,
-      "note": "Approx; level held before PCV7 (2000)"
+      "note": "Approx; level held before PCV7 (2000). Deaths estimated (cases x ~1.3% CFR)"
     },
     {
       "year": 2007,
@@ -4932,7 +4932,7 @@ window.DISEASE_DATA = {
       "cfr": 1.2222,
       "death_rate": 0.2765,
       "hosp_rate": null,
-      "note": "Approx; after PCV7 cut <5 invasive disease ~76%"
+      "note": "Approx; after PCV7 cut <5 invasive disease ~76%. Deaths estimated"
     },
     {
       "year": 2019,
@@ -4942,7 +4942,7 @@ window.DISEASE_DATA = {
       "cfr": 1.3025,
       "death_rate": 0.0969,
       "hosp_rate": null,
-      "note": "After PCV13 (2010); -91% vs 1997"
+      "note": "After PCV13 (2010); -91% vs 1997. Deaths estimated"
     }
   ],
   "polio": [

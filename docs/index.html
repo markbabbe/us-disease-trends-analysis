@@ -339,7 +339,7 @@ const FACTS = {
   pcv: ["Pneumococcus (Streptococcus pneumoniae) — meningitis, bloodstream infection, pneumonia.",
         "Invasive disease in children <5 fell ~91%: 15,707 (1997) → 1,382 (2019); ~1–2% fatal (~200 deaths/yr pre-PCV in <5).",
         "PCV7 in 2000; PCV13 in 2010.",
-        "Also a major cause of disease in older adults; this series is children <5 (CDC ABCs). Deaths shown are estimates."],
+        "Cases = invasive pneumococcal disease in children <5 (CDC ABCs). DEATHS view is an ESTIMATE — pneumococcal deaths aren't recorded separately (coded under pneumonia/sepsis/meningitis, rarely lab-confirmed); it's IPD cases × the measured ~1.3% case-fatality, matching CDC's ~200 deaths/yr pre-PCV estimate. Unlike Hib, there's no clean measured proxy. Also a major killer of older adults (not shown)."],
   diphtheria: ["Once a top infectious killer: ~40 deaths per 100,000 in 1900 (~30,000 deaths/yr); >100,000 cases/yr in the early 1920s.",
                "Toxoid (1920s) drove most of the death decline; combined into DTP ~1948.",
                "Deaths shown 1900–2022 (pre-1937 from NCHS Table 65 rates × population; 1937+ CDC/OWID). Cases start 1937.",
@@ -849,9 +849,13 @@ function renderDisease(dis, metric) {
   // Hib deaths aren't recorded separately, so the Deaths view is the MEASURED childhood
   // meningitis death rate (ages 1-4, NCHS) used as the Hib proxy — not deaths in <5.
   const hibProxy = (dis === "hib" && metric === "death_rate");
+  // Pneumococcal deaths aren't recorded separately either, but (unlike Hib) no clean
+  // measured proxy exists — so the PCV death view is an explicit estimate.
+  const pcvEst = (dis === "pcv" && metric === "death_rate");
   const label = hibProxy
     ? "Childhood meningitis death rate, ages 1–4 (Hib proxy)"
-    : METRIC_LABEL[metric] + (u5 ? " (children <5)" : "");
+    : (pcvEst ? "Estimated IPD deaths per 100,000 (children <5)"
+              : METRIC_LABEL[metric] + (u5 ? " (children <5)" : ""));
   const n = makeLineChart(`chart-${dis}`, dis, metric, color, label);
   const canvas = document.getElementById(`chart-${dis}`);
   const msg = document.getElementById(`msg-${dis}`);
@@ -859,7 +863,9 @@ function renderDisease(dis, metric) {
     canvas.style.visibility = "visible"; msg.style.display = "none";
     document.getElementById(`nd-${dis}`).textContent = hibProxy
       ? " — measured all-cause meningitis deaths per 100,000 children aged 1–4 (Hib-specific deaths aren't recorded; NCHS HIST001R)"
-      : (u5 ? " — per 100,000 children <5" : "");
+      : (pcvEst
+          ? " — ESTIMATE: invasive pneumococcal cases × measured ~1.3% case-fatality (pneumococcal deaths aren't recorded separately; matches CDC's ~200/yr pre-PCV estimate)"
+          : (u5 ? " — per 100,000 children <5" : ""));
   } else {
     canvas.style.visibility = "hidden"; msg.style.display = "flex";
     msg.textContent = noDataReason(dis, metric);

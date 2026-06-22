@@ -224,10 +224,19 @@ differently and mostly recently, so the CSVs are **documented anchors with clear
   CDC's measured baseline (~41/100,000 <5); **1980 and 1985 are a pre-vaccine
   plateau estimate** at that surveillance level (no granular early-1980s annual
   data is published). Rate is per 100,000 children <5 (see under-5 denominator
-  below). Intermediate points approximate.
+  below). Intermediate points approximate. **Deaths view:** Hib-specific deaths
+  aren't recorded, so the dashboard's Deaths-per-100,000 view plots the **measured
+  childhood-meningitis death rate (ages 1–4, NCHS HIST001R, 1979–1998)** as the
+  proxy — not a cases × CFR estimate (see the meningitis-proxy section above).
 - `pcv.csv` — invasive **pneumococcal** disease in children <5 (CDC Active
   Bacterial Core surveillance): 15,707 (1997) → 1,382 (2019), −91%. PCV7 2000,
   PCV13 2010. (Pneumococcus also heavily affects older adults — not shown.)
+  **Deaths are an explicit ESTIMATE:** pneumococcal deaths aren't recorded
+  separately (coded under pneumonia/sepsis/meningitis, rarely lab-confirmed), and —
+  unlike Hib — there is **no clean measured proxy**. The death series is IPD cases
+  × the measured ~1.3% case-fatality, anchored to CDC's burden estimate of **~200
+  deaths/yr in <5 pre-PCV** (Pink Book ch. 17). It necessarily tracks the case
+  curve; the dashboard labels the Deaths view as an estimate.
 - `rotavirus.csv` — primary series is **hospitalizations** in children <5, not
   reported cases (rotavirus has no notifiable-case record). Pre-vaccine
   ~55,000–70,000 hospitalizations/yr; vaccine 2006 → large declines. **No death
