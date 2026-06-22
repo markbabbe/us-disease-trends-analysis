@@ -450,6 +450,8 @@ function renderOverview() {
   ];
   const covRows = COVSERIES.map(([k, label]) =>
     `<tr><td>${label}</td><td>${latest[k] != null ? latest[k].toFixed(1) + "%" : "—"}</td></tr>`).join("");
+  const y85 = cl.find(r => r.year === 1985) || {};
+  const pct = v => (v != null ? v.toFixed(1) + "%" : "—");
 
   host.innerHTML = `
     <div class="card" style="line-height:1.6;">
@@ -463,6 +465,20 @@ function renderOverview() {
       digits; many series have era-specific caveats (case-definition changes, surveillance start dates,
       ascertainment). Full sources &amp; caveats:
       <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/SOURCES.md">SOURCES.md</a>.</p>
+    </div>
+    <div class="card" style="line-height:1.6;border-left:4px solid #e0a800;background:rgba(224,168,0,0.06);">
+      <h3 style="margin:2px 0 8px;font-size:16px;">Takeaway: the 1985 childhood schedule — before the 1986 Vaccine Injury Act</h3>
+      <p style="margin:0 0 8px;">In <strong>1985</strong>, the year before the <strong>National Childhood
+      Vaccine Injury Act of 1986</strong>, the routine U.S. childhood immunization schedule consisted of
+      <strong>3 vaccines</strong> — DTP, oral polio (OPV), and MMR — protecting against <strong>7 diseases</strong>:
+      diphtheria, tetanus, pertussis, polio, measles, mumps, and rubella.</p>
+      <p style="margin:0 0 8px;">Coverage among young children that year was far below today's ~90%+:
+      <strong>DTP (3+ doses) ${pct(y85.dtp3)}</strong>, <strong>polio (3+ doses) ${pct(y85.polio3)}</strong>,
+      and <strong>MMR (1+ dose) ${pct(y85.mmr)}</strong>.</p>
+      <p style="margin:0;font-size:12.5px;color:var(--muted);">For comparison, the current schedule (birth–18)
+      protects against roughly <strong>16 diseases</strong> (HepB, rotavirus, DTaP, Hib, pneumococcal, polio,
+      influenza, MMR, varicella, hepatitis A, HPV, and meningococcal). 1985 coverage source: CDC Pink Book
+      Appendix E, "Vaccine Coverage Levels — United States, 1962–2016."</p>
     </div>
     <div class="card">
       <h3 style="margin:2px 0 8px;font-size:15px;">U.S. childhood vaccination coverage, 1962–2016</h3>
