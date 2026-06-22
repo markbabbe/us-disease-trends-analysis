@@ -111,6 +111,46 @@
   <div id="panels"></div>
   <div id="chronicPanels" style="display:none;"></div>
 
+  <div id="polioOriginExtra" class="card" style="display:none;border-left:4px solid #5dade2;">
+    <h3 style="margin:2px 2px 8px;font-size:15px;">Where did polio come from? Why epidemics appeared only in the late 1800s</h3>
+    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+      A genuine historical puzzle. The <strong>poliovirus is ancient</strong> — an Egyptian carving from
+      ~1400&nbsp;BC shows a withered, polio-like leg — yet <strong>epidemic</strong> paralytic polio is strikingly
+      <strong>modern</strong>. The first U.S. outbreak was Vermont, <strong>1894</strong> (~132 cases); the first big
+      urban epidemic struck New York in <strong>1916</strong> (~27,000 cases). Before ~1890 polio existed only as
+      rare, scattered "infantile paralysis." Strangely, the epidemics grew <em>worse</em> as sanitation, clean water,
+      and hygiene <em>improved</em> — the opposite of typhoid, cholera, diphtheria, and TB, which were falling.
+      Scientists still don't fully agree on why. The two main explanations:</p>
+    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+      <strong>1) The leading (mainstream) view — the "hygiene hypothesis."</strong> When water and food were
+      routinely contaminated, nearly every baby caught poliovirus in its <em>first months of life</em>, while still
+      protected by the mother's antibodies. That early, antibody-shielded infection was usually silent and gave
+      lifelong immunity — paralysis was rare. Modern sanitation <em>delayed</em> first exposure to older childhood or
+      adulthood, after maternal antibodies had faded, and polio is far more likely to paralyze when it first strikes
+      an older, unprotected person. So cleaner living paradoxically turned a mild, near-universal infant infection into
+      an epidemic crippler — a "disease of development," not of filth. This fits the timing and the age-shift well,
+      though the exact drivers (why certain years and places, the role of more virulent strains) aren't fully settled.</p>
+    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+      <strong>2) The skeptic alternative — the pesticide / DDT theory.</strong> A minority view — voiced by physician
+      <em>Morton Biskind</em> in the 1950s and revived in Forrest Maready's 2018 book <em>The Moth in the Iron
+      Lung</em> and by some vaccine skeptics — argues the paralysis epidemics were caused or worsened by neurotoxic
+      pesticides (<em>lead arsenate</em>, then <em>DDT</em>), citing a rough correlation between pesticide use and
+      epidemic peaks, and crediting the decline to falling pesticide use rather than the vaccine.</p>
+    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+      <strong>Why mainstream scientists reject pesticides as <em>the cause</em>:</strong> the poliovirus was isolated
+      and shown to cause the disease (grown in culture by Enders, Weller &amp; Robbins in 1949 — Nobel 1954), it is
+      contagious, and outbreaks spread like an infection, not a poisoning. Epidemics began in the <strong>1890s</strong>,
+      before DDT's insecticidal use (1939+); the decline tracks the <strong>1955 Salk vaccine</strong> closely — years
+      before DDT was restricted (1972) — and polio has since been eliminated in many countries by vaccination with no
+      change in pesticide use. Pesticide nerve damage is real but is a different mechanism from viral paralysis.</p>
+    <p class="metric-note" style="margin:0;line-height:1.65;">
+      <strong>The kernel worth keeping:</strong> there genuinely <em>was</em> a post-1955 diagnostic reclassification
+      (the paralytic-case definition tightened and aseptic meningitis / other paralyses were split out) — that's real
+      and is exactly what the next card below quantifies — and individual co-factors (heavy exertion, tonsillectomy)
+      could worsen a given case. But "polio was just pesticide poisoning" doesn't survive the virus evidence.
+      <strong>Best-supported answer:</strong> the hygiene / maternal-antibody hypothesis.</p>
+  </div>
+
   <div id="polioExtra" class="card" style="display:none;">
     <h3 style="margin:2px 2px 10px;font-size:15px;">Polio: isolating the effect of the 1950s case-definition change</h3>
     <p class="metric-note" style="margin:0 0 10px;">The definition change and the
@@ -419,6 +459,7 @@ function selectTab(id) {
   document.getElementById("chronicPanels").style.display = isChronic ? "" : "none";
   document.getElementById("overviewPanels").style.display = isOverview ? "" : "none";
   // Tab-specific extras: only show where they're relevant.
+  document.getElementById("polioOriginExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("polioExtra").style.display = has(["polio"]) ? "" : "none";
   document.getElementById("hibExtra").style.display = has(["hib"]) ? "" : "none";
   document.getElementById("dtapExtra").style.display = has(["pertussis"]) ? "" : "none";
@@ -530,10 +571,14 @@ function renderOverview() {
         preventing the remaining deaths plus disability (e.g., congenital rubella, Hib meningitis). High pre-vaccine
         death-<em>rate</em> reduction ≠ "the disease was already beaten."</p>
       <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
-        <strong>Why only three diseases:</strong> polio was <em>not</em> a major killer in 1900 (deaths rose with the
-        mid-century epidemics, then fell after the 1955 vaccine), and tetanus, mumps, rubella and the newer-vaccine
-        diseases (Hib, HepB, PCV, rotavirus, meningococcal) have no comparable 1900 U.S. death-rate baseline — or
-        death isn't their main harm — so a "1900 → release" reduction can't be computed honestly for them.</p>
+        <strong>Why only three diseases:</strong> <strong>polio is the counterexample</strong> — it was <em>not</em> a
+        major killer in 1900; its deaths <em>rose</em> through the mid-century epidemics and only fell <em>after</em>
+        the 1955 vaccine, so a "1900 → release" reduction would be negative and misleading (see the Polio tab for why
+        polio appeared so late). <strong>Tetanus</strong> has no national death-registration data back to 1900 in this
+        dataset and is mechanistically different — it's <em>not contagious</em> (environmental spores, no herd
+        immunity), so its decline reflects wound care plus the toxoid, not population immunity. Mumps, rubella, and the
+        newer-vaccine diseases (Hib, HepB, PCV, rotavirus, meningococcal) likewise have no comparable 1900 baseline —
+        or death isn't their main harm. So a "1900 → release" reduction can't be computed honestly for them.</p>
     </div>
     <div class="card">
       <h3 style="margin:2px 0 10px;font-size:15px;">Most recent coverage (${latest.year || ""})</h3>
