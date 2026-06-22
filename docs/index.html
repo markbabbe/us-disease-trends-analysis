@@ -478,7 +478,6 @@ const ovCharts = {};
 function renderOverview() {
   const host = document.getElementById("overviewPanels");
   const cl = D.coverageLevels || [];
-  const latest = cl[cl.length - 1] || {};
   const COVSERIES = [
     ["dtp3", "DTP (3+ doses)", "#e67e22"],
     ["polio3", "Polio (3+)", "#27ae60"],
@@ -489,8 +488,6 @@ function renderOverview() {
     ["var", "Varicella", "#48c9b0"],
     ["rota", "Rotavirus", "#5499c7"],
   ];
-  const covRows = COVSERIES.map(([k, label]) =>
-    `<tr><td>${label}</td><td>${latest[k] != null ? latest[k].toFixed(1) + "%" : "—"}</td></tr>`).join("");
   const y85 = cl.find(r => r.year === 1985) || {};
   const pct = v => (v != null ? v.toFixed(1) + "%" : "—");
   const pvdRows = (D.preVaccineDecline || []).map(r => `<tr>
@@ -579,10 +576,6 @@ function renderOverview() {
         immunity), so its decline reflects wound care plus the toxoid, not population immunity. Mumps, rubella, and the
         newer-vaccine diseases (Hib, HepB, PCV, rotavirus, meningococcal) likewise have no comparable 1900 baseline —
         or death isn't their main harm. So a "1900 → release" reduction can't be computed honestly for them.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin:2px 0 10px;font-size:15px;">Most recent coverage (${latest.year || ""})</h3>
-      <table style="max-width:420px;"><thead><tr><th>Vaccine</th><th>Coverage</th></tr></thead><tbody>${covRows}</tbody></table>
     </div>
     <div class="card" style="line-height:1.6;">
       <h3 style="margin:2px 0 8px;font-size:15px;">What's in each tab</h3>
