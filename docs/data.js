@@ -3419,14 +3419,94 @@ window.DISEASE_DATA = {
       "note": "Death rate 0.7/100k (NCHS Table 65); decline 1923-40 mainly from antitoxin wound care"
     },
     {
+      "year": 1939,
+      "cases": null,
+      "deaths": 656,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.4997,
+      "hosp_rate": null,
+      "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1940,
+      "cases": null,
+      "deaths": 529,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.4003,
+      "hosp_rate": null,
+      "note": "Death rate 0.4/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1941,
+      "cases": null,
+      "deaths": 670,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.4997,
+      "hosp_rate": null,
+      "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1942,
+      "cases": null,
+      "deaths": 680,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.5,
+      "hosp_rate": null,
+      "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1943,
+      "cases": null,
+      "deaths": 690,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.5003,
+      "hosp_rate": null,
+      "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1944,
+      "cases": null,
+      "deaths": 699,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.4999,
+      "hosp_rate": null,
+      "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1945,
+      "cases": null,
+      "deaths": 709,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.5002,
+      "hosp_rate": null,
+      "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1946,
+      "cases": null,
+      "deaths": 575,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.4002,
+      "hosp_rate": null,
+      "note": "Death rate 0.4/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
+    },
+    {
       "year": 1947,
       "cases": 560,
-      "deaths": null,
+      "deaths": 582,
       "incidence": 0.3847,
-      "cfr": null,
-      "death_rate": null,
+      "cfr": 103.9286,
+      "death_rate": 0.3998,
       "hosp_rate": null,
-      "note": "Notifiable from 1947 (3.9 per million reported cases); historical CFR ~30%"
+      "note": "Notifiable from 1947 (3.9 per million reported cases); historical CFR ~30% | deaths: Death rate 0.4/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop"
     },
     {
       "year": 1948,
@@ -3439,6 +3519,16 @@ window.DISEASE_DATA = {
       "note": "Death rate ~0.34/100k (interp. NCHS 1938-1950); toxoid into routine childhood DTP. Count = rate x pop"
     },
     {
+      "year": 1949,
+      "cases": null,
+      "deaths": 448,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.2998,
+      "hosp_rate": null,
+      "note": "Death rate 0.3/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
       "year": 1950,
       "cases": null,
       "deaths": 303,
@@ -3447,6 +3537,86 @@ window.DISEASE_DATA = {
       "death_rate": 0.2002,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65); toxoid-era decline 1945-55"
+    },
+    {
+      "year": 1951,
+      "cases": null,
+      "deaths": 462,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.2998,
+      "hosp_rate": null,
+      "note": "Death rate 0.3/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1952,
+      "cases": null,
+      "deaths": 314,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.2001,
+      "hosp_rate": null,
+      "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1953,
+      "cases": null,
+      "deaths": 319,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.1997,
+      "hosp_rate": null,
+      "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1954,
+      "cases": null,
+      "deaths": 325,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.2,
+      "hosp_rate": null,
+      "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1955,
+      "cases": null,
+      "deaths": 331,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.2002,
+      "hosp_rate": null,
+      "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1956,
+      "cases": null,
+      "deaths": 168,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.0999,
+      "hosp_rate": null,
+      "note": "Death rate 0.1/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1957,
+      "cases": null,
+      "deaths": 342,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.2001,
+      "hosp_rate": null,
+      "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1958,
+      "cases": null,
+      "deaths": 347,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.1997,
+      "hosp_rate": null,
+      "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
     },
     {
       "year": 1959,
@@ -3459,6 +3629,36 @@ window.DISEASE_DATA = {
       "note": "Death rate 0.16/100k (CDC/Fraser); >90% below 1900"
     },
     {
+      "year": 1960,
+      "cases": null,
+      "deaths": 179,
+      "incidence": null,
+      "cfr": null,
+      "death_rate": 0.0998,
+      "hosp_rate": null,
+      "note": "Death rate 0.1/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop"
+    },
+    {
+      "year": 1974,
+      "cases": 101,
+      "deaths": null,
+      "incidence": 0.0475,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1975,
+      "cases": 102,
+      "deaths": null,
+      "incidence": 0.0475,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
       "year": 1976,
       "cases": 75,
       "deaths": null,
@@ -3467,6 +3667,136 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Approx; \"50-100 cases/yr since mid-1970s\" (CDC)"
+    },
+    {
+      "year": 1977,
+      "cases": 87,
+      "deaths": null,
+      "incidence": 0.0396,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1978,
+      "cases": 86,
+      "deaths": null,
+      "incidence": 0.0388,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1979,
+      "cases": 81,
+      "deaths": null,
+      "incidence": 0.0361,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1980,
+      "cases": 95,
+      "deaths": null,
+      "incidence": 0.0419,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1981,
+      "cases": 72,
+      "deaths": null,
+      "incidence": 0.0315,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1982,
+      "cases": 88,
+      "deaths": null,
+      "incidence": 0.0381,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1983,
+      "cases": 91,
+      "deaths": null,
+      "incidence": 0.039,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1984,
+      "cases": 74,
+      "deaths": null,
+      "incidence": 0.0314,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1985,
+      "cases": 83,
+      "deaths": null,
+      "incidence": 0.0349,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1986,
+      "cases": 64,
+      "deaths": null,
+      "incidence": 0.0267,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1987,
+      "cases": 48,
+      "deaths": null,
+      "incidence": 0.0198,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1988,
+      "cases": 53,
+      "deaths": null,
+      "incidence": 0.0217,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1989,
+      "cases": 53,
+      "deaths": null,
+      "incidence": 0.0215,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
     },
     {
       "year": 1990,
@@ -3479,6 +3809,136 @@ window.DISEASE_DATA = {
       "note": "Approx anchor"
     },
     {
+      "year": 1991,
+      "cases": 57,
+      "deaths": null,
+      "incidence": 0.0226,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1992,
+      "cases": 45,
+      "deaths": null,
+      "incidence": 0.0176,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1993,
+      "cases": 48,
+      "deaths": null,
+      "incidence": 0.0186,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1994,
+      "cases": 51,
+      "deaths": null,
+      "incidence": 0.0195,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1995,
+      "cases": 34,
+      "deaths": null,
+      "incidence": 0.0128,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1997,
+      "cases": 42,
+      "deaths": null,
+      "incidence": 0.0155,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1998,
+      "cases": 34,
+      "deaths": null,
+      "incidence": 0.0124,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 1999,
+      "cases": 32,
+      "deaths": null,
+      "incidence": 0.0115,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 2000,
+      "cases": 35,
+      "deaths": null,
+      "incidence": 0.0124,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 2001,
+      "cases": 38,
+      "deaths": null,
+      "incidence": 0.0134,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 2002,
+      "cases": 25,
+      "deaths": null,
+      "incidence": 0.0087,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 2003,
+      "cases": 20,
+      "deaths": null,
+      "incidence": 0.0069,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 2004,
+      "cases": 34,
+      "deaths": null,
+      "incidence": 0.0116,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
       "year": 2005,
       "cases": 27,
       "deaths": null,
@@ -3487,6 +3947,36 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "2001-2008 averaged 29 cases/yr (CFR ~13%)"
+    },
+    {
+      "year": 2006,
+      "cases": 41,
+      "deaths": null,
+      "incidence": 0.0138,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 2007,
+      "cases": 28,
+      "deaths": null,
+      "incidence": 0.0093,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
+    },
+    {
+      "year": 2008,
+      "cases": 19,
+      "deaths": null,
+      "incidence": 0.0063,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)"
     },
     {
       "year": 2009,
@@ -3646,7 +4136,7 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": null,
       "hosp_rate": null,
-      "note": "CDC NNDSS API x9gk-5huc (provisional; cases only"
+      "note": "CDC NNDSS API x9gk-5huc (provisional; cases only, deaths not in weekly table)"
     },
     {
       "year": 2025,
@@ -3656,7 +4146,7 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": null,
       "hosp_rate": null,
-      "note": "CDC NNDSS API x9gk-5huc (provisional; cases only"
+      "note": "CDC NNDSS API x9gk-5huc (provisional; cases only, deaths not in weekly table)"
     }
   ],
   "pertussis": [
