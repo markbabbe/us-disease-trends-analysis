@@ -52,3 +52,6 @@ year,cases,deaths,notes
 2016,3218,,
 2017,3409,,
 2020,2157,,CDC NNDSS (acute cases)
+2023,1634,,CDC NNDSS API x9gk-5huc acute (provisional)
+2024,2642,,"CDC NNDSS API x9gk-5huc acute = Confirmed 2373 + Probable 269 (provisional)"
+2025,2217,,"CDC NNDSS API x9gk-5huc acute = Confirmed 1890 + Probable 327 (provisional)"

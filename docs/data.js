@@ -2061,6 +2061,36 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS (acute cases)"
+    },
+    {
+      "year": 2023,
+      "cases": 1634,
+      "deaths": null,
+      "incidence": 0.4835,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc acute (provisional)"
+    },
+    {
+      "year": 2024,
+      "cases": 2642,
+      "deaths": null,
+      "incidence": 0.7768,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc acute = Confirmed 2373 + Probable 269 (provisional)"
+    },
+    {
+      "year": 2025,
+      "cases": 2217,
+      "deaths": null,
+      "incidence": 0.6518,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc acute = Confirmed 1890 + Probable 327 (provisional)"
     }
   ],
   "rotavirus": [
@@ -3607,6 +3637,26 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": ""
+    },
+    {
+      "year": 2024,
+      "cases": 33,
+      "deaths": null,
+      "incidence": 0.0097,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc (provisional; cases only"
+    },
+    {
+      "year": 2025,
+      "cases": 38,
+      "deaths": null,
+      "incidence": 0.0112,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc (provisional; cases only"
     }
   ],
   "pertussis": [
@@ -4901,6 +4951,46 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "18 reported cases in children =<5"
+    },
+    {
+      "year": 2022,
+      "cases": 13,
+      "deaths": null,
+      "incidence": 0.0715,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)"
+    },
+    {
+      "year": 2023,
+      "cases": 27,
+      "deaths": null,
+      "incidence": 0.1492,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)"
+    },
+    {
+      "year": 2024,
+      "cases": 25,
+      "deaths": null,
+      "incidence": 0.1389,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)"
+    },
+    {
+      "year": 2025,
+      "cases": 21,
+      "deaths": null,
+      "incidence": 0.1167,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)"
     }
   ],
   "pcv": [
@@ -7339,6 +7429,36 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": ""
+    },
+    {
+      "year": 2023,
+      "cases": 430,
+      "deaths": null,
+      "incidence": 0.1272,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc (provisional)"
+    },
+    {
+      "year": 2024,
+      "cases": 361,
+      "deaths": null,
+      "incidence": 0.1061,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc (provisional)"
+    },
+    {
+      "year": 2025,
+      "cases": 342,
+      "deaths": null,
+      "incidence": 0.1006,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc (provisional)"
     }
   ],
   "rubella": [
@@ -7911,6 +8031,26 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": ""
+    },
+    {
+      "year": 2023,
+      "cases": 9,
+      "deaths": null,
+      "incidence": 0.0027,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc (provisional)"
+    },
+    {
+      "year": 2024,
+      "cases": 9,
+      "deaths": null,
+      "incidence": 0.0026,
+      "cfr": null,
+      "death_rate": null,
+      "hosp_rate": null,
+      "note": "CDC NNDSS API x9gk-5huc (provisional)"
     }
   ],
   "meningococcal": [
