@@ -5,9 +5,16 @@ Source: Our World in Data U.S. series (underlying: U.S. Public Health Reports +
 CDC). Raw files: data/owid_diphtheria.csv, owid_mumps.csv, owid_rubella.csv.
 Output: data/diphtheria.csv, data/mumps.csv, data/rubella.csv
 (Tetanus and Hep B are hand-built from CDC MMWR — see those CSVs.)
+
+NON-DESTRUCTIVE: merges into the existing CSVs via scripts/_merge.py. OWID does
+not carry the curated rows these files also hold (diphtheria deaths 1900-1936,
+the NNDSS recent years, partial-year rows), so a rebuild may only add — it never
+overwrites an existing value. See _merge.py for the rule.
 """
 import csv
 import os
+
+from _merge import merge_and_write
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
@@ -18,12 +25,11 @@ def read(name):
         return list(csv.DictReader(f))
 
 
+HEADER = ["year", "cases", "deaths", "notes"]
+
+
 def write(name, rows):
-    with open(os.path.join(DATA, name), "w", newline="") as f:
-        w = csv.writer(f)
-        w.writerow(["year", "cases", "deaths", "notes"])
-        w.writerows(rows)
-    print(f"wrote data/{name}: {len(rows)} rows ({rows[0][0]}-{rows[-1][0]})")
+    merge_and_write(name, HEADER, [dict(zip(HEADER, r)) for r in rows])
 
 
 def col(r, key):

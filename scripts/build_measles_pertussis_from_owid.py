@@ -11,11 +11,17 @@ Sources (Our World in Data; underlying U.S. Public Health Reports + CDC):
 Recent pertussis (2023-2025) appended from cdc_nndss_recent.csv (provisional).
 Early measles/pertussis death RATES (1900-1930) remain in early_mortality_rates.csv,
 used by the dashboard/early chart.
+
+NON-DESTRUCTIVE: merges via scripts/_merge.py — an existing value is never
+overwritten by an OWID value, so curated rows (the measles 2025 CDC final count,
+partial-year rows) survive a rebuild. Divergences are printed, not hidden.
 """
 import csv
 import os
 
 import numpy as np
+
+from _merge import merge_and_write
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
@@ -38,12 +44,8 @@ def to_num(v):
 
 
 def write(name, col, rows):
-    with open(os.path.join(DATA, name), "w", newline="") as f:
-        w = csv.writer(f)
-        w.writerow(["year", col, "deaths", "notes"])
-        w.writerows(rows)
-    nd = sum(1 for r in rows if r[2] != "")
-    print(f"wrote data/{name}: {len(rows)} rows ({rows[0][0]}-{rows[-1][0]}), {nd} with deaths")
+    header = ["year", col, "deaths", "notes"]
+    merge_and_write(name, header, [dict(zip(header, r)) for r in rows])
 
 
 def main():

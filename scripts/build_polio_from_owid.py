@@ -16,6 +16,8 @@ import os
 
 import numpy as np
 
+from _merge import merge_and_write
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
 
@@ -66,13 +68,8 @@ def main():
         out.append([y, tc, par, de, note])
 
     out.sort(key=lambda x: x[0])
-    with open(os.path.join(DATA, "polio.csv"), "w", newline="") as f:
-        w = csv.writer(f)
-        w.writerow(["year", "total_cases", "paralytic_cases", "deaths", "notes"])
-        w.writerows(out)
-    n_deaths = sum(1 for r in out if r[3] != "")
-    print(f"wrote data/polio.csv: {len(out)} rows, {n_deaths} with deaths "
-          f"({out[0][0]}-{out[-1][0]})")
+    header = ["year", "total_cases", "paralytic_cases", "deaths", "notes"]
+    merge_and_write("polio.csv", header, [dict(zip(header, r)) for r in out])
 
 
 if __name__ == "__main__":
