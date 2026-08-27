@@ -17,3 +17,4 @@ year,cases,deaths,hospitalizations,notes
 2023,438,57,,REPORTED cases (NNDSS); incidence 0.13/100k - most since 2013. Deaths estimated
 2024,477,62,,REPORTED cases (NNDSS, provisional); serogroup Y surge. Deaths estimated
 2025,463,60,,REPORTED cases (NNDSS, preliminary); 2nd-largest since 2013. Deaths estimated
+2026,188,24,,"CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR); deaths ESTIMATED (cases x ~13% CFR)"

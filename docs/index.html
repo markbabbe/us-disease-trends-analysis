@@ -374,6 +374,7 @@ const FACTS = {
   measles: ["Pre-vaccine: ~500k reported cases/yr but ~3–4M estimated infections/yr.",
             "Vaccine 1963; MMR 1971; 2nd dose 1989 (after 1989–91 resurgence).",
             "Declared eliminated 2000; outbreaks since via undervaccination.",
+            "2025 was the largest post-elimination year (2,289 confirmed, CDC final); 2026 has already passed it — the 2026 point is PARTIAL (NNDSS through MMWR week 32) and will keep rising.",
             "Caveat: CFR fell ~90% from 1900→1950 BEFORE the vaccine (antibiotics, nutrition, care)."],
   mumps: ["Vaccine 1967; into MMR 1971; nationally notifiable from 1968.",
           "Cases down >99%, but resurgences occur (2006; 2016–17) in close-contact settings / waning immunity.",
@@ -385,7 +386,7 @@ const FACTS = {
   meningococcal: ["Neisseria meningitidis — sudden bacterial meningitis/sepsis; rare but ~10–15% fatal even with treatment.",
                   "MenACWY (Menactra) licensed + routine adolescent recommendation 2005; 16-year booster ~2011; MenB vaccines 2014–15.",
                   "IMPORTANT: incidence was already falling for years BEFORE the 2005 vaccine — from ~1.1/100k in the mid-1990s to ~0.40 by 2006 — and serogroup B (not covered by MenACWY) fell too, so the overall drop is largely a pre-existing trend. The vaccine's clearest measured effect is on serogroups C/W/Y in vaccinated teens (~80–90% lower).",
-                  "Rebounding since 2021 (serogroup Y): 208 (2021) → 438 (2023) → ~477 (2024). Deaths shown are ESTIMATES (cases × ~13% CFR); pre-2021 case counts derived from CDC published incidence × population, 2021+ are reported NNDSS counts."],
+                  "Rebounding since 2021 (serogroup Y): 208 (2021) → 438 (2023) → ~477 (2024) → 463 (2025); 2026 is PARTIAL (188 through MMWR week 32). Deaths shown are ESTIMATES (cases × ~13% CFR); pre-2021 case counts derived from CDC published incidence × population, 2021+ are reported NNDSS counts."],
 };
 
 const AFFECTED = {
@@ -822,11 +823,18 @@ const DEATH_COLOR = "#ff6b6b";
 function makeLineChart(canvasId, dis, field, color, labelText) {
   const pts = D[dis]
     .filter(r => r[field] !== null && r[field] !== undefined && !(isLog() && r[field] <= 0))
-    .map(r => ({ x: r.year, y: r[field] }));
+    .map(r => ({ x: r.year, y: r[field], partial: r.partial || null }));
+  // A partial (year-to-date) point is NOT a finished annual total — draw its segment
+  // dashed and its marker hollow so it can't be misread as a real drop.
+  const isPartial = i => !!(pts[i] && pts[i].partial);
   const cfg = {
     type: "line",
     data: { datasets: [{ label: labelText, data: pts, borderColor: color,
-                         backgroundColor: color, tension: 0.15, pointRadius: 2.2, borderWidth: 2 }] },
+                         backgroundColor: color, tension: 0.15, borderWidth: 2,
+                         pointRadius: ctx => isPartial(ctx.dataIndex) ? 4.5 : 2.2,
+                         pointStyle: ctx => isPartial(ctx.dataIndex) ? "rectRot" : "circle",
+                         pointBackgroundColor: ctx => isPartial(ctx.dataIndex) ? "#11161b" : color,
+                         segment: { borderDash: ctx => isPartial(ctx.p1DataIndex) ? [6, 4] : undefined } }] },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
@@ -840,7 +848,11 @@ function makeLineChart(canvasId, dis, field, color, labelText) {
       plugins: {
         legend: { display: false },
         annotation: { annotations: buildAnnotations(dis) },
-        tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
+        tooltip: { callbacks: {
+          title: items => "Year " + items[0].parsed.x,
+          afterLabel: item => item.raw && item.raw.partial
+            ? "PARTIAL YEAR — year-to-date through " + item.raw.partial + ", not an annual total"
+            : undefined } },
       },
     },
   };
@@ -872,16 +884,21 @@ function renderDisease(dis, metric) {
     ? "Childhood meningitis death rate, ages 1–4 (Hib proxy)"
     : (pcvEst ? "Estimated IPD deaths per 100,000 (children <5)"
               : METRIC_LABEL[metric] + (u5 ? " (children <5)" : ""));
+  // If the newest plotted point is an incomplete year, say so in the chart's subhead.
+  const partialRec = (D[dis] || []).find(r => r.partial && r[metric] !== null && r[metric] !== undefined);
+  const partialNote = partialRec
+    ? ` — ${partialRec.year} is a PARTIAL year (through ${partialRec.partial}), shown hollow/dashed; not comparable to a full year`
+    : "";
   const n = makeLineChart(`chart-${dis}`, dis, metric, color, label);
   const canvas = document.getElementById(`chart-${dis}`);
   const msg = document.getElementById(`msg-${dis}`);
   if (n) {
     canvas.style.visibility = "visible"; msg.style.display = "none";
-    document.getElementById(`nd-${dis}`).textContent = hibProxy
+    document.getElementById(`nd-${dis}`).textContent = (hibProxy
       ? " — measured all-cause meningitis deaths per 100,000 children aged 1–4 (Hib-specific deaths aren't recorded; NCHS HIST001R)"
       : (pcvEst
           ? " — ESTIMATE: invasive pneumococcal cases × measured ~1.3% case-fatality (pneumococcal deaths aren't recorded separately; matches CDC's ~200/yr pre-PCV estimate)"
-          : (u5 ? " — per 100,000 children <5" : ""));
+          : (u5 ? " — per 100,000 children <5" : ""))) + partialNote;
   } else {
     canvas.style.visibility = "hidden"; msg.style.display = "flex";
     msg.textContent = noDataReason(dis, metric);

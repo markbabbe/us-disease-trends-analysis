@@ -103,4 +103,5 @@ year,reported_cases,deaths,notes
 2022,121,0,
 2023,59,,
 2024,285,,
-2025,2288,,Large outbreak year
+2025,2289,,"Large outbreak year; CDC final total (2,289)"
+2026,2365,,"CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR); CDC's measles page counts higher (~2,465 as of Aug 6, 2026)"

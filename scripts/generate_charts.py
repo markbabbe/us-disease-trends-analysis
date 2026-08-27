@@ -66,9 +66,28 @@ VACCINE = {
 }
 
 
+def _partial_years():
+    """{csv filename -> {years}} for rows that are an INCOMPLETE current year.
+
+    The static PNGs are the complete-year archive: a year-to-date row plotted as an
+    annual total would read as a real collapse, so those rows are dropped here. The
+    interactive dashboard keeps them and draws them explicitly marked as partial.
+    """
+    out = {}
+    path = os.path.join(DATA, "partial_years.csv")
+    if not os.path.exists(path):
+        return out
+    with open(path) as f:
+        for r in csv.DictReader(f):
+            out.setdefault(r["disease"] + ".csv", set()).add(int(r["year"]))
+    return out
+
+
 def read_csv(name):
     with open(os.path.join(DATA, name)) as f:
-        return list(csv.DictReader(f))
+        rows = list(csv.DictReader(f))
+    drop = _partial_years().get(name, set())
+    return [r for r in rows if int(r["year"]) not in drop] if drop else rows
 
 
 def to_int(v):

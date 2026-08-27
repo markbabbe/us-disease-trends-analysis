@@ -22,9 +22,18 @@
 > reaches back to ~2022 and is *provisional*, so it supplements — it cannot
 > replace — the historical record (which exists only as scanned MMWR annual
 > summaries, the Pink Book PDF, and NCHS volumes). The live pull captures the
-> **2024 pertussis resurgence (~35,500 reported)** and the **large 2025 measles
-> year (~2,000+ reported, provisional)** — recent context the pre-2020
+> **2024 pertussis resurgence (~35,500 reported)**, the **large 2025 measles
+> year (2,289 confirmed — CDC's final count)**, and the **ongoing 2026 measles
+> year**, which has already passed 2025 — recent context the pre-2020
 > compilation would miss.
+>
+> **Data currency — last refreshed 2026-08-26.** The newest rows are **2026
+> year-to-date through MMWR week 32**, not finished years. They are listed in
+> [`data/partial_years.csv`](data/partial_years.csv); the interactive dashboard
+> draws them with a hollow marker on a dashed segment and labels them
+> `PARTIAL YEAR`, and the static PNGs in [`charts/`](charts/) omit them entirely,
+> so no chart shows an incomplete year as if it were an annual total. Population
+> denominators are Census **Vintage 2025** (national and under-5, July 1, 2025).
 
 ---
 

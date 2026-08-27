@@ -45,6 +45,14 @@ def early_rates(disease):
 UNDER5 = {"hib", "pcv", "rotavirus"}
 
 
+def load_partial():
+    """(disease, year) -> how far the year runs, for rows that are an INCOMPLETE current
+    year (e.g. "MMWR week 32"). Declared in data/partial_years.csv so the dashboard can
+    mark the point instead of drawing it as if it were a finished annual total."""
+    return {(r["disease"], int(r["year"])): r["through"]
+            for r in read_csv("partial_years.csv")}
+
+
 def load_pop_under5():
     rows = read_csv("us_population_under5.csv")
     return (np.array([int(r["year"]) for r in rows]),
@@ -54,6 +62,7 @@ def load_pop_under5():
 def build(rows, case_field, disease):
     pyrs, pop = load_pop_under5() if disease in UNDER5 else load_pop()
     early = early_rates(disease)
+    partial = load_partial()
     out = {}
     for r in rows:
         y = int(r["year"])
@@ -67,14 +76,14 @@ def build(rows, case_field, disease):
         hosp_rate = round(hosp / p * 100000, 4) if hosp is not None else None
         out[y] = {"year": y, "cases": cases, "deaths": deaths, "incidence": inc,
                   "cfr": cfr, "death_rate": death_rate, "hosp_rate": hosp_rate,
-                  "note": r.get("notes", "")}
+                  "note": r.get("notes", ""), "partial": partial.get((disease, y))}
     # Backfill early-era death rates (1900-1930) where the count series lacks them.
     for y, rate in early.items():
         rec = out.get(y)
         if rec is None:
             out[y] = {"year": y, "cases": None, "deaths": None, "incidence": None,
                       "cfr": None, "death_rate": rate, "hosp_rate": None,
-                      "note": "Early death rate (approx)"}
+                      "note": "Early death rate (approx)", "partial": None}
         elif rec["death_rate"] is None:
             rec["death_rate"] = rate
     return [out[y] for y in sorted(out)]
@@ -253,7 +262,8 @@ def main():
         rec = by_year.get(y)
         if rec is None:
             rec = {"year": y, "cases": None, "deaths": None, "incidence": None,
-                   "cfr": None, "death_rate": None, "hosp_rate": None, "note": ""}
+                   "cfr": None, "death_rate": None, "hosp_rate": None, "note": "",
+                   "partial": None}
             by_year[y] = rec
         rec["death_rate"] = rate          # measured meningitis (1-4) death rate / 100,000
         rec["deaths"] = None              # drop the back-calculated estimate

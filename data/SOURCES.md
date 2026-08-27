@@ -25,7 +25,7 @@ annual digits — especially before 1950 — carry real uncertainty.
   Registration Area). Source for cause-specific mortality. The Death
   Registration Area covered only ~10 states (~26% of the U.S. population) in
   1900 and did not include all states until 1933 — a key early-century caveat.
-- **U.S. Census Bureau.** Decennial census counts (1900–2020) and Vintage 2024
+- **U.S. Census Bureau.** Decennial census counts (1900–2020) and Vintage 2025
   population estimate, used as denominators for per-100,000 rates. See
   `us_population.csv`.
 - **CDC measles, pertussis, and polio surveillance pages and outbreak reports**
@@ -37,7 +37,12 @@ annual digits — especially before 1950 — carry real uncertainty.
 
 ## File-by-file notes
 
-- `us_population.csv` — Decennial census counts; 2024 is a Census estimate.
+- `us_population.csv` — Decennial census counts; 2024–2025 are Census **Vintage
+  2025** estimates (NST-EST2025, July 1: 340,003,797 and 341,784,857).
+  `us_population_under5.csv` likewise uses Vintage 2025 (NC-EST2025-AGESEX-RES,
+  ages 0–4 summed: 18,584,735 in 2024 and 18,491,867 in 2025), replacing the
+  earlier ~18.0M approximation. Years past the last row are held flat, not
+  extrapolated.
 - `measles.csv` — **Complete annual series, 1919–2025**, rebuilt by
   [`scripts/build_measles_pertussis_from_owid.py`](../scripts/build_measles_pertussis_from_owid.py)
   from OWID (`owid_combined_cases.csv` for case counts, `owid_measles_rate.csv`
@@ -98,7 +103,7 @@ open-data API and saved to `cdc_nndss_recent.csv` by
   the API returns measles 2022 = 122, matching the finalized MMWR figure (~121).
 - ⚠️ It is **weekly provisional** data. Provisional cumulative counts can differ
   a few percent from the finalized MMWR annual summary, and the current year is
-  partial (excluded from the trend charts).
+  partial — see "Partial (current-year) data" below.
 - ❌ It does **not** contain the deep historical series (1900–2020) this project
   depends on. The consolidated weekly dataset only goes back to ~2022. The
   long historical record exists only as **scanned MMWR annual summaries, the
@@ -110,6 +115,44 @@ open-data API and saved to `cdc_nndss_recent.csv` by
 The 2022–2025 rows in `measles.csv` and `pertussis.csv` are therefore labeled as
 CDC NNDSS API (provisional). They capture the recent measles resurgence (2025)
 and pertussis resurgence (2024) that the historical compilation alone would miss.
+
+### Partial (current-year) data
+
+**Last refreshed 2026-08-26; newest NNDSS data = MMWR week 32 of 2026.**
+
+A year-to-date row is not an annual total, and plotting one as if it were would
+read as a collapse in cases that never happened. So every incomplete year is
+declared in [`partial_years.csv`](partial_years.csv) (`disease, year, through,
+as_of, source`), and the two renderers treat it explicitly:
+
+- **`docs/` dashboard** — keeps the point, draws it hollow on a dashed segment,
+  labels the chart "PARTIAL year (through MMWR week 32)", and repeats the warning
+  in the tooltip. (`scripts/build_dashboard_data.py` copies the `through` string
+  onto each record as `partial`.)
+- **`charts/` PNGs** — drop partial rows entirely (`_partial_years()` in
+  `scripts/generate_charts.py`); the static charts are the complete-year archive.
+
+2026 year-to-date (NNDSS `x9gk-5huc`, national `states=Total`, week 32):
+measles 2,365 · pertussis 7,844 · mumps 147 · tetanus 19 · HepB acute 1,202
+(996 confirmed + 206 probable) · Hib (<5, serotype b) 28 · meningococcal 188.
+
+Two known mismatches, left as-is rather than silently reconciled:
+
+- **Measles counts differ by source.** `measles.csv` uses CDC's measles
+  surveillance page for 2022–2025 (2023 = 59, 2024 = 285, 2025 = **2,289**
+  final), which runs higher than the NNDSS weekly table (47 / 266 / 2,026). The
+  2026 row uses NNDSS week 32 (2,365) because it is a reproducible cut with a
+  defined end date; CDC's measles page reported ~2,465 as of Aug 6, 2026 and a
+  higher figure since. Treat 2026 as a floor.
+- **Rubella and paralytic polio have no 2025/2026 rows.** Every 2025 and 2026
+  week is published with the `-` flag and an empty cumulative count. That is
+  *consistent with* zero reported cases but is not a published annual total, so
+  no row was invented for either year.
+
+Diphtheria, rotavirus and PCV get no 2026 row: NNDSS publishes no diphtheria
+label, rotavirus here is a hospitalization-estimate series, and `pcv.csv` is CDC
+ABCs invasive-disease surveillance — a different system from the NNDSS invasive
+pneumococcal counts, so appending one would mix incompatible sources.
 
 ## Additional diseases (DTaP, HepB, MMR tabs)
 

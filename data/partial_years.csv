@@ -1,0 +1,8 @@
+disease,year,through,as_of,source
+measles,2026,MMWR week 32,2026-08-26,CDC NNDSS API x9gk-5huc (provisional)
+pertussis,2026,MMWR week 32,2026-08-26,CDC NNDSS API x9gk-5huc (provisional)
+mumps,2026,MMWR week 32,2026-08-26,CDC NNDSS API x9gk-5huc (provisional)
+tetanus,2026,MMWR week 32,2026-08-26,CDC NNDSS API x9gk-5huc (provisional)
+hepb,2026,MMWR week 32,2026-08-26,CDC NNDSS API x9gk-5huc (provisional)
+hib,2026,MMWR week 32,2026-08-26,CDC NNDSS API x9gk-5huc (provisional)
+meningococcal,2026,MMWR week 32,2026-08-26,CDC NNDSS API x9gk-5huc (provisional)
