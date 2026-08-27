@@ -39,9 +39,14 @@
 
 ## How to read this report
 
-- **Sections 1–7** analyze each disease across the requested dimensions
-  (timeline, raw cases, population-adjusted rates, age, severity, excess
-  mortality, surveillance bias).
+- **Sections 1–3** analyze polio, pertussis and measles in depth across seven
+  dimensions each (timeline, raw cases, population-adjusted rates, age, severity,
+  excess mortality, surveillance bias) — §1.x, §2.x, §3.x.
+- **Section 7b** covers what hospitalization data can and cannot show.
+- The other nine diseases (diphtheria, tetanus, Hep B, Hib, pneumococcal,
+  rotavirus, mumps, rubella, meningococcal) are covered in the **interactive
+  dashboard** in [`docs/`](docs/), not in this document; their sources and
+  caveats are in [`data/SOURCES.md`](data/SOURCES.md).
 - **Section 8** argues for the most appropriate metric for cross-decade
   comparison.
 - **Section 9** is the summary table and a guide to the charts.
@@ -75,7 +80,7 @@ The single most important methodological fact in this report:
 | 1907, 1916 | Major Northeast epidemics; 1916 caused ~6,000 deaths and ~27,000 cases | Outbreak |
 | 1930s–1940s | Polio becomes nationally notifiable; surveillance formalized | Surveillance |
 | 1949–1954 | Enteroviruses (Coxsackie, ECHO) identified — many "nonparalytic polio" and aseptic-meningitis cases now attributable to *other* viruses | Diagnostics / case definition |
-| **1952** | **Largest U.S. epidemic on record: ~57,600 cases, ~21,000 paralytic, ~3,145 deaths** | Outbreak |
+| **1952** | **Largest U.S. epidemic on record: 57,198 cases, 21,269 paralytic, 3,108 deaths** (the figures plotted here; CDC's often-quoted totals are ~57,600 and ~3,145 — see note below) | Outbreak |
 | **April 1955** | **Salk inactivated polio vaccine (IPV) licensed** | Vaccine |
 | Late 1950s | Paralytic-polio case definition **tightened**: required residual paralysis at follow-up (commonly ~60 days) plus clinical/lab criteria | Case definition |
 | **1961–1963** | **Sabin oral polio vaccine (OPV) licensed and widely adopted** | Vaccine |
@@ -84,6 +89,15 @@ The single most important methodological fact in this report:
 | 1980s–1990s | Essentially all U.S. paralytic cases are **vaccine-associated paralytic polio (VAPP)** from OPV (~5–10/yr) | Surveillance |
 | 2000 | U.S. switches to all-IPV schedule; OPV discontinued, ending VAPP | Policy |
 | 2005, 2022 | Rare importations / vaccine-derived cases in undervaccinated communities | Outbreak |
+
+> **A note on the 1952 digits.** Two sets of numbers circulate for 1952: CDC's
+> frequently quoted ~57,600 cases / ~3,145 deaths, and 57,198 / 3,108 — the
+> figures in [`data/polio.csv`](data/polio.csv), derived from OWID's U.S. rate
+> series × interpolated Census population (see
+> [`data/SOURCES.md`](data/SOURCES.md)). They differ by <1.2%. This report quotes
+> the values it actually plots so that every figure here can be recomputed from
+> the CSVs; where you see CDC's rounder numbers elsewhere, that is the same
+> epidemic measured through a slightly different compilation.
 
 ## 1.2 Raw cases
 
@@ -158,7 +172,7 @@ it cannot change whether someone died. So we normalize three metrics to 1952
 | 1952 | 100 | 100 | 100 |
 | 1955 | 50 | 65 | **33** |
 | 1957 | 9.5 | 12 | **7.0** |
-| 1961 | 2.3 | 4.6 | **2.9** |
+| 1961 | 1.7 | *no data* | **2.9** |
 
 Two observations that *constrain* the artifact:
 
@@ -166,8 +180,9 @@ Two observations that *constrain* the artifact:
   definition had artificially stripped out mild/transient paralytic cases, the
   paralytic count would have dropped *faster* than deaths, and the
   **case-fatality rate would have risen.** It did not: CFR (deaths ÷ paralytic)
-  stayed near **7–9% from 1954 through 1961** (the 14.8% in 1952 reflects that
-  severe epidemic year). A dominant reporting artifact predicts the opposite.
+  stayed near **7–9% from 1954 through 1960** (the 14.6% in 1952 reflects that
+  severe epidemic year). No paralytic count is published for 1961 in this
+  compilation, so the CFR series stops at 1960. A dominant reporting artifact predicts the opposite.
 - **The decline continued for years after the definition stabilized** (1958
   onward), through the period of rising vaccine coverage — something a one-time
   definitional reset cannot produce.
@@ -223,7 +238,7 @@ clean age breakdowns needed to do this rigorously.
 
 ## 1.5 Severe disease analysis
 
-- **Mortality (most comparable):** ~3,145 deaths in 1952; ~16 by 1965;
+- **Mortality (most comparable):** 3,108 deaths in 1952; 16 by 1965;
   essentially zero thereafter (chart:
   [`charts/polio_deaths.png`](charts/polio_deaths.png)).
 - **Paralysis with residual deficit:** the clinical hallmark; tracked closely
@@ -410,8 +425,11 @@ increase from the nadir.
 | 1983 | Record low (~1,500 cases) | Milestone |
 | **1989–1991** | **Resurgence (~55,000 cases over the period, 120+ deaths)**, concentrated in undervaccinated preschoolers | Outbreak |
 | **1989** | **Second MMR dose recommended** in response | Policy |
-| **2000** | **Measles declared eliminated** (no continuous endemic transmission) in the U.S. | Milestone |
-| 2014, 2019 | Large import-driven outbreaks in undervaccinated communities; 2019 (~1,282) the largest post-elimination year | Outbreak |
+| **2000** | **Measles declared eliminated** (no continuous endemic transmission) in the U.S. — *a status now under review; see the 2026 rows below* | Milestone |
+| 2014, 2019 | Large import-driven outbreaks in undervaccinated communities; 2019 (1,274) was then the largest post-elimination year | Outbreak |
+| **2025** | **2,289 confirmed — largest post-elimination year to that point**; outbreaks began Jan 2025 | Outbreak |
+| **2026** | **Already past 2025** (2,365 reported through MMWR week 32; CDC's measles page counts higher) — a 35-year high | Outbreak |
+| **Nov 2026** | **U.S. elimination status under formal review** by PAHO's Regional Verification Commission. The Americas lost measles-free status in Nov 2025 after Canada sustained ≥12 months of transmission; endemic status turns on 12 months of continuous transmission of one lineage | Status |
 
 ## 3.2 Raw cases
 
@@ -459,12 +477,25 @@ age- and dose-dependent.
 - **Mortality (most comparable):** ~400–500 deaths/yr in the 1950s–early 1960s;
   by the 1980s, single digits to low tens; 1990 resurgence ~64; modern years
   often **0** (chart: [`charts/measles_deaths.png`](charts/measles_deaths.png)).
-- **Case fatality rate:** ~**0.1–0.2%** in the mid-century U.S. (≈1–2 per 1,000
-  reported cases), but **higher earlier in the century** and much higher in
-  malnourished populations. The U.S. measles CFR **fell ~90% between 1900 and
-  the 1950s — before any vaccine** — driven by antibiotics (for secondary
+- **Case fatality rate:** **0.06–0.14%** in the mid-century U.S. as measured
+  here (deaths ÷ *reported* cases, 1949–1963), i.e. roughly 1 per 1,000 reported
+  cases — consistent with CDC's often-quoted 1–2 per 1,000. Deaths per reported
+  case were **far higher earlier in the century**, and fell ~90% between the
+  1920s and 1950 — before any vaccine — driven by antibiotics (for secondary
   pneumonia), nutrition, and supportive care
   (chart: [`charts/measles_cfr.png`](charts/measles_cfr.png)).
+  **Read that chart with its denominator in mind.** It is deaths ÷ *reported*
+  cases, and reporting improved enormously across the same period. The 1919 point
+  reads **7.4%** (13,274 deaths ÷ 179,829 reported cases) — measles never killed
+  7% of the people it infected; that year's case count is simply missing most of
+  its cases. Since only ~10% of infections were reported in the pre-vaccine era
+  (§3.2), the early points overstate true lethality by roughly the same order.
+  The **fall** in this ratio is real and driven partly by better treatment, but
+  part of it is the denominator catching up. The same problem returns from the
+  other end after elimination: with 55 reported cases in 2012, two deaths read as
+  a 3.6% "CFR." Both failure modes — pre-1930 years and any year under 500
+  reported cases — are drawn hollow on the chart. Treat the stretch from ~1930 to
+  the early 1990s as the interpretable part.
 - **Other severe outcomes:** acute encephalitis (~1 per 1,000 cases),
   hospitalization, and SSPE (a fatal late complication, ~1 per several thousand
   infections, higher for infant infection).
@@ -522,7 +553,13 @@ the **proportion of reported cases hospitalized** in the modern surveillance era
 | Measles (all reported cases) | 2001–2019 | ~20% (about 1 in 5) |
 | Pertussis (infants <1 yr) | recent | ~30% (higher in the youngest) |
 | Pertussis (all reported cases) | recent | ~5% |
-| Polio (paralytic, epidemic era) | 1940s–50s | ~95% (mostly hospitalized) |
+
+Polio is deliberately absent from that table. Paralytic cases in the epidemic era
+were very nearly always hospitalized — bulbar cases required mechanical
+ventilation — but no measured national proportion exists, so the figure this
+report used to carry (~95%) was a generalization formatted as data. It has been
+removed from [`data/hospitalizations.csv`](data/hospitalizations.csv); the
+qualitative fact stands on its own above.
 
 **Interpretation.** Case-hospitalization *proportion* is a useful severity
 signal but is **not** a population rate, and it is sensitive to the same
@@ -575,17 +612,27 @@ over years to decades and is often uneven across age groups and communities.
 Coverage gaps explain much of the *residual* disease and the *resurgences* that
 occur even after a vaccine exists.
 
-*Observed (chart: [`charts/coverage.png`](charts/coverage.png); live data:
-[`data/coverage.csv`](data/coverage.csv) from the CDC NIS API).* Modern U.S.
-childhood coverage by age 24 months sits on a plateau of roughly **80–93%**
-(MMR ≥1 dose ~90%, polio ~92%, DTaP ≥4 doses ~81%).
+*Observed (chart: [`charts/coverage.png`](charts/coverage.png); sources:
+[`data/coverage_levels_pinkbook.csv`](data/coverage_levels_pinkbook.csv) and
+[`data/coverage.csv`](data/coverage.csv), live from the CDC NIS API).* Modern
+U.S. childhood coverage by age 24 months sits on a plateau of roughly **90–93%**
+(MMR ≥1 dose ~91%, polio ~92%, DTaP ≥3 doses ~93%).
 
-**The key limitation, stated plainly:** there is **no clean national annual
-coverage series before ~1994**, when the CDC National Immunization Survey began.
-The most decision-relevant period for the "availability ≠ protection" question —
-the early uptake decades (polio 1955+, measles 1963+) — is therefore documented
-as **cited milestones and anchor estimates**, not a continuous series. Full
-detail and sources: [`data/coverage_milestones.md`](data/coverage_milestones.md).
+**The measured record reaches further back than this report used to claim.** CDC
+Pink Book Appendix E carries **annual national coverage from 1962** (DTP 3+ from
+1962, MMR from 1967, polio 3+ from 1973), from the U.S. Immunization Survey and
+later the NIS. That series is in the repo and is what the coverage chart now
+plots. It shows something the old approximate anchors obscured: coverage
+**fell through the late 1970s and bottomed in the mid-1980s** (polio 3+ at 53.6%
+in 1985, MMR at 61.2%) — the coverage trough that preceded the 1989–91 measles
+resurgence — then jumped after 1991.
+
+*Remaining limitations:* Appendix E reports **no years for 1986–1990** (the chart
+breaks the line rather than bridging it), the 1955–1961 polio-uptake years
+predate the series entirely, and Appendix E is indexed by **survey year** while
+the live NIS file is indexed by **birth year** (~2-year offset), so the two are
+plotted as separate lines, never spliced. Pre-1962 uptake is documented as cited
+milestones in [`data/coverage_milestones.md`](data/coverage_milestones.md).
 Highlights:
 
 - **Polio:** uptake was relatively fast after 1955, so the case decline tracks
@@ -613,9 +660,9 @@ incidence comparison across the post-licensure era.
 
 | Disease | Best metric for long-term comparison | Trend **before** vaccine era | Trend **after** vaccine era | Major caveats |
 |---|---|---|---|---|
-| **Polio** | Deaths & paralytic cases per 100,000 (age-specific ideal) | Rising, with severe epidemic peaks (1952: ~57.6k cases, ~3,145 deaths) | Fell >99% within a decade; wild virus eliminated by 1979; deaths ≈0 | Late-1950s definition tightening + enterovirus reclassification deflate later counts; ventilator care lowered CFR pre-vaccine; asymptomatic denominator never measured |
+| **Polio** | Deaths & paralytic cases per 100,000 (age-specific ideal) | Rising, with severe epidemic peaks (1952: 57,198 cases, 3,108 deaths) | Fell >99% within a decade; wild virus eliminated by 1979; deaths ≈0 | Late-1950s definition tightening + enterovirus reclassification deflate later counts; ventilator care lowered CFR pre-vaccine; asymptomatic denominator never measured |
 | **Pertussis** | Infant mortality & hospitalization rate | Very high (~265k cases 1934; thousands of deaths/yr) | Fell ~99% to 1976 nadir, then **partial resurgence** in cases | Resurgence inflated by PCR detection; waning acellular immunity is real; deaths now ~10–20/yr, mostly infants; CFR fell via supportive care |
-| **Measles** | Deaths per 100,000 + incidence (with ascertainment caveat) | Near-universal childhood infection (~3–4M true infections/yr); deaths declining for decades | Cases fell ~99%+; eliminated 2000; outbreaks since via undervaccination | Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed; CFR fell ~90% (1900→1950) before vaccine |
+| **Measles** | Deaths per 100,000 + incidence (with ascertainment caveat) | Near-universal childhood infection (~3–4M true infections/yr); deaths declining for decades | Cases fell ~99%+; eliminated 2000 (**status under PAHO review Nov 2026** after the 2025–26 outbreaks); outbreaks since via undervaccination | Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed; CFR fell ~90% (1900→1950) before vaccine |
 
 ## 9.2 Charts
 
@@ -688,7 +735,9 @@ incidence comparison across the post-licensure era.
 ---
 
 *Compiled as an objective epidemiological/statistical analysis. Sources and
-data-quality notes: [`data/SOURCES.md`](data/SOURCES.md). All figures are
-reproducible from the CSVs and script in this repository. Where this document
+data-quality notes: [`data/SOURCES.md`](data/SOURCES.md). Every figure quoted in
+this document is recomputable from the CSVs in [`data/`](data/) via the scripts in
+[`scripts/`](scripts/); where a widely quoted external figure differs from the
+value plotted here, both are given. Where this document
 states a number, treat the **trend** as the finding and the **digits** —
 especially pre-1950 — as approximate.*

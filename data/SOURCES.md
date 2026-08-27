@@ -138,9 +138,12 @@ measles 2,365 · pertussis 7,844 · mumps 147 · tetanus 19 · HepB acute 1,202
 
 Two known mismatches, left as-is rather than silently reconciled:
 
-- **Measles counts differ by source.** `measles.csv` uses CDC's measles
-  surveillance page for 2022–2025 (2023 = 59, 2024 = 285, 2025 = **2,289**
-  final), which runs higher than the NNDSS weekly table (47 / 266 / 2,026). The
+- **Measles counts differ by source.** `measles.csv` takes 2022–2025 from the
+  OWID compilation (`owid_combined_cases.csv`: 2023 = 59, 2024 = 285, 2025 =
+  2,288), whose U.S. figures track CDC's measles surveillance page and run higher
+  than the NNDSS weekly table (47 / 266 / 2,026). The 2025 value is carried at
+  **2,289**, CDC's final count — one above OWID's snapshot; the rebuild script
+  reports that divergence on every run rather than silently reverting it. The
   2026 row uses NNDSS week 32 (2,365) because it is a reproducible cut with a
   defined end date; CDC's measles page reported ~2,465 as of Aug 6, 2026 and a
   higher figure since. Treat 2026 as a floor.
@@ -262,11 +265,20 @@ differently and mostly recently, so the CSVs are **documented anchors with clear
 "what's measured" notes**, not annual counts:
 
 - `hib.csv` — invasive **Haemophilus influenzae type b** disease in children <5.
-  Pre-vaccine ~20,000 cases/yr and ~1,000 deaths (CDC/Roush 2007); conjugate
-  vaccine 1987–1990 → >99% decline (18 cases in <5 in 2019). The 1987 anchor uses
-  CDC's measured baseline (~41/100,000 <5); **1980 and 1985 are a pre-vaccine
-  plateau estimate** at that surveillance level (no granular early-1980s annual
-  data is published). Rate is per 100,000 children <5 (see under-5 denominator
+  Conjugate vaccine 1987–1990 → >99% decline (18 cases in <5 in 2019). The 1987
+  anchor uses CDC's measured baseline (~41/100,000 <5); **1980 and 1985 are a
+  pre-vaccine plateau estimate** at that surveillance level (no granular
+  early-1980s annual data is published).
+  **Two CDC pre-vaccine numbers, reconciled.** CDC states both "~20,000 cases
+  annually" (Pink Book ch. 8; Roush 2007) and a measured incidence of ~40–50 per
+  100,000 children <5 — which, against ~17–18M children, works out to ~7,000–9,000.
+  They are not the same quantity: **20,000 is an estimate of true national burden**
+  adjusted for under-ascertainment, while **40–50/100,000 is what surveillance
+  measured**. This series plots the measured basis for every year (~6,900–7,600
+  pre-vaccine) so the pre- and post-vaccine points are like-for-like; if you compare
+  the chart's pre-vaccine level to CDC's 20,000 headline, expect a ~2.5–3× gap and
+  that is why. Pre-vaccine deaths (~1,000/yr, CDC/Roush) likewise correspond to the
+  20,000 burden estimate, not to the plotted case series. Rate is per 100,000 children <5 (see under-5 denominator
   below). Intermediate points approximate. **Deaths view:** Hib-specific deaths
   aren't recorded, so the dashboard's Deaths-per-100,000 view plots the **measured
   childhood-meningitis death rate (ages 1–4, NCHS HIST001R, 1979–1998)** as the
@@ -305,9 +317,11 @@ data honestly, **not** to imply a causal link — the evidence is firmly against
   (6.7 → 32.2 per 1,000; "1 in 150" → "1 in 31").
 - **Asthma** — NHIS current childhood asthma prevalence, ~1980–2019. A 1997 NHIS
   redesign breaks pre/post comparability.
-- **Eczema** — atopic dermatitis in children; **approximate** anchors (no clean
-  long U.S. annual series; literature reports a ~2–3× rise since the 1970s to
-  ~10–13% today).
+- **Eczema — removed.** This series was four round "approx" anchors (1970: 5.0,
+  2000: 10.0, 2010: 11.0, 2019: 13.0) with no citation behind any of them. Since
+  every other number in this repo traces to a named source, it was deleted rather
+  than dressed up. NHIS does carry a childhood eczema/skin-allergy question from
+  ~1997 onward; a sourced series could be rebuilt from it.
 - **Vaccine count** — number of *diseases* protected against on the routine
   schedule (definition-dependent; antigen/dose counts differ).
 
@@ -318,7 +332,7 @@ data honestly, **not** to imply a causal link — the evidence is firmly against
 2. **The autism rise is largely ascertainment**: broadened criteria
    (DSM-III 1980 → DSM-IV 1994 spectrum/Asperger → DSM-5 2013), diagnostic
    substitution, awareness, screening, and service eligibility.
-3. **Asthma/eczema** rises are studied via the hygiene hypothesis, environment,
+3. **The asthma rise** is studied via the hygiene hypothesis, environment,
    obesity, and urbanization.
 4. **Vaccines specifically have been tested and found NOT associated with
    autism**: Hviid et al., Ann Intern Med 2019 (657,461 children); DeStefano et
@@ -446,6 +460,12 @@ therefore records the **documented case-hospitalization proportion** (% of
 reported cases hospitalized) by era, from CDC surveillance, not a per-100,000
 time series. See README §7b.
 
+The polio row (~95% of paralytic cases hospitalized, 1940s–50s) was **removed**:
+it was a historical generalization with no measured source behind it, and a
+number in a data file reads as a measurement. That paralytic polio was very
+nearly always hospitalized — bulbar cases required ventilation — remains stated
+in README §7b as the qualitative fact it is.
+
 ## Vaccination coverage levels 1962–2016 (Overview tab)
 
 `coverage_levels_pinkbook.csv` — transcribed (by word-coordinate parsing) from the
@@ -455,9 +475,14 @@ time series. See README §7b.
 Polio 3+, MMR, Hib 3+, Varicella, PCV 3+, HepB 3+, Rotavirus, and the 4-3-1 /
 4-3-1-3 combined series. Powers the Overview home tab's coverage chart. DTP3+
 coverage rose from 67.3% (1962) to the low-90s; newer vaccines begin when
-introduced. This is authoritative annual coverage and supersedes the approximate
-pre-1994 anchors in `coverage_historical.csv` (still used by the older per-tab
-coverage card).
+introduced. This is authoritative annual coverage and **replaced** `coverage_historical.csv`,
+a set of unsourced "approx" pre-1994 anchors that disagreed with it by as much as
+19 points (1991 polio: 72 vs a measured 53.2). That file has been deleted and
+both the dashboard and `charts/coverage.png` now plot measured data only.
+Appendix E is indexed by **survey year** while the live NIS file
+(`coverage.csv`) is indexed by **birth year** — roughly a 2-year offset — so the
+two are drawn as separate lines and never spliced into one series. Appendix E
+reports no years for 1986–1990; the chart breaks the line there.
 
 ## Vaccination coverage (live CDC NIS API)
 

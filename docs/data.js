@@ -298,309 +298,6 @@ window.DISEASE_DATA = {
       "note": "1900 & 1959 rates from CDC/Fraser; 1910-1950 from NCHS Table 65. Tetanus isn't contagious, so the fall reflects wound care + antitoxin + the toxoid, not herd immunity."
     }
   ],
-  "coverage": {
-    "measles": [
-      {
-        "year": 1963,
-        "value": 0.0,
-        "approx": true
-      },
-      {
-        "year": 1968,
-        "value": 48.0,
-        "approx": true
-      },
-      {
-        "year": 1976,
-        "value": 63.0,
-        "approx": true
-      },
-      {
-        "year": 1980,
-        "value": 65.0,
-        "approx": true
-      },
-      {
-        "year": 1985,
-        "value": 62.0,
-        "approx": true
-      },
-      {
-        "year": 1991,
-        "value": 82.0,
-        "approx": true
-      },
-      {
-        "year": 1996,
-        "value": 91.0,
-        "approx": true
-      },
-      {
-        "year": 2011,
-        "value": 90.1,
-        "approx": false
-      },
-      {
-        "year": 2012,
-        "value": 90.6,
-        "approx": false
-      },
-      {
-        "year": 2013,
-        "value": 90.3,
-        "approx": false
-      },
-      {
-        "year": 2014,
-        "value": 89.8,
-        "approx": false
-      },
-      {
-        "year": 2015,
-        "value": 90.8,
-        "approx": false
-      },
-      {
-        "year": 2016,
-        "value": 90.8,
-        "approx": false
-      },
-      {
-        "year": 2017,
-        "value": 90.4,
-        "approx": false
-      },
-      {
-        "year": 2018,
-        "value": 92.3,
-        "approx": false
-      },
-      {
-        "year": 2019,
-        "value": 91.5,
-        "approx": false
-      },
-      {
-        "year": 2020,
-        "value": 90.2,
-        "approx": false
-      },
-      {
-        "year": 2021,
-        "value": 90.2,
-        "approx": false
-      },
-      {
-        "year": 2022,
-        "value": 91.4,
-        "approx": false
-      }
-    ],
-    "pertussis": [
-      {
-        "year": 1970,
-        "value": 75.0,
-        "approx": true
-      },
-      {
-        "year": 1976,
-        "value": 70.0,
-        "approx": true
-      },
-      {
-        "year": 1980,
-        "value": 68.0,
-        "approx": true
-      },
-      {
-        "year": 1985,
-        "value": 65.0,
-        "approx": true
-      },
-      {
-        "year": 1991,
-        "value": 83.0,
-        "approx": true
-      },
-      {
-        "year": 1996,
-        "value": 95.0,
-        "approx": true
-      },
-      {
-        "year": 2011,
-        "value": 93.6,
-        "approx": false
-      },
-      {
-        "year": 2012,
-        "value": 94.2,
-        "approx": false
-      },
-      {
-        "year": 2013,
-        "value": 94.2,
-        "approx": false
-      },
-      {
-        "year": 2014,
-        "value": 93.0,
-        "approx": false
-      },
-      {
-        "year": 2015,
-        "value": 93.9,
-        "approx": false
-      },
-      {
-        "year": 2016,
-        "value": 93.7,
-        "approx": false
-      },
-      {
-        "year": 2017,
-        "value": 92.6,
-        "approx": false
-      },
-      {
-        "year": 2018,
-        "value": 94.6,
-        "approx": false
-      },
-      {
-        "year": 2019,
-        "value": 93.8,
-        "approx": false
-      },
-      {
-        "year": 2020,
-        "value": 92.7,
-        "approx": false
-      },
-      {
-        "year": 2021,
-        "value": 92.8,
-        "approx": false
-      },
-      {
-        "year": 2022,
-        "value": 92.6,
-        "approx": false
-      }
-    ],
-    "polio": [
-      {
-        "year": 1955,
-        "value": 0.0,
-        "approx": true
-      },
-      {
-        "year": 1960,
-        "value": 55.0,
-        "approx": true
-      },
-      {
-        "year": 1963,
-        "value": 65.0,
-        "approx": true
-      },
-      {
-        "year": 1968,
-        "value": 70.0,
-        "approx": true
-      },
-      {
-        "year": 1970,
-        "value": 72.0,
-        "approx": true
-      },
-      {
-        "year": 1976,
-        "value": 67.0,
-        "approx": true
-      },
-      {
-        "year": 1980,
-        "value": 60.0,
-        "approx": true
-      },
-      {
-        "year": 1985,
-        "value": 58.0,
-        "approx": true
-      },
-      {
-        "year": 1991,
-        "value": 72.0,
-        "approx": true
-      },
-      {
-        "year": 1996,
-        "value": 91.0,
-        "approx": true
-      },
-      {
-        "year": 2011,
-        "value": 92.0,
-        "approx": false
-      },
-      {
-        "year": 2012,
-        "value": 93.0,
-        "approx": false
-      },
-      {
-        "year": 2013,
-        "value": 92.3,
-        "approx": false
-      },
-      {
-        "year": 2014,
-        "value": 91.0,
-        "approx": false
-      },
-      {
-        "year": 2015,
-        "value": 92.6,
-        "approx": false
-      },
-      {
-        "year": 2016,
-        "value": 92.5,
-        "approx": false
-      },
-      {
-        "year": 2017,
-        "value": 91.5,
-        "approx": false
-      },
-      {
-        "year": 2018,
-        "value": 93.8,
-        "approx": false
-      },
-      {
-        "year": 2019,
-        "value": 92.9,
-        "approx": false
-      },
-      {
-        "year": 2020,
-        "value": 92.1,
-        "approx": false
-      },
-      {
-        "year": 2021,
-        "value": 92.0,
-        "approx": false
-      },
-      {
-        "year": 2022,
-        "value": 92.3,
-        "approx": false
-      }
-    ]
-  },
   "coverageLevels": [
     {
       "year": 1962,
@@ -1338,24 +1035,6 @@ window.DISEASE_DATA = {
         "value": 7.0
       }
     ],
-    "eczema": [
-      {
-        "year": 1970,
-        "value": 5.0
-      },
-      {
-        "year": 2000,
-        "value": 10.0
-      },
-      {
-        "year": 2010,
-        "value": 11.0
-      },
-      {
-        "year": 2019,
-        "value": 13.0
-      }
-    ],
     "devdisability": [
       {
         "year": 1998,
@@ -1541,7 +1220,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Hep B reportable from 1966",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1967,
@@ -1552,7 +1234,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1968,
@@ -1563,7 +1248,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1969,
@@ -1574,7 +1262,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1970,
@@ -1585,7 +1276,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1971,
@@ -1596,7 +1290,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1972,
@@ -1607,7 +1304,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1973,
@@ -1618,7 +1318,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1974,
@@ -1629,7 +1332,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1975,
@@ -1640,7 +1346,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1976,
@@ -1651,7 +1360,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1977,
@@ -1662,7 +1374,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1978,
@@ -1673,7 +1388,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -1684,7 +1402,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.116,
       "hosp_rate": null,
       "note": "Deaths = HBV-attributed (Pinkbook underlying); recent multiple-cause ~1,700/yr (CDC Table 2.8)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -1695,7 +1416,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1298,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -1706,7 +1430,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1722,
       "hosp_rate": null,
       "note": "HepB vaccine (adults)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -1717,7 +1444,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1624,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -1728,7 +1458,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1878,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -1739,7 +1472,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1975,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -1750,7 +1486,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2062,
       "hosp_rate": null,
       "note": "Peak reported acute cases",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -1761,7 +1500,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2322,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -1772,7 +1514,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2458,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -1783,7 +1528,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2542,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -1794,7 +1542,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2884,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -1805,7 +1556,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3281,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -1816,7 +1570,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3619,
       "hosp_rate": null,
       "note": "Infant/universal vaccination recommended",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -1827,7 +1584,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3538,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -1838,7 +1598,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.4027,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -1849,7 +1612,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.4278,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -1860,7 +1626,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3875,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1996,
@@ -1871,7 +1640,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.4032,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -1882,7 +1654,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3792,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -1893,7 +1668,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3827,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -1904,7 +1682,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2991,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -1915,7 +1696,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3148,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2001,
@@ -1926,7 +1710,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2706,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2002,
@@ -1937,7 +1724,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2656,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -1948,7 +1738,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2365,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2004,
@@ -1959,7 +1752,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2199,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -1970,7 +1766,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2176,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -1981,7 +1780,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.235,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -1992,7 +1794,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2392,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -2003,7 +1808,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2212,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2009,
@@ -2014,7 +1822,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1951,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -2025,7 +1836,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1904,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2011,
@@ -2036,7 +1850,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1974,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -2047,7 +1864,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1855,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2013,
@@ -2058,7 +1878,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1816,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -2069,7 +1892,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1683,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -2080,7 +1906,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2016,
@@ -2091,7 +1920,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -2102,7 +1934,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -2113,7 +1948,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS (acute cases)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -2124,7 +1962,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc acute (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -2135,7 +1976,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc acute = Confirmed 2373 + Probable 269 (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2025,
@@ -2146,7 +1990,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc acute = Confirmed 1890 + Probable 327 (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2026,
@@ -2157,7 +2004,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR); acute = Confirmed 996 + Probable 206",
-      "partial": "MMWR week 32"
+      "partial": "MMWR week 32",
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "rotavirus": [
@@ -2170,7 +2020,13 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": 304.7452,
       "note": "Cases = ESTIMATED illnesses pre-vaccine (~2.7M/yr in <5). Hospitalizations are the tracked metric; U.S. deaths too few to count reliably",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "estimated",
+        "note": "~2.7M illnesses/yr in children <5 \u2014 a CDC burden estimate, not a case count. Rotavirus has no notifiable-case record."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -2181,7 +2037,13 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": 293.0605,
       "note": "Vaccine introduced mid-2006; little impact yet",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": {
+        "kind": "estimated",
+        "note": "Approximate post-vaccine hospitalization levels."
+      }
     },
     {
       "year": 2008,
@@ -2192,7 +2054,13 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": 165.0309,
       "note": "Approx; ~45% fewer hospitalizations after the vaccine",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": {
+        "kind": "estimated",
+        "note": "Approximate post-vaccine hospitalization levels."
+      }
     },
     {
       "year": 2012,
@@ -2203,7 +2071,13 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": 75.6109,
       "note": "Approx; sustained ~60-80% reduction",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": {
+        "kind": "estimated",
+        "note": "Approximate post-vaccine hospitalization levels."
+      }
     },
     {
       "year": 2019,
@@ -2214,7 +2088,13 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": 80.7841,
       "note": "Approx",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": {
+        "kind": "estimated",
+        "note": "Approximate post-vaccine hospitalization levels."
+      }
     }
   ],
   "diphtheria": [
@@ -2227,7 +2107,13 @@ window.DISEASE_DATA = {
       "death_rate": 40.3007,
       "hosp_rate": null,
       "note": "Diphtheria+croup death rate 40.3/100k (a top infectious killer); NCHS Table 65",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1901,
@@ -2238,7 +2124,13 @@ window.DISEASE_DATA = {
       "death_rate": 33.5005,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1902,
@@ -2249,7 +2141,13 @@ window.DISEASE_DATA = {
       "death_rate": 29.8003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1903,
@@ -2260,7 +2158,13 @@ window.DISEASE_DATA = {
       "death_rate": 31.0996,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1904,
@@ -2271,7 +2175,13 @@ window.DISEASE_DATA = {
       "death_rate": 29.2997,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1905,
@@ -2282,7 +2192,13 @@ window.DISEASE_DATA = {
       "death_rate": 23.5003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1906,
@@ -2293,7 +2209,13 @@ window.DISEASE_DATA = {
       "death_rate": 26.2998,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1907,
@@ -2304,7 +2226,13 @@ window.DISEASE_DATA = {
       "death_rate": 24.2006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1908,
@@ -2315,7 +2243,13 @@ window.DISEASE_DATA = {
       "death_rate": 21.9005,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1909,
@@ -2326,7 +2260,13 @@ window.DISEASE_DATA = {
       "death_rate": 19.9003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1910,
@@ -2337,7 +2277,13 @@ window.DISEASE_DATA = {
       "death_rate": 21.0998,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1911,
@@ -2348,7 +2294,13 @@ window.DISEASE_DATA = {
       "death_rate": 18.4002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1912,
@@ -2359,7 +2311,13 @@ window.DISEASE_DATA = {
       "death_rate": 17.6003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1913,
@@ -2370,7 +2328,13 @@ window.DISEASE_DATA = {
       "death_rate": 18.0997,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1914,
@@ -2381,7 +2345,13 @@ window.DISEASE_DATA = {
       "death_rate": 17.1997,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1915,
@@ -2392,7 +2362,13 @@ window.DISEASE_DATA = {
       "death_rate": 15.2,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1916,
@@ -2403,7 +2379,13 @@ window.DISEASE_DATA = {
       "death_rate": 13.8999,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1917,
@@ -2414,7 +2396,13 @@ window.DISEASE_DATA = {
       "death_rate": 15.6002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1918,
@@ -2425,7 +2413,13 @@ window.DISEASE_DATA = {
       "death_rate": 14.0002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1919,
@@ -2436,7 +2430,13 @@ window.DISEASE_DATA = {
       "death_rate": 14.9003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1920,
@@ -2447,7 +2447,13 @@ window.DISEASE_DATA = {
       "death_rate": 17.7002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1921,
@@ -2458,7 +2464,13 @@ window.DISEASE_DATA = {
       "death_rate": 14.6,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1922,
@@ -2469,7 +2481,13 @@ window.DISEASE_DATA = {
       "death_rate": 12.0001,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1923,
@@ -2480,7 +2498,13 @@ window.DISEASE_DATA = {
       "death_rate": 9.2997,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1924,
@@ -2491,7 +2515,13 @@ window.DISEASE_DATA = {
       "death_rate": 7.8002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1925,
@@ -2502,7 +2532,13 @@ window.DISEASE_DATA = {
       "death_rate": 7.3997,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1926,
@@ -2513,7 +2549,13 @@ window.DISEASE_DATA = {
       "death_rate": 7.6996,
       "hosp_rate": null,
       "note": "Toxoid widely adopted in the 1920s",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1927,
@@ -2524,7 +2566,13 @@ window.DISEASE_DATA = {
       "death_rate": 7.1996,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1928,
@@ -2535,7 +2583,13 @@ window.DISEASE_DATA = {
       "death_rate": 6.5002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1930,
@@ -2546,7 +2600,13 @@ window.DISEASE_DATA = {
       "death_rate": 4.9001,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1931,
@@ -2557,7 +2617,13 @@ window.DISEASE_DATA = {
       "death_rate": 4.8002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1932,
@@ -2568,7 +2634,13 @@ window.DISEASE_DATA = {
       "death_rate": 4.4002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1933,
@@ -2579,7 +2651,13 @@ window.DISEASE_DATA = {
       "death_rate": 3.9002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1934,
@@ -2590,7 +2668,13 @@ window.DISEASE_DATA = {
       "death_rate": 3.3,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1935,
@@ -2601,7 +2685,13 @@ window.DISEASE_DATA = {
       "death_rate": 3.0999,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1936,
@@ -2612,7 +2702,13 @@ window.DISEASE_DATA = {
       "death_rate": 2.4001,
       "hosp_rate": null,
       "note": "Pre-1937 = deaths derived from NCHS Table 65 rates x Census pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 death rates x interpolated Census population; OWID's counts start 1937."
+      },
+      "basisHosp": null
     },
     {
       "year": 1937,
@@ -2623,7 +2719,10 @@ window.DISEASE_DATA = {
       "death_rate": 2.0197,
       "hosp_rate": null,
       "note": "OWID series starts 1937; pre-1937 had >100k cases/yr in the 1920s",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1938,
@@ -2634,7 +2733,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.9636,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1939,
@@ -2645,7 +2747,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.5404,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1940,
@@ -2656,7 +2761,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.1024,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1941,
@@ -2667,7 +2775,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1942,
@@ -2678,7 +2789,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1943,
@@ -2689,7 +2803,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.8672,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1944,
@@ -2700,7 +2817,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.8189,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1945,
@@ -2711,7 +2831,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.1274,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1946,
@@ -2722,7 +2845,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.8764,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1947,
@@ -2733,7 +2859,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.5488,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1948,
@@ -2744,7 +2873,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.4298,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1949,
@@ -2755,7 +2887,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3842,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1950,
@@ -2766,7 +2901,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2709,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1951,
@@ -2777,7 +2915,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1959,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1952,
@@ -2788,7 +2929,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1383,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1953,
@@ -2799,7 +2943,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0977,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1954,
@@ -2810,7 +2957,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0892,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1955,
@@ -2821,7 +2971,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0907,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1956,
@@ -2832,7 +2985,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0613,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1957,
@@ -2843,7 +2999,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0474,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1958,
@@ -2854,7 +3013,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0426,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1959,
@@ -2865,7 +3027,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0408,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1960,
@@ -2876,7 +3041,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0385,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1961,
@@ -2887,7 +3055,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0374,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1962,
@@ -2898,7 +3069,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0223,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1963,
@@ -2909,7 +3083,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0241,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1964,
@@ -2920,7 +3097,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0222,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1965,
@@ -2931,7 +3111,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0094,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1966,
@@ -2942,7 +3125,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0103,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1967,
@@ -2953,7 +3139,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0163,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1968,
@@ -2964,7 +3153,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0151,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1969,
@@ -2975,7 +3167,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0124,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1970,
@@ -2986,7 +3181,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0148,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1971,
@@ -2997,7 +3195,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0063,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1972,
@@ -3008,7 +3209,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0048,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1973,
@@ -3019,7 +3223,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0048,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1974,
@@ -3030,7 +3237,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0024,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1975,
@@ -3041,7 +3251,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0023,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1976,
@@ -3052,7 +3265,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0032,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1977,
@@ -3063,7 +3279,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0023,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1978,
@@ -3074,7 +3293,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0018,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -3085,7 +3307,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -3096,7 +3321,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -3107,7 +3335,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -3118,7 +3349,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -3129,7 +3363,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -3140,7 +3377,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -3151,7 +3391,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -3162,7 +3405,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -3173,7 +3419,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -3184,7 +3433,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -3195,7 +3447,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -3206,7 +3461,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -3217,7 +3475,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -3228,7 +3489,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -3239,7 +3503,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -3250,7 +3517,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -3261,7 +3531,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1996,
@@ -3272,7 +3545,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -3283,7 +3559,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -3294,7 +3573,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -3305,7 +3587,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -3316,7 +3601,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2001,
@@ -3327,7 +3615,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2002,
@@ -3338,7 +3629,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -3349,7 +3643,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2004,
@@ -3360,7 +3657,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -3371,7 +3671,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -3382,7 +3685,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -3393,7 +3699,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -3404,7 +3713,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2009,
@@ -3415,7 +3727,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -3426,7 +3741,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2011,
@@ -3437,7 +3755,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -3448,7 +3769,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2013,
@@ -3459,7 +3783,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -3470,7 +3797,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -3481,7 +3811,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2016,
@@ -3492,7 +3825,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -3503,7 +3839,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2018,
@@ -3514,7 +3853,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -3525,7 +3867,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -3536,7 +3881,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2021,
@@ -3547,7 +3895,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -3558,7 +3909,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "tetanus": [
@@ -3571,7 +3925,13 @@ window.DISEASE_DATA = {
       "death_rate": 2.3303,
       "hosp_rate": null,
       "note": "Death rate 2.33/100k (CDC/Fraser 'Tetanus in the US 1900-1969'). Count = rate x population. Cases not reported until 1947",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1910,
@@ -3582,7 +3942,13 @@ window.DISEASE_DATA = {
       "death_rate": 1.8996,
       "hosp_rate": null,
       "note": "Death rate 1.9/100k (NCHS Grove & Hetzel Table 65). Count = rate x population",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1920,
@@ -3593,7 +3959,13 @@ window.DISEASE_DATA = {
       "death_rate": 1.5997,
       "hosp_rate": null,
       "note": "Death rate 1.6/100k (NCHS Table 65); WWI-era plateau",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1930,
@@ -3604,7 +3976,13 @@ window.DISEASE_DATA = {
       "death_rate": 1.0998,
       "hosp_rate": null,
       "note": "Death rate 1.1/100k (NCHS Table 65)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1938,
@@ -3615,7 +3993,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.7003,
       "hosp_rate": null,
       "note": "Death rate 0.7/100k (NCHS Table 65); decline 1923-40 mainly from antitoxin wound care",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1939,
@@ -3626,7 +4010,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.4997,
       "hosp_rate": null,
       "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1940,
@@ -3637,7 +4027,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.4003,
       "hosp_rate": null,
       "note": "Death rate 0.4/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1941,
@@ -3648,7 +4044,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.4997,
       "hosp_rate": null,
       "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1942,
@@ -3659,7 +4061,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.5,
       "hosp_rate": null,
       "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1943,
@@ -3670,7 +4078,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.5003,
       "hosp_rate": null,
       "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1944,
@@ -3681,7 +4095,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.4999,
       "hosp_rate": null,
       "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1945,
@@ -3692,7 +4112,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.5002,
       "hosp_rate": null,
       "note": "Death rate 0.5/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1946,
@@ -3703,7 +4129,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.4002,
       "hosp_rate": null,
       "note": "Death rate 0.4/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1947,
@@ -3714,7 +4146,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.3998,
       "hosp_rate": null,
       "note": "Notifiable from 1947 (3.9 per million reported cases); historical CFR ~30% | deaths: Death rate 0.4/100k (NCHS Table 65, 5th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1948,
@@ -3725,7 +4163,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.3397,
       "hosp_rate": null,
       "note": "Death rate ~0.34/100k (interp. NCHS 1938-1950); toxoid into routine childhood DTP. Count = rate x pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1949,
@@ -3736,7 +4180,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.2998,
       "hosp_rate": null,
       "note": "Death rate 0.3/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1950,
@@ -3747,7 +4197,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.2002,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65); toxoid-era decline 1945-55",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1951,
@@ -3758,7 +4214,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.2998,
       "hosp_rate": null,
       "note": "Death rate 0.3/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1952,
@@ -3769,7 +4231,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.2001,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1953,
@@ -3780,7 +4248,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.1997,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1954,
@@ -3791,7 +4265,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.2,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1955,
@@ -3802,7 +4282,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.2002,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1956,
@@ -3813,7 +4299,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.0999,
       "hosp_rate": null,
       "note": "Death rate 0.1/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1957,
@@ -3824,7 +4316,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.2001,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1958,
@@ -3835,7 +4333,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.1997,
       "hosp_rate": null,
       "note": "Death rate 0.2/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1959,
@@ -3846,7 +4350,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.1598,
       "hosp_rate": null,
       "note": "Death rate 0.16/100k (CDC/Fraser); >90% below 1900",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1960,
@@ -3857,7 +4367,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.0998,
       "hosp_rate": null,
       "note": "Death rate 0.1/100k (NCHS Table 65, 7th rev.); count = rate x interp. pop",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "NCHS Table 65 / CDC-Fraser death rates x interpolated Census population. Tetanus cases were not notifiable until 1947."
+      },
+      "basisHosp": null
     },
     {
       "year": 1974,
@@ -3868,7 +4384,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1975,
@@ -3879,7 +4398,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1976,
@@ -3890,7 +4412,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Approx; \"50-100 cases/yr since mid-1970s\" (CDC)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1977,
@@ -3901,7 +4426,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1978,
@@ -3912,7 +4440,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -3923,7 +4454,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -3934,7 +4468,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -3945,7 +4482,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -3956,7 +4496,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -3967,7 +4510,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -3978,7 +4524,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -3989,7 +4538,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -4000,7 +4552,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -4011,7 +4566,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -4022,7 +4580,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -4033,7 +4594,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -4044,7 +4608,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Approx anchor",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -4055,7 +4622,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -4066,7 +4636,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -4077,7 +4650,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -4088,7 +4664,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -4099,7 +4678,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -4110,7 +4692,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -4121,7 +4706,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -4132,7 +4720,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -4143,7 +4734,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2001,
@@ -4154,7 +4748,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2002,
@@ -4165,7 +4762,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -4176,7 +4776,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2004,
@@ -4187,7 +4790,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -4198,7 +4804,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "2001-2008 averaged 29 cases/yr (CFR ~13%)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -4209,7 +4818,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -4220,7 +4832,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -4231,7 +4846,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "WHO GHO total tetanus reported cases (indicator WHS3_46; matches CDC anchors)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2009,
@@ -4242,7 +4860,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0007,
       "hosp_rate": null,
       "note": "Annual data 2009-2023 from CDC MMWR SS7501",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -4253,7 +4874,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2011,
@@ -4264,7 +4888,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0016,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -4275,7 +4902,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0013,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2013,
@@ -4286,7 +4916,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.001,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -4297,7 +4930,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0016,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -4308,7 +4944,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0012,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2016,
@@ -4319,7 +4958,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -4330,7 +4972,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2018,
@@ -4341,7 +4986,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -4352,7 +5000,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0012,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -4363,7 +5014,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2021,
@@ -4374,7 +5028,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -4385,7 +5042,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -4396,7 +5056,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -4407,7 +5070,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc (provisional; cases only, deaths not in weekly table)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2025,
@@ -4418,7 +5084,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc (provisional; cases only, deaths not in weekly table)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2026,
@@ -4429,7 +5098,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR); cases only, deaths not in the weekly table",
-      "partial": "MMWR week 32"
+      "partial": "MMWR week 32",
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "pertussis": [
@@ -4442,7 +5114,10 @@ window.DISEASE_DATA = {
       "death_rate": 12.2,
       "hosp_rate": null,
       "note": "Early death rate (approx)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1910,
@@ -4453,7 +5128,10 @@ window.DISEASE_DATA = {
       "death_rate": 11.8,
       "hosp_rate": null,
       "note": "Early death rate (approx)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1920,
@@ -4464,7 +5142,10 @@ window.DISEASE_DATA = {
       "death_rate": 9.0,
       "hosp_rate": null,
       "note": "Early death rate (approx)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1922,
@@ -4475,7 +5156,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1923,
@@ -4486,7 +5170,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1924,
@@ -4497,7 +5184,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1925,
@@ -4508,7 +5198,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1926,
@@ -4519,7 +5212,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1927,
@@ -4530,7 +5226,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1928,
@@ -4541,7 +5240,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1929,
@@ -4552,7 +5254,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1930,
@@ -4563,7 +5268,10 @@ window.DISEASE_DATA = {
       "death_rate": 4.8,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1931,
@@ -4574,7 +5282,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1932,
@@ -4585,7 +5296,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1933,
@@ -4596,7 +5310,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1934,
@@ -4607,7 +5324,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1935,
@@ -4618,7 +5338,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1936,
@@ -4629,7 +5352,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1937,
@@ -4640,7 +5366,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1938,
@@ -4651,7 +5380,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1939,
@@ -4662,7 +5394,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1940,
@@ -4673,7 +5408,10 @@ window.DISEASE_DATA = {
       "death_rate": 2.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1941,
@@ -4684,7 +5422,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1942,
@@ -4695,7 +5436,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1943,
@@ -4706,7 +5450,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1944,
@@ -4717,7 +5464,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.3431,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1945,
@@ -4728,7 +5478,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.236,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1946,
@@ -4739,7 +5492,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.8638,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1947,
@@ -4750,7 +5506,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.3422,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1948,
@@ -4761,7 +5520,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.777,
       "hosp_rate": null,
       "note": "Whole-cell DTP routine",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1949,
@@ -4772,7 +5534,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1950,
@@ -4783,7 +5548,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.7388,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1951,
@@ -4794,7 +5562,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.617,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1952,
@@ -4805,7 +5576,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2562,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1953,
@@ -4816,7 +5590,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.169,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1954,
@@ -4827,7 +5604,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2295,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1955,
@@ -4838,7 +5618,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2825,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1956,
@@ -4849,7 +5632,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1582,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1957,
@@ -4860,7 +5646,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1071,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1958,
@@ -4871,7 +5660,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1019,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1959,
@@ -4882,7 +5674,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1524,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1960,
@@ -4893,7 +5688,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0658,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1961,
@@ -4904,7 +5702,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0418,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1962,
@@ -4915,7 +5716,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0451,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1963,
@@ -4926,7 +5730,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0617,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1964,
@@ -4937,7 +5744,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0492,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1965,
@@ -4948,7 +5758,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0288,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1966,
@@ -4959,7 +5772,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0253,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1967,
@@ -4970,7 +5786,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0189,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1968,
@@ -4981,7 +5800,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0181,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1969,
@@ -4992,7 +5814,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0065,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1970,
@@ -5003,7 +5828,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0059,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1971,
@@ -5014,7 +5842,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0088,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1972,
@@ -5025,7 +5856,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0029,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1973,
@@ -5036,7 +5870,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0024,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1974,
@@ -5047,7 +5884,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0066,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1975,
@@ -5058,7 +5898,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0037,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1976,
@@ -5069,7 +5912,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0032,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1977,
@@ -5080,7 +5926,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0046,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1978,
@@ -5091,7 +5940,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0027,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -5102,7 +5954,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0027,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -5113,7 +5968,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0049,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -5124,7 +5982,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0026,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -5135,7 +5996,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0017,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -5146,7 +6010,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0021,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -5157,7 +6024,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -5168,7 +6038,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0017,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -5179,7 +6052,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0025,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -5190,7 +6066,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -5201,7 +6080,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0016,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -5212,7 +6094,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0049,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -5223,7 +6108,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0048,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -5234,7 +6122,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -5245,7 +6136,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.002,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -5256,7 +6150,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0027,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -5267,7 +6164,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0031,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -5278,7 +6178,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0023,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1996,
@@ -5289,7 +6192,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0015,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -5300,7 +6206,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0022,
       "hosp_rate": null,
       "note": "Acellular DTaP switch",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -5311,7 +6220,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0018,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -5322,7 +6234,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0025,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -5333,7 +6248,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0043,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2001,
@@ -5344,7 +6262,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2002,
@@ -5355,7 +6276,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0063,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -5366,7 +6290,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0038,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2004,
@@ -5377,7 +6304,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0055,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -5388,7 +6318,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0105,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -5399,7 +6332,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -5410,7 +6346,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -5421,7 +6360,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0066,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2009,
@@ -5432,7 +6374,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0049,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -5443,7 +6388,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0084,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2011,
@@ -5454,7 +6402,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0023,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -5465,7 +6416,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0054,
       "hosp_rate": null,
       "note": "Highest since 1955",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2013,
@@ -5476,7 +6430,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0038,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -5487,7 +6444,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0044,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -5498,7 +6458,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0022,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2016,
@@ -5509,7 +6472,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0034,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -5520,7 +6486,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0028,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2018,
@@ -5531,7 +6500,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0028,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -5542,7 +6514,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -5553,7 +6528,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0015,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2021,
@@ -5564,7 +6542,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0012,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -5575,7 +6556,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -5586,7 +6570,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -5597,7 +6584,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Resurgence (CDC NNDSS, provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2025,
@@ -5608,7 +6598,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2026,
@@ -5619,7 +6612,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR)",
-      "partial": "MMWR week 32"
+      "partial": "MMWR week 32",
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "hib": [
@@ -5632,7 +6628,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.4,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -5642,8 +6641,14 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": 1.7,
       "hosp_rate": null,
-      "note": "Pre-vaccine plateau (est. ~42/100k <5); burden estimates cite ~20k cases/yr",
-      "partial": null
+      "note": "Pre-vaccine plateau ESTIMATE at CDC's measured surveillance level (~40/100k in <5) x under-5 population. NOT the same quantity as CDC's ~20,000 cases/yr figure \u2014 see note in row 1987",
+      "partial": null,
+      "basisCases": {
+        "kind": "estimated",
+        "note": "Pre-vaccine plateau: CDC's measured surveillance rate (~41/100k in <5) x under-5 population. Not a reported count \u2014 no granular early-1980s annual data is published."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -5654,7 +6659,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.2,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -5665,7 +6673,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.4,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -5676,7 +6687,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.4,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -5687,7 +6701,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.2,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -5697,8 +6714,14 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": 1.1,
       "hosp_rate": null,
-      "note": "Pre-vaccine plateau (est.); polysaccharide vaccine 1985 had little population effect",
-      "partial": null
+      "note": "Pre-vaccine plateau ESTIMATE (same basis as 1980); the 1985 polysaccharide vaccine had little population effect",
+      "partial": null,
+      "basisCases": {
+        "kind": "estimated",
+        "note": "Pre-vaccine plateau: CDC's measured surveillance rate (~41/100k in <5) x under-5 population. Not a reported count \u2014 no granular early-1980s annual data is published."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -5709,7 +6732,10 @@ window.DISEASE_DATA = {
       "death_rate": 1.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -5719,8 +6745,14 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": 1.0,
       "hosp_rate": null,
-      "note": "~41/100k in children <5 (CDC); deaths approx (~5% fatal)",
-      "partial": null
+      "note": "~41/100k in children <5 (CDC measured surveillance). RECONCILIATION: CDC also states '~20,000 cases annually' pre-vaccine \u2014 that is an estimate of TRUE national burden adjusted for under-ascertainment, roughly 2.5-3x the measured/reported level plotted here. Both are CDC figures for the same era; this series plots the measured one throughout so pre- and post-vaccine points share a basis. Deaths approx (~5% fatal)",
+      "partial": null,
+      "basisCases": {
+        "kind": "estimated",
+        "note": "Pre-vaccine plateau: CDC's measured surveillance rate (~41/100k in <5) x under-5 population. Not a reported count \u2014 no granular early-1980s annual data is published."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -5731,7 +6763,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.9,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -5741,8 +6776,14 @@ window.DISEASE_DATA = {
       "cfr": null,
       "death_rate": 0.7,
       "hosp_rate": null,
-      "note": "~37/100k \u2014 still high just before the 1990 infant vaccine",
-      "partial": null
+      "note": "~37/100k measured \u2014 still high just before the 1990 infant vaccine",
+      "partial": null,
+      "basisCases": {
+        "kind": "estimated",
+        "note": "Pre-vaccine plateau: CDC's measured surveillance rate (~41/100k in <5) x under-5 population. Not a reported count \u2014 no granular early-1980s annual data is published."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -5753,7 +6794,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.5,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -5764,7 +6808,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3,
       "hosp_rate": null,
       "note": "~11/100k \u2014 sharp drop AFTER the 1990 infant conjugate vaccine",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -5775,7 +6822,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -5786,7 +6836,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -5797,7 +6850,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -5808,7 +6864,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2,
       "hosp_rate": null,
       "note": "~1.6/100k",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1996,
@@ -5819,7 +6878,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -5830,7 +6892,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3,
       "hosp_rate": null,
       "note": "280 reported cases (~1.5/100k)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -5841,7 +6906,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -5852,7 +6920,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Approx",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -5863,7 +6934,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "18 reported cases in children =<5",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -5874,7 +6948,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -5885,7 +6962,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -5896,7 +6976,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2025,
@@ -5907,7 +6990,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS: H. influenzae invasive, age <5, serotype b (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2026,
@@ -5918,7 +7004,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR): H. influenzae invasive, age <5, serotype b",
-      "partial": "MMWR week 32"
+      "partial": "MMWR week 32",
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "pcv": [
@@ -5931,7 +7020,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.0566,
       "hosp_rate": null,
       "note": "Invasive pneumococcal disease in children <5 (CDC ABCs). Deaths ESTIMATED: matches CDC burden estimate (~200/yr pre-PCV) = cases x measured ~1.3% CFR. Pneumococcal deaths aren't recorded separately",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC Active Bacterial Core surveillance rates for children <5; the 1999 and 2007 points are explicitly approximate."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "IPD cases x a measured ~1.3% case-fatality, anchored to CDC's ~200 deaths/yr pre-PCV burden estimate."
+      },
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -5942,7 +7040,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.0737,
       "hosp_rate": null,
       "note": "Approx; level held before PCV7 (2000). Deaths estimated (cases x ~1.3% CFR)",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC Active Bacterial Core surveillance rates for children <5; the 1999 and 2007 points are explicitly approximate."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "IPD cases x a measured ~1.3% case-fatality, anchored to CDC's ~200 deaths/yr pre-PCV burden estimate."
+      },
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -5953,7 +7060,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.2765,
       "hosp_rate": null,
       "note": "Approx; after PCV7 cut <5 invasive disease ~76%. Deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC Active Bacterial Core surveillance rates for children <5; the 1999 and 2007 points are explicitly approximate."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "IPD cases x a measured ~1.3% case-fatality, anchored to CDC's ~200 deaths/yr pre-PCV burden estimate."
+      },
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -5964,7 +7080,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0969,
       "hosp_rate": null,
       "note": "After PCV13 (2010); -91% vs 1997. Deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC Active Bacterial Core surveillance rates for children <5; the 1999 and 2007 points are explicitly approximate."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "IPD cases x a measured ~1.3% case-fatality, anchored to CDC's ~200 deaths/yr pre-PCV burden estimate."
+      },
+      "basisHosp": null
     }
   ],
   "polio": [
@@ -5977,7 +7102,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.0539,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1911,
@@ -5988,7 +7122,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.4807,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1913,
@@ -5999,7 +7142,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.4473,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1914,
@@ -6010,7 +7162,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.3448,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1915,
@@ -6021,7 +7182,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.7132,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1916,
@@ -6032,7 +7202,16 @@ window.DISEASE_DATA = {
       "death_rate": 7.2614,
       "hosp_rate": null,
       "note": "NYC-centered epidemic (approx national)",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1917,
@@ -6043,7 +7222,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.1876,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1918,
@@ -6054,7 +7242,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.951,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1919,
@@ -6065,7 +7262,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.7292,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1920,
@@ -6076,7 +7282,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.7404,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1921,
@@ -6087,7 +7302,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.5148,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1922,
@@ -6098,7 +7322,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.7391,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1923,
@@ -6109,7 +7342,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.7834,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1924,
@@ -6120,7 +7362,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.9797,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1925,
@@ -6131,7 +7382,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.3349,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1926,
@@ -6142,7 +7402,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.7505,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1927,
@@ -6153,7 +7422,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.7501,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1928,
@@ -6164,7 +7442,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.1831,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1929,
@@ -6175,7 +7462,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.6865,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1930,
@@ -6186,7 +7482,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.1453,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1931,
@@ -6197,7 +7502,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.7349,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1932,
@@ -6208,7 +7522,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.6792,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1933,
@@ -6219,7 +7542,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.6498,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1934,
@@ -6230,7 +7562,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.6893,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1935,
@@ -6241,7 +7582,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.8357,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1936,
@@ -6252,7 +7602,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.6222,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1937,
@@ -6263,7 +7622,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.1353,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1938,
@@ -6274,7 +7642,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.3758,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1939,
@@ -6285,7 +7662,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.5896,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1940,
@@ -6296,7 +7682,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.7755,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1941,
@@ -6307,7 +7702,16 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1942,
@@ -6318,7 +7722,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.4235,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1943,
@@ -6329,7 +7742,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.8571,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1944,
@@ -6340,7 +7762,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.9991,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1945,
@@ -6351,7 +7782,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.8586,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1946,
@@ -6362,7 +7802,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.3177,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1947,
@@ -6373,7 +7822,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.4087,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1948,
@@ -6384,7 +7842,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.4868,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1949,
@@ -6395,7 +7862,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.8627,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1950,
@@ -6406,7 +7882,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.2344,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1951,
@@ -6417,7 +7902,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.9914,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1952,
@@ -6428,7 +7922,16 @@ window.DISEASE_DATA = {
       "death_rate": 1.9806,
       "hosp_rate": null,
       "note": "Largest US epidemic on record",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1953,
@@ -6439,7 +7942,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.8997,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1954,
@@ -6450,7 +7962,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.8362,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1955,
@@ -6461,7 +7982,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.6279,
       "hosp_rate": null,
       "note": "Salk IPV licensed April 1955",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1956,
@@ -6472,7 +8002,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.3355,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1957,
@@ -6483,7 +8022,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.1287,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1958,
@@ -6494,7 +8042,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.1462,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1959,
@@ -6505,7 +8062,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.2561,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1960,
@@ -6516,7 +8082,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.1277,
       "hosp_rate": null,
       "note": "Sabin OPV rollout beginning",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1961,
@@ -6527,7 +8102,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.049,
       "hosp_rate": null,
       "note": "OPV licensed",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1962,
@@ -6538,7 +8122,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.032,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1963,
@@ -6549,7 +8142,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0214,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1964,
@@ -6560,7 +8162,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1965,
@@ -6571,7 +8182,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0084,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1966,
@@ -6582,7 +8202,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0046,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1967,
@@ -6593,7 +8222,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0082,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1968,
@@ -6604,7 +8242,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0116,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1969,
@@ -6615,7 +8262,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0065,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1970,
@@ -6626,7 +8282,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0034,
       "hosp_rate": null,
       "note": "Only sporadic/imported and VAPP",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1971,
@@ -6637,7 +8302,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0088,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID case rate x interpolated Census population."
+      },
+      "basisDeaths": {
+        "kind": "derived",
+        "note": "OWID death rate x interpolated Census population."
+      },
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -6648,7 +8322,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Last endemic wild-virus outbreak (Amish)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -6659,7 +8336,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Vaccine-associated paralytic polio era",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -6670,7 +8350,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "OPV discontinued in US",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -6681,7 +8364,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "Importation into unvaccinated community",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -6692,7 +8378,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "Vaccine-derived case (Rockland County NY)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "measles": [
@@ -6705,7 +8394,10 @@ window.DISEASE_DATA = {
       "death_rate": 13.3,
       "hosp_rate": null,
       "note": "Early death rate (approx)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1910,
@@ -6716,7 +8408,10 @@ window.DISEASE_DATA = {
       "death_rate": 12.4,
       "hosp_rate": null,
       "note": "Early death rate (approx)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1919,
@@ -6727,7 +8422,10 @@ window.DISEASE_DATA = {
       "death_rate": 12.6851,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1920,
@@ -6738,7 +8436,10 @@ window.DISEASE_DATA = {
       "death_rate": 8.8,
       "hosp_rate": null,
       "note": "Early death rate (approx)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1921,
@@ -6749,7 +8450,10 @@ window.DISEASE_DATA = {
       "death_rate": 3.6328,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1922,
@@ -6760,7 +8464,10 @@ window.DISEASE_DATA = {
       "death_rate": 3.7512,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1923,
@@ -6771,7 +8478,10 @@ window.DISEASE_DATA = {
       "death_rate": 9.6298,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1924,
@@ -6782,7 +8492,10 @@ window.DISEASE_DATA = {
       "death_rate": 7.6009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1925,
@@ -6793,7 +8506,10 @@ window.DISEASE_DATA = {
       "death_rate": 2.067,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1926,
@@ -6804,7 +8520,13 @@ window.DISEASE_DATA = {
       "death_rate": 7.5913,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1927,
@@ -6815,7 +8537,13 @@ window.DISEASE_DATA = {
       "death_rate": 3.8535,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1928,
@@ -6826,7 +8554,13 @@ window.DISEASE_DATA = {
       "death_rate": 5.2652,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1929,
@@ -6837,7 +8571,13 @@ window.DISEASE_DATA = {
       "death_rate": 2.4719,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1930,
@@ -6848,7 +8588,10 @@ window.DISEASE_DATA = {
       "death_rate": 3.2,
       "hosp_rate": null,
       "note": "Early death rate (approx)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1931,
@@ -6859,7 +8602,13 @@ window.DISEASE_DATA = {
       "death_rate": 2.9597,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1932,
@@ -6870,7 +8619,13 @@ window.DISEASE_DATA = {
       "death_rate": 1.5929,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1933,
@@ -6881,7 +8636,13 @@ window.DISEASE_DATA = {
       "death_rate": 2.2925,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1934,
@@ -6892,7 +8653,13 @@ window.DISEASE_DATA = {
       "death_rate": 5.6528,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1935,
@@ -6903,7 +8670,13 @@ window.DISEASE_DATA = {
       "death_rate": 3.1398,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1936,
@@ -6914,7 +8687,13 @@ window.DISEASE_DATA = {
       "death_rate": 1.011,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1937,
@@ -6925,7 +8704,13 @@ window.DISEASE_DATA = {
       "death_rate": 1.1052,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "OWID reports no case counts for these years; filled from the published case RATE x population."
+      },
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1938,
@@ -6936,7 +8721,10 @@ window.DISEASE_DATA = {
       "death_rate": 2.5389,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1939,
@@ -6947,7 +8735,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.9134,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1940,
@@ -6958,7 +8749,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.5259,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1941,
@@ -6969,7 +8763,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1942,
@@ -6980,7 +8777,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1943,
@@ -6991,7 +8791,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1944,
@@ -7002,7 +8805,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1945,
@@ -7013,7 +8819,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1946,
@@ -7024,7 +8833,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1947,
@@ -7035,7 +8847,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1948,
@@ -7046,7 +8861,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1949,
@@ -7057,7 +8875,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.6499,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1950,
@@ -7068,7 +8889,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3033,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1951,
@@ -7079,7 +8903,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.4367,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1952,
@@ -7090,7 +8917,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3894,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1953,
@@ -7101,7 +8931,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2867,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1954,
@@ -7112,7 +8945,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3163,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1955,
@@ -7123,7 +8959,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2075,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1956,
@@ -7134,7 +8973,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3141,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1957,
@@ -7145,7 +8987,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.227,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1958,
@@ -7156,7 +9001,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.3166,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1959,
@@ -7167,7 +9015,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2175,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1960,
@@ -7178,7 +9029,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2108,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1961,
@@ -7189,7 +9043,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2366,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1962,
@@ -7200,7 +9057,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2184,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1963,
@@ -7211,7 +9071,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.192,
       "hosp_rate": null,
       "note": "Measles vaccine licensed",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1964,
@@ -7222,7 +9085,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.2181,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1965,
@@ -7233,7 +9099,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1412,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1966,
@@ -7244,7 +9113,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.1317,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1967,
@@ -7255,7 +9127,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0403,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1968,
@@ -7266,7 +9141,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0116,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1969,
@@ -7277,7 +9155,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0199,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1970,
@@ -7288,7 +9169,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0428,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1971,
@@ -7299,7 +9183,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0428,
       "hosp_rate": null,
       "note": "MMR licensed",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1972,
@@ -7310,7 +9197,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0111,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1973,
@@ -7321,7 +9211,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0105,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1974,
@@ -7332,7 +9225,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0094,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1975,
@@ -7343,7 +9239,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0093,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1976,
@@ -7354,7 +9253,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0055,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1977,
@@ -7365,7 +9267,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0068,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1978,
@@ -7376,7 +9281,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.005,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -7387,7 +9295,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0027,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -7398,7 +9309,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0049,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -7409,7 +9323,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -7420,7 +9337,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -7431,7 +9351,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0017,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -7442,7 +9365,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -7453,7 +9379,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0017,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -7464,7 +9393,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0008,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -7475,7 +9407,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0008,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -7486,7 +9421,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0012,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -7497,7 +9435,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0126,
       "hosp_rate": null,
       "note": "2nd dose recommended (after 1989-91 resurgence)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -7508,7 +9449,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0253,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -7519,7 +9463,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0107,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -7530,7 +9477,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0016,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -7541,7 +9491,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -7552,7 +9505,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -7563,7 +9519,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0008,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1996,
@@ -7574,7 +9533,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -7585,7 +9547,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0007,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -7596,7 +9561,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -7607,7 +9575,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0007,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -7618,7 +9589,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "Elimination declared",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2001,
@@ -7629,7 +9603,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2002,
@@ -7640,7 +9617,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -7651,7 +9631,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2004,
@@ -7662,7 +9645,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -7673,7 +9659,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -7684,7 +9673,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -7695,7 +9687,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -7706,7 +9701,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2009,
@@ -7717,7 +9715,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0007,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -7728,7 +9729,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2011,
@@ -7739,7 +9743,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -7750,7 +9757,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0006,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2013,
@@ -7761,7 +9771,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -7772,7 +9785,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -7783,7 +9799,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2016,
@@ -7794,7 +9813,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -7805,7 +9827,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2018,
@@ -7816,7 +9841,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -7827,7 +9855,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -7838,7 +9869,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2021,
@@ -7849,7 +9883,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -7860,7 +9897,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -7871,7 +9911,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -7882,7 +9925,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2025,
@@ -7893,7 +9939,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Large outbreak year; CDC final total (2,289)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2026,
@@ -7904,7 +9953,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR); CDC's measles page counts higher (~2,465 as of Aug 6, 2026)",
-      "partial": "MMWR week 32"
+      "partial": "MMWR week 32",
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "mumps": [
@@ -7917,7 +9969,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0289,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1960,
@@ -7928,7 +9983,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0234,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1961,
@@ -7939,7 +9997,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0292,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1962,
@@ -7950,7 +10011,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0234,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1963,
@@ -7961,7 +10025,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0257,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1964,
@@ -7972,7 +10039,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0265,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1965,
@@ -7983,7 +10053,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0162,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1966,
@@ -7994,7 +10067,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0222,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1967,
@@ -8005,7 +10081,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0189,
       "hosp_rate": null,
       "note": "Mumps vaccine licensed",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1968,
@@ -8016,7 +10095,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0126,
       "hosp_rate": null,
       "note": "Nationally notifiable; into MMR 1971",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1969,
@@ -8027,7 +10109,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.011,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1970,
@@ -8038,7 +10123,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0079,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1971,
@@ -8049,7 +10137,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0073,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1972,
@@ -8060,7 +10151,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0077,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1973,
@@ -8071,7 +10165,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0057,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1974,
@@ -8082,7 +10179,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0028,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1975,
@@ -8093,7 +10193,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0037,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1976,
@@ -8104,7 +10207,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0037,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1977,
@@ -8115,7 +10221,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0023,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1978,
@@ -8126,7 +10235,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0014,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -8137,7 +10249,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -8148,7 +10263,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -8159,7 +10277,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -8170,7 +10291,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -8181,7 +10305,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0009,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -8192,7 +10319,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -8203,7 +10333,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -8214,7 +10347,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -8225,7 +10361,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0008,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -8236,7 +10375,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0008,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -8247,7 +10389,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0012,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -8258,7 +10403,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -8269,7 +10417,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -8280,7 +10431,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -8291,7 +10445,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -8302,7 +10459,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -8313,7 +10473,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1996,
@@ -8324,7 +10487,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -8335,7 +10501,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -8346,7 +10515,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -8357,7 +10529,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0004,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -8368,7 +10543,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0007,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2001,
@@ -8379,7 +10557,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2002,
@@ -8390,7 +10571,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -8401,7 +10585,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2004,
@@ -8412,7 +10599,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -8423,7 +10613,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -8434,7 +10627,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -8445,7 +10641,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -8456,7 +10655,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0007,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2009,
@@ -8467,7 +10669,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0007,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -8478,7 +10683,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2011,
@@ -8489,7 +10697,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -8500,7 +10711,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2013,
@@ -8511,7 +10725,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -8522,7 +10739,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -8533,7 +10753,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2016,
@@ -8544,7 +10767,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -8555,7 +10781,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2018,
@@ -8566,7 +10795,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -8577,7 +10809,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0003,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -8588,7 +10823,10 @@ window.DISEASE_DATA = {
       "death_rate": 0.0,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2021,
@@ -8599,7 +10837,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -8610,7 +10851,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -8621,7 +10865,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -8632,7 +10879,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2025,
@@ -8643,7 +10893,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2026,
@@ -8654,7 +10907,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR)",
-      "partial": "MMWR week 32"
+      "partial": "MMWR week 32",
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "rubella": [
@@ -8667,7 +10923,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Notifiable from 1966; main harm is CRS, not deaths",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1967,
@@ -8678,7 +10937,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1968,
@@ -8689,7 +10951,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1969,
@@ -8700,7 +10965,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "Rubella vaccine licensed; into MMR 1971",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1970,
@@ -8711,7 +10979,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1971,
@@ -8722,7 +10993,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1972,
@@ -8733,7 +11007,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1973,
@@ -8744,7 +11021,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1974,
@@ -8755,7 +11035,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1975,
@@ -8766,7 +11049,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1976,
@@ -8777,7 +11063,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1977,
@@ -8788,7 +11077,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1978,
@@ -8799,7 +11091,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1979,
@@ -8810,7 +11105,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1980,
@@ -8821,7 +11119,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1981,
@@ -8832,7 +11133,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1982,
@@ -8843,7 +11147,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1983,
@@ -8854,7 +11161,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1984,
@@ -8865,7 +11175,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1985,
@@ -8876,7 +11189,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1986,
@@ -8887,7 +11203,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1987,
@@ -8898,7 +11217,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1988,
@@ -8909,7 +11231,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1989,
@@ -8920,7 +11245,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1990,
@@ -8931,7 +11259,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1991,
@@ -8942,7 +11273,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1992,
@@ -8953,7 +11287,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1993,
@@ -8964,7 +11301,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1994,
@@ -8975,7 +11315,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1995,
@@ -8986,7 +11329,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1996,
@@ -8997,7 +11343,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1997,
@@ -9008,7 +11357,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1998,
@@ -9019,7 +11371,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 1999,
@@ -9030,7 +11385,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -9041,7 +11399,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2001,
@@ -9052,7 +11413,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2002,
@@ -9063,7 +11427,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -9074,7 +11441,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2004,
@@ -9085,7 +11455,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -9096,7 +11469,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -9107,7 +11483,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2007,
@@ -9118,7 +11497,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -9129,7 +11511,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2009,
@@ -9140,7 +11525,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -9151,7 +11539,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2011,
@@ -9162,7 +11553,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -9173,7 +11567,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2013,
@@ -9184,7 +11581,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -9195,7 +11595,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -9206,7 +11609,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2016,
@@ -9217,7 +11623,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -9228,7 +11637,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2018,
@@ -9239,7 +11651,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -9250,7 +11665,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -9261,7 +11679,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2021,
@@ -9272,7 +11693,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -9283,7 +11707,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -9294,7 +11721,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -9305,7 +11735,10 @@ window.DISEASE_DATA = {
       "death_rate": null,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc (provisional)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": null,
+      "basisHosp": null
     }
   ],
   "meningococcal": [
@@ -9318,7 +11751,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.1435,
       "hosp_rate": null,
       "note": "Mid-1990s peak era; incidence ~1.1/100k (ABCs). Cases = incidence x US pop. Deaths = CFR ~13% (estimate)",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2000,
@@ -9329,7 +11771,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0942,
       "hosp_rate": null,
       "note": "Incidence ~0.72/100k; already falling years before any vaccine. Derived from CDC period incidence; deaths estimated (CFR ~13%)",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2003,
@@ -9340,7 +11791,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0794,
       "hosp_rate": null,
       "note": "Midpoint of prevaccine 2000-2005 period (CDC avg 0.61/100k). Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2005,
@@ -9351,7 +11811,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0644,
       "hosp_rate": null,
       "note": "MenACWY (Menactra) licensed + ACIP routine adolescent recommendation. Incidence ~0.50/100k. Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2006,
@@ -9362,7 +11831,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.052,
       "hosp_rate": null,
       "note": "CDC-reported incidence 0.40/100k. Cases = incidence x pop. Deaths estimated (CFR ~13%)",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2008,
@@ -9373,7 +11851,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0462,
       "hosp_rate": null,
       "note": "Post-primary-dose period (2006-2010 avg 0.35/100k). Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2010,
@@ -9384,7 +11871,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0389,
       "hosp_rate": null,
       "note": "Booster dose (16y) added to schedule ~2010-2011. Incidence ~0.30/100k. Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2012,
@@ -9395,7 +11891,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0262,
       "hosp_rate": null,
       "note": "Post-booster period (2011-2017 avg 0.15/100k). Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2014,
@@ -9406,7 +11911,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0195,
       "hosp_rate": null,
       "note": "Incidence ~0.15/100k; MenB vaccines licensed 2014-2015. Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2015,
@@ -9417,7 +11931,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0153,
       "hosp_rate": null,
       "note": "CDC-reported incidence 0.12/100k. Cases = incidence x pop. Deaths estimated (CFR ~13%)",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2017,
@@ -9428,7 +11951,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0142,
       "hosp_rate": null,
       "note": "2015-2019 enhanced surveillance avg 0.11/100k; CFR 12.8% measured. Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2019,
@@ -9439,7 +11971,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.014,
       "hosp_rate": null,
       "note": "Incidence ~0.11/100k. Derived; deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2020,
@@ -9450,7 +11991,16 @@ window.DISEASE_DATA = {
       "death_rate": 0.0091,
       "hosp_rate": null,
       "note": "Pandemic low; CDC-reported incidence ~0.07/100k. Deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": {
+        "kind": "derived",
+        "note": "CDC-published incidence (per 100k) x U.S. population for that year, not a reported case count."
+      },
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2021,
@@ -9461,7 +12011,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.0081,
       "hosp_rate": null,
       "note": "REPORTED cases (NNDSS); record low incidence ~0.06/100k. Deaths estimated (CFR ~13%)",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2022,
@@ -9472,7 +12028,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.0119,
       "hosp_rate": null,
       "note": "REPORTED cases (NNDSS); serogroup Y rising. Deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2023,
@@ -9483,7 +12045,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.0169,
       "hosp_rate": null,
       "note": "REPORTED cases (NNDSS); incidence 0.13/100k - most since 2013. Deaths estimated",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2024,
@@ -9494,7 +12062,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.0182,
       "hosp_rate": null,
       "note": "REPORTED cases (NNDSS",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2025,
@@ -9505,7 +12079,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.0176,
       "hosp_rate": null,
       "note": "REPORTED cases (NNDSS",
-      "partial": null
+      "partial": null,
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     },
     {
       "year": 2026,
@@ -9516,7 +12096,13 @@ window.DISEASE_DATA = {
       "death_rate": 0.007,
       "hosp_rate": null,
       "note": "CDC NNDSS API x9gk-5huc, YTD through MMWR week 32 of 2026 (provisional, PARTIAL YEAR); deaths ESTIMATED (cases x ~13% CFR)",
-      "partial": "MMWR week 32"
+      "partial": "MMWR week 32",
+      "basisCases": null,
+      "basisDeaths": {
+        "kind": "estimated",
+        "note": "Cases x ~13% case-fatality. No national annual meningococcal death count is published."
+      },
+      "basisHosp": null
     }
   ]
 };

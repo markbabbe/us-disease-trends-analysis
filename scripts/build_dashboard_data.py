@@ -53,6 +53,29 @@ def load_partial():
             for r in read_csv("partial_years.csv")}
 
 
+def load_basis():
+    """(disease, field) -> list of (year_start, year_end, basis, note).
+
+    Declares which points are REPORTED counts and which are derived from a
+    published rate or estimated from an assumed parameter. Several series splice
+    the two — Hib's pre-vaccine plateau is an estimate while its post-1990 points
+    are reported counts — and a single unbroken line hides that the measurement
+    changed underneath it. See data/series_basis.csv.
+    """
+    out = {}
+    for r in read_csv("series_basis.csv"):
+        out.setdefault((r["disease"], r["field"]), []).append(
+            (int(r["year_start"]), int(r["year_end"]), r["basis"], r["note"]))
+    return out
+
+
+def basis_for(basis, disease, field, year):
+    for y0, y1, kind, note in basis.get((disease, field), []):
+        if y0 <= year <= y1:
+            return {"kind": kind, "note": note}
+    return None
+
+
 def load_pop_under5():
     rows = read_csv("us_population_under5.csv")
     return (np.array([int(r["year"]) for r in rows]),
@@ -63,6 +86,7 @@ def build(rows, case_field, disease):
     pyrs, pop = load_pop_under5() if disease in UNDER5 else load_pop()
     early = early_rates(disease)
     partial = load_partial()
+    basis = load_basis()
     out = {}
     for r in rows:
         y = int(r["year"])
@@ -76,14 +100,18 @@ def build(rows, case_field, disease):
         hosp_rate = round(hosp / p * 100000, 4) if hosp is not None else None
         out[y] = {"year": y, "cases": cases, "deaths": deaths, "incidence": inc,
                   "cfr": cfr, "death_rate": death_rate, "hosp_rate": hosp_rate,
-                  "note": r.get("notes", ""), "partial": partial.get((disease, y))}
+                  "note": r.get("notes", ""), "partial": partial.get((disease, y)),
+                  "basisCases": basis_for(basis, disease, "cases", y),
+                  "basisDeaths": basis_for(basis, disease, "deaths", y),
+                  "basisHosp": basis_for(basis, disease, "hospitalizations", y)}
     # Backfill early-era death rates (1900-1930) where the count series lacks them.
     for y, rate in early.items():
         rec = out.get(y)
         if rec is None:
             out[y] = {"year": y, "cases": None, "deaths": None, "incidence": None,
                       "cfr": None, "death_rate": rate, "hosp_rate": None,
-                      "note": "Early death rate (approx)", "partial": None}
+                      "note": "Early death rate (approx)", "partial": None,
+                      "basisCases": None, "basisDeaths": None, "basisHosp": None}
         elif rec["death_rate"] is None:
             rec["death_rate"] = rate
     return [out[y] for y in sorted(out)]
@@ -162,27 +190,6 @@ def coverage_levels():
     return out
 
 
-def coverage():
-    """Merge approximate historical anchors with live modern NIS data."""
-    def f(v):
-        v = (v or "").strip()
-        return float(v) if v else None
-    series = {"measles": {}, "pertussis": {}, "polio": {}}
-    for r in read_csv("coverage_historical.csv"):
-        y = int(r["year"])
-        for d, col in [("measles", "measles_mmr"), ("pertussis", "pertussis_dtap"), ("polio", "polio")]:
-            v = f(r[col])
-            if v is not None:
-                series[d][y] = {"year": y, "value": v, "approx": True}
-    for r in read_csv("coverage.csv"):
-        y = int(r["year"])
-        for d, col in [("measles", "measles_mmr"), ("pertussis", "pertussis_dtap"), ("polio", "polio")]:
-            v = f(r[col])
-            if v is not None:
-                series[d][y] = {"year": y, "value": v, "approx": False}
-    return {d: [series[d][y] for y in sorted(series[d])] for d in series}
-
-
 # disease key -> (csv file, case-count column, display name)
 DISEASE_CFG = {
     "hepb": ("hepb.csv", "cases", "Hepatitis B"),
@@ -240,7 +247,6 @@ def main():
         "under5": sorted(UNDER5),
         "earlyMortality": early(),
         "preVaccineDecline": pre_vaccine_decline(),
-        "coverage": coverage(),
         "coverageLevels": coverage_levels(),
         "chronic": chronic(),
         "lamerato": lamerato(),
@@ -258,12 +264,16 @@ def main():
         rec["death_rate"] = None
         rec["deaths"] = None
         rec["cfr"] = None
+        rec["basisDeaths"] = None       # the Deaths view is the MEASURED meningitis
+                                        # proxy, not the cases x CFR estimate that
+                                        # series_basis.csv describes
     for y, rate in men.items():
         rec = by_year.get(y)
         if rec is None:
             rec = {"year": y, "cases": None, "deaths": None, "incidence": None,
                    "cfr": None, "death_rate": None, "hosp_rate": None, "note": "",
-                   "partial": None}
+                   "partial": None, "basisCases": None, "basisDeaths": None,
+                   "basisHosp": None}
             by_year[y] = rec
         rec["death_rate"] = rate          # measured meningitis (1-4) death rate / 100,000
         rec["deaths"] = None              # drop the back-calculated estimate

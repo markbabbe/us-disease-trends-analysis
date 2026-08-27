@@ -1,8 +1,8 @@
 year,cases,deaths,notes
-1980,6900,345,Pre-vaccine plateau (est. ~42/100k <5); burden estimates cite ~20k cases/yr
-1985,7300,365,Pre-vaccine plateau (est.); polysaccharide vaccine 1985 had little population effect
-1987,7600,380,~41/100k in children <5 (CDC); deaths approx (~5% fatal)
-1989,6800,340,~37/100k — still high just before the 1990 infant vaccine
+1980,6900,345,"Pre-vaccine plateau ESTIMATE at CDC's measured surveillance level (~40/100k in <5) x under-5 population. NOT the same quantity as CDC's ~20,000 cases/yr figure — see note in row 1987"
+1985,7300,365,Pre-vaccine plateau ESTIMATE (same basis as 1980); the 1985 polysaccharide vaccine had little population effect
+1987,7600,380,"~41/100k in children <5 (CDC measured surveillance). RECONCILIATION: CDC also states '~20,000 cases annually' pre-vaccine — that is an estimate of TRUE national burden adjusted for under-ascertainment, roughly 2.5-3x the measured/reported level plotted here. Both are CDC figures for the same era; this series plots the measured one throughout so pre- and post-vaccine points share a basis. Deaths approx (~5% fatal)"
+1989,6800,340,~37/100k measured — still high just before the 1990 infant vaccine
 1991,2040,100,~11/100k — sharp drop AFTER the 1990 infant conjugate vaccine
 1995,300,15,~1.6/100k
 1997,280,14,280 reported cases (~1.5/100k)

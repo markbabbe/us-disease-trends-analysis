@@ -3,12 +3,16 @@
 **Why this file exists.** A vaccine's *licensure year* is not the year it
 protected the population. Coverage rises (sometimes slowly, sometimes in pockets)
 over years to decades, and gaps in coverage explain much of the *residual*
-disease and the *resurgences* seen after a vaccine exists. But there is **no
-clean national annual coverage time series before ~1994**, when the CDC National
-Immunization Survey (NIS) began. This file therefore gives **documented
-milestones and anchor estimates with citations**, not a smooth annual series.
-Modern (post-2011) machine-readable coverage is in `coverage.csv` (live from the
-CDC NIS API).
+disease and the *resurgences* seen after a vaccine exists.
+
+**Measured annual coverage starts in 1962**, not 1994: CDC Pink Book Appendix E
+("Vaccine Coverage Levels — United States, 1962–2016") is transcribed in
+`coverage_levels_pinkbook.csv` and is the authoritative series — use it first.
+Modern machine-readable coverage is in `coverage.csv` (live from the CDC NIS
+API). This file covers what those series *cannot*: the 1955–1961 polio-uptake
+years that predate Appendix E, the 1986–1990 years it does not report, and the
+policy events that moved coverage. It gives **documented milestones with
+citations**, not a substitute annual series.
 
 > **Uncertainty note.** Pre-1994 figures below are anchor estimates from
 > published CDC/MMWR historical reports; many are national approximations or
@@ -62,7 +66,7 @@ as 1989–91. Coverage, not mere availability, drove the endgame to elimination
 - **1970s** state school-entry immunization laws (all 50 states by ~1980)
 - **1986** National Childhood Vaccine Injury Act (VICP; stabilized vaccine supply)
 - **1993–1994** Vaccines for Children (VFC) program (free vaccines for eligible kids)
-- **1994** National Immunization Survey (NIS) begins — first systematic national coverage measurement
+- **1962–1985** U.S. Immunization Survey; **1994** National Immunization Survey (NIS) succeeds it — both compiled in Pink Book Appendix E
 
 ## Sources
 

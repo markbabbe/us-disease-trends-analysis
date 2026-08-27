@@ -234,17 +234,40 @@ def cfr_chart(disease, rows, case_field, title):
         c = to_int(r.get(case_field))
         d = to_int(r.get("deaths"))
         if c and d is not None and c > 0:
-            pts.append((int(r["year"]), d / c * 100))
+            pts.append((int(r["year"]), d / c * 100, c))
     if len(pts) < 2:
         return None
     pts.sort()
-    yrs = [y for y, _ in pts]
-    cfr = [v for _, v in pts]
+    yrs = [y for y, _, _ in pts]
+    cfr = [v for _, v, _ in pts]
+    counts = [c for _, _, c in pts]
     fig, ax = plt.subplots(figsize=(10, 5.5))
     ax.plot(yrs, cfr, "-o", color="#8e44ad", markersize=4, linewidth=1.5)
+    # Deaths / REPORTED cases. Early reporting captured a small and rapidly
+    # changing share of infections (~10% for pre-vaccine measles), so the early
+    # points measure the denominator's incompleteness as much as lethality.
+    # Draw them hollow so the level isn't read as a true case-fatality rate.
+    # Two distinct denominator problems, both marked hollow:
+    #   early years  — only a small, fast-changing share of infections was reported
+    #   small-n years — a modern year with 55 reported cases turns 2 deaths into 3.6%
+    MIN_N = 500
+    weak = [(y, v) for y, v, c in pts if y < 1930 or c < MIN_N]
+    if weak:
+        ax.plot([y for y, _ in weak], [v for _, v in weak], "o", markersize=8,
+                markerfacecolor="none", markeredgecolor="#8e44ad", markeredgewidth=1.4)
+        peak = max(weak, key=lambda t: t[1])
+        ax.annotate("HOLLOW = don't read as lethality.\n"
+                    "Early years: only ~10% of infections were reported, so the\n"
+                    "denominator is missing (1919 reads 7.4%).\n"
+                    f"Recent years: fewer than {MIN_N} reported cases, so one or two\n"
+                    "deaths swing the ratio by whole percentage points.",
+                    xy=(peak[0], peak[1]), xytext=(0.34, 0.86),
+                    textcoords="axes fraction", fontsize=8, color="#5b2c6f",
+                    arrowprops=dict(arrowstyle="->", color="#8e44ad", lw=1),
+                    bbox=dict(boxstyle="round", fc="#f6eefb", ec="#8e44ad", alpha=0.95))
     ax.set_title(title)
     ax.set_xlabel("Year")
-    ax.set_ylabel("Case fatality rate (%)")
+    ax.set_ylabel("Deaths per 100 REPORTED cases (%)")
     ax.grid(True, alpha=0.3)
     fig.tight_layout()
     p = os.path.join(OUT, f"{disease}_cfr.png")
@@ -298,41 +321,72 @@ def early_mortality_chart():
     return p
 
 
-def _cov_series(col):
-    """Merge approximate historical anchors + modern NIS for one column."""
-    pts = {}
-    for r in read_csv("coverage_historical.csv"):
-        if r[col].strip():
-            pts[int(r["year"])] = (float(r[col]), True)
+def _break_gaps(yrs, vals, max_gap=1):
+    """Insert a NaN wherever the series skips years, so the line breaks instead of
+    drawing a straight segment across missing data (Appendix E has no 1986-1990)."""
+    oy, ov = [], []
+    for i, (y, v) in enumerate(zip(yrs, vals)):
+        if i and y - yrs[i - 1] > max_gap:
+            oy.append(yrs[i - 1] + 0.5)
+            ov.append(float("nan"))
+        oy.append(y)
+        ov.append(v)
+    return oy, ov
+
+
+def _pinkbook_series(col):
+    """Measured annual coverage from CDC Pink Book Appendix E (1962-2016)."""
+    pts = []
+    for r in read_csv("coverage_levels_pinkbook.csv"):
+        v = (r.get(col) or "").strip()
+        if v:
+            pts.append((int(r["year"]), float(v)))
+    return _break_gaps([y for y, _ in pts], [v for _, v in pts])
+
+
+def _nis_series(col):
+    """Live CDC NIS series (coverage.csv), indexed by BIRTH year."""
+    pts = []
     for r in read_csv("coverage.csv"):
-        if r[col].strip():
-            pts[int(r["year"])] = (float(r[col]), False)
-    yrs = sorted(pts)
-    return yrs, [pts[y][0] for y in yrs], [pts[y][1] for y in yrs]
+        v = (r.get(col) or "").strip()
+        if v:
+            pts.append((int(r["year"]), float(v)))
+    return [y for y, _ in pts], [v for _, v in pts]
 
 
 def coverage_chart():
-    cols = [("measles_mmr", "#c0392b", "Measles (MMR ≥1)"),
-            ("pertussis_dtap", "#e67e22", "Pertussis (DTP/DTaP ≥3)"),
-            ("polio", "#27ae60", "Polio (≥3)")]
+    """Measured coverage only.
+
+    This chart used to splice in `coverage_historical.csv` — unsourced pre-1994
+    "approx" anchors that disagreed with the measured Pink Book series by up to
+    19 points (1991 polio: 72 vs 53.2). Those anchors are gone. What is plotted
+    now is measured data from two surveys whose x-axes mean different things, so
+    they are drawn as separate lines rather than joined into one.
+    """
+    cols = [("mmr", "measles_mmr", "#c0392b", "Measles (MMR ≥1)"),
+            ("dtp3", "pertussis_dtap", "#e67e22", "Pertussis (DTP/DTaP ≥3)"),
+            ("polio3", "polio", "#27ae60", "Polio (≥3)")]
     fig, ax = plt.subplots(figsize=(10, 5.5))
-    for col, color, label in cols:
-        yrs, vals, approx = _cov_series(col)
-        ax.plot(yrs, vals, "-o", color=color, markersize=4, label=label)
-        # mark the approximate (pre-1994) anchors with hollow markers
-        ax_yrs = [y for y, a in zip(yrs, approx) if a]
-        ax_vals = [v for v, a in zip(vals, approx) if a]
-        ax.plot(ax_yrs, ax_vals, "o", color=color, markersize=7,
-                markerfacecolor="none", markeredgecolor=color)
+    for pb_col, nis_col, color, label in cols:
+        yrs, vals = _pinkbook_series(pb_col)
+        ax.plot(yrs, vals, "-o", color=color, markersize=3.5, linewidth=1.6,
+                label=f"{label} — Pink Book App. E (survey year)")
+        nyrs, nvals = _nis_series(nis_col)
+        ax.plot(nyrs, nvals, "--s", color=color, markersize=3.5, linewidth=1.4,
+                alpha=0.75, label=f"{label} — CDC NIS (birth year)")
     ax.set_ylim(0, 100)
-    ax.axvspan(1950, 1994, color="#999", alpha=0.08)
-    ax.text(1971, 6, "pre-1994: approx. anchors\n(hollow markers)", fontsize=8, color="#666", ha="center")
-    ax.set_title("U.S. childhood vaccination coverage over time\n"
-                 "(hollow = approximate historical anchors; solid = CDC NIS, 2011+)")
+    ax.set_title("U.S. childhood vaccination coverage, measured sources only\n"
+                 "Pink Book Appendix E 1962-2016 (solid) · CDC NIS by birth year (dashed)")
     ax.set_xlabel("Year")
     ax.set_ylabel("Coverage (%)")
     ax.grid(True, alpha=0.3)
-    ax.legend(loc="lower right")
+    ax.legend(loc="lower right", fontsize=7.5, ncol=2, framealpha=0.95)
+    ax.text(0.015, 0.90,
+            "Two measured surveys, indexed differently (survey year vs birth year,\n"
+            "~2-year offset) — plotted separately, not spliced. Line breaks = years\n"
+            "Appendix E does not report (1986-1990).",
+            transform=ax.transAxes, fontsize=7.5, color="#555", va="top",
+            bbox=dict(boxstyle="round", fc="#f4f4f4", ec="#bbb", alpha=0.9))
     fig.tight_layout()
     p = os.path.join(OUT, "coverage.png")
     fig.savefig(p, dpi=130)
