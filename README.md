@@ -182,7 +182,8 @@ Two observations that *constrain* the artifact:
   **case-fatality rate would have risen.** It did not: CFR (deaths ÷ paralytic)
   stayed near **7–9% from 1954 through 1960** (the 14.6% in 1952 reflects that
   severe epidemic year). No paralytic count is published for 1961 in this
-  compilation, so the CFR series stops at 1960. A dominant reporting artifact predicts the opposite.
+  compilation, so the CFR series stops at 1960. A dominant reporting artifact
+  predicts the opposite.
 - **The decline continued for years after the definition stabilized** (1958
   onward), through the period of rising vaccine coverage — something a one-time
   definitional reset cannot produce.
@@ -477,10 +478,11 @@ age- and dose-dependent.
 - **Mortality (most comparable):** ~400–500 deaths/yr in the 1950s–early 1960s;
   by the 1980s, single digits to low tens; 1990 resurgence ~64; modern years
   often **0** (chart: [`charts/measles_deaths.png`](charts/measles_deaths.png)).
-- **Case fatality rate:** **0.06–0.14%** in the mid-century U.S. as measured
-  here (deaths ÷ *reported* cases, 1949–1963), i.e. roughly 1 per 1,000 reported
-  cases — consistent with CDC's often-quoted 1–2 per 1,000. Deaths per reported
-  case were **far higher earlier in the century**, and fell ~90% between the
+- **Case fatality rate:** **0.06–0.16%** in the mid-century U.S. as measured
+  here (deaths ÷ *reported* cases, 1949–1963: low 0.062% in 1955, high 0.155% in
+  1949) — roughly 1 per 1,000 reported cases, consistent with CDC's often-quoted
+  1–2 per 1,000. Deaths per reported case were **far higher earlier in the
+  century**, and fell ~90% between the
   1920s and 1950 — before any vaccine — driven by antibiotics (for secondary
   pneumonia), nutrition, and supportive care
   (chart: [`charts/measles_cfr.png`](charts/measles_cfr.png)).
@@ -662,7 +664,7 @@ incidence comparison across the post-licensure era.
 |---|---|---|---|---|
 | **Polio** | Deaths & paralytic cases per 100,000 (age-specific ideal) | Rising, with severe epidemic peaks (1952: 57,198 cases, 3,108 deaths) | Fell >99% within a decade; wild virus eliminated by 1979; deaths ≈0 | Late-1950s definition tightening + enterovirus reclassification deflate later counts; ventilator care lowered CFR pre-vaccine; asymptomatic denominator never measured |
 | **Pertussis** | Infant mortality & hospitalization rate | Very high (~265k cases 1934; thousands of deaths/yr) | Fell ~99% to 1976 nadir, then **partial resurgence** in cases | Resurgence inflated by PCR detection; waning acellular immunity is real; deaths now ~10–20/yr, mostly infants; CFR fell via supportive care |
-| **Measles** | Deaths per 100,000 + incidence (with ascertainment caveat) | Near-universal childhood infection (~3–4M true infections/yr); deaths declining for decades | Cases fell ~99%+; eliminated 2000 (**status under PAHO review Nov 2026** after the 2025–26 outbreaks); outbreaks since via undervaccination | Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed; CFR fell ~90% (1900→1950) before vaccine |
+| **Measles** | Deaths per 100,000 + incidence (with ascertainment caveat) | Near-universal childhood infection (~3–4M true infections/yr); deaths declining for decades | Cases fell ~99%+; eliminated 2000 (**status under PAHO review Nov 2026** after the 2025–26 outbreaks); outbreaks since via undervaccination | Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed; deaths per *reported* case fell ~90% (1920s→1950) before the vaccine — part medicine, part improving ascertainment (§3.5) |
 
 ## 9.2 Charts
 

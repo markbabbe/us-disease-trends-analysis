@@ -303,7 +303,7 @@
         <tr><td>Diphtheria</td><td>Cases &amp; deaths</td><td>&gt;100k cases/yr in the 1920s</td><td>Essentially eliminated</td><td>OWID series starts 1937; antitoxin cut fatality pre-vaccine</td></tr>
         <tr><td>Tetanus</td><td>Cases &amp; CFR</td><td>~560 cases/yr (1947)</td><td>~25/yr; deaths &gt;99% lower</td><td>NOT contagious (no herd immunity); pre-2009 anchors approximate</td></tr>
         <tr><td>Pertussis</td><td>Infant mortality &amp; hospitalization</td><td>Very high (~265k cases 1934)</td><td>Fell ~99% to 1976, then partial resurgence in cases</td><td>Resurgence inflated by PCR detection; waning acellular immunity is real</td></tr>
-        <tr><td>Polio</td><td>Deaths &amp; paralytic cases per 100k</td><td>Rising, severe epidemic peaks (1952: ~57.6k cases, ~3,145 deaths)</td><td>Fell &gt;99% in a decade; wild virus eliminated 1979</td><td>Late-1950s definition tightening + enterovirus reclassification deflate later counts</td></tr>
+        <tr><td>Polio</td><td>Deaths &amp; paralytic cases per 100k</td><td>Rising, severe epidemic peaks (1952: 57,198 cases, 3,108 deaths — as plotted; CDC's quoted totals are ~57,600 / ~3,145)</td><td>Fell &gt;99% in a decade; wild virus eliminated 1979</td><td>Late-1950s definition tightening + enterovirus reclassification deflate later counts</td></tr>
         <tr><td>Measles</td><td>Deaths per 100k + incidence</td><td>Near-universal childhood infection (~3–4M true infections/yr)</td><td>Fell ~99%+; eliminated 2000 (status under review, Nov 2026)</td><td>Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed</td></tr>
         <tr><td>Mumps</td><td>Reported cases</td><td>Common childhood illness</td><td>Down &gt;99%; periodic resurgences</td><td>Notifiable only from 1968; waning immunity drives outbreaks</td></tr>
         <tr><td>Rubella</td><td>Cases + CRS births</td><td>1964–65: ~12.5M cases, ~20k CRS</td><td>Eliminated 2004</td><td>Harm is birth defects (CRS), not deaths; notifiable 1966</td></tr>
@@ -368,7 +368,7 @@ const FACTS = {
               "Whole-cell DTP routine ~1948; acellular DTaP switch 1991–97.",
               "Reported-case nadir 1976 (~1,010); 2012 peak ~48,300 — highest since 1955.",
               "Caveat: modern resurgence partly real (waning immunity) and partly detection (PCR)."],
-  polio: ["Largest U.S. epidemic 1952: ~57,600 cases, ~21,000 paralytic, ~3,145 deaths.",
+  polio: ["Largest U.S. epidemic 1952: 57,198 cases, 21,269 paralytic, 3,108 deaths (the figures plotted here; CDC's often-quoted totals are ~57,600 and ~3,145 — same epidemic, slightly different compilation).",
           "Salk IPV licensed 1955; Sabin OPV 1961–63.",
           "Last endemic wild outbreak 1979; wild virus eliminated from the Americas by 1994.",
           "Caveat: paralytic case definition tightened late-1950s; enteroviruses reclassified out."],
@@ -376,7 +376,7 @@ const FACTS = {
             "Vaccine 1963; MMR 1971; 2nd dose 1989 (after 1989–91 resurgence).",
             "Declared eliminated 2000 — but that status is under formal PAHO review in Nov 2026 after the 2025-26 outbreaks (the Americas lost measles-free status in Nov 2025 when Canada passed 12 months of continuous transmission).",
             "2025 was the largest post-elimination year (2,289 confirmed, CDC final); 2026 has already passed it — the 2026 point is PARTIAL (NNDSS through MMWR week 32) and will keep rising.",
-            "Caveat: CFR fell ~90% from 1900→1950 BEFORE the vaccine (antibiotics, nutrition, care)."],
+            "Caveat: deaths per REPORTED case fell ~90% from the 1920s to 1950 — BEFORE the vaccine (antibiotics, nutrition, care). Part of that fall is better reporting, not just better medicine: this series starts in 1919 and early case counts miss most infections."],
   mumps: ["Vaccine 1967; into MMR 1971; nationally notifiable from 1968.",
           "Cases down >99%, but resurgences occur (2006; 2016–17) in close-contact settings / waning immunity.",
           "Rarely fatal; complications include orchitis, meningitis, deafness."],

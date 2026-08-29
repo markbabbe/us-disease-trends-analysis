@@ -278,8 +278,9 @@ differently and mostly recently, so the CSVs are **documented anchors with clear
   pre-vaccine) so the pre- and post-vaccine points are like-for-like; if you compare
   the chart's pre-vaccine level to CDC's 20,000 headline, expect a ~2.5–3× gap and
   that is why. Pre-vaccine deaths (~1,000/yr, CDC/Roush) likewise correspond to the
-  20,000 burden estimate, not to the plotted case series. Rate is per 100,000 children <5 (see under-5 denominator
-  below). Intermediate points approximate. **Deaths view:** Hib-specific deaths
+  20,000 burden estimate, not to the plotted case series.
+  Rate is per 100,000 children <5 (see under-5 denominator below). Intermediate
+  points approximate. **Deaths view:** Hib-specific deaths
   aren't recorded, so the dashboard's Deaths-per-100,000 view plots the **measured
   childhood-meningitis death rate (ages 1–4, NCHS HIST001R, 1979–1998)** as the
   proxy — not a cases × CFR estimate (see the meningitis-proxy section above).
@@ -475,9 +476,9 @@ in README §7b as the qualitative fact it is.
 Polio 3+, MMR, Hib 3+, Varicella, PCV 3+, HepB 3+, Rotavirus, and the 4-3-1 /
 4-3-1-3 combined series. Powers the Overview home tab's coverage chart. DTP3+
 coverage rose from 67.3% (1962) to the low-90s; newer vaccines begin when
-introduced. This is authoritative annual coverage and **replaced** `coverage_historical.csv`,
-a set of unsourced "approx" pre-1994 anchors that disagreed with it by as much as
-19 points (1991 polio: 72 vs a measured 53.2). That file has been deleted and
+introduced. This is authoritative annual coverage and **replaced**
+`coverage_historical.csv`, a set of unsourced "approx" pre-1994 anchors that
+disagreed with it by as much as 19 points (1991 polio: 72 vs a measured 53.2). That file has been deleted and
 both the dashboard and `charts/coverage.png` now plot measured data only.
 Appendix E is indexed by **survey year** while the live NIS file
 (`coverage.csv`) is indexed by **birth year** — roughly a 2-year offset — so the

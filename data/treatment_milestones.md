@@ -33,8 +33,12 @@ complications, not the virus directly — so antibacterial treatment mattered.
 | 1942–1945 | **Penicillin** enters clinical, then widespread civilian use (post-WWII) | Further reduced secondary-infection deaths |
 | early 1900s→1950s | Improved nutrition, hydration, supportive care | Major contributor to the long pre-vaccine CFR decline |
 
-*Signal:* the U.S. measles **death rate fell ~90% from 1900 to 1950 — before the
-1963 vaccine** (see `early_mortality_rates.csv` and the early-mortality chart).
+*Signal:* the U.S. measles **death rate per 100,000 fell from ~13.3 (1900) to
+~0.3 (1950) — about 98%, and all of it before the 1963 vaccine** (see
+`early_mortality_rates.csv` and the early-mortality chart). Note this is the
+population death *rate*, which is not the same as deaths per reported case: that
+ratio fell ~90% over the same period and is partly an artifact of improving case
+ascertainment (README §3.5).
 
 ## Pertussis — supportive/critical care for infants
 
