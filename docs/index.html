@@ -331,8 +331,7 @@
   </div><!-- /dataSection -->
 
   <div id="trialsPanels" style="display:none;"></div>
-  <div id="autismPanels" style="display:none;"></div>
-  <div id="vaxvsPanels" style="display:none;"></div>
+  <div id="safetyPanels" style="display:none;"></div>
 </div>
 
 <footer>
@@ -679,7 +678,7 @@ const CHRONIC_CAVEAT =
   "(4) MMR, thimerosal, and cumulative antigen exposure have been tested and found NOT associated with " +
   "autism (Hviid 2019, 657,461 children; DeStefano 2013; Madsen 2002; U.S. Institute of Medicine 2004/2011; " +
   "Cochrane). The 1998 Wakefield claim was retracted for fraud. A fully-vaccinated-vs-never-vaccinated " +
-  "comparison has NOT been done — see the Vaxxed-vs-unvaxxed tab. " +
+  "comparison has NOT been done — see the Vaxxed-vs-unvaxxed section below. " +
   "(5) '# vaccines' counts diseases on the routine childhood/adolescent schedule (definition-dependent).";
 
 const CHRONIC_LIMITATIONS = `
@@ -691,8 +690,8 @@ Datalink) <em>can</em> identify never-vaccinated children — but it is heavily 
 by indication</strong> (families often skip vaccines <em>after</em> a diagnosis in an older child) and
 <strong>ascertainment bias</strong> (unvaccinated children have far fewer medical visits → fewer recorded
 diagnoses). Observational zero-dose studies <em>do</em> exist but are confounded (e.g., Mawson 2017,
-retracted; the Lamerato/Henry Ford study — see the box at the top of this tab). The mainstream
-"no-link" studies (listed on the Autism &amp; chronic tab) are mostly <strong>Scandinavian registry or
+retracted; the Lamerato/Henry Ford study — see above). The mainstream
+"no-link" studies (listed in the Autism &amp; chronic section above) are mostly <strong>Scandinavian registry or
 U.S. managed-care</strong> populations — observational, with residual confounding and diagnosis
 tied to medical contact.</p>
 <p style="margin:0 0 8px;"><strong>Mercury vs. aluminum.</strong> Thimerosal (mercury) is well-studied and
@@ -719,7 +718,7 @@ const CHRONIC_LAMERATO = `
 <h3 style="margin:2px 0 8px;font-size:15px;">The completely-unvaccinated vs. vaccinated study: Lamerato et al. (Henry Ford Health)</h3>
 <p style="margin:0 0 10px;font-size:13px;line-height:1.6;">This is the <strong>only sizable completely-unvaccinated-vs-vaccinated
 comparison from a mainstream U.S. health system to reach the public</strong> — nearly every other study
-(on the Autism &amp; chronic tab) compares <em>MMR vs. no-MMR</em> or more-vs-fewer antigens, not vaccinated vs. truly zero doses.
+(in the Autism &amp; chronic section above) compares <em>MMR vs. no-MMR</em> or more-vs-fewer antigens, not vaccinated vs. truly zero doses.
 (Other vaxxed-vs-unvaxxed studies exist but are small, survey-based, or retracted, e.g. Mawson 2017.)
 A retrospective analysis at Henry Ford Health (Detroit, data ~2020–2022) compared people who received
 <strong>zero</strong> CDC-schedule doses to vaccinated people, counting chronic-illness diagnoses. It was
@@ -759,7 +758,7 @@ const CHRONIC_NOLINK = `
 <h3 style="margin:2px 0 8px;font-size:15px;">Most-cited studies finding NO vaccine–autism link (and their limits)</h3>
 <p style="margin:0 0 10px;font-size:13px;line-height:1.6;">The mainstream conclusion rests largely on these. All are
 observational, and — as the rightmost column shows — <strong>none compares the full schedule vs. no vaccines</strong>
-(the gap the Henry Ford study on the Vaxxed-vs-unvaxxed tab tries, imperfectly, to fill). The 1998 Wakefield paper claiming an MMR–autism
+(the gap the Henry Ford study below tries, imperfectly, to fill). The 1998 Wakefield paper claiming an MMR–autism
 link was retracted for fraud.</p>
 <table style="margin:0;">
   <thead><tr><th>Study</th><th>What it tested</th><th>Finding</th><th>Key limitations</th></tr></thead>
@@ -858,15 +857,28 @@ const chartOptsDual = (c) => ({
   },
 });
 
-function renderAutism() {
-  const host = document.getElementById("autismPanels");
+function renderSafety() {
+  const host = document.getElementById("safetyPanels");
   const conds = [
     { key: "autism", title: "Autism (CDC ADDM, age 8)", unit: "per 1,000 children", color: "#c0392b" },
     { key: "devdisability", title: "Any developmental disability (NHIS, 3-17)", unit: "% of children", color: "#8e44ad" },
     { key: "asthma", title: "Asthma (children, NHIS)", unit: "% of children", color: "#2980b9" },
   ];
+  const fmt = n => n.toLocaleString();
+  const lamRows = (D.lamerato || []).slice().sort((a, b) => b.vax - a.vax).map(r => {
+    const ratio = r.novx > 0 ? (r.vax / r.novx).toFixed(1) + "×" : "—";
+    return `<tr><td>${r.condition}</td><td>${fmt(r.vax_n)} (${r.vax.toFixed(2)}%)</td>` +
+           `<td>${fmt(r.novx_n)} (${r.novx.toFixed(2)}%)</td><td>${ratio}</td></tr>`;
+  }).join("");
+  const condTable = `<table style="margin:0 0 12px;"><thead><tr><th>Condition</th>` +
+    `<th>Vaccinated (n=16,511)</th><th>Unvaccinated (n=1,957)</th><th>Raw ratio</th></tr></thead>` +
+    `<tbody>${lamRows}</tbody></table>`;
+  const secH2 = "margin:28px 0 14px;font-size:19px;border-top:1px solid var(--line);padding-top:22px;";
   host.innerHTML =
-    `<p class="evidence-lead">Do vaccines cause autism or chronic disease? These are the studies most often cited — and the actual trends over time.</p>
+    `<p class="evidence-lead">Do vaccines cause the harms people worry about — autism, chronic disease? And has anyone
+       compared fully-vaccinated to fully-unvaccinated children? Jump to:
+       <a href="#sec-autism">Autism &amp; chronic disease</a> &nbsp;·&nbsp; <a href="#sec-vaxvs">Vaxxed vs unvaxxed</a>.</p>
+     <h2 id="sec-autism" style="${secH2}border-top:none;padding-top:2px;">Autism &amp; chronic disease</h2>
      <div class="verdict"><b>Plain-English verdict</b> Tested repeatedly in very large studies and <strong>not
        found</strong>: MMR, thimerosal, and cumulative antigen exposure are <em>not</em> associated with autism. The rise
        in autism <em>diagnoses</em> tracks broadened criteria, awareness, and screening (see caveats). Chronic-disease
@@ -874,7 +886,14 @@ function renderAutism() {
      <div class="card">${CHRONIC_NOLINK}</div>
      <div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;">${CHRONIC_CAVEAT}</div>
      ` + conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
-        <div class="disease-chart" style="height:320px;"><canvas id="au-${c.key}"></canvas></div></div>`).join("");
+        <div class="disease-chart" style="height:320px;"><canvas id="au-${c.key}"></canvas></div></div>`).join("") +
+    `<h2 id="sec-vaxvs" style="${secH2}">Vaccinated vs unvaccinated</h2>
+     <div class="verdict"><b>Plain-English verdict</b> No randomized trial of "all vaccines vs. none" exists (withholding
+       proven protection would be unethical). The few observational attempts are dominated by a known bias — unvaccinated
+       children see doctors far less, so fewer conditions get recorded — so they cannot establish that vaccines cause
+       chronic illness. The disease-specific evidence above is far stronger and shows no link.</div>
+     <div class="card">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>
+     <div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;">${CHRONIC_LIMITATIONS}</div>`;
   const vax = D.chronic.vaccines.map(p => ({ x: p.year, y: p.value }));
   conds.forEach(c => {
     const pts = D.chronic[c.key].map(p => ({ x: p.year, y: p.value }));
@@ -893,27 +912,6 @@ function renderAutism() {
   });
 }
 
-function renderVaxvs() {
-  const host = document.getElementById("vaxvsPanels");
-  const fmt = n => n.toLocaleString();
-  const lamRows = (D.lamerato || []).slice().sort((a, b) => b.vax - a.vax).map(r => {
-    const ratio = r.novx > 0 ? (r.vax / r.novx).toFixed(1) + "×" : "—";
-    return `<tr><td>${r.condition}</td><td>${fmt(r.vax_n)} (${r.vax.toFixed(2)}%)</td>` +
-           `<td>${fmt(r.novx_n)} (${r.novx.toFixed(2)}%)</td><td>${ratio}</td></tr>`;
-  }).join("");
-  const condTable = `<table style="margin:0 0 12px;"><thead><tr><th>Condition</th>` +
-    `<th>Vaccinated (n=16,511)</th><th>Unvaccinated (n=1,957)</th><th>Raw ratio</th></tr></thead>` +
-    `<tbody>${lamRows}</tbody></table>`;
-  host.innerHTML =
-    `<p class="evidence-lead">Has anyone compared children who got <em>every</em> vaccine to children who got <em>none</em>? Very few studies try — here is what they can, and cannot, show.</p>
-     <div class="verdict"><b>Plain-English verdict</b> No randomized trial of "all vaccines vs. none" exists (withholding
-       proven protection would be unethical). The few observational attempts are dominated by a known bias — unvaccinated
-       children see doctors far less, so fewer conditions get recorded — so they cannot establish that vaccines cause
-       chronic illness. The disease-specific evidence (see the Autism &amp; chronic tab) is far stronger and shows no link.</div>
-     <div class="card">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>
-     <div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;">${CHRONIC_LIMITATIONS}</div>`;
-}
-
 function renderTrials() {
   document.getElementById("trialsPanels").innerHTML =
     `<p class="evidence-lead">The clinical trials each vaccine had to pass before U.S. licensure — sample size, design, and result.</p>
@@ -925,11 +923,10 @@ function renderTrials() {
 const PRIMARY = [
   { id: "data",   label: "The Data",             sub: "disease trends over time" },
   { id: "trials", label: "How they were tested", sub: "the approval trials" },
-  { id: "autism", label: "Autism & chronic",     sub: "what the studies found" },
-  { id: "vaxvs",  label: "Vaxxed vs unvaxxed",   sub: "the head-to-head evidence" },
+  { id: "safety", label: "Safety",               sub: "autism, chronic disease, vaxxed vs unvaxxed" },
 ];
 let activePrimary = "data";
-const EVID = { trials: renderTrials, autism: renderAutism, vaxvs: renderVaxvs };
+const EVID = { trials: renderTrials, safety: renderSafety };
 
 function buildTopnav() {
   const nav = document.getElementById("topnav");
@@ -947,8 +944,7 @@ function selectPrimary(id) {
   const isData = id === "data";
   document.getElementById("dataSection").style.display = isData ? "" : "none";
   document.getElementById("trialsPanels").style.display = id === "trials" ? "" : "none";
-  document.getElementById("autismPanels").style.display = id === "autism" ? "" : "none";
-  document.getElementById("vaxvsPanels").style.display = id === "vaxvs" ? "" : "none";
+  document.getElementById("safetyPanels").style.display = id === "safety" ? "" : "none";
   window.scrollTo(0, 0);
   if (isData) selectTab(activeTab);
   else EVID[id]();
