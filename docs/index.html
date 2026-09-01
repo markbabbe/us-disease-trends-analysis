@@ -689,7 +689,7 @@ by indication</strong> (families often skip vaccines <em>after</em> a diagnosis 
 <strong>ascertainment bias</strong> (unvaccinated children have far fewer medical visits → fewer recorded
 diagnoses). Observational zero-dose studies <em>do</em> exist but are confounded (e.g., Mawson 2017,
 retracted; the Lamerato/Henry Ford study — see above). The mainstream
-"no-link" studies (listed in the Autism &amp; chronic section above) are mostly <strong>Scandinavian registry or
+"no-link" studies (listed in the section above) are mostly <strong>Scandinavian registry or
 U.S. managed-care</strong> populations — observational, with residual confounding and diagnosis
 tied to medical contact.</p>
 <p style="margin:0 0 8px;"><strong>Mercury vs. aluminum.</strong> Thimerosal (mercury) is well-studied and
@@ -716,7 +716,7 @@ const CHRONIC_LAMERATO = `
 <h3 style="margin:2px 0 8px;font-size:15px;">The completely-unvaccinated vs. vaccinated study: Lamerato et al. (Henry Ford Health)</h3>
 <p style="margin:0 0 10px;font-size:13px;line-height:1.6;">This is the <strong>only sizable completely-unvaccinated-vs-vaccinated
 comparison from a mainstream U.S. health system to reach the public</strong> — nearly every other study
-(in the Autism &amp; chronic section above) compares <em>MMR vs. no-MMR</em> or more-vs-fewer antigens, not vaccinated vs. truly zero doses.
+(in the section above) compares <em>MMR vs. no-MMR</em> or more-vs-fewer antigens, not vaccinated vs. truly zero doses.
 (Other vaxxed-vs-unvaxxed studies exist but are small, survey-based, or retracted, e.g. Mawson 2017.)
 A retrospective analysis at Henry Ford Health (Detroit, data ~2020–2022) compared people who received
 <strong>zero</strong> CDC-schedule doses to vaccinated people, counting chronic-illness diagnoses. It was
@@ -873,23 +873,43 @@ function renderSafety() {
     `<tbody>${lamRows}</tbody></table>`;
   const secH2 = "margin:28px 0 14px;font-size:19px;border-top:1px solid var(--line);padding-top:22px;";
   host.innerHTML =
-    `<p class="evidence-lead">Do vaccines cause the harms people worry about — autism, chronic disease? And has anyone
-       compared fully-vaccinated to fully-unvaccinated children? Jump to:
-       <a href="#sec-autism">Autism &amp; chronic disease</a> &nbsp;·&nbsp; <a href="#sec-vaxvs">Vaxxed vs unvaxxed</a>.</p>
-     <h2 id="sec-autism" style="${secH2}border-top:none;padding-top:2px;">Autism &amp; chronic disease</h2>
-     <div class="verdict"><b>Plain-English verdict</b> Tested repeatedly in very large studies and <strong>not
-       found</strong>: MMR, thimerosal, and cumulative antigen exposure are <em>not</em> associated with autism. The rise
-       in autism <em>diagnoses</em> tracks broadened criteria, awareness, and screening (see caveats). Chronic-disease
-       trends have many drivers — a shared upward line is not evidence of cause.</div>
-     <div class="card">${CHRONIC_NOLINK}</div>
-     <div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;">${CHRONIC_CAVEAT}</div>
+    `<div class="verdict" style="border-left-color:#e0a800;">
+       <b>The debate</b>
+       The real question isn't about any single shot — it's whether the childhood vaccine schedule <em>as a whole</em>
+       raises a child's odds of chronic illness: autism, asthma, autoimmune and other conditions. It's a fair thing to
+       ask, and it's fueled by a real correlation — as the schedule grew from the 1980s on, diagnoses of several of these
+       conditions rose (charts below). The honest answer splits into two very different questions:
+       <ul style="margin:9px 0 0;padding-left:18px;">
+         <li><strong>Specific claims that have been tested head-on</strong> — does MMR cause autism? the preservative
+           thimerosal? the sheer <em>number</em> of antigens? Each has large, direct studies.
+           <a href="#sec-tested">Jump&nbsp;↓</a></li>
+         <li><strong>The whole schedule vs. no vaccines at all</strong> — the "everything vs. nothing" comparison most
+           people actually mean. Far harder, and far less settled. <a href="#sec-vaxvs">Jump&nbsp;↓</a></li>
+       </ul>
+     </div>
+     <h3 style="margin:8px 2px 4px;font-size:15px;">The correlation people point to</h3>
+     <p class="evidence-lead" style="margin-top:0;">These conditions rose over the same decades the schedule expanded.
+       That shared upward line is where the worry starts — but on its own it is not evidence of cause (autism-diagnosis
+       criteria widened enormously over the same period; see the caveats below the charts).</p>
      ` + conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="au-${c.key}"></canvas></div></div>`).join("") +
-    `<h2 id="sec-vaxvs" style="${secH2}">Vaccinated vs unvaccinated</h2>
-     <div class="verdict"><b>Plain-English verdict</b> No randomized trial of "all vaccines vs. none" exists (withholding
-       proven protection would be unethical). The few observational attempts are dominated by a known bias — unvaccinated
-       children see doctors far less, so fewer conditions get recorded — so they cannot establish that vaccines cause
-       chronic illness. The disease-specific evidence above is far stronger and shows no link.</div>
+    `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;">${CHRONIC_CAVEAT}</div>
+     <h2 id="sec-tested" style="${secH2}">What's actually been tested (and what it shows)</h2>
+     <div class="verdict"><b>What these studies do and don't show</b>
+       The specific, most-famous claims have been tested in very large studies and are <strong>not supported</strong>:
+       MMR does not increase autism risk, the preservative thimerosal doesn't, and neither does the <em>number</em> of
+       antigens ("too many too soon"). But note the design — these compare, for example, MMR vs. no-MMR among children
+       who <em>all</em> received the other vaccines. So they refute the specific MMR / thimerosal / antigen-count claims
+       — <strong>not</strong> the whole schedule vs. none, and <strong>not</strong> chronic illness in general. That is a
+       separate, far-less-settled question — see below.</div>
+     <div class="card">${CHRONIC_NOLINK}</div>
+     <h2 id="sec-vaxvs" style="${secH2}">Vaccinated vs unvaccinated: the whole-schedule question</h2>
+     <div class="verdict"><b>Plain-English verdict</b> This is the question the debate is really about, and the honest
+       answer is that it is <em>not</em> cleanly settled. No randomized trial of "all vaccines vs. none" exists
+       (withholding proven protection would be unethical), and the few observational attempts are dominated by a known
+       bias — unvaccinated children see doctors far less, so fewer conditions get recorded. They cannot establish that
+       vaccines cause chronic illness, but they also can't fully close the question. The specific-claim evidence above is
+       much stronger; this direct comparison is the genuinely under-studied part.</div>
      <div class="card">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>
      <div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;">${CHRONIC_LIMITATIONS}</div>`;
   const vax = D.chronic.vaccines.map(p => ({ x: p.year, y: p.value }));
