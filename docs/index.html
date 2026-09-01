@@ -912,12 +912,71 @@ function renderSafety() {
   });
 }
 
+const TRIALS = [
+  { v: "Polio (Salk, IPV)", trial: "Francis field trial, 1954",
+    design: "Randomized, double-blind, placebo-controlled. 1.8 million children — ~650,000 in the blinded vaccine/placebo arm, ~1.18M observed controls. One of the largest trials ever run; analyzed independently by Thomas Francis, not Salk.",
+    result: "80–90% effective against paralytic polio.",
+    cite: "Francis et al., Am. J. Public Health, 1955", href: "" },
+  { v: "Measles (MMR)", trial: "Enders/Katz vaccine, licensed 1963",
+    design: "Developed from the Enders–Katz attenuated strain and tested in field trials in the early 1960s; predates today's mega-trials. Efficacy figures below are the established CDC estimates.",
+    result: "~93% effective after 1 dose, ~97% after 2 doses (CDC).",
+    cite: "CDC, Measles Vaccination", href: "" },
+  { v: "Hepatitis B", trial: "Szmuness et al., 1980",
+    design: "Randomized, double-blind, placebo-controlled. 1,083 high-risk adults.",
+    result: "92% efficacy — HBV infection 3.2% (vaccine) vs 25.6% (placebo).",
+    cite: "Szmuness et al., NEJM, 1980", href: "https://pubmed.ncbi.nlm.nih.gov/6997738/" },
+  { v: "Hib (conjugate)", trial: "Santosham et al., 1991",
+    design: "Randomized field trial in Navajo infants (a very high-incidence population), PRP-OMP conjugate at 2 and 4 months.",
+    result: "~95% efficacy against invasive Hib disease (2 doses). Kaiser HbOC trial similar.",
+    cite: "Santosham et al., NEJM, 1991", href: "https://pubmed.ncbi.nlm.nih.gov/1903846/" },
+  { v: "Pertussis (acellular, DTaP)", trial: "Progetto Pertosse (Greco et al.), 1996",
+    design: "Randomized, double-blind trial in infants (Italy). A parallel Swedish trial (Gustafsson et al., 1996) found ~80–85%.",
+    result: "84% efficacy against typical pertussis (the whole-cell vaccine in the same trial: 36%).",
+    cite: "Greco et al., NEJM, 1996", href: "https://pubmed.ncbi.nlm.nih.gov/8538704/" },
+  { v: "Pneumococcal (PCV7)", trial: "Black et al., 2000",
+    design: "Randomized, double-blind. 37,868 infants (Northern California Kaiser Permanente).",
+    result: "~97% efficacy against vaccine-serotype invasive pneumococcal disease.",
+    cite: "Black et al., Pediatr. Infect. Dis. J., 2000", href: "https://pubmed.ncbi.nlm.nih.gov/10749457/" },
+  { v: "Rotavirus (RotaTeq)", trial: "REST (Vesikari et al.), 2006",
+    design: "Randomized, double-blind, placebo-controlled. ~70,000 infants across 11 countries — sized specifically to rule out the intussusception risk that got the earlier RotaShield vaccine withdrawn in 1999.",
+    result: "98% efficacy against severe rotavirus disease; no intussusception signal.",
+    cite: "Vesikari et al., NEJM, 2006", href: "https://pubmed.ncbi.nlm.nih.gov/16394299/" },
+];
+
 function renderTrials() {
+  const rows = TRIALS.map(t => `<tr>
+      <td><strong>${t.v}</strong><br><span style="color:var(--muted);font-size:12px;">${t.trial}</span></td>
+      <td>${t.design}</td>
+      <td>${t.result}</td>
+      <td>${t.href ? `<a href="${t.href}" target="_blank" rel="noopener">${t.cite}</a>` : t.cite}</td>
+    </tr>`).join("");
   document.getElementById("trialsPanels").innerHTML =
-    `<p class="evidence-lead">The clinical trials each vaccine had to pass before U.S. licensure — sample size, design, and result.</p>
-     <div class="card" style="border-left:4px solid #e0a800;"><strong>Being sourced.</strong> The trial receipts
-       (Francis polio field trial, measles, MMR, DTaP, Hib, HepB, PCV, rotavirus) are being transcribed from primary
-       sources with citations — not yet published.</div>`;
+    `<p class="evidence-lead">Before U.S. licensure, each vaccine had to show — in a controlled trial — that it actually works. Here are the pivotal ones: design, size, result, source.</p>
+     <div class="verdict"><b>Plain-English verdict</b> These vaccines were tested in controlled trials before approval —
+       most randomized and placebo- or comparator-controlled, several among the largest medical trials ever run — and
+       efficacy ran high (roughly 80–98%). The same system also <em>removes</em> vaccines when a real risk appears: the
+       first rotavirus vaccine (RotaShield) was pulled in 1999 over a rare bowel problem, and its replacement's trial was
+       built specifically to rule that out.</div>
+     <div class="card" style="overflow-x:auto;">
+       <table style="min-width:640px;">
+         <thead><tr><th>Vaccine / pivotal trial</th><th>Design &amp; size</th><th>Result</th><th>Source</th></tr></thead>
+         <tbody>${rows}</tbody>
+       </table>
+     </div>
+     <div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;">
+       <strong>How to read these (go a level deeper).</strong>
+       <ul style="margin:8px 0 0;padding-left:18px;">
+         <li><strong>"Efficacy"</strong> = how much the vaccine cut disease in the trial vs. the unvaccinated/placebo group.</li>
+         <li><strong>Older vaccines</strong> (measles, and the diphtheria/tetanus toxoids) predate today's mega-RCTs.
+           Their protection was established through antibody (antitoxin) correlates and field data rather than a single
+           giant placebo trial — a real limitation to note, though the near-elimination of these diseases after rollout
+           is strong corroborating evidence.</li>
+         <li><strong>New formulations</strong> of an already-licensed vaccine are usually tested against the existing
+           vaccine (an active comparator), not a saline placebo — because withholding proven protection would be
+           unethical. That confirms the new version is as good as the old, but can't measure effects common to both
+           (see the Safety tab's note on placebo arms).</li>
+       </ul>
+     </div>`;
 }
 
 const PRIMARY = [
