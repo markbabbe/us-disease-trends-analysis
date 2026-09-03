@@ -740,6 +740,10 @@ __CONDTABLE__
         can produce a ~2.5× difference in <em>diagnosed</em> illness with no real difference in underlying
         health. The analysis does not resolve this; it would need to adjust for healthcare utilization
         (e.g., conditions per visit, or matching on visit frequency).</li>
+    <li><strong>Unequal follow-up time (also decisive):</strong> the vaccinated were tracked for years, while a
+        quarter of the unvaccinated were followed only to under 6 months old and half to under 15 months. More
+        follow-up time = more chances for any condition to be recorded, regardless of true health — on its own enough
+        to manufacture much of the ~2.5× gap.</li>
     <li><strong>Observational → association, not causation.</strong> "Zero doses" also selects for families
         who rarely use the medical system, deepening the gap.</li>
     <li><strong>The original Henry Ford authors reportedly still support the vaccine schedule</strong> and do
@@ -894,22 +898,38 @@ function renderSafety() {
      ` + conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="au-${c.key}"></canvas></div></div>`).join("") +
     `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;">${CHRONIC_CAVEAT}</div>
-     <h2 id="sec-tested" style="${secH2}">What's actually been tested (and what it shows)</h2>
-     <div class="verdict"><b>What these studies do and don't show</b>
-       The specific, most-famous claims have been tested in very large studies and are <strong>not supported</strong>:
-       MMR does not increase autism risk, the preservative thimerosal doesn't, and neither does the <em>number</em> of
-       antigens ("too many too soon"). But note the design — these compare, for example, MMR vs. no-MMR among children
-       who <em>all</em> received the other vaccines. So they refute the specific MMR / thimerosal / antigen-count claims
-       — <strong>not</strong> the whole schedule vs. none, and <strong>not</strong> chronic illness in general. That is a
-       separate, far-less-settled question — see below.</div>
+     <h2 id="sec-tested" style="${secH2}">The studies usually cited — and what they can and can't show</h2>
+     <div class="verdict"><b>What these studies actually test</b>
+       When people say "vaccines don't cause autism," they point to studies like Madsen (537k children), Hviid (657k),
+       and Taylor's meta-analysis (1.2M). These are large and real, and they genuinely tested the two most-alleged
+       culprits against children who got <em>none of that component</em>: <strong>MMR</strong> (the comparison kids got
+       zero MMR) and the preservative <strong>thimerosal</strong> (removed from Danish vaccines in 1992, giving a
+       genuinely unexposed group). Both came back <strong>not associated with autism</strong>. The "<em>number</em> of
+       antigens" claim is weaker evidence — it compares more vs. fewer antigens, never against zero.
+       <br><br>
+       But note what none of them can do: every comparison child <em>still received the other vaccines</em>. So they
+       rule out MMR and thimerosal specifically — they do <strong>not</strong>, and by design cannot, test <em>being
+       vaccinated vs. not</em>, or chronic illness in general. That question is separate, and far less settled — see
+       below.</div>
      <div class="card">${CHRONIC_NOLINK}</div>
      <h2 id="sec-vaxvs" style="${secH2}">Vaccinated vs unvaccinated: the whole-schedule question</h2>
-     <div class="verdict"><b>Plain-English verdict</b> This is the question the debate is really about, and the honest
-       answer is that it is <em>not</em> cleanly settled. No randomized trial of "all vaccines vs. none" exists
-       (withholding proven protection would be unethical), and the few observational attempts are dominated by a known
-       bias — unvaccinated children see doctors far less, so fewer conditions get recorded. They cannot establish that
-       vaccines cause chronic illness, but they also can't fully close the question. The specific-claim evidence above is
-       much stronger; this direct comparison is the genuinely under-studied part.</div>
+     <div class="verdict"><b>What the direct comparisons found</b>
+       On this exact question — the whole schedule vs. no vaccines at all — very few studies have measured it, and the
+       ones that have (the Henry Ford / Lamerato re-analysis and the Mawson 2017 survey) <strong>both found an
+       association</strong>: more diagnosed chronic illness in the vaccinated (~2.5× in Lamerato). So it is
+       <strong>wrong to say "no evidence of harm" here</strong> — and wrong to claim the evidence points to safety on
+       this specific question; the studies usually cited for that (above) compare vaccinated to vaccinated and can't
+       answer it.
+       <br><br>
+       <strong>But the association can't yet be read as cause.</strong> Both studies have flaws big enough to produce it
+       on their own: in Lamerato the vaccinated were <em>followed far longer</em> (a quarter of the unvaccinated dropped
+       out before 6 months old) and <em>saw doctors far more often</em> — each mechanically produces more recorded
+       diagnoses regardless of real health. Mawson was a small, self-selected survey. Neither corrected for this, and no
+       randomized trial exists.
+       <br><br>
+       <strong>Honest bottom line:</strong> an apparent association, from a tiny and badly-confounded evidence base —
+       genuinely unresolved, not "no harm" and not "harm proven." The clean study (matched on follow-up time and doctor
+       visits) hasn't been done.</div>
      <div class="card">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>
      <div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;">${CHRONIC_LIMITATIONS}</div>`;
   const vax = D.chronic.vaccines.map(p => ({ x: p.year, y: p.value }));
