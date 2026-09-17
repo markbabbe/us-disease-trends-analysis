@@ -1003,6 +1003,17 @@ function renderTrials() {
       <td>${t.result}</td>
       <td>${t.href ? `<a href="${t.href}" target="_blank" rel="noopener">${t.cite}</a>` : t.cite}</td>
     </tr>`).join("");
+  const SAFETY_REVIEW = [
+    { v: "Polio — IPOL", dur: "48 hours" },
+    { v: "Pneumococcal — Prevnar", dur: "48 hours" },
+    { v: "Hib — PedvaxHIB", dur: "3 days" },
+    { v: "DTaP — Infanrix", dur: "4 days" },
+    { v: "Hepatitis B — Engerix-B", dur: "4 days" },
+    { v: "MMR — M-M-R II", dur: "4 days (local) / 42 days (systemic)" },
+    { v: "Rotavirus — RotaTeq", dur: "42 days" },
+  ];
+  const safetyRows = SAFETY_REVIEW.map(s =>
+    `<tr><td><strong>${s.v}</strong></td><td style="text-align:right;">${s.dur}</td></tr>`).join("");
   document.getElementById("trialsPanels").innerHTML =
     `<p class="evidence-lead">Before U.S. licensure, each vaccine had to show — in a controlled trial — that it actually works. Here are the pivotal ones: design, size, result, source.</p>
      <div class="verdict"><b>Plain-English verdict</b> These vaccines were tested in controlled trials before approval —
@@ -1029,7 +1040,28 @@ function renderTrials() {
            unethical. That confirms the new version is as good as the old, but can't measure effects common to both
            (see the Safety tab's note on placebo arms).</li>
        </ul>
-     </div>`;
+     </div>
+     <h2 style="margin:30px 0 6px;font-size:19px;border-top:1px solid var(--line);padding-top:22px;">Duration of safety review after injection</h2>
+     <p class="evidence-lead" style="margin-top:0;">How long, after each shot, participants were actively monitored for
+       reactions in the trials these products were licensed on — straight from the FDA package inserts (the windows for
+       solicited reactions logged after each dose).</p>
+     <div class="card" style="overflow-x:auto;">
+       <table style="min-width:520px;">
+         <thead><tr><th>Vaccine (FDA product)</th><th style="text-align:right;">Duration of safety review after injection</th></tr></thead>
+         <tbody>${safetyRows}</tbody>
+       </table>
+       <p class="metric-note" style="margin:10px 0 0;">Source: FDA package inserts —
+         <a href="https://www.fda.gov/media/75695/download" target="_blank" rel="noopener">IPOL</a>,
+         <a href="https://www.fda.gov/media/75718/download" target="_blank" rel="noopener">RotaTeq</a>,
+         and the M-M-R II, Engerix-B, PedvaxHIB, Infanrix, and Prevnar inserts.</p>
+     </div>
+     <div class="verdict" style="border-left-color:#e0a800;">
+       <b>These products were licensed on this evidence</b>
+       After each shot, participants were actively monitored for reactions for a short window — <strong>2 days to 6
+       weeks</strong> (most 2–4 days), shown above. Serious adverse events were followed for longer in the trials, but
+       <strong>none attempted to measure long-term, multi-year effects before the vaccine was released to the
+       public.</strong> Detecting rare or delayed effects is left to post-licensure surveillance (VAERS, the Vaccine
+       Safety Datalink) — i.e., <em>after</em> millions are already vaccinated.</div>`;
 }
 
 const PRIMARY = [
