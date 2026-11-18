@@ -213,7 +213,11 @@ footer .wrap { padding-block: 22px 40px; font: 400 0.8125rem/1.6 var(--sans); co
       <li><strong>Deaths fell first.</strong> For measles, whooping cough and diphtheria, the death rate fell 80–98%
         <em>before</em> the vaccines arrived, thanks to clean water, better nutrition, antibiotics and hospital care.</li>
       <li><strong>Vaccines then cut cases.</strong> People were still catching these diseases until vaccines drove
-        cases toward zero, ending most remaining deaths and disabilities like paralysis and birth defects.</li>
+        cases toward zero, and with them the paralysis and birth defects that came with polio and rubella infection.
+        Their share of the final fall in <em>deaths</em> differs by disease. Where deaths were already falling year
+        over year (whooping cough, diphtheria), that decline would reasonably have continued without the vaccine, so
+        the vaccine's share can't be separated out. Where deaths had stopped falling (measles levelled off; polio swung
+        with epidemics), the drop after the vaccine broke from the trend.</li>
       <li><strong>Autism: specific claims tested, the big question not.</strong> MMR and the mercury preservative
         thimerosal were tested in large studies and no link was found. But the whole schedule vs. no vaccines has
         never been cleanly tested, so neither "vaccines cause autism" nor "vaccines don't cause autism" is settled
@@ -772,8 +776,11 @@ function renderOverview() {
       <p>What the vaccines then changed was different: the number of <strong><u>cases</u></strong>.
       Living conditions made these diseases far less <em>deadly</em>, but they kept <em>infecting</em> almost everyone —
       measles still caused ~3–4 million U.S. infections a year right up to the 1963 vaccine. Vaccination is what drove
-      cases toward zero (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all &gt;99%), ending the remaining
-      deaths <em>and</em> the disabilities antibiotics could not prevent — paralysis, congenital rubella, deafness.
+      cases toward zero (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all &gt;99%), and with them the
+      disabilities antibiotics could not prevent: paralysis, congenital rubella, deafness. Its share of the final fall
+      in <em>deaths</em> varies. For whooping cough and diphtheria, deaths were already falling year over year and
+      would reasonably have kept falling, so the vaccine's share can't be separated out. For measles (flat at about
+      400 deaths a year from 1955 to 1962) and polio (epidemic swings with no downward trend from 1945 to 1954), the post-vaccine drop broke from the trend.
       (The case side isn't perfectly clean either — polio's paralytic-case definition was tightened in the late 1950s,
       and pertussis has partly resurged — but the post-vaccine collapses are large and each lines up with its rollout.)</p>
       <p class="fine">Keeping <strong>deaths</strong> and <strong>cases</strong>
@@ -795,7 +802,8 @@ function renderOverview() {
       </ul>
       <p>What these did <em>not</em> do was stop infection. Nearly every child still caught
       measles; deaths per case fell, but cases didn't. That's where vaccines come in, as the previous section describes. Polio went the
-      other way: its deaths rose until the 1955 vaccine.</p>
+      other way: its deaths rose from 1900 into the mid-century epidemics, peaked in 1952, and fell for good only
+      after the 1955 vaccine.</p>
       <p class="fine"><strong>Points raised by vaccine critic Aaron Siri (2025 Senate
       testimony), checked:</strong> (1) Before the 1963 vaccine, U.S. measles killed about 400 people a year, roughly 1
       in 450,000 Americans — consistent with CDC figures. (2) A U.S. Public Health Service analysis found diphtheria
@@ -887,8 +895,8 @@ function renderOverview() {
         <strong>The other half of the story — cases.</strong> Living conditions made these diseases far less deadly, but
         they kept <em>infecting</em> almost everyone — measles caused ~3–4 million U.S. infections a year right up to the
         1963 vaccine. What vaccination changed was the number of <strong>cases</strong>, driving them toward zero and
-        ending the remaining deaths <em>plus</em> the disabilities antibiotics could not prevent (congenital rubella, Hib
-        meningitis, paralysis). The honest read: <strong>living standards drove the death <em>rate</em> down; vaccines
+        ending the disabilities antibiotics could not prevent (congenital rubella, Hib meningitis, paralysis). For
+        deaths, the vaccine's share is clear only where the pre-vaccine trend had stopped falling (measles, polio). The honest read: <strong>living standards drove the death <em>rate</em> down; vaccines
         drove <em>cases</em> down.</strong> Though not identically for every disease — near-elimination for measles and
         diphtheria, a partial and partly-resurgent drop for pertussis, and, for non-contagious tetanus, protection of
         individuals rather than the herd.</p>
@@ -1428,6 +1436,9 @@ const CLAIMS = [
   { c: "Most of the fall in deaths came before the vaccines.",
     who: "Aaron Siri (2025 Senate testimony); also shown by CDC/NCHS death records",
     ev: "U.S. death-rate records back to 1900: measles −98.6%, whooping cough −93.6%, diphtheria −80.9% before each vaccine (The Data tab). The 1900 baseline covers only part of the country, so treat the exact digits as approximate." },
+  { c: "Death rates would have kept falling without the vaccines.",
+    who: "Inference from the pre-vaccine trend in U.S. death records (NCHS, 1900–1970; see The Data)",
+    ev: "Reasonable where deaths were already falling year over year. Whooping cough: 4.8 per 100,000 in 1930 → 0.78 in 1948 (vaccine routine) → 0.07 in 1960. Diphtheria: 40.3 in 1900 → 7.7 in 1926 (toxoid) → 0.4 in 1948. The decline sped up after each vaccine, but antibiotics and other improvements arrived in the same years, so the vaccine's share can't be measured; assuming deaths would have frozen at the vaccine-year level isn't supported either. The trend points the other way for two diseases. Measles deaths fell in the early 1950s, then levelled off: 0.21–0.32 per 100,000 (about 400 a year) every year from 1955 to 1962. After the 1963 vaccine they fell to 0.012 by 1968, about 95% below that plateau. Polio deaths swung with epidemics but showed no downward trend before the vaccine (0.86 per 100,000 in 1945, a 1.98 peak in 1952, 0.84 in 1954). After the 1955 vaccine they fell below any earlier level, to 0.008 by 1965." },
   { c: "Vaccines drove cases toward zero.",
     who: "CDC, AAP, mainstream public health",
     ev: "Case counts collapsed right after each rollout (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all >99%), and controlled trials measured 80–98% protection. Some caveats: polio's case definition tightened, and whooping cough has partly returned." },
