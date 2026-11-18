@@ -2,125 +2,214 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>U.S. Vaccines — Data, Trials & Safety</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>U.S. Vaccines in the Open</title>
+<meta name="description" content="A sourced review of the U.S. childhood vaccine schedule: disease trends, approval trials, safety evidence and the claims on both sides." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" />
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 <style>
-  :root {
-    --polio: #27ae60; --pertussis: #e67e22; --measles: #c0392b;
-    --bg: #0f1419; --panel: #1a2129; --ink: #e6edf3; --muted: #9aa7b2;
-    --line: #2a333d; --accent: #4aa3df;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-         background: var(--bg); color: var(--ink); }
-  header { padding: 28px 24px 14px; border-bottom: 1px solid var(--line); }
-  h1 { margin: 0 0 6px; font-size: 22px; }
-  header p { margin: 0; color: var(--muted); max-width: 70ch; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  .topnav { display: flex; flex-wrap: wrap; gap: 6px; padding: 18px 0 0; }
-  .pnav { background: transparent; color: var(--muted); border: 1px solid transparent;
-          border-radius: 9px; padding: 11px 18px; cursor: pointer; font-size: 15px; font-weight: 600;
-          line-height: 1.15; }
-  .pnav small { display: block; font-size: 10.5px; font-weight: 400; opacity: 0.75; margin-top: 3px;
-                letter-spacing: .02em; text-transform: none; }
-  .pnav:hover { color: var(--ink); }
-  .pnav[aria-selected="true"] { background: var(--panel); color: var(--ink); border-color: var(--accent); }
-  .pnav[aria-selected="true"] small { color: var(--accent); opacity: 1; }
-  .evidence-lead { font-size: 13px; color: var(--muted); margin: 4px 0 14px; max-width: 80ch; }
-  .verdict { border-left: 4px solid var(--accent); background: #14202b; border-radius: 8px;
-             padding: 13px 15px; margin: 0 0 16px; line-height: 1.6; }
-  .verdict b { color: var(--accent); display: block; font-size: 10.5px; letter-spacing: .07em;
-               text-transform: uppercase; margin-bottom: 4px; }
-  .tabbar { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 0 4px; border-bottom: 1px solid var(--line); }
-  .tab { background: var(--panel); color: var(--muted); border: 1px solid var(--line);
-         border-bottom: none; border-radius: 9px 9px 0 0; padding: 10px 16px; cursor: pointer;
-         font-size: 14px; line-height: 1.2; }
-  .tab small { display: block; font-size: 10px; opacity: 0.7; margin-top: 2px; }
-  .tab[aria-selected="true"] { color: var(--ink); border-color: var(--accent); background: #18222c; font-weight: 600; }
-  .tab[aria-selected="true"] small { color: var(--accent); opacity: 1; }
-  .controls { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-end;
-              padding: 18px 0; }
-  .group { display: flex; flex-direction: column; gap: 6px; }
-  .group h3 { margin: 0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-  .opts { display: flex; gap: 14px; flex-wrap: wrap; }
-  label.chk { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; }
-  .swatch { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
-  select, button { background: var(--panel); color: var(--ink); border: 1px solid var(--line);
-                   border-radius: 7px; padding: 7px 10px; font-size: 14px; }
-  button { cursor: pointer; }
-  button.toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
-          padding: 16px; margin: 14px 0; overflow-x: auto; }
-  .chart-box { position: relative; height: 460px; }
-  .small .chart-box { height: 300px; }
-  .grid { display: grid; grid-template-columns: 1fr 280px; gap: 14px; }
-  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
-  .disease-card { display: grid; grid-template-columns: 1fr 270px; gap: 16px; align-items: start; }
-  @media (max-width: 820px) { .disease-card { grid-template-columns: 1fr; } }
-  .disease-card h3 { margin: 0 0 8px; font-size: 16px; }
-  .disease-chart { position: relative; height: 215px; }
-  .nodata-msg { position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
-                text-align: center; padding: 10px 18px; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
-  .chart-label { font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
-                 color: var(--muted); margin: 4px 0 2px; }
-  .facts-mini { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
-  .facts-mini li { margin-bottom: 7px; }
-  .affected { background: #14202b; border: 1px solid var(--line); border-left: 3px solid var(--accent);
-              border-radius: 6px; padding: 9px 11px; margin: 0 0 10px; font-size: 12.5px; color: var(--ink); }
-  .affected b { color: var(--accent); display: block; font-size: 10px; letter-spacing: .06em;
-                text-transform: uppercase; margin-bottom: 3px; }
-  .facts h3 { margin: 2px 0 10px; font-size: 13px; }
-  .facts ul { margin: 0; padding-left: 18px; color: var(--muted); }
-  .facts li { margin-bottom: 8px; }
-  .metric-note { color: var(--muted); font-size: 13px; margin: 6px 2px 0; }
-  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
-  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
-  th { color: var(--muted); font-weight: 600; }
-  a { color: var(--accent); }
-  footer { color: var(--muted); font-size: 13px; padding: 24px; text-align: center; }
-  .start { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent);
-           border-radius: 12px; padding: 14px 18px; margin: 18px 0 4px; }
-  .start h2 { margin: 0 0 8px; font-size: 16px; }
-  .start ol { margin: 0; padding-left: 20px; }
-  .start li { margin-bottom: 6px; }
-  .start .legend { margin: 10px 0 0; font-size: 12.5px; color: var(--muted); }
-  .rate { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .03em; border-radius: 999px;
-          padding: 2px 9px; white-space: nowrap; color: #0f1419; }
-  .r-strong { background: #58d68d; } .r-partial { background: #f4d03f; } .r-unres { background: #f0b27a; }
-  .r-weak { background: #bfc9d1; } .r-contra { background: #ec7063; }
-  .claims td { font-size: 13px; }
-  .claims td:first-child { font-weight: 600; min-width: 170px; }
-  .claims .who { color: var(--muted); font-size: 12px; }
-  @media (max-width: 760px) {
-    .claims { min-width: 0 !important; }
-    .claims thead { display: none; }
-    .claims, .claims tbody, .claims tr, .claims td { display: block; width: 100%; }
-    .claims tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
-    .claims td { border: none; padding: 3px 4px; }
-    .claims td:nth-child(2)::before { content: "Who says it: "; font-weight: 600; }
-  }
-  .claims tr.grp td { background: #14202b; color: var(--accent); font-weight: 700; font-size: 11.5px;
-                      letter-spacing: .06em; text-transform: uppercase; }
-  .pill { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; }
+/* Layout: a review article. Prose held to ~68 characters, figures and tables run the full 1040px
+   measure; serif text, small-caps sans labels, numbered Figures and Boxes as in a journal. */
+:root {
+  --paper: #f4f5f2;   /* cool, faintly green-grey paper */
+  --wash:  #e8ebe5;   /* box / figure ground */
+  --ink:   #192024;   /* blue-black text */
+  --ink-2: #545f65;   /* secondary text */
+  --rule:  #cbd1c9;
+  --accent:#1b4c6e;   /* iron-gall blue: links, active section, case series */
+  --deaths:#9b3a27;   /* oxide red: death series only */
+  --c1:#1b4c6e; --c2:#9b3a27; --c3:#2f7d5b; --c4:#8a6d14; --c5:#6b4a8f; --c6:#2a8296; --c7:#b0567a; --c8:#5b6b2a;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans:  "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono:  "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --measure: 68ch;
+  --wide: 1040px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper:#13191c; --wash:#1b2327; --ink:#e2e6e6; --ink-2:#a1abb0; --rule:#2c363b; --accent:#8db8da; --deaths:#e3907b;
+  --c1:#8db8da; --c2:#e3907b; --c3:#79c49d; --c4:#d6b65a; --c5:#b59ad8; --c6:#76c3d3; --c7:#e39abb; --c8:#b5c46e;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper:#13191c; --wash:#1b2327; --ink:#e2e6e6; --ink-2:#a1abb0; --rule:#2c363b; --accent:#8db8da; --deaths:#e3907b;
+  --c1:#8db8da; --c2:#e3907b; --c3:#79c49d; --c4:#d6b65a; --c5:#b59ad8; --c6:#76c3d3; --c7:#e39abb; --c8:#b5c46e;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink);
+       font: 400 1.0625rem/1.62 var(--serif); font-optical-sizing: auto;
+       font-feature-settings: "kern", "liga", "onum"; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+strong, b { font-weight: 600; }
+.wrap { max-width: calc(var(--wide) + 2 * 24px); margin: 0 auto;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; text-wrap: balance; letter-spacing: -0.005em; }
+
+/* ---------- masthead ---------- */
+.masthead { border-bottom: 1px solid var(--rule); }
+.masthead .wrap { padding-block: 40px 28px; display: grid; gap: 14px; }
+.kicker { margin: 0; font: 500 0.75rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.masthead h1 { margin: 0; font-size: clamp(2rem, 1.3rem + 2.6vw, 3.1rem); line-height: 1.08; font-weight: 600; max-width: 20ch; }
+.dek { margin: 0; max-width: var(--measure); font-size: 1.1875rem; line-height: 1.5; color: var(--ink-2); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 6px 0 0; font: 400 0.8125rem/1.4 var(--sans); color: var(--ink-2); }
+.meta div { display: flex; gap: 6px; }
+.meta dt { font-weight: 600; color: var(--ink); }
+.meta dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+/* ---------- abstract ---------- */
+.abstract { margin: 32px 0 8px; display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 8px 32px; }
+.abstract h2 { margin: 0; font: 600 0.75rem/1.9 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.abstract ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; max-width: var(--measure); }
+.abstract li { padding-left: 1.1em; text-indent: -1.1em; }
+.abstract li::before { content: "■"; color: var(--accent); font-size: .55em; vertical-align: .35em; margin-right: .9em; }
+.abstract .after { grid-column: 2; margin: 6px 0 0; font-size: .95rem; color: var(--ink-2); max-width: var(--measure); }
+@media (max-width: 720px) { .abstract { grid-template-columns: 1fr; } .abstract .after { grid-column: 1; } }
+
+/* ---------- section navigation ---------- */
+.topnav { display: flex; flex-wrap: wrap; gap: 0; margin: 36px 0 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.pnav { flex: 1 1 180px; background: none; border: 0; border-right: 1px solid var(--rule); color: var(--ink-2);
+        text-align: left; padding: 12px 16px 13px; cursor: pointer; font: 600 0.9375rem/1.25 var(--sans); }
+.pnav:last-child { border-right: 0; }
+.pnav .n { font: 500 0.75rem var(--mono); color: var(--ink-2); margin-right: 8px; }
+.pnav small { display: block; margin-top: 3px; font: 400 0.75rem/1.3 var(--sans); color: var(--ink-2); }
+.pnav:hover { color: var(--ink); background: var(--wash); }
+.pnav[aria-selected="true"] { color: var(--ink); box-shadow: inset 0 -3px 0 var(--accent); }
+.pnav[aria-selected="true"] .n { color: var(--accent); }
+@media (max-width: 720px) { .pnav { flex-basis: 50%; border-bottom: 1px solid var(--rule); } .pnav:nth-child(2n) { border-right: 0; } }
+
+.tabbar { display: flex; flex-wrap: wrap; gap: 4px 2px; padding: 18px 0 10px; border-bottom: 1px solid var(--rule); }
+.tab { background: none; border: 0; border-radius: 3px; color: var(--ink-2); cursor: pointer;
+       padding: 6px 12px 7px; font: 500 0.875rem/1.2 var(--sans); }
+.tab small { display: none; }
+.tab:hover { color: var(--ink); background: var(--wash); }
+.tab[aria-selected="true"] { color: var(--paper); background: var(--ink); }
+
+.controls { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: flex-end; padding: 16px 0 6px; }
+.group { display: flex; flex-direction: column; gap: 5px; }
+.group h3 { margin: 0; font: 600 0.6875rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+select, button.toggle { font: 500 0.875rem var(--sans); color: var(--ink); background: var(--paper);
+        border: 1px solid var(--rule); border-radius: 3px; padding: 6px 10px; cursor: pointer; }
+button.toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.metric-note { color: var(--ink-2); font: 400 0.875rem/1.55 var(--sans); margin: 6px 0 0; max-width: 80ch; }
+#metricNote { margin: 4px 0 8px; }
+
+/* ---------- article blocks ---------- */
+#dataSection, #claimsPanels, #trialsPanels, #safetyPanels { counter-reset: fig box; padding-bottom: 24px; }
+.card { margin: 40px 0 0; overflow-x: auto; }
+.card > h3, .card h3:first-child { margin: 0 0 12px; font-size: 1.375rem; line-height: 1.25; }
+.card p { margin: 0 0 12px; max-width: var(--measure); }
+.card p:last-child { margin-bottom: 0; }
+.card ul { max-width: var(--measure); padding-left: 1.2em; margin: 0 0 12px; }
+.card li { margin-bottom: 6px; }
+.card .metric-note { max-width: var(--measure); }
+
+/* Boxes: self-contained asides, numbered like a review article's "Box 1" */
+.card.note { background: var(--wash); border-radius: 2px; padding: 22px 26px 24px; max-width: calc(var(--measure) + 60px); }
+#claimsPanels .card.note { max-width: none; }
+.card.note > h3 { font-size: 1.1875rem; }
+.card.note > h3::before { counter-increment: box; content: "Box " counter(box); display: block; margin-bottom: 6px;
+        font: 600 0.6875rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.card.note p, .card.note .metric-note { font: 400 1rem/1.62 var(--serif); color: var(--ink); }
+
+/* Figures: any block holding a chart gets a numbered caption */
+.card:has(canvas) > h3 { font-size: 1.0625rem; font-weight: 600; }
+.card:has(canvas) > h3::before { counter-increment: fig; content: "Figure " counter(fig) "."; margin-right: .45em;
+        font-family: var(--sans); font-weight: 600; color: var(--accent); }
+.chart-box { position: relative; height: 420px; }
+.small .chart-box { height: 300px; }
+.card:has(canvas) .metric-note { margin-top: 10px; }
+
+/* In-brief summaries */
+.verdict { margin: 32px 0 0; padding: 16px 0 16px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule);
+           max-width: var(--measure); font-size: 1.0625rem; line-height: 1.62; }
+.verdict b { display: block; margin-bottom: 6px; font: 600 0.6875rem/1 var(--sans); letter-spacing: .12em;
+             text-transform: uppercase; color: var(--accent); }
+.verdict ul { margin: 10px 0 0; padding-left: 1.2em; }
+.verdict li { margin-bottom: 6px; }
+.evidence-lead { margin: 28px 0 0; max-width: var(--measure); font-size: 1.1875rem; line-height: 1.5; color: var(--ink-2); }
+h2.sec { margin: 64px 0 0; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 1.75rem; line-height: 1.2; }
+h3.subhead { margin: 36px 0 0; font-size: 1.25rem; }
+.fine { font: 400 0.875rem/1.55 var(--sans); color: var(--ink-2); }
+.sub { display: inline-block; margin-top: 2px; font: 400 0.75rem/1.35 var(--sans); color: var(--ink-2); }
+.today { margin-top: 8px; padding-top: 8px; border-top: 1px dotted var(--rule); font: 400 0.8125rem/1.5 var(--sans); color: var(--ink-2); }
+.today strong { color: var(--ink); }
+.caption { margin: 18px 0 6px; font: 400 0.8125rem/1.45 var(--sans); color: var(--ink-2); }
+.box-inner { margin-top: 16px; background: var(--wash); padding: 16px 20px; border-radius: 2px; font: 400 0.9375rem/1.55 var(--serif); }
+.box-inner ul { margin: 8px 0 0; }
+
+/* Tables: booktabs rules, sans text, tabular figures */
+table { border-collapse: collapse; width: 100%; font: 400 0.875rem/1.45 var(--sans); font-variant-numeric: tabular-nums;
+        border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); margin: 4px 0 0; }
+thead th { border-bottom: 1px solid var(--ink); }
+th { text-align: left; vertical-align: bottom; font-weight: 600; color: var(--ink); padding: 9px 12px 7px 0; }
+td { text-align: left; vertical-align: top; padding: 9px 12px 9px 0; border-top: 1px solid var(--rule); }
+tbody tr:first-child td { border-top: 0; }
+td.num, th.num { text-align: right; padding-right: 0; padding-left: 12px; }
+td.rownote { border-top: 0; padding: 0 0 8px; font-size: .75rem; color: var(--ink-2); }
+td.em { font-weight: 600; color: var(--deaths); }
+
+/* ---------- disease panels ---------- */
+.disease-card { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start;
+                margin: 0; padding: 28px 0; border-bottom: 1px solid var(--rule); overflow: visible; }
+#panels { margin-top: 8px; }
+.disease-card h3 { margin: 0 0 10px; font-size: 1.25rem; }
+.disease-card .nodata { display: block; margin-top: 3px; font: 400 0.75rem/1.45 var(--sans); color: var(--ink-2); }
+.disease-chart { position: relative; height: 240px; }
+.nodata-msg { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; text-align: center;
+              padding: 10px 18px; color: var(--ink-2); font: 400 0.875rem/1.5 var(--sans); background: var(--wash); }
+.affected { margin: 0 0 12px; font: 400 0.875rem/1.5 var(--sans); }
+.affected b { display: block; margin-bottom: 3px; font: 600 0.6875rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.facts-mini { margin: 0; padding-left: 1.1em; font: 400 0.8125rem/1.5 var(--sans); color: var(--ink-2); }
+.facts-mini li { margin-bottom: 6px; }
+@media (max-width: 820px) { .disease-card { grid-template-columns: minmax(0, 1fr); gap: 14px; } }
+
+/* ---------- claims & evidence ---------- */
+.claims-group { margin: 44px 0 0; }
+.claims-group > h3 { margin: 0; padding-bottom: 8px; border-bottom: 2px solid var(--ink);
+        font: 600 0.75rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.claim { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 8px 36px; padding: 18px 0;
+         border-bottom: 1px solid var(--rule); }
+.claim-text { margin: 0; font: 600 1.0625rem/1.4 var(--serif); }
+.claim-who { margin: 6px 0 0; font: 400 0.8125rem/1.45 var(--sans); color: var(--ink-2); }
+.claim-who span { font-weight: 600; color: var(--ink); }
+.claim-ev { margin: 0; font-size: 1rem; line-height: 1.6; }
+.claim-ev .lbl { display: block; margin-bottom: 2px; font: 600 0.6875rem/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+@media (max-width: 760px) { .claim { grid-template-columns: minmax(0, 1fr); } }
+.whos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 18px 32px; max-width: none; }
+.whos li { margin: 0; font-size: .9375rem; line-height: 1.55; }
+.whos strong { display: block; font: 600 0.875rem/1.4 var(--sans); }
+
+footer { margin-top: 56px; border-top: 1px solid var(--rule); }
+footer .wrap { padding-block: 22px 40px; font: 400 0.8125rem/1.6 var(--sans); color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
-<header>
+<header class="masthead">
   <div class="wrap">
-    <h1>U.S. Vaccines — the evidence, in the open</h1>
-    <p>A sourced look at the U.S. childhood vaccine schedule that isn't trying to sell you either way: the
-    historical <strong>data</strong> (how deaths and cases changed), the common <strong>claims</strong> from both
-    sides and the evidence behind each, the <strong>trials</strong> each vaccine passed, and the
-    <strong>safety</strong> evidence on autism, chronic illness and COVID. Everything is cited so you can check it.</p>
+    <p class="kicker">An open review of the U.S. childhood vaccine schedule</p>
+    <h1>U.S. Vaccines: The Evidence, in the Open</h1>
+    <p class="dek">How deaths and cases changed, the trials each vaccine passed, the safety evidence on autism,
+      chronic illness and COVID, and the claims made on both sides. Written to inform, not to persuade, with every
+      figure sourced.</p>
+    <dl class="meta">
+      <div><dt>Updated</dt><dd>17 November 2026</dd></div>
+      <div><dt>Case data</dt><dd>through MMWR week 44, 2026</dd></div>
+      <div><dt>Sources</dt><dd>CDC · NCHS · FDA labels · peer-reviewed studies</dd></div>
+    </dl>
   </div>
 </header>
 
 <div class="wrap">
-  <div class="start">
-    <h2>New here? The full picture in five points</h2>
-    <ol>
+  <section class="abstract" aria-label="Abstract">
+    <h2>Abstract</h2>
+    <ul>
       <li><strong>Deaths fell first.</strong> For measles, whooping cough and diphtheria, the death rate fell 80–98%
         <em>before</em> the vaccines arrived, thanks to clean water, better nutrition, antibiotics and hospital care.</li>
       <li><strong>Vaccines then cut cases.</strong> People were still catching these diseases until vaccines drove
@@ -129,16 +218,13 @@
         thimerosal were tested in large studies and no link was found. But the whole schedule vs. no vaccines has
         never been cleanly tested, so neither "vaccines cause autism" nor "vaccines don't cause autism" is settled
         for the schedule as a whole.</li>
-      <li><strong>Trials:</strong> most vaccines proved they work in controlled trials, but side effects were
+      <li><strong>Trials.</strong> Most vaccines proved they work in controlled trials, but side effects were
         actively tracked for days to months, not years. Long-term effects depend on monitoring after approval.</li>
-      <li><strong>Measles is back:</strong> the U.S. lost its measles-elimination status in November 2026.</li>
-    </ol>
-    <p class="legend">The <strong>Claims &amp; evidence</strong> tab lists common claims from <em>both</em> sides,
-      who makes them, and how strong the evidence is:
-      <span class="rate r-strong">Strong</span> <span class="rate r-partial">Partly true</span>
-      <span class="rate r-unres">Unresolved</span> <span class="rate r-weak">Weak evidence</span>
-      <span class="rate r-contra">Contradicted</span></p>
-  </div>
+      <li><strong>Measles is back.</strong> The U.S. lost its measles-elimination status in November 2026.</li>
+    </ul>
+    <p class="after">Section 2, Claims and evidence, sets out common claims from both sides, who makes them, and
+      what the evidence shows.</p>
+  </section>
   <div class="topnav" id="topnav"></div>
   <div id="dataSection">
   <div class="tabbar" id="tabbar"></div>
@@ -162,15 +248,15 @@
     </div>
   </div>
 
-  <p class="metric-note" id="metricNote" style="margin:0 2px 12px;"></p>
+  <p class="metric-note" id="metricNote"></p>
 
   <div id="overviewPanels" style="display:none;"></div>
   <div id="panels"></div>
   <div id="chronicPanels" style="display:none;"></div>
 
-  <div id="polioOriginExtra" class="card" style="display:none;border-left:4px solid #5dade2;">
-    <h3 style="margin:2px 2px 8px;font-size:15px;">Where did polio come from? Why epidemics appeared only in the late 1800s</h3>
-    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+  <div id="polioOriginExtra" class="card note" style="display:none;">
+    <h3>Where did polio come from? Why epidemics appeared only in the late 1800s</h3>
+    <p class="metric-note">
       A genuine historical puzzle. The <strong>poliovirus is ancient</strong> — an Egyptian carving from
       ~1400&nbsp;BC shows a withered, polio-like leg — yet <strong>epidemic</strong> paralytic polio is strikingly
       <strong>modern</strong>. The first U.S. outbreak was Vermont, <strong>1894</strong> (~132 cases); the first big
@@ -179,7 +265,7 @@
       rare, scattered "infantile paralysis." Strangely, the epidemics grew <em>worse</em> as sanitation, clean water,
       and hygiene <em>improved</em> — the opposite of typhoid, cholera, diphtheria, and TB, which were falling.
       Scientists still don't fully agree on why. The two main explanations:</p>
-    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+    <p class="metric-note">
       <strong>1) The leading (mainstream) view — the "hygiene hypothesis."</strong> When water and food were
       routinely contaminated, nearly every baby caught poliovirus in its <em>first months of life</em>, while still
       protected by the mother's antibodies. That early, antibody-shielded infection was usually silent and gave
@@ -188,20 +274,20 @@
       an older, unprotected person. So cleaner living paradoxically turned a mild, near-universal infant infection into
       an epidemic crippler — a "disease of development," not of filth. This fits the timing and the age-shift well,
       though the exact drivers (why certain years and places, the role of more virulent strains) aren't fully settled.</p>
-    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+    <p class="metric-note">
       <strong>2) The skeptic alternative — the pesticide / DDT theory.</strong> A minority view — voiced by physician
       <em>Morton Biskind</em> in the 1950s and revived in Forrest Maready's 2018 book <em>The Moth in the Iron
       Lung</em> and by some vaccine skeptics — argues the paralysis epidemics were caused or worsened by neurotoxic
       pesticides (<em>lead arsenate</em>, then <em>DDT</em>), citing a rough correlation between pesticide use and
       epidemic peaks, and crediting the decline to falling pesticide use rather than the vaccine.</p>
-    <p class="metric-note" style="margin:0 0 8px;line-height:1.65;">
+    <p class="metric-note">
       <strong>Why mainstream scientists reject pesticides as <em>the cause</em>:</strong> the poliovirus was isolated
       and shown to cause the disease (grown in culture by Enders, Weller &amp; Robbins in 1949 — Nobel 1954), it is
       contagious, and outbreaks spread like an infection, not a poisoning. Epidemics began in the <strong>1890s</strong>,
       before DDT's insecticidal use (1939+); the decline tracks the <strong>1955 Salk vaccine</strong> closely — years
       before DDT was restricted (1972) — and polio has since been eliminated in many countries by vaccination with no
       change in pesticide use. Pesticide nerve damage is real but is a different mechanism from viral paralysis.</p>
-    <p class="metric-note" style="margin:0;line-height:1.65;">
+    <p class="metric-note">
       <strong>The kernel worth keeping:</strong> there genuinely <em>was</em> a post-1955 diagnostic reclassification
       (the paralytic-case definition tightened and aseptic meningitis / other paralyses were split out) — that's real
       and is exactly what the next card below quantifies — and individual co-factors (heavy exertion, tonsillectomy)
@@ -210,8 +296,8 @@
   </div>
 
   <div id="polioExtra" class="card" style="display:none;">
-    <h3 style="margin:2px 2px 10px;font-size:15px;">Polio: isolating the effect of the 1950s case-definition change</h3>
-    <p class="metric-note" style="margin:0 0 10px;">The definition change and the
+    <h3>Polio: isolating the effect of the 1950s case-definition change</h3>
+    <p class="metric-note">The definition change and the
       Salk vaccine both arrived in <strong>1955</strong>, so they overlap on the
       main chart. To separate them we use a <strong>definition-immune anchor:
       deaths</strong> (which cannot be reclassified). Normalized to 1952 = 100,
@@ -225,13 +311,12 @@
       cannot by itself split the real decline between vaccine and other factors at
       the 1955 inflection — see the
       <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/README.md#12b-capturing-the-effect-of-the-polio-definition-change">README write-up</a>.)</p>
-    <img src="polio_definition_effect.png" alt="Polio definition-change effect: normalized cases vs definition-immune deaths"
-         style="width:100%;border-radius:8px;display:block;" />
+    <div class="chart-box"><canvas id="polioNormChart" aria-label="Polio cases and deaths normalized to 1952"></canvas></div>
   </div>
 
   <div id="hibExtra" class="card" style="display:none;">
-    <h3 style="margin:2px 2px 10px;font-size:15px;">Hib: the mortality signal (via childhood meningitis)</h3>
-    <p class="metric-note" style="margin:0 0 10px;">Hib-specific deaths aren't recorded
+    <h3>Hib: the mortality signal (via childhood meningitis)</h3>
+    <p class="metric-note">Hib-specific deaths aren't recorded
       in standard U.S. mortality tables — Hib deaths were coded under
       <strong>meningitis</strong> and septicemia, not broken out. Since Hib was the
       leading cause of bacterial meningitis in young children before the vaccine,
@@ -243,13 +328,12 @@
       meningitis, so it overstates Hib's share somewhat. <strong>The main chart's
       "Deaths per 100,000" view above now plots this same measured 1–4-year series</strong>,
       so the death view reflects real mortality instead of a back-calculated estimate.</p>
-    <img src="childhood_meningitis.png" alt="Childhood meningitis death rate 1979-1998, a Hib proxy"
-         style="width:100%;border-radius:8px;display:block;" />
+    <div class="chart-box" style="height:320px;"><canvas id="meningitisChart" aria-label="Childhood meningitis death rate 1979 to 1998"></canvas></div>
   </div>
 
-  <div id="noDeathStatsExtra" class="card" style="display:none;border-left:4px solid #5dade2;">
-    <h3 style="margin:2px 2px 8px;font-size:15px;">Why isn't there a clean death count for this disease?</h3>
-    <p class="metric-note" style="margin:0;line-height:1.65;">
+  <div id="noDeathStatsExtra" class="card note" style="display:none;">
+    <h3>Why isn't there a clean death count for this disease?</h3>
+    <p class="metric-note">
       Two reasons. <strong>(1) Death was relatively uncommon</strong> — most infections didn't kill (case-fatality
       was roughly <strong>~5% for Hib</strong> and <strong>~1% for pneumococcus</strong>), so even when the diseases
       were common the death totals were modest (~1,000/yr for Hib, ~200/yr for pneumococcus in young children before
@@ -262,9 +346,9 @@
     </p>
   </div>
 
-  <div id="dtapExtra" class="card" style="display:none;border-left:4px solid #e0a800;">
-    <h3 style="margin:2px 2px 8px;font-size:15px;">⚠ DTP and all-cause mortality — an unresolved "non-specific effects" concern</h3>
-    <p class="metric-note" style="margin:0;line-height:1.65;">
+  <div id="dtapExtra" class="card note" style="display:none;">
+    <h3>DTP and all-cause mortality — an unresolved "non-specific effects" concern</h3>
+    <p class="metric-note">
       Beyond protecting against their target diseases, vaccines may have
       <strong>"non-specific effects"</strong> on overall mortality. Observational
       studies from the Bandim Health Project (Guinea-Bissau) report that
@@ -292,9 +376,9 @@
     </p>
   </div>
 
-  <div id="mmrExtra" class="card" style="display:none;">
-    <h3 style="margin:2px 2px 8px;font-size:15px;">Related: natural measles/mumps and later disease (non-specific effects)</h3>
-    <p class="metric-note" style="margin:0;line-height:1.6;">A Japanese cohort (JACC; Kubota et al.,
+  <div id="mmrExtra" class="card note" style="display:none;">
+    <h3>Related: natural measles/mumps and later disease (non-specific effects)</h3>
+    <p class="metric-note">A Japanese cohort (JACC; Kubota et al.,
       <em>Atherosclerosis</em> 2015; 103,836 adults followed ~20 years) found that adults who had had
       <strong>both measles and mumps</strong> as children had <strong>lower cardiovascular mortality</strong>
       (men HR 0.80, women 0.83) — part of the broader, unsettled "non-specific effects" idea (see the DTaP
@@ -306,9 +390,9 @@
       <em>raises</em> mortality from other infections).</p>
   </div>
 
-  <div id="menbExtra" class="card" style="display:none;border-left:4px solid #5dade2;">
-    <h3 style="margin:2px 2px 8px;font-size:15px;">Meningococcal: most of the decline came <em>before</em> the vaccine</h3>
-    <p class="metric-note" style="margin:0;line-height:1.65;">
+  <div id="menbExtra" class="card note" style="display:none;">
+    <h3>Meningococcal: most of the decline came <em>before</em> the vaccine</h3>
+    <p class="metric-note">
       This is a case where the headline ("cases fell after the vaccine") is true but
       <strong>misleading on its own</strong>. U.S. meningococcal incidence was already
       falling for roughly a decade <em>before</em> routine adolescent MenACWY arrived in
@@ -334,13 +418,13 @@
   </div>
 
   <div class="card small" id="earlyCard">
-    <h3 style="margin:2px 2px 10px;font-size:14px;">Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
+    <h3>Early-century death rate per 100,000 (1900–1960) — before the measles vaccine</h3>
     <div class="chart-box"><canvas id="early"></canvas></div>
     <p class="metric-note">Approximate, from NCHS/Historical Statistics mortality-decline series via the partial Death Registration Area. Shows that case fatality fell sharply <em>before</em> vaccines (antibiotics, nutrition, supportive care). Both measles and pertussis death rates dropped ~95%+ over this window; the measles vaccine (1963) came <em>after</em> it.</p>
   </div>
 
   <div class="card small" id="coverageCard">
-    <h3 style="margin:2px 2px 10px;font-size:14px;">Childhood vaccination coverage over time</h3>
+    <h3>Childhood vaccination coverage over time</h3>
     <div class="chart-box"><canvas id="coverage"></canvas></div>
     <p class="metric-note"><strong>Availability ≠ coverage.</strong> A vaccine's
       licensure year is not when the population became protected — coverage rises
@@ -353,7 +437,7 @@
   </div>
 
   <div class="card" id="summaryCard">
-    <h3 style="margin:2px 2px 12px;font-size:15px;">Summary: best metric &amp; trend by disease</h3>
+    <h3>Summary: best metric &amp; trend by disease</h3>
     <table>
       <thead><tr><th>Disease</th><th>Best metric</th><th>Before vaccine</th><th>After vaccine</th><th>Major caveat</th></tr></thead>
       <tbody>
@@ -378,19 +462,45 @@
 </div>
 
 <footer>
-  Sources: CDC/MMWR · NCHS Vital Statistics · U.S. Census Bureau · JAMA 2007 (Roush et al.).
-  Data &amp; code: <a href="https://github.com/markbabbe/us-disease-trends-analysis">github.com/markbabbe/us-disease-trends-analysis</a>.
-  Trends are robust; pre-1950 annual digits are approximate.
+  <div class="wrap">
+    Sources: CDC/MMWR · NCHS Vital Statistics · CDC Pink Book · FDA package inserts · U.S. Census Bureau ·
+    peer-reviewed studies cited in each section. Full source notes:
+    <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/SOURCES.md">SOURCES.md</a>.
+    Data and code: <a href="https://github.com/markbabbe/us-disease-trends-analysis">github.com/markbabbe/us-disease-trends-analysis</a>.
+    Trends are robust; pre-1950 annual digits are approximate.
+  </div>
 </footer>
 
 <script src="data.js"></script>
 <script>
 const D = window.DISEASE_DATA;
-const COLORS = {
-  hepb: "#a569bd", rotavirus: "#5499c7", diphtheria: "#5dade2", tetanus: "#dc7633",
-  pertussis: "#e67e22", hib: "#bb8fce", pcv: "#58d68d", polio: "#27ae60",
-  measles: "#c0392b", mumps: "#f4d03f", rubella: "#48c9b0",
-};
+// Every chart color comes from the page's CSS tokens, so charts follow the light/dark theme.
+let TK = {}, COLORS = {}, DEATH_COLOR = "";
+function readTokens() {
+  const cs = getComputedStyle(document.documentElement), v = n => cs.getPropertyValue(n).trim();
+  const cat = [1, 2, 3, 4, 5, 6, 7, 8].map(i => v("--c" + i));
+  TK = { ink: v("--ink"), muted: v("--ink-2"), grid: v("--rule"), paper: v("--paper"), wash: v("--wash"),
+         accent: v("--accent"), deaths: v("--deaths"), cat };
+  COLORS = { hepb: cat[4], rotavirus: cat[5], diphtheria: cat[0], tetanus: cat[3], pertussis: cat[3],
+             hib: cat[4], pcv: cat[2], polio: cat[2], measles: cat[1], mumps: cat[7], rubella: cat[6],
+             meningococcal: cat[5] };
+  DEATH_COLOR = TK.deaths;
+  if (window.Chart) {
+    Chart.defaults.font.family = '"IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif';
+    Chart.defaults.font.size = 11.5;
+    Chart.defaults.color = TK.muted;
+    Chart.defaults.borderColor = TK.grid;
+    Chart.defaults.elements.line.borderWidth = 1.8;
+    Chart.defaults.elements.point.radius = 1.8;
+    Chart.defaults.plugins.legend.labels.boxWidth = 14;
+    Chart.defaults.plugins.legend.labels.boxHeight = 2;
+    Chart.defaults.plugins.tooltip.backgroundColor = TK.ink;
+    Chart.defaults.plugins.tooltip.titleColor = TK.paper;
+    Chart.defaults.plugins.tooltip.bodyColor = TK.paper;
+    Chart.defaults.plugins.tooltip.cornerRadius = 2;
+  }
+}
+readTokens();
 const NAMES = D.names;
 const METRIC_LABEL = {
   incidence: "Cases per 100,000",
@@ -470,7 +580,7 @@ const AFFECTED = {
 };
 
 const charts = {};
-let earlyChart, activeTab = D.tabs[0].id;
+let earlyChart, coverageChart, activeTab = D.tabs[0].id;
 function activeDiseases() { return D.tabs.find(t => t.id === activeTab).diseases; }
 
 // On a log axis, label only exact powers of 10, as plain numbers (evenly spaced).
@@ -496,10 +606,10 @@ function buildAnnotations(dis) {
   if (dc) {
     ann[`${dis}-defchange`] = {
       type: "box", xMin: dc.x0, xMax: dc.x1,
-      backgroundColor: "rgba(123,45,142,0.18)", borderColor: "rgba(123,45,142,0.4)",
+      backgroundColor: TK.wash, borderColor: TK.grid,
       borderWidth: 1,
-      label: { display: true, content: dc.label, rotation: 90,
-               position: { x: "center", y: "center" }, color: "#c79bd6",
+      label: { display: false, content: dc.label, rotation: 90,
+               position: { x: "center", y: "center" }, color: TK.muted,
                font: { size: 9 }, backgroundColor: "transparent" },
     };
   }
@@ -507,10 +617,10 @@ function buildAnnotations(dis) {
   (D.vaccines[dis] || []).forEach((v, i) => {
     ann[`${dis}-${i}`] = {
       type: "line", xMin: v.year, xMax: v.year,
-      borderColor: COLORS[dis], borderWidth: 1, borderDash: [5, 4],
+      borderColor: TK.muted, borderWidth: 1, borderDash: [4, 4],
       label: { display: true, content: `${v.label} ${v.year}`, position: "start",
                rotation: 90, backgroundColor: "transparent",
-               color: COLORS[dis], font: { size: 9 } },
+               color: TK.muted, font: { size: 10 } },
     };
   });
   return ann;
@@ -551,6 +661,8 @@ function selectTab(id) {
   document.getElementById("menbExtra").style.display = has(["meningococcal"]) ? "" : "none";
   document.getElementById("earlyCard").style.display = has(["measles", "pertussis"]) ? "" : "none";
   document.getElementById("coverageCard").style.display = has(["measles", "pertussis", "polio"]) ? "" : "none";
+  if (has(["polio"])) renderPolioNorm();
+  if (has(["hib"])) renderMeningitis();
   if (isOverview) { renderOverview(); return; }
   if (isChronic) { renderChronic(); return; }
   buildPanels();
@@ -558,65 +670,121 @@ function selectTab(id) {
 }
 
 const ovCharts = {};
+const figCharts = {};
+
+function lineSet(label, pts, color, opts = {}) {
+  return Object.assign({ label, data: pts, borderColor: color, backgroundColor: color, tension: 0.15,
+                         pointRadius: 2.2, borderWidth: 1.8 }, opts);
+}
+function vline(x, text) {
+  return { type: "line", xMin: x, xMax: x, borderColor: TK.muted, borderWidth: 1, borderDash: [4, 4],
+           label: { display: true, content: text, position: "start", rotation: 90, color: TK.muted,
+                    backgroundColor: "transparent", font: { size: 10 } } };
+}
+
+function renderPolioNorm() {
+  const P = D.polioNormalized; if (!P) return;
+  const el = document.getElementById("polioNormChart"); if (!el) return;
+  if (figCharts.polio) figCharts.polio.destroy();
+  const m = a => a.map(r => ({ x: r.year, y: r.value }));
+  figCharts.polio = new Chart(el, {
+    type: "line",
+    data: { datasets: [
+      lineSet("Total reported cases", m(P.total), TK.muted, { borderWidth: 1.4 }),
+      lineSet("Paralytic cases", m(P.paralytic), TK.accent),
+      lineSet("Deaths (cannot be reclassified)", m(P.deaths), TK.deaths, { borderWidth: 2.6, pointRadius: 2.6 }) ] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "nearest", intersect: false },
+      scales: {
+        x: { type: "linear", min: 1949, max: 1968, ticks: { callback: v => v, stepSize: 2 }, grid: { color: TK.grid },
+             title: { display: true, text: "Year" } },
+        y: { type: "logarithmic", min: 0.05, max: 150, grid: { color: TK.grid },
+             ticks: { callback: v => [0.1, 1, 10, 100].includes(v) ? v : "" },
+             title: { display: true, text: "Percent of 1952 level (log scale)" } } },
+      plugins: { legend: { position: "bottom", labels: { color: TK.ink } },
+        annotation: { annotations: {
+          band: { type: "box", xMin: 1954, xMax: 1958, backgroundColor: TK.wash, borderColor: TK.grid, borderWidth: 1,
+                  label: { display: true, content: "Case definition tightened", position: { x: "center", y: "end" },
+                           color: TK.muted, font: { size: 10 } } },
+          icu: vline(1952, "First ICU ventilation 1952"), salk: vline(1955, "Salk IPV 1955"), sabin: vline(1961, "Sabin OPV 1961") } },
+        tooltip: { callbacks: { title: i => "Year " + i[0].parsed.x, label: c => `${c.dataset.label}: ${c.parsed.y.toFixed(1)}% of 1952` } } } } });
+}
+
+function renderMeningitis() {
+  const M = D.meningitis; if (!M) return;
+  const el = document.getElementById("meningitisChart"); if (!el) return;
+  if (figCharts.men) figCharts.men.destroy();
+  figCharts.men = new Chart(el, {
+    type: "line",
+    data: { datasets: [
+      lineSet("Under 1 year", M.map(r => ({ x: r.year, y: r.under1 })), TK.cat[4]),
+      lineSet("Ages 1–4", M.map(r => ({ x: r.year, y: r.age1_4 })), TK.accent, { borderWidth: 2.4 }) ] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "nearest", intersect: false },
+      scales: {
+        x: { type: "linear", ticks: { callback: v => v }, grid: { color: TK.grid }, title: { display: true, text: "Year" } },
+        y: { beginAtZero: true, grid: { color: TK.grid }, title: { display: true, text: "Meningitis deaths per 100,000" } } },
+      plugins: { legend: { position: "bottom", labels: { color: TK.ink } },
+        annotation: { annotations: { hib: vline(1990, "Infant Hib vaccine 1990") } },
+        tooltip: { callbacks: { title: i => "Year " + i[0].parsed.x } } } } });
+}
 
 function renderOverview() {
   const host = document.getElementById("overviewPanels");
   const cl = D.coverageLevels || [];
   const COVSERIES = [
-    ["dtp3", "DTP (3+ doses)", "#e67e22"],
-    ["polio3", "Polio (3+)", "#27ae60"],
-    ["mmr", "MMR (1+)", "#c0392b"],
-    ["hib3", "Hib (3+)", "#bb8fce"],
-    ["hepb3", "Hepatitis B (3+)", "#a569bd"],
-    ["pcv3", "PCV (3+)", "#58d68d"],
-    ["var", "Varicella", "#48c9b0"],
-    ["rota", "Rotavirus", "#5499c7"],
+    ["dtp3", "DTP (3+ doses)", TK.cat[3]],
+    ["polio3", "Polio (3+)", TK.cat[2]],
+    ["mmr", "MMR (1+)", TK.cat[1]],
+    ["hib3", "Hib (3+)", TK.cat[4]],
+    ["hepb3", "Hepatitis B (3+)", TK.cat[7]],
+    ["pcv3", "PCV (3+)", TK.cat[6]],
+    ["var", "Varicella", TK.cat[5]],
+    ["rota", "Rotavirus", TK.cat[0]],
   ];
   const y85 = cl.find(r => r.year === 1985) || {};
   const pct = v => (v != null ? v.toFixed(1) + "%" : "—");
   const pvdRows = (D.preVaccineDecline || []).map(r => `<tr>
       <td>${r.label}</td><td>${r.vaccine} (${r.releaseYear})</td>
-      <td style="text-align:right;">${r.rate1900.toFixed(1)}</td>
-      <td style="text-align:right;">${r.rateRelease != null ? r.rateRelease.toFixed(2) : "—"}</td>
-      <td style="text-align:right;font-weight:600;color:#e0a800;">${r.pct != null ? "−" + r.pct.toFixed(1) + "%" : "—"}</td>
-    </tr>${r.note ? `<tr><td colspan="5" style="padding:0 0 6px;font-size:11px;color:var(--muted);border:0;">${r.note}</td></tr>` : ""}`).join("");
+      <td class="num">${r.rate1900.toFixed(1)}</td>
+      <td class="num">${r.rateRelease != null ? r.rateRelease.toFixed(2) : "—"}</td>
+      <td class="num em">${r.pct != null ? "−" + r.pct.toFixed(1) + "%" : "—"}</td>
+    </tr>${r.note ? `<tr><td colspan="5" class="rownote">${r.note}</td></tr>` : ""}`).join("");
 
   host.innerHTML = `
-    <div class="card" style="line-height:1.6;">
-      <h3 style="margin:2px 0 8px;font-size:17px;">U.S. vaccine-preventable disease trends &amp; vaccination coverage</h3>
-      <p style="margin:0 0 8px;">An objective look at how the burden of vaccine-preventable diseases changed over the
+    <div class="card">
+      <h3>U.S. vaccine-preventable disease trends &amp; vaccination coverage</h3>
+      <p>An objective look at how the burden of vaccine-preventable diseases changed over the
       20th–21st centuries, and at vaccination coverage. Pick a <strong>vaccine tab</strong> above (ordered by the
       childhood schedule); each shows reported <strong>deaths, cases, and hospitalizations per 100,000</strong>
       over time, with vaccine-introduction markers. Data are from CDC/MMWR, NCHS Vital Statistics, the CDC Pink
       Book, OWID (U.S. Public Health Reports + CDC), and the U.S. Census.</p>
-      <p style="margin:0;font-size:12.5px;color:var(--muted);">Read the <strong>trend shape</strong>, not exact
+      <p class="fine">Read the <strong>trend shape</strong>, not exact
       digits; many series have era-specific caveats (case-definition changes, surveillance start dates,
       ascertainment). Full sources &amp; caveats:
       <a href="https://github.com/markbabbe/us-disease-trends-analysis/blob/main/data/SOURCES.md">SOURCES.md</a>.</p>
     </div>
-    <div class="card" style="line-height:1.6;border-left:4px solid #27ae60;background:rgba(39,174,96,0.06);">
-      <h3 style="margin:2px 0 8px;font-size:17px;">The bottom line — deaths vs. cases</h3>
-      <p style="margin:0 0 8px;"><strong>Most of the fall in <u>deaths</u> from these diseases happened before the
+    <div class="card">
+      <h3>The bottom line — deaths vs. cases</h3>
+      <p><strong>Most of the fall in <u>deaths</u> from these diseases happened before the
       vaccines.</strong> Clean water, sanitation, better nutrition and housing, and — from the 1940s — antibiotics had
       already cut the death rate dramatically: for measles, pertussis, and diphtheria, deaths per 100,000 were down
       <strong>80–98%</strong> by the time the vaccine arrived. That is real, and it is underappreciated — the table
       below quantifies it disease by disease.</p>
-      <p style="margin:0 0 8px;">What the vaccines then changed was different: the number of <strong><u>cases</u></strong>.
+      <p>What the vaccines then changed was different: the number of <strong><u>cases</u></strong>.
       Living conditions made these diseases far less <em>deadly</em>, but they kept <em>infecting</em> almost everyone —
       measles still caused ~3–4 million U.S. infections a year right up to the 1963 vaccine. Vaccination is what drove
       cases toward zero (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all &gt;99%), ending the remaining
       deaths <em>and</em> the disabilities antibiotics could not prevent — paralysis, congenital rubella, deafness.
       (The case side isn't perfectly clean either — polio's paralytic-case definition was tightened in the late 1950s,
       and pertussis has partly resurged — but the post-vaccine collapses are large and each lines up with its rollout.)</p>
-      <p style="margin:0;font-size:12.5px;color:var(--muted);">Keeping <strong>deaths</strong> and <strong>cases</strong>
+      <p class="fine">Keeping <strong>deaths</strong> and <strong>cases</strong>
       separate is the whole point — conflating them is where most of the noise comes from. Every trend and caveat here is
       sourced so you can check it yourself; read the trend shape on each tab, not the exact digits.</p>
     </div>
-    <div class="card" style="line-height:1.6;border-left:4px solid #e0a800;">
-      <h3 style="margin:2px 0 8px;font-size:16px;">Why did deaths fall before the vaccines?</h3>
-      <p style="margin:0 0 8px;">For measles, whooping cough and diphtheria, deaths per 100,000 fell 80–98% before
+    <div class="card">
+      <h3>Why did deaths fall before the vaccines?</h3>
+      <p>For measles, whooping cough and diphtheria, deaths per 100,000 fell 80–98% before
       the vaccines arrived. Three waves of change did most of it:</p>
-      <ul style="margin:0 0 8px;padding-left:18px;">
+      <ul>
         <li><strong>1890s–1930s, living conditions:</strong> chlorinated water (from 1908), pasteurized milk, sewers,
           less crowded housing and better nutrition. Well-fed children survived infections that killed malnourished ones.
           Diphtheria antitoxin (1894) cut deaths among those infected directly.</li>
@@ -625,46 +793,46 @@ function renderOverview() {
         <li><strong>1940s–50s, hospital care:</strong> oxygen, IV fluids, and the first intensive-care units and
           ventilators (1952).</li>
       </ul>
-      <p style="margin:0 0 8px;">What these did <em>not</em> do was stop infection. Nearly every child still caught
-      measles; deaths per case fell, but cases didn't. That's where vaccines come in (see the next card). Polio went the
+      <p>What these did <em>not</em> do was stop infection. Nearly every child still caught
+      measles; deaths per case fell, but cases didn't. That's where vaccines come in, as the previous section describes. Polio went the
       other way: its deaths rose until the 1955 vaccine.</p>
-      <p style="margin:0 0 8px;font-size:13px;"><strong>Points raised by vaccine critic Aaron Siri (2025 Senate
+      <p class="fine"><strong>Points raised by vaccine critic Aaron Siri (2025 Senate
       testimony), checked:</strong> (1) Before the 1963 vaccine, U.S. measles killed about 400 people a year, roughly 1
       in 450,000 Americans — consistent with CDC figures. (2) A U.S. Public Health Service analysis found diphtheria
       deaths began falling at the same time in every state after 1925, even though early immunization reached very
       different shares of children — a sign other factors were at work too. (3) Scarlet fever, a childhood killer
       in 1900, all but disappeared with <em>no</em> vaccine (antibiotics and milder strains). (4) His claim that
       deaths fell no faster after vaccines arrived hasn't been tested on this site's data, so it isn't shown.</p>
-      <p style="margin:0;font-size:12.5px;color:var(--muted);"><strong>What about hospitalizations?</strong> The U.S.
+      <p class="fine"><strong>What about hospitalizations?</strong> The U.S.
       has no national hospitalization records for these diseases before their vaccines (rotavirus is the only one
       tracked here), so a pre-vaccine fall in hospitalizations can't be shown — only deaths.</p>
     </div>
-    <div class="card" style="line-height:1.6;border-left:4px solid #4aa3df;">
-      <h3 style="margin:2px 0 8px;font-size:16px;">Why any of this matters</h3>
-      <p style="margin:0 0 8px;">The point of a vaccine is the reward side of this whole picture: not dying — or being
+    <div class="card">
+      <h3>Why any of this matters</h3>
+      <p>The point of a vaccine is the reward side of this whole picture: not dying — or being
       paralyzed, made deaf, or born damaged — from something preventable. Vaccination is a genuine
       <strong>benefit–risk trade.</strong> For the historical big killers (polio, measles, diphtheria) the benefit side
       is large and well-established — that's the Data and Trials tabs. The risk side is what the Safety tab weighs:
       mostly small and specific, with the whole-schedule chronic-illness question less settled.</p>
-      <p style="margin:0;">It's a real trade-off, taken seriously — when the risk <em>has</em> outweighed the benefit,
+      <p>It's a real trade-off, taken seriously — when the risk <em>has</em> outweighed the benefit,
       the vaccine gets pulled (RotaShield, 1999). Not an assumption that it always comes out favorable; a calculation,
       disease by disease.</p>
     </div>
-    <div class="card" style="line-height:1.6;border-left:4px solid var(--line);">
-      <h3 style="margin:2px 0 8px;font-size:16px;">Context: how the childhood schedule has changed since 1985 (and what the 1986 law did)</h3>
-      <p style="margin:0 0 8px;">In <strong>1985</strong>, the year before the <strong>National Childhood
+    <div class="card">
+      <h3>Context: how the childhood schedule has changed since 1985 (and what the 1986 law did)</h3>
+      <p>In <strong>1985</strong>, the year before the <strong>National Childhood
       Vaccine Injury Act of 1986</strong>, the routine U.S. childhood immunization schedule consisted of
       <strong>3 vaccines</strong> — DTP, oral polio (OPV), and MMR — protecting against <strong>7 diseases</strong>:
       diphtheria, tetanus, pertussis, polio, measles, mumps, and rubella.</p>
-      <p style="margin:0 0 8px;">Coverage among young children that year:
+      <p>Coverage among young children that year:
       <strong>DTP (3+ doses) ${pct(y85.dtp3)}</strong>, <strong>polio (3+ doses) ${pct(y85.polio3)}</strong>,
       and <strong>MMR (1+ dose) ${pct(y85.mmr)}</strong>.</p>
-      <p style="margin:0 0 8px;font-size:12.5px;color:var(--muted);">For comparison, the schedule in force today
+      <p class="fine">For comparison, the schedule in force today
       (birth–18, as it stood in May 2025) covers <strong>18 diseases</strong>: the 7 above plus hepatitis B,
       rotavirus, Hib, pneumococcal, influenza, COVID-19, RSV, varicella, hepatitis A, HPV, and meningococcal. (Infant
       RSV protection is usually a monoclonal antibody rather than a vaccine.) 1985 coverage source: CDC Pink Book
       Appendix E, "Vaccine Coverage Levels — United States, 1962–2016."</p>
-      <p style="margin:0 0 10px;font-size:12.5px;color:var(--muted);"><strong>The schedule is in legal flux (as of
+      <p class="fine"><strong>The schedule is in legal flux (as of
       Nov 2026).</strong> On <strong>Jan 5, 2026</strong> HHS revised it without an ACIP vote. Nothing was removed, but
       hepatitis A, meningococcal ACWY, RSV, rotavirus and influenza moved from "all children" to risk-based or
       "shared clinical decision-making." It also carried over a Dec 2025 ACIP vote making the hepatitis B birth dose
@@ -673,49 +841,49 @@ function renderOverview() {
       members, and their votes, putting the May 2025 schedule back in force. The government appealed (argued in the First Circuit Oct 6, 2026; no ruling yet), and
       a <strong>May 29, 2026</strong> executive order (EO 14407) directed CDC and ACIP to review the schedule again.
       Source: Congressional Research Service, R48982 and IN12684.</p>
-      <details style="margin:0;">
-        <summary style="cursor:pointer;font-weight:600;font-size:13.5px;">What the 1986 Act did — in plain English</summary>
-        <div style="margin-top:8px;font-size:13px;line-height:1.65;">
-          <p style="margin:0 0 6px;">By the mid-1980s, lawsuits over rare vaccine side effects had driven several
+      <details>
+        <summary>What the 1986 Act did — in plain English</summary>
+        <div>
+          <p>By the mid-1980s, lawsuits over rare vaccine side effects had driven several
           makers out of the market, threatening shortages. The <strong>National Childhood Vaccine Injury Act of
           1986</strong> made a trade-off: people who believe a vaccine harmed them file a claim in a no-fault federal
           <strong>"vaccine court" (VICP)</strong> — funded by a small per-dose tax, with no need to prove the maker did
           wrong — and in return, manufacturers are <strong>largely shielded from ordinary lawsuits</strong> over side
           effects (upheld in <em>Bruesewitz v. Wyeth</em>, 2011). It also required parent safety handouts and
           side-effect reporting (now <strong>VAERS</strong>).</p>
-          <p style="margin:0 0 6px;">The Act also required HHS to keep a <strong>Task Force on Safer Childhood
+          <p>The Act also required HHS to keep a <strong>Task Force on Safer Childhood
           Vaccines</strong> and to report to Congress every two years, from 1989, on vaccine-safety improvements. In a
           2018 lawsuit brought by the advocacy group ICAN (lawyer: Aaron Siri), HHS could not produce any of those
           reports (<em>ICAN v. HHS</em>, S.D.N.Y. 18-cv-03215). The task force had been disbanded in 1998; HHS revived it
           in August 2025 after another lawsuit.</p>
-          <p style="margin:0;color:var(--muted);">It's a law about <em>liability</em>, not evidence — it says nothing
+          <p class="fine">It's a law about <em>liability</em>, not evidence — it says nothing
           about whether any specific vaccine causes any specific harm.</p>
         </div>
       </details>
     </div>
     <div class="card">
-      <h3 style="margin:2px 0 8px;font-size:15px;">U.S. childhood vaccination coverage, 1962–2016</h3>
+      <h3>U.S. childhood vaccination coverage, 1962–2016</h3>
       <div style="position:relative;height:440px;"><canvas id="ov-coverage"></canvas></div>
-      <p class="metric-note" style="margin:8px 0 0;">Percent of young children vaccinated (newer vaccines begin
+      <p class="metric-note">Percent of young children vaccinated (newer vaccines begin
       when introduced). Source: CDC Pink Book Appendix E, "Vaccine Coverage Levels — United States, 1962–2016"
       (13th ed., 2018). DTP coverage rose from 67% (1962) to the low-90s; coverage now sits ~90% for most
       long-standing vaccines.</p>
     </div>
     <div class="card">
-      <h3 style="margin:2px 0 8px;font-size:15px;">How much of the death decline came <em>before</em> each vaccine? (1900 → release year)</h3>
-      <p style="margin:0 0 10px;line-height:1.6;"><strong>Most of it.</strong> For the four diseases with U.S.
+      <h3>How much of the death decline came <em>before</em> each vaccine? (1900 → release year)</h3>
+      <p><strong>Most of it.</strong> For the four diseases with U.S.
       death-registration data back to 1900, the death rate had already fallen dramatically before the vaccine existed —
       driven mainly by clean water, sanitation, nutrition, and (after ~1940) antibiotics. The table shows how much,
       disease by disease.</p>
-      <table style="width:100%;max-width:660px;font-size:13px;">
+      <table style="max-width:660px;">
         <thead><tr>
-          <th style="text-align:left;">Disease</th><th style="text-align:left;">Vaccine (year)</th>
-          <th style="text-align:right;">Deaths/100k 1900</th><th style="text-align:right;">At release</th>
-          <th style="text-align:right;">Pre-vaccine drop</th>
+          <th>Disease</th><th>Vaccine (year)</th>
+          <th class="num">Deaths/100k 1900</th><th class="num">At release</th>
+          <th class="num">Pre-vaccine drop</th>
         </tr></thead>
         <tbody>${pvdRows}</tbody>
       </table>
-      <p style="margin:12px 0 0;line-height:1.6;">
+      <p>
         <strong>The other half of the story — cases.</strong> Living conditions made these diseases far less deadly, but
         they kept <em>infecting</em> almost everyone — measles caused ~3–4 million U.S. infections a year right up to the
         1963 vaccine. What vaccination changed was the number of <strong>cases</strong>, driving them toward zero and
@@ -724,12 +892,12 @@ function renderOverview() {
         drove <em>cases</em> down.</strong> Though not identically for every disease — near-elimination for measles and
         diphtheria, a partial and partly-resurgent drop for pertussis, and, for non-contagious tetanus, protection of
         individuals rather than the herd.</p>
-      <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
+      <p class="metric-note">
         <strong>A note on tetanus:</strong> its decline is real but works differently — tetanus is <em>not
         contagious</em> (environmental spores, no herd immunity), so its drop reflects wound care, antitoxin, and the
         toxoid rather than population immunity. It's included because solid U.S. death rates exist back to 1900
         (CDC/Fraser + NCHS).</p>
-      <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
+      <p class="metric-note">
         <strong>Why not the other diseases:</strong> <strong>polio is the counterexample</strong> — it was <em>not</em>
         a major killer in 1900; its deaths <em>rose</em> through the mid-century epidemics and only fell <em>after</em>
         the 1955 vaccine, so a "1900 → release" reduction would be negative and misleading (see the Polio tab for why
@@ -737,9 +905,9 @@ function renderOverview() {
         meningococcal) have no comparable 1900 death-rate baseline — or death isn't their main harm — so a
         "1900 → release" reduction can't be computed honestly for them.</p>
     </div>
-    <div class="card" style="line-height:1.6;">
-      <h3 style="margin:2px 0 8px;font-size:15px;">What's on this site</h3>
-      <ul style="margin:0;padding-left:18px;font-size:13px;">
+    <div class="card">
+      <h3>What's on this site</h3>
+      <ul>
         <li><strong>The Data</strong> — this overview, then one tab per vaccine (ordered by the childhood schedule). Each shows deaths / cases / hospitalizations per 100,000 over time with vaccine-introduction markers, "most affected" notes and key caveats. Some carry deep-dive cards (e.g., the polio case-definition change; the DTP all-cause-mortality debate; the Hib meningitis proxy; meningococcal's pre-vaccine decline).</li>
         <li><strong>Claims &amp; evidence</strong> — common claims from both sides, who makes them, and a plain rating of how strong the evidence is.</li>
         <li><strong>How they were tested</strong> — the pivotal approval trial for each vaccine (design, size, result, source), and how long participants were monitored for reactions after each shot.</li>
@@ -758,19 +926,19 @@ function renderOverview() {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
       scales: {
-        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
-        y: { min: 0, max: 100, title: { display: true, text: "Coverage (%)", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+        x: { type: "linear", title: { display: true, text: "Year", color: TK.muted },
+             ticks: { color: TK.muted, callback: v => v }, grid: { color: TK.grid } },
+        y: { min: 0, max: 100, title: { display: true, text: "Coverage (%)", color: TK.muted },
+             ticks: { color: TK.muted }, grid: { color: TK.grid } },
       },
-      plugins: { legend: { labels: { color: "#e6edf3", boxWidth: 12, font: { size: 11 } } },
+      plugins: { legend: { labels: { color: TK.ink, boxWidth: 12, font: { size: 11 } } },
                  tooltip: { callbacks: { title: i => "Year " + i[0].parsed.x } } },
     },
   });
 }
 
 const CHRONIC_CAVEAT =
-  "⚠️ Correlation is NOT causation. These conditions are shown over time alongside the growing " +
+  "Correlation is NOT causation. These conditions are shown over time alongside the growing " +
   "vaccine schedule, but shared upward trends do not show one caused the other — many things changed " +
   "over these decades. Key context: (1) Data limits — autism wasn't a distinct diagnosis until 1980 " +
   "(DSM-III) or systematically measured until ~2000 (CDC ADDM); asthma data starts ~1980, and a " +
@@ -787,8 +955,8 @@ const CHRONIC_CAVEAT =
   "(5) '# vaccines' counts diseases on the routine childhood/adolescent schedule (definition-dependent).";
 
 const CHRONIC_LIMITATIONS = `
-<h3 style="margin:2px 0 8px;font-size:15px;">What hasn't been tested (and the key confounder)</h3>
-<p style="margin:0 0 8px;"><strong>No RCT or cleanly-controlled fully-vaccinated-vs-never-vaccinated study exists.</strong>
+<h3>What hasn't been tested (and the key confounder)</h3>
+<p><strong>No RCT or cleanly-controlled fully-vaccinated-vs-never-vaccinated study exists.</strong>
 A randomized trial is ethically impossible (you can't withhold protection from deadly diseases). An
 observational version is feasible — databases (immunization registries, EHRs, claims, the Vaccine Safety
 Datalink) <em>can</em> identify never-vaccinated children — but it is heavily confounded: <strong>confounding
@@ -799,18 +967,18 @@ self-selected survey; the Lamerato/Henry Ford draft — see above). The mainstre
 "no-link" studies (listed in the section above) are mostly <strong>Scandinavian registry or
 U.S. managed-care</strong> populations — observational, with residual confounding and diagnosis
 tied to medical contact.</p>
-<p style="margin:0 0 8px;"><strong>What the official reviews said.</strong> The Institute of Medicine's 2013 review
+<p><strong>What the official reviews said.</strong> The Institute of Medicine's 2013 review
 of the whole schedule found "no evidence" that it is unsafe, but also that few studies examine the schedule as a
 whole. It said a randomized vaccinated-vs-unvaccinated trial would be unethical and recommended using the Vaccine
 Safety Datalink to study it. Its 2011 review found the evidence "inadequate to accept or reject" a link between DTaP
 and autism, meaning it had not been studied enough to say either way.</p>
-<p style="margin:0 0 8px;"><strong>Mercury vs. aluminum.</strong> Thimerosal (mercury) is well-studied and
+<p><strong>Mercury vs. aluminum.</strong> Thimerosal (mercury) is well-studied and
 its removal (~2001 in the U.S.) did not lower autism — but that addresses <em>mercury only</em>. Aluminum
 adjuvants were <em>not</em> removed, and cumulative vaccine aluminum <em>rose</em> as the schedule grew.
 Aluminum has far less autism-specific epidemiology; existing data (FDA toxicokinetic modeling; an
 observational <em>asthma</em> signal, Glanz 2023, needing replication) don't show an autism link but don't
 rule it out to the same standard. Note injected vs. ingested aluminum differ in bioavailability.</p>
-<p style="margin:0 0 8px;"><strong>Even RCTs often lack a placebo arm.</strong> Pivotal pediatric vaccine
+<p><strong>Even RCTs often lack a placebo arm.</strong> Pivotal pediatric vaccine
 trials frequently use an <em>active comparator</em> (another vaccine) rather than an inert (saline) placebo.
 Example: the Phase III trial of MMR-RIT vs. MMR II (Klein et al. 2019, ~5,000 children) compared two MMR
 vaccines — serious adverse events 2.1% vs. 1.9%, new-onset chronic diseases 3.4% vs. 3.7%, similar between
@@ -818,15 +986,15 @@ arms. That shows the new MMR is as safe as the established one, but with no plac
 can't measure effects common to both. (Active comparison is standard and appropriate for a new formulation
 of an already-licensed vaccine — a saline arm would withhold proven protection — so it's a limitation for
 the "vaccine vs. none" question, not evidence of harm.)</p>
-<p style="margin:0;"><strong>Net:</strong> strongly supported — MMR and thimerosal are <em>not</em>
+<p><strong>Net:</strong> strongly supported — MMR and thimerosal are <em>not</em>
 associated with autism. Weaker — antigen load (more vs. fewer, never vs. zero). Not directly tested — whole schedule vs. none, aluminum adjuvants and
 neurodevelopment, and a "saturating" cumulative effect. "Not tested" is not "evidence of harm": indirect
 evidence (no dose-response, autism rising after thimerosal removal, ~80% genetic/prenatal heritability)
 weighs against a vaccine cause.</p>`;
 
 const CHRONIC_LAMERATO = `
-<h3 style="margin:2px 0 8px;font-size:15px;">The completely-unvaccinated vs. vaccinated study: Lamerato et al. (Henry Ford Health)</h3>
-<p style="margin:0 0 10px;font-size:13px;line-height:1.6;">This is the <strong>only sizable completely-unvaccinated-vs-vaccinated
+<h3>The completely-unvaccinated vs. vaccinated study: Lamerato et al. (Henry Ford Health)</h3>
+<p>This is the <strong>only sizable completely-unvaccinated-vs-vaccinated
 comparison from a mainstream U.S. health system to reach the public</strong> — nearly every other study
 (in the section above) compares <em>MMR vs. no-MMR</em> or more-vs-fewer antigens, not vaccinated vs. truly zero doses.
 (Other vaxxed-vs-unvaxxed studies exist but are small or survey-based — e.g. Mawson 2017, a self-selected
@@ -837,18 +1005,18 @@ chronic-illness diagnoses. The draft itself reported a <strong>~2.5× higher lik
 condition</strong> associated with vaccination (adjusted hazard ratio 2.54). It was presented at a U.S. Senate
 hearing (Sept 9, 2025) and re-analyzed in a December 2025 commentary in <em>IJVTPR</em> (Oller, Broudy &amp;
 Hulscher, McCullough Foundation).</p>
-<table style="margin:0 0 12px;">
+<table>
   <thead><tr><th>Cohort</th><th>People</th><th>CDC-schedule doses</th><th>Clinic visits / year</th><th>Chronic-condition finding</th></tr></thead>
   <tbody>
     <tr><td>Unvaccinated</td><td>1,957</td><td>0</td><td>~2</td><td>reference group</td></tr>
     <tr><td>Vaccinated</td><td>16,511</td><td>18 (median)</td><td>~7</td><td>~2.5× higher reported likelihood</td></tr>
   </tbody>
 </table>
-<div style="font-size:12px;color:var(--muted);margin:2px 0 4px;">Each chronic condition by group (sorted by the vaccinated rate). These are <strong>raw reported rates</strong> — read the disclaimer below before interpreting.</div>
+<div class="caption">Each chronic condition by group (sorted by the vaccinated rate). These are <strong>raw reported rates</strong> — read the disclaimer below before interpreting.</div>
 __CONDTABLE__
-<div style="border-left:4px solid #e0a800;background:#14202b;border-radius:6px;padding:11px 13px;font-size:12.5px;line-height:1.55;">
-  <strong style="color:#e0a800;">⚠ What this study can and can't show: it reports an association, which is not proof that vaccines cause chronic illness.</strong>
-  <ul style="margin:7px 0 0;padding-left:18px;">
+<div class="box-inner">
+  <strong>What this study can and can't show: it reports an association, which is not proof that vaccines cause chronic illness.</strong>
+  <ul>
     <li><strong>Doctor visits (the biggest concern):</strong> vaccinated children were seen ~7 times a year vs ~2 for
         unvaccinated children, about 3.5× more chances to diagnose and record a condition.
         <em>What the authors did:</em> re-ran the analysis using only children with at least one medical visit; the gap
@@ -887,27 +1055,27 @@ __CONDTABLE__
 </div>`;
 
 const CHRONIC_NOLINK = `
-<h3 style="margin:2px 0 8px;font-size:15px;">Most-cited studies finding NO vaccine–autism link (and their limits)</h3>
-<p style="margin:0 0 10px;font-size:13px;line-height:1.6;">The mainstream conclusion rests largely on these. All are
+<h3>Most-cited studies finding NO vaccine–autism link (and their limits)</h3>
+<p>The mainstream conclusion rests largely on these. All are
 observational, and — as the rightmost column shows — <strong>none compares the full schedule vs. no vaccines</strong>
 (the gap the Henry Ford study below tries, imperfectly, to fill). The 1998 Wakefield paper claiming an MMR–autism
 link was retracted for fraud.</p>
-<table style="margin:0;">
+<table>
   <thead><tr><th>Study</th><th>What it tested</th><th>Finding</th><th>Key limitations</th></tr></thead>
   <tbody>
-    <tr><td><strong>Madsen et al. 2002</strong><br><span style="color:var(--muted);font-size:12px;">NEJM · 537,303 children</span></td>
+    <tr><td><strong>Madsen et al. 2002</strong><br><span class="sub">NEJM · 537,303 children</span></td>
         <td>MMR vs. no-MMR (Denmark)</td><td>No association (adj. RR 0.92)</td>
         <td>Both groups got the other routine vaccines → isolates MMR only, not vaccination-vs-none; observational; registry-based diagnoses</td></tr>
-    <tr><td><strong>Hviid et al. 2019</strong><br><span style="color:var(--muted);font-size:12px;">Ann Intern Med · 657,461 children</span></td>
+    <tr><td><strong>Hviid et al. 2019</strong><br><span class="sub">Ann Intern Med · 657,461 children</span></td>
         <td>MMR vs. no-MMR (Denmark)</td><td>No association (HR 0.93), incl. higher-risk subgroups</td>
         <td>Same MMR-vs-no-MMR design; can't detect an effect shared by all vaccines; observational/registry</td></tr>
-    <tr><td><strong>DeStefano et al. 2013</strong><br><span style="color:var(--muted);font-size:12px;">J Pediatr · 256 cases / 752 controls</span></td>
+    <tr><td><strong>DeStefano et al. 2013</strong><br><span class="sub">J Pediatr · 256 cases / 752 controls</span></td>
         <td>Cumulative antigen exposure ("too many too soon")</td><td>No dose-response with antigen number/timing</td>
         <td>Small case-control; tests a gradient <em>within</em> vaccinated children (no zero-vaccine arm); antigen count misses adjuvants such as aluminum</td></tr>
-    <tr><td><strong>Hviid et al. 2003</strong><br><span style="color:var(--muted);font-size:12px;">JAMA · 467,450 children</span></td>
+    <tr><td><strong>Hviid et al. 2003</strong><br><span class="sub">JAMA · 467,450 children</span></td>
         <td>Thimerosal-containing vs. thimerosal-free version of the same vaccine (Denmark, born 1990–96)</td><td>No association (RR 0.85) and no dose-response with ethylmercury</td>
         <td>Both groups were vaccinated → isolates thimerosal only; observational/registry. (A companion ecological study, Madsen 2003, found Danish autism diagnoses kept rising after thimerosal was removed in 1992.)</td></tr>
-    <tr><td><strong>Taylor et al. 2014</strong><br><span style="color:var(--muted);font-size:12px;">Vaccine · meta-analysis, 1,256,407 children (cohorts) + 9,920 (case-control)</span></td>
+    <tr><td><strong>Taylor et al. 2014</strong><br><span class="sub">Vaccine · meta-analysis, 1,256,407 children (cohorts) + 9,920 (case-control)</span></td>
         <td>Pools 10 studies of MMR, thimerosal and mercury exposure</td><td>No association (cohort OR 0.99)</td>
         <td>A pool of the same kinds of studies above, so it inherits their design: it rules out MMR/thimerosal/mercury, not vaccination vs. none — despite its title ("Vaccines are not associated with autism"). Pooling can't remove confounding shared by the inputs.</td></tr>
   </tbody>
@@ -918,9 +1086,9 @@ const chronicCharts = {};
 function renderChronic() {
   const host = document.getElementById("chronicPanels");
   const conds = [
-    { key: "autism", title: "Neurodevelopmental — Autism (CDC ADDM, age 8)", unit: "per 1,000 children", color: "#c0392b" },
-    { key: "devdisability", title: "Any developmental disability (NHIS, children 3-17)", unit: "% of children", color: "#8e44ad" },
-    { key: "asthma", title: "Asthma (children, NHIS)", unit: "% of children", color: "#2980b9" },
+    { key: "autism", title: "Neurodevelopmental — Autism (CDC ADDM, age 8)", unit: "per 1,000 children", color: TK.cat[1] },
+    { key: "devdisability", title: "Any developmental disability (NHIS, children 3-17)", unit: "% of children", color: TK.cat[4] },
+    { key: "asthma", title: "Asthma (children, NHIS)", unit: "% of children", color: TK.cat[0] },
   ];
   // Build the per-condition table (Lamerato Table 2), sorted by vaccinated rate.
   const fmt = n => n.toLocaleString();
@@ -929,16 +1097,16 @@ function renderChronic() {
     return `<tr><td>${r.condition}</td><td>${fmt(r.vax_n)} (${r.vax.toFixed(2)}%)</td>` +
            `<td>${fmt(r.novx_n)} (${r.novx.toFixed(2)}%)</td><td>${ratio}</td></tr>`;
   }).join("");
-  const condTable = `<table style="margin:0 0 12px;"><thead><tr><th>Condition</th>` +
+  const condTable = `<table><thead><tr><th>Condition</th>` +
     `<th>Vaccinated (n=16,511)</th><th>Unvaccinated (n=1,957)</th><th>Raw ratio</th></tr></thead>` +
     `<tbody>${lamRows}</tbody></table>`;
 
   host.innerHTML =
-    `<div class="card" style="color:var(--ink);">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>` +
-    `<div class="card" style="color:var(--ink);">${CHRONIC_NOLINK}</div>` +
-    `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;color:var(--ink);">${CHRONIC_CAVEAT}</div>` +
-    `<div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;color:var(--ink);">${CHRONIC_LIMITATIONS}</div>` +
-    conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
+    `<div class="card">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>` +
+    `<div class="card">${CHRONIC_NOLINK}</div>` +
+    `<div class="card note">${CHRONIC_CAVEAT}</div>` +
+    `<div class="card note">${CHRONIC_LIMITATIONS}</div>` +
+    conds.map(c => `<div class="card"><h3>${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="chronic-${c.key}"></canvas></div></div>`).join("");
 
   const vax = D.chronic.vaccines.map(p => ({ x: p.year, y: p.value }));
@@ -951,24 +1119,24 @@ function renderChronic() {
       data: { datasets: [
         { label: c.unit, data: pts, borderColor: c.color, backgroundColor: c.color,
           tension: 0.2, pointRadius: 3, borderWidth: 2, yAxisID: "y" },
-        { label: "# vaccines on schedule (diseases)", data: vax, borderColor: "#9aa7b2",
-          backgroundColor: "#9aa7b2", borderDash: [5, 4], tension: 0.1, pointRadius: 2, borderWidth: 1.5, yAxisID: "y1" },
+        { label: "# vaccines on schedule (diseases)", data: vax, borderColor: TK.muted,
+          backgroundColor: TK.muted, borderDash: [5, 4], tension: 0.1, pointRadius: 2, borderWidth: 1.5, yAxisID: "y1" },
       ]},
       options: {
         responsive: true, maintainAspectRatio: false,
         interaction: { mode: "nearest", intersect: false },
         scales: {
-          x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-               ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+          x: { type: "linear", title: { display: true, text: "Year", color: TK.muted },
+               ticks: { color: TK.muted, callback: v => v }, grid: { color: TK.grid } },
           y: { position: "left", beginAtZero: true,
                title: { display: true, text: c.unit, color: c.color },
-               ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+               ticks: { color: TK.muted }, grid: { color: TK.grid } },
           y1: { position: "right", beginAtZero: true,
-                title: { display: true, text: "# vaccines (diseases)", color: "#9aa7b2" },
-                ticks: { color: "#9aa7b2" }, grid: { drawOnChartArea: false } },
+                title: { display: true, text: "# vaccines (diseases)", color: TK.muted },
+                ticks: { color: TK.muted }, grid: { drawOnChartArea: false } },
         },
         plugins: {
-          legend: { labels: { color: "#e6edf3", boxWidth: 12 } },
+          legend: { labels: { color: TK.ink, boxWidth: 12 } },
           tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
         },
       },
@@ -981,16 +1149,16 @@ const chartOptsDual = (c) => ({
   responsive: true, maintainAspectRatio: false,
   interaction: { mode: "nearest", intersect: false },
   scales: {
-    x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-         ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+    x: { type: "linear", title: { display: true, text: "Year", color: TK.muted },
+         ticks: { color: TK.muted, callback: v => v }, grid: { color: TK.grid } },
     y: { position: "left", beginAtZero: true, title: { display: true, text: c.unit, color: c.color },
-         ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+         ticks: { color: TK.muted }, grid: { color: TK.grid } },
     y1: { position: "right", beginAtZero: true,
-          title: { display: true, text: "# vaccines (diseases)", color: "#9aa7b2" },
-          ticks: { color: "#9aa7b2" }, grid: { drawOnChartArea: false } },
+          title: { display: true, text: "# vaccines (diseases)", color: TK.muted },
+          ticks: { color: TK.muted }, grid: { drawOnChartArea: false } },
   },
   plugins: {
-    legend: { labels: { color: "#e6edf3", boxWidth: 12 } },
+    legend: { labels: { color: TK.ink, boxWidth: 12 } },
     tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
   },
 });
@@ -998,9 +1166,9 @@ const chartOptsDual = (c) => ({
 function renderSafety() {
   const host = document.getElementById("safetyPanels");
   const conds = [
-    { key: "autism", title: "Autism (CDC ADDM, age 8)", unit: "per 1,000 children", color: "#c0392b" },
-    { key: "devdisability", title: "Any developmental disability (NHIS, 3-17)", unit: "% of children", color: "#8e44ad" },
-    { key: "asthma", title: "Asthma (children, NHIS)", unit: "% of children", color: "#2980b9" },
+    { key: "autism", title: "Autism (CDC ADDM, age 8)", unit: "per 1,000 children", color: TK.cat[1] },
+    { key: "devdisability", title: "Any developmental disability (NHIS, 3-17)", unit: "% of children", color: TK.cat[4] },
+    { key: "asthma", title: "Asthma (children, NHIS)", unit: "% of children", color: TK.cat[0] },
   ];
   const fmt = n => n.toLocaleString();
   const lamRows = (D.lamerato || []).slice().sort((a, b) => b.vax - a.vax).map(r => {
@@ -1008,18 +1176,18 @@ function renderSafety() {
     return `<tr><td>${r.condition}</td><td>${fmt(r.vax_n)} (${r.vax.toFixed(2)}%)</td>` +
            `<td>${fmt(r.novx_n)} (${r.novx.toFixed(2)}%)</td><td>${ratio}</td></tr>`;
   }).join("");
-  const condTable = `<table style="margin:0 0 12px;"><thead><tr><th>Condition</th>` +
+  const condTable = `<table><thead><tr><th>Condition</th>` +
     `<th>Vaccinated (n=16,511)</th><th>Unvaccinated (n=1,957)</th><th>Raw ratio</th></tr></thead>` +
     `<tbody>${lamRows}</tbody></table>`;
   const secH2 = "margin:28px 0 14px;font-size:19px;border-top:1px solid var(--line);padding-top:22px;";
   host.innerHTML =
-    `<div class="verdict" style="border-left-color:#e0a800;">
+    `<div class="verdict">
        <b>The debate</b>
        The real question isn't about any single shot — it's whether the childhood vaccine schedule <em>as a whole</em>
        raises a child's odds of chronic illness: autism, asthma, autoimmune and other conditions. It's a fair thing to
        ask, and it's fueled by a real correlation — as the schedule grew from the 1980s on, diagnoses of several of these
        conditions rose (charts below). The honest answer splits into two very different questions:
-       <ul style="margin:9px 0 0;padding-left:18px;">
+       <ul>
          <li><strong>Specific claims that have been tested head-on</strong> — does MMR cause autism? the preservative
            thimerosal? the sheer <em>number</em> of antigens? Each has large, direct studies.
            <a href="#sec-tested">Jump&nbsp;↓</a></li>
@@ -1029,14 +1197,14 @@ function renderSafety() {
            <a href="#sec-covid">Jump&nbsp;↓</a></li>
        </ul>
      </div>
-     <h3 style="margin:8px 2px 4px;font-size:15px;">The correlation people point to</h3>
-     <p class="evidence-lead" style="margin-top:0;">These conditions rose over the same decades the schedule expanded.
+     <h3 class="subhead">The correlation people point to</h3>
+     <p class="evidence-lead">These conditions rose over the same decades the schedule expanded.
        That shared upward line is where the worry starts — but on its own it is not evidence of cause (autism-diagnosis
        criteria widened enormously over the same period; see the caveats below the charts).</p>
-     ` + conds.map(c => `<div class="card"><h3 style="color:${c.color};margin:2px 0 8px;font-size:15px;">${c.title}</h3>
+     ` + conds.map(c => `<div class="card"><h3>${c.title}</h3>
         <div class="disease-chart" style="height:320px;"><canvas id="au-${c.key}"></canvas></div></div>`).join("") +
-    `<div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;">${CHRONIC_CAVEAT}</div>
-     <h2 id="sec-tested" style="${secH2}">The studies usually cited — and what they can and can't show</h2>
+    `<div class="card note">${CHRONIC_CAVEAT}</div>
+     <h2 id="sec-tested" class="sec">The studies usually cited — and what they can and can't show</h2>
      <div class="verdict"><b>What these studies actually test</b>
        When people say "vaccines don't cause autism," they point to studies like Madsen (537k children), Hviid (657k),
        and Taylor's meta-analysis (1.2M). These are large and real, and they genuinely tested the two most-alleged
@@ -1050,12 +1218,12 @@ function renderSafety() {
        vaccinated vs. not</em>, or chronic illness in general. That question is separate, and far less settled — see
        below.</div>
      <div class="card">${CHRONIC_NOLINK}</div>
-     <div class="card" style="font-size:13px;line-height:1.6;">
-       <h3 style="margin:2px 0 8px;font-size:15px;">The main review arguing FOR a link — and its limits</h3>
+     <div class="card">
+       <h3>The main review arguing FOR a link — and its limits</h3>
        <table>
          <thead><tr><th>Review</th><th>What it claims</th><th>Key limitations</th></tr></thead>
          <tbody><tr>
-           <td><strong>McCullough Foundation report, Oct 2025</strong><br><span style="color:var(--muted);font-size:12px;">Hulscher, Leake, McCullough, Wakefield et al. · preprint (Zenodo)</span></td>
+           <td><strong>McCullough Foundation report, Oct 2025</strong><br><span class="sub">Hulscher, Leake, McCullough, Wakefield et al. · preprint (Zenodo)</span></td>
            <td>Vaccination, especially early and combined, is "the most significant modifiable risk factor" for autism.
              Of 136 studies on vaccines or their ingredients, it says 107 "inferred a possible link" and 29 found none.</td>
            <td>It counts studies rather than weighing their size and quality. Critics say it includes animal studies,
@@ -1065,7 +1233,7 @@ function renderSafety() {
          </tr></tbody>
        </table>
      </div>
-     <h2 id="sec-vaxvs" style="${secH2}">Vaccinated vs unvaccinated: the whole-schedule question</h2>
+     <h2 id="sec-vaxvs" class="sec">Vaccinated vs unvaccinated: the whole-schedule question</h2>
      <div class="verdict"><b>What the direct comparisons found</b>
        On this exact question — the whole schedule vs. no vaccines at all — very few studies have measured it, and the
        ones that have (the Henry Ford / Lamerato re-analysis and the Mawson 2017 survey) <strong>both found an
@@ -1085,8 +1253,8 @@ function renderSafety() {
        genuinely unresolved, not "no harm" and not "harm proven." The clean study (matched on follow-up time and doctor
        visits) hasn't been done.</div>
      <div class="card">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>
-     <div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;">${CHRONIC_LIMITATIONS}</div>
-     <h2 id="sec-covid" style="${secH2}">COVID-19 vaccines in children</h2>
+     <div class="card note">${CHRONIC_LIMITATIONS}</div>
+     <h2 id="sec-covid" class="sec">COVID-19 vaccines in children</h2>
      <div class="verdict"><b>The honest picture</b>
        COVID vaccines are the newest on the schedule and the most argued over for healthy children. Both of these are
        true: the vaccines <strong>cut symptomatic COVID sharply at first</strong>, but that protection
@@ -1094,7 +1262,7 @@ function renderSafety() {
        (myocarditis), mostly in teenage boys and young men. Countries weigh this differently: Denmark (2022) and the UK
        (from 2023) stopped routinely offering them to healthy children, and in May 2025 HHS moved healthy U.S. children
        from "recommended" to "talk with your doctor" (shared decision-making).</div>
-     <div class="card" style="font-size:13px;line-height:1.6;overflow-x:auto;">
+     <div class="card">
        <table style="min-width:600px;">
          <thead><tr><th>Question</th><th>What the evidence shows</th><th>Source</th></tr></thead>
          <tbody>
@@ -1131,8 +1299,8 @@ function renderSafety() {
       data: { datasets: [
         { label: c.unit, data: pts, borderColor: c.color, backgroundColor: c.color,
           tension: 0.2, pointRadius: 3, borderWidth: 2, yAxisID: "y" },
-        { label: "# vaccines on schedule (diseases)", data: vax, borderColor: "#9aa7b2",
-          backgroundColor: "#9aa7b2", borderDash: [5, 4], tension: 0.1, pointRadius: 2, borderWidth: 1.5, yAxisID: "y1" },
+        { label: "# vaccines on schedule (diseases)", data: vax, borderColor: TK.muted,
+          backgroundColor: TK.muted, borderDash: [5, 4], tension: 0.1, pointRadius: 2, borderWidth: 1.5, yAxisID: "y1" },
       ]},
       options: chartOptsDual(c),
     });
@@ -1184,8 +1352,8 @@ const TRIALS = [
 
 function renderTrials() {
   const rows = TRIALS.map(t => `<tr>
-      <td><strong>${t.v}</strong><br><span style="color:var(--muted);font-size:12px;">${t.trial}</span></td>
-      <td>${t.design}${t.today ? `<div style="margin-top:6px;font-size:12px;color:var(--muted);"><strong style="color:var(--ink);">Today's product:</strong> ${t.today}</div>` : ""}</td>
+      <td><strong>${t.v}</strong><br><span class="sub">${t.trial}</span></td>
+      <td>${t.design}${t.today ? `<div class="today"><strong>Today's product:</strong> ${t.today}</div>` : ""}</td>
       <td>${t.result}</td>
       <td>${t.href ? `<a href="${t.href}" target="_blank" rel="noopener">${t.cite}</a>` : t.cite}</td>
     </tr>`).join("");
@@ -1204,21 +1372,21 @@ function renderTrials() {
     `<tr><td><strong>${s.v}</strong></td><td>${s.short}</td><td>${s.sae}</td></tr>`).join("");
   document.getElementById("trialsPanels").innerHTML =
     `<p class="evidence-lead">Before U.S. licensure, each vaccine had to show — in a controlled trial — that it actually works. Here are the pivotal ones: design, size, result, source.</p>
-     <div class="verdict"><b>Plain-English verdict</b> These vaccines were tested in controlled trials before approval —
+     <div class="verdict"><b>In brief</b> These vaccines were tested in controlled trials before approval —
        most randomized, several among the largest medical trials ever run — and protection ran high (roughly 80–98%).
        Two caveats. First, several of <em>today's</em> products were licensed on antibody levels or against an older
        vaccine, not in their own placebo trial (see "Today's product" under each row). Second, a trial "placebo" often
        contains everything in the vaccine except the active part, not salt water. The system does remove vaccines when a
        real risk appears: the first rotavirus vaccine (RotaShield) was pulled in 1999 over a rare bowel problem.</div>
-     <div class="card" style="overflow-x:auto;">
+     <div class="card">
        <table style="min-width:640px;">
          <thead><tr><th>Vaccine / pivotal trial</th><th>Design &amp; size</th><th>Result</th><th>Source</th></tr></thead>
          <tbody>${rows}</tbody>
        </table>
      </div>
-     <div class="card" style="border-left:4px solid #e0a800;font-size:13px;line-height:1.6;">
+     <div class="card note">
        <strong>How to read these (go a level deeper).</strong>
-       <ul style="margin:8px 0 0;padding-left:18px;">
+       <ul>
          <li><strong>"Efficacy"</strong> = how much the vaccine cut disease in the trial vs. the unvaccinated/placebo group.</li>
          <li><strong>Older vaccines</strong> (measles, and the diphtheria/tetanus toxoids) predate today's mega-RCTs.
            Their protection was established through antibody (antitoxin) correlates and field data rather than a single
@@ -1230,21 +1398,21 @@ function renderTrials() {
            (see the Safety tab's note on placebo arms).</li>
        </ul>
      </div>
-     <h2 style="margin:30px 0 6px;font-size:19px;border-top:1px solid var(--line);padding-top:22px;">How long were side effects tracked after each shot?</h2>
-     <p class="evidence-lead" style="margin-top:0;">From the current FDA labels for today's U.S. products. Two different
+     <h2 class="sec">How long were side effects tracked after each shot?</h2>
+     <p class="evidence-lead">From the current FDA labels for today's U.S. products. Two different
        windows: <strong>short-term reactions</strong> (fever, swelling, fussiness) that parents logged daily, and
        <strong>serious events</strong> (hospitalization, new chronic conditions) that researchers followed afterwards.</p>
-     <div class="card" style="overflow-x:auto;">
+     <div class="card">
        <table style="min-width:520px;">
          <thead><tr><th>Vaccine (FDA product)</th><th>Short-term reactions actively logged</th><th>Serious events followed</th></tr></thead>
          <tbody>${safetyRows}</tbody>
        </table>
-       <p class="metric-note" style="margin:10px 0 0;">Source: current FDA package inserts (section 6, "Adverse
+       <p class="metric-note">Source: current FDA package inserts (section 6, "Adverse
          Reactions"), read via the NLM's <a href="https://dailymed.nlm.nih.gov/" target="_blank" rel="noopener">DailyMed</a>.
          "Not stated" means the label gives no serious-event follow-up window, not that none occurred. Vaccine-critic
          Aaron Siri compiles similar figures (<a href="https://icandecide.org/no-placebo" target="_blank" rel="noopener">ICAN chart</a>).</p>
      </div>
-     <div class="verdict" style="border-left-color:#e0a800;">
+     <div class="verdict">
        <b>What this means</b>
        Short-term reactions were logged for <strong>2 days to 6 weeks</strong> (most under a week). Serious events were
        followed for up to <strong>6 months</strong> in newer trials, and a specific bowel risk for a year in the rotavirus
@@ -1255,95 +1423,71 @@ function renderTrials() {
 }
 
 // ---- Claims & evidence: each claim, who makes it, and the evidence behind it ----
-// r: strong | partial | unres | weak | contra  (rates the evidence FOR the claim as worded)
-const RATE = { strong: ["r-strong", "Strong"], partial: ["r-partial", "Partly true"],
-               unres: ["r-unres", "Unresolved"], weak: ["r-weak", "Weak evidence"],
-               contra: ["r-contra", "Contradicted"] };
 const CLAIMS = [
   { g: "Deaths, cases and history" },
   { c: "Most of the fall in deaths came before the vaccines.",
     who: "Aaron Siri (2025 Senate testimony); also shown by CDC/NCHS death records",
-    ev: "U.S. death-rate records back to 1900: measles −98.6%, whooping cough −93.6%, diphtheria −80.9% before each vaccine (The Data tab). The 1900 baseline covers only part of the country, so treat the exact digits as approximate.",
-    r: "strong" },
+    ev: "U.S. death-rate records back to 1900: measles −98.6%, whooping cough −93.6%, diphtheria −80.9% before each vaccine (The Data tab). The 1900 baseline covers only part of the country, so treat the exact digits as approximate." },
   { c: "Vaccines drove cases toward zero.",
     who: "CDC, AAP, mainstream public health",
-    ev: "Case counts collapsed right after each rollout (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all >99%), and controlled trials measured 80–98% protection. Some caveats: polio's case definition tightened, and whooping cough has partly returned.",
-    r: "strong" },
+    ev: "Case counts collapsed right after each rollout (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all >99%), and controlled trials measured 80–98% protection. Some caveats: polio's case definition tightened, and whooping cough has partly returned." },
   { c: "Polio epidemics were caused by pesticides (DDT), not a virus.",
     who: "Morton Biskind (1950s); Forrest Maready (2018 book)",
-    ev: "Poliovirus was isolated and grown in the lab (Nobel Prize 1954). Epidemics began in the 1890s, before DDT, and the decline tracks the 1955 vaccine, years before DDT was restricted (Polio tab).",
-    r: "contra" },
+    ev: "Poliovirus was isolated and grown in the lab (Nobel Prize 1954). Epidemics began in the 1890s, before DDT, and the decline tracks the 1955 vaccine, years before DDT was restricted (Polio tab)." },
   { c: "Babies of vaccinated mothers lose measles protection sooner.",
     who: "Aaron Siri",
-    ev: "Correct. Babies of vaccinated mothers lost maternal measles antibodies at a median of ~1 month vs ~3.8 months for babies of naturally immune mothers (Leuridan, BMJ 2010). By 6 months nearly all babies had lost them either way.",
-    r: "strong" },
+    ev: "Babies of vaccinated mothers lost maternal measles antibodies at a median of ~1 month vs ~3.8 months for babies of naturally immune mothers (Leuridan, BMJ 2010). By 6 months nearly all babies had lost them either way." },
   { c: "Catching measles naturally protects against cancer and heart disease.",
     who: "Aaron Siri",
-    ev: "Observational studies report associations (e.g., a Japanese cohort: lower heart-disease death after childhood measles and mumps). But childhood infection was recalled decades later, and association isn't cause. Measles itself kills roughly 1–3 per 1,000 U.S. cases.",
-    r: "weak" },
+    ev: "Observational studies report associations (e.g., a Japanese cohort: lower heart-disease death after childhood measles and mumps). But childhood infection was recalled decades later, and association isn't cause. Measles itself kills roughly 1–3 per 1,000 U.S. cases." },
   { g: "Autism and chronic illness" },
   { c: "The MMR vaccine causes autism.",
     who: "Andrew Wakefield (1998 paper, retracted for fraud)",
-    ev: "Large studies compared children who got MMR with children who didn't (Madsen 2002, 537,303 children; Hviid 2019, 657,461) and found no association.",
-    r: "contra" },
+    ev: "Large studies compared children who got MMR with children who didn't (Madsen 2002, 537,303 children; Hviid 2019, 657,461) and found no association." },
   { c: "Thimerosal (mercury preservative) causes autism.",
     who: "Vaccine critics since ~1999",
-    ev: "Danish children who got a thimerosal-free version of the same vaccine had the same autism risk (Hviid 2003, 467,450 children), and autism diagnoses kept rising after thimerosal was removed.",
-    r: "contra" },
+    ev: "Danish children who got a thimerosal-free version of the same vaccine had the same autism risk (Hviid 2003, 467,450 children), and autism diagnoses kept rising after thimerosal was removed." },
   { c: "\"Vaccines do not cause autism\" (as a blanket statement).",
     who: "CDC's long-standing position; AAP. In Nov 2025 HHS added an asterisk to this headline on CDC's site, saying it is \"not an evidence-based claim\"",
-    ev: "Holds for MMR and thimerosal specifically. The infant schedule as a whole has never been compared with no vaccines, and the Institute of Medicine (2011) called the evidence \"inadequate to accept or reject\" a link for DTaP.",
-    r: "partial" },
+    ev: "Holds for MMR and thimerosal specifically. The infant schedule as a whole has never been compared with no vaccines, and the Institute of Medicine (2011) called the evidence \"inadequate to accept or reject\" a link for DTaP." },
   { c: "Infant vaccines have never been properly studied for autism.",
     who: "Aaron Siri",
-    ev: "Largely true for the shots given in the first year (hep B, DTaP, Hib, polio, pneumococcal): the big autism studies tested MMR (given at ~12 months) and thimerosal. One study tested antigen counts within vaccinated children (DeStefano 2013), with no unvaccinated group.",
-    r: "partial" },
+    ev: "Largely true for the shots given in the first year (hep B, DTaP, Hib, polio, pneumococcal): the big autism studies tested MMR (given at ~12 months) and thimerosal. One study tested antigen counts within vaccinated children (DeStefano 2013), with no unvaccinated group." },
   { c: "Vaccination is the biggest avoidable cause of autism.",
     who: "McCullough Foundation report (Hulscher, McCullough, Wakefield et al., Oct 2025)",
-    ev: "The report counts studies (107 of 136 \"inferred a possible link\") rather than weighing their quality. Critics note it includes animal studies and retracted work, and all authors belong to the foundation. No study comparing children has shown vaccines cause autism. The Henry Ford draft, the study critics cite most, found no autism link.",
-    r: "weak" },
+    ev: "The report counts studies (107 of 136 \"inferred a possible link\") rather than weighing their quality. Critics note it includes animal studies and retracted work, and all authors belong to the foundation. No study comparing children has shown vaccines cause autism. The Henry Ford draft, the study critics cite most, found no autism link." },
   { c: "Vaccinated children have far more chronic illness.",
     who: "Aaron Siri; the unpublished Henry Ford draft (Lamerato et al.); the McCullough Foundation re-analysis",
-    ev: "The Henry Ford draft found ~2.5× more diagnosed chronic conditions (asthma, allergies, developmental) in vaccinated children. But vaccinated children saw doctors ~3.5× as often, giving more chances for a diagnosis, and the authors' checks for this are disputed. No clean study exists either way (Safety tab).",
-    r: "unres" },
+    ev: "The Henry Ford draft found ~2.5× more diagnosed chronic conditions (asthma, allergies, developmental) in vaccinated children. But vaccinated children saw doctors ~3.5× as often, giving more chances for a diagnosis, and the authors' checks for this are disputed. No clean study exists either way (Safety tab)." },
   { g: "Testing and oversight" },
   { c: "Childhood vaccines were never tested against a placebo.",
     who: "Aaron Siri / ICAN",
-    ev: "Several were: the 1954 Salk polio trial, the Hib (PedvaxHIB) trial, the plasma hep B trial, both rotavirus vaccines, COVID. But most of today's injected products were licensed against an older vaccine, and many trial \"placebos\" contain every ingredient except the active one rather than salt water (Trials tab).",
-    r: "partial" },
+    ev: "Several were: the 1954 Salk polio trial, the Hib (PedvaxHIB) trial, the plasma hep B trial, both rotavirus vaccines, COVID. But most of today's injected products were licensed against an older vaccine, and many trial \"placebos\" contain every ingredient except the active one rather than salt water (Trials tab)." },
   { c: "Trials monitored safety for only a few days.",
     who: "Aaron Siri",
-    ev: "Short-term reactions were logged for 2–8 days for most vaccines (MMR and RotaTeq: 42 days). Serious events were followed for ~1–6 months in some trials, and intussusception (a bowel blockage) for a year in the rotavirus trials. No trial followed children for years before approval (Trials tab).",
-    r: "partial" },
+    ev: "Short-term reactions were logged for 2–8 days for most vaccines (MMR and RotaTeq: 42 days). Serious events were followed for ~1–6 months in some trials, and intussusception (a bowel blockage) for a year in the rotavirus trials. No trial followed children for years before approval (Trials tab)." },
   { c: "Vaccines are thoroughly tested for safety.",
     who: "CDC, FDA, AAP",
-    ev: "Short-term safety and effectiveness were tested in controlled trials, often large ones. Long-term and whole-schedule safety rests on monitoring after approval (VAERS, the Vaccine Safety Datalink). The Institute of Medicine (2013) found no evidence the schedule is unsafe, but said few studies examine it as a whole.",
-    r: "partial" },
+    ev: "Short-term safety and effectiveness were tested in controlled trials, often large ones. Long-term and whole-schedule safety rests on monitoring after approval (VAERS, the Vaccine Safety Datalink). The Institute of Medicine (2013) found no evidence the schedule is unsafe, but said few studies examine it as a whole." },
   { c: "HHS never filed the vaccine-safety reports to Congress required by the 1986 law.",
     who: "Aaron Siri / ICAN (2018 lawsuit)",
-    ev: "In ICAN v. HHS (S.D.N.Y. 2018), HHS could not produce any of the reports, which were due every two years from 1989. The required Task Force on Safer Childhood Vaccines was disbanded in 1998 and revived in Aug 2025 after another lawsuit.",
-    r: "strong" },
+    ev: "In ICAN v. HHS (S.D.N.Y. 2018), HHS could not produce any of the reports, which were due every two years from 1989. The required Task Force on Safer Childhood Vaccines was disbanded in 1998 and revived in Aug 2025 after another lawsuit." },
   { c: "Whole-cell DTP raises overall infant deaths (in poor countries).",
     who: "Peter Aaby / Bandim Health Project; cited by Aaron Siri",
-    ev: "Observational studies from Guinea-Bissau found ~5× higher overall infant death after DTP (10× when given without oral polio; Mogensen 2017). A WHO-commissioned review rated the evidence very low quality, and WHO kept recommending DTP. The U.S. has used acellular DTaP since the late 1990s.",
-    r: "unres" },
+    ev: "Observational studies from Guinea-Bissau found ~5× higher overall infant death after DTP (10× when given without oral polio; Mogensen 2017). A WHO-commissioned review rated the evidence very low quality, and WHO kept recommending DTP. The U.S. has used acellular DTaP since the late 1990s." },
   { g: "COVID-19 vaccines (children)" },
   { c: "COVID vaccines can cause heart inflammation (myocarditis) in young males.",
     who: "Peter McCullough; also confirmed by CDC and FDA",
-    ev: "Confirmed but rare: the highest rate was ~106 cases per million second doses in males 16–17, and ~71 per million in males 12–15 (Oster, JAMA 2022), usually within days of the dose.",
-    r: "strong" },
+    ev: "Confirmed but rare: the highest rate was ~106 cases per million second doses in males 16–17, and ~71 per million in males 12–15 (Oster, JAMA 2022), usually within days of the dose." },
   { c: "COVID vaccines have killed large numbers of people.",
     who: "Peter McCullough; McCullough Foundation autopsy review (Hulscher et al., 2024)",
-    ev: "The autopsy review had its own reviewers decide cause case by case. The journal withdrew it in 2024, and it was republished in a non-PubMed-indexed journal. Death counts from VAERS reports can't show cause. No population study has established mass deaths from the vaccines.",
-    r: "weak" },
+    ev: "The autopsy review had its own reviewers decide cause case by case. The journal withdrew it in 2024, and it was republished in a non-PubMed-indexed journal. Death counts from VAERS reports can't show cause. No population study has established mass deaths from the vaccines." },
   { c: "COVID vaccines protect children from COVID.",
     who: "CDC, Pfizer, AAP",
-    ev: "The trial in ages 5–11 showed 90.7% protection against symptomatic COVID after ~2 months (Walter, NEJM 2022). Real-world protection fell to ~25% within months and faded against later Omicron variants (test-negative study, 2023).",
-    r: "partial" },
+    ev: "The trial in ages 5–11 showed 90.7% protection against symptomatic COVID after ~2 months (Walter, NEJM 2022). Real-world protection fell to ~25% within months and faded against later Omicron variants (test-negative study, 2023)." },
   { c: "COVID is a serious threat to healthy children.",
     who: "AAP; contested by Kennedy's HHS (May 2025 directive)",
-    ev: "COVID caused 821 deaths among ages 0–19 from Aug 2021 to Jul 2022, the 8th leading cause of death in that age group (Flaxman, JAMA Netw Open 2023). Risk is far lower than for adults and concentrated in infants and children with underlying conditions.",
-    r: "partial" },
+    ev: "COVID caused 821 deaths among ages 0–19 from Aug 2021 to Jul 2022, the 8th leading cause of death in that age group (Flaxman, JAMA Netw Open 2023). Risk is far lower than for adults and concentrated in infants and children with underlying conditions." },
 ];
 
 const WHO = [
@@ -1356,39 +1500,33 @@ const WHO = [
 ];
 
 function renderClaims() {
-  const rows = CLAIMS.map(x => x.g
-    ? `<tr class="grp"><td colspan="4">${x.g}</td></tr>`
-    : `<tr><td>${x.c}</td><td class="who">${x.who}</td><td>${x.ev}</td>
-         <td><span class="rate ${RATE[x.r][0]}">${RATE[x.r][1]}</span></td></tr>`).join("");
-  const who = WHO.map(([n, d]) => `<li><strong>${n}</strong> — ${d}</li>`).join("");
-  document.getElementById("claimsPanels").innerHTML =
-    `<p class="evidence-lead">Common claims about vaccines, from both sides of the debate. For each: who makes it,
-       what the evidence actually shows, and how strong that evidence is. The rating is about the <em>evidence</em>,
-       not the person making the claim.</p>
-     <div class="verdict"><b>How to read the ratings</b>
-       <span class="rate r-strong">Strong</span> solid, direct evidence supports the claim as worded ·
-       <span class="rate r-partial">Partly true</span> right about part of it, overstated about the rest ·
-       <span class="rate r-unres">Unresolved</span> real evidence on both sides, no clean study yet ·
-       <span class="rate r-weak">Weak evidence</span> the evidence offered can't support the claim ·
-       <span class="rate r-contra">Contradicted</span> directly tested and not supported</div>
-     <div class="card" style="overflow-x:auto;">
-       <table class="claims" style="min-width:720px;">
-         <thead><tr><th>Claim</th><th>Who makes it</th><th>What the evidence shows</th><th>Evidence</th></tr></thead>
-         <tbody>${rows}</tbody>
-       </table>
-     </div>
-     <div class="card" style="font-size:13px;line-height:1.6;">
-       <h3 style="margin:2px 0 8px;font-size:15px;">Who's who</h3>
-       <p style="margin:0 0 8px;color:var(--muted);">Roles and interests, so you can weigh each source. Listed for
-         people and institutions on both sides.</p>
-       <ul style="margin:0;padding-left:18px;">${who}</ul>
-     </div>`;
+  const esc = t => t;
+  let html = `<p class="evidence-lead">Common claims about vaccines from both sides of the debate. For each one: who
+      makes it, and what the evidence actually shows, with sources you can check.</p>`;
+  let open = false;
+  CLAIMS.forEach(x => {
+    if (x.g) {
+      if (open) html += `</section>`;
+      html += `<section class="claims-group"><h3>${x.g}</h3>`;
+      open = true;
+    } else {
+      html += `<article class="claim">
+        <div><p class="claim-text">${esc(x.c)}</p><p class="claim-who"><span>Made by</span> ${x.who}</p></div>
+        <p class="claim-ev"><span class="lbl">What the evidence shows</span>${x.ev}</p></article>`;
+    }
+  });
+  if (open) html += `</section>`;
+  const who = WHO.map(([n, d]) => `<li><strong>${n}</strong>${d}</li>`).join("");
+  html += `<div class="card note"><h3>Who's who</h3>
+      <p>Roles and interests, so you can weigh each source. Listed for people and institutions on both sides.</p>
+      <ul class="whos">${who}</ul></div>`;
+  document.getElementById("claimsPanels").innerHTML = html;
 }
 
 const PRIMARY = [
   { id: "data",   label: "The Data",             sub: "disease trends over time" },
-  { id: "claims", label: "Claims & evidence",    sub: "who says what, and how strong it is" },
-  { id: "trials", label: "How they were tested", sub: "the approval trials" },
+  { id: "claims", label: "Claims and evidence",  sub: "who says what, and what the evidence shows" },
+  { id: "trials", label: "How they were tested", sub: "approval trials and safety tracking" },
   { id: "safety", label: "Safety",               sub: "autism, chronic illness, COVID" },
 ];
 let activePrimary = "data";
@@ -1397,13 +1535,12 @@ const EVID = { claims: renderClaims, trials: renderTrials, safety: renderSafety 
 function buildTopnav() {
   const nav = document.getElementById("topnav");
   nav.innerHTML = PRIMARY.map(p =>
-    `<button class="pnav" data-p="${p.id}" aria-selected="${p.id === activePrimary}">
-       ${p.label}<small>${p.sub}</small></button>`).join("");
+    `<button class="pnav" data-p="${p.id}" aria-selected="${p.id === activePrimary}"><span class="n">${PRIMARY.indexOf(p) + 1}</span>${p.label}<small>${p.sub}</small></button>`).join("");
   nav.querySelectorAll(".pnav").forEach(b =>
     b.addEventListener("click", () => selectPrimary(b.dataset.p)));
 }
 
-function selectPrimary(id) {
+function selectPrimary(id, keepScroll) {
   activePrimary = id;
   document.querySelectorAll("#topnav .pnav").forEach(b =>
     b.setAttribute("aria-selected", String(b.dataset.p === id)));
@@ -1412,7 +1549,7 @@ function selectPrimary(id) {
   document.getElementById("claimsPanels").style.display = id === "claims" ? "" : "none";
   document.getElementById("trialsPanels").style.display = id === "trials" ? "" : "none";
   document.getElementById("safetyPanels").style.display = id === "safety" ? "" : "none";
-  window.scrollTo(0, 0);
+  if (!keepScroll) window.scrollTo(0, 0);
   if (isData) selectTab(activeTab);
   else EVID[id]();
 }
@@ -1422,7 +1559,7 @@ function buildPanels() {
   host.innerHTML = activeDiseases().map(dis => `
     <div class="card disease-card">
       <div>
-        <h3 style="color:${COLORS[dis]}">${NAMES[dis]}<span class="nodata" id="nd-${dis}" style="color:var(--muted);font-weight:400;font-size:12px;"></span></h3>
+        <h3>${NAMES[dis]}<span class="nodata" id="nd-${dis}"></span></h3>
         <div class="disease-chart"><canvas id="chart-${dis}"></canvas><div class="nodata-msg" id="msg-${dis}"></div></div>
       </div>
       <div>
@@ -1432,7 +1569,6 @@ function buildPanels() {
     </div>`).join("");
 }
 
-const DEATH_COLOR = "#ff6b6b";
 
 // One single-series line chart (deaths and incidence are kept in separate charts).
 // Which basis field describes the metric being plotted.
@@ -1463,17 +1599,18 @@ function makeLineChart(canvasId, dis, field, color, labelText) {
                                             : (basisOf(ctx.dataIndex) === "estimated" ? "rect" : "circle"),
                          pointBackgroundColor: ctx => (isPartial(ctx.dataIndex) ||
                                                        basisOf(ctx.dataIndex) === "estimated")
-                                                      ? "#11161b" : color,
+                                                      ? TK.paper : color,
                          segment: { borderDash: ctx => isPartial(ctx.p1DataIndex) ? [6, 4] : undefined } }] },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
       scales: {
-        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
+        x: { type: "linear", title: { display: true, text: "Year", color: TK.muted },
+             min: pts.length ? pts[0].x : undefined, max: pts.length ? pts[pts.length - 1].x : undefined,
+             ticks: { color: TK.muted, callback: v => v, maxTicksLimit: 8 }, grid: { color: TK.grid } },
         y: { type: isLog() ? "logarithmic" : "linear",
              title: { display: true, text: labelText + (isLog() ? " (log ×10)" : ""), color: color },
-             ticks: { color: "#9aa7b2", callback: logTickLabel }, grid: { color: "#222b34" } },
+             ticks: { color: TK.muted, callback: logTickLabel }, grid: { color: TK.grid } },
       },
       plugins: {
         legend: { display: false },
@@ -1507,7 +1644,7 @@ function noDataReason(dis, metric) {
 }
 
 function renderDisease(dis, metric) {
-  const color = metric === "death_rate" ? DEATH_COLOR : COLORS[dis];
+  const color = metric === "death_rate" ? TK.deaths : TK.accent;
   const u5 = (D.under5 || []).includes(dis);
   // Hib deaths aren't recorded separately, so the Deaths view is the MEASURED childhood
   // meningitis death rate (ages 1-4, NCHS) used as the Hib proxy — not deaths in <5.
@@ -1576,17 +1713,17 @@ function renderEarly() {
     options: {
       responsive: true, maintainAspectRatio: false,
       scales: {
-        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
-        y: { title: { display: true, text: "Deaths per 100,000", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+        x: { type: "linear", title: { display: true, text: "Year", color: TK.muted },
+             ticks: { color: TK.muted, callback: v => v }, grid: { color: TK.grid } },
+        y: { title: { display: true, text: "Deaths per 100,000", color: TK.muted },
+             ticks: { color: TK.muted }, grid: { color: TK.grid } },
       },
       plugins: {
-        legend: { labels: { color: "#e6edf3" } },
+        legend: { labels: { color: TK.ink } },
         annotation: { annotations: { dtp: {
-          type: "line", xMin: 1948, xMax: 1948, borderColor: "#888", borderWidth: 1, borderDash: [5, 4],
+          type: "line", xMin: 1948, xMax: 1948, borderColor: TK.muted, borderWidth: 1, borderDash: [5, 4],
           label: { display: true, content: "DTP routine ~1948", position: "start", rotation: 90,
-                   backgroundColor: "transparent", color: "#9aa7b2", font: { size: 9 } } } } },
+                   backgroundColor: "transparent", color: TK.muted, font: { size: 9 } } } } },
       },
     },
   });
@@ -1617,25 +1754,36 @@ function renderCoverage() {
     label, borderColor: color, backgroundColor: color, tension: 0.2, pointRadius: 2, borderWidth: 2,
     data: cl.filter(r => r[k] != null).map(r => ({ x: r.year, y: r[k] })),
   }));
-  new Chart(document.getElementById("coverage"), {
+  coverageChart = new Chart(document.getElementById("coverage"), {
     type: "line",
     data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
       scales: {
-        x: { type: "linear", title: { display: true, text: "Year", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2", callback: v => v }, grid: { color: "#222b34" } },
-        y: { min: 0, max: 100, title: { display: true, text: "Coverage (%)", color: "#9aa7b2" },
-             ticks: { color: "#9aa7b2" }, grid: { color: "#222b34" } },
+        x: { type: "linear", title: { display: true, text: "Year", color: TK.muted },
+             ticks: { color: TK.muted, callback: v => v }, grid: { color: TK.grid } },
+        y: { min: 0, max: 100, title: { display: true, text: "Coverage (%)", color: TK.muted },
+             ticks: { color: TK.muted }, grid: { color: TK.grid } },
       },
       plugins: {
-        legend: { labels: { color: "#e6edf3" } },
+        legend: { labels: { color: TK.ink } },
         tooltip: { callbacks: { title: items => "Year " + items[0].parsed.x } },
       },
     },
   });
 }
+
+function rerenderForTheme() {
+  readTokens();
+  if (earlyChart) { earlyChart.destroy(); renderEarly(); }
+  if (coverageChart) { coverageChart.destroy(); renderCoverage(); }
+  selectPrimary(activePrimary, true);
+}
+try {
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerenderForTheme);
+  new MutationObserver(rerenderForTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+} catch (e) {}
 
 buildTopnav();
 buildTabbar();
