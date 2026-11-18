@@ -27,8 +27,8 @@
 > year**, which has already passed 2025 — recent context the pre-2020
 > compilation would miss.
 >
-> **Data currency — last refreshed 2026-08-26.** The newest rows are **2026
-> year-to-date through MMWR week 32**, not finished years. They are listed in
+> **Data currency — last refreshed 2026-11-17.** The newest rows are **2026
+> year-to-date through MMWR week 44**, not finished years. They are listed in
 > [`data/partial_years.csv`](data/partial_years.csv); the interactive dashboard
 > draws them with a hollow marker on a dashed segment and labels them
 > `PARTIAL YEAR`, and the static PNGs in [`charts/`](charts/) omit them entirely,
@@ -426,11 +426,11 @@ increase from the nadir.
 | 1983 | Record low (~1,500 cases) | Milestone |
 | **1989–1991** | **Resurgence (~55,000 cases over the period, 120+ deaths)**, concentrated in undervaccinated preschoolers | Outbreak |
 | **1989** | **Second MMR dose recommended** in response | Policy |
-| **2000** | **Measles declared eliminated** (no continuous endemic transmission) in the U.S. — *a status now under review; see the 2026 rows below* | Milestone |
+| **2000** | **Measles declared eliminated** (no continuous endemic transmission) in the U.S. — *status lost Nov 2026; see below* | Milestone |
 | 2014, 2019 | Large import-driven outbreaks in undervaccinated communities; 2019 (1,274) was then the largest post-elimination year | Outbreak |
 | **2025** | **2,289 confirmed — largest post-elimination year to that point**; outbreaks began Jan 2025 | Outbreak |
-| **2026** | **Already past 2025** (2,365 reported through MMWR week 32; CDC's measles page counts higher) — a 35-year high | Outbreak |
-| **Nov 2026** | **U.S. elimination status under formal review** by PAHO's Regional Verification Commission. The Americas lost measles-free status in Nov 2025 after Canada sustained ≥12 months of transmission; endemic status turns on 12 months of continuous transmission of one lineage | Status |
+| **2026** | **More than double 2025**: 5,412 confirmed as of Nov 12 (CDC); 5,087 in NNDSS through MMWR week 44 — the most since 1991 | Outbreak |
+| **Nov 2026** | **U.S. loses measles elimination status** (PAHO, announced Nov 17, 2026, after its commission met Nov 10–13): the chain of transmission that began Jan 20, 2025 ran more than 12 months. Mexico and Bolivia lost status at the same time; Canada lost its status in Nov 2025 | Status |
 
 ## 3.2 Raw cases
 

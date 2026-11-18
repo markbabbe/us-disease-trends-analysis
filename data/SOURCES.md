@@ -118,7 +118,7 @@ and pertussis resurgence (2024) that the historical compilation alone would miss
 
 ### Partial (current-year) data
 
-**Last refreshed 2026-08-26; newest NNDSS data = MMWR week 32 of 2026.**
+**Last refreshed 2026-11-17; newest NNDSS data = MMWR week 44 of 2026.**
 
 A year-to-date row is not an annual total, and plotting one as if it were would
 read as a collapse in cases that never happened. So every incomplete year is
@@ -126,15 +126,15 @@ declared in [`partial_years.csv`](partial_years.csv) (`disease, year, through,
 as_of, source`), and the two renderers treat it explicitly:
 
 - **`docs/` dashboard** — keeps the point, draws it hollow on a dashed segment,
-  labels the chart "PARTIAL year (through MMWR week 32)", and repeats the warning
+  labels the chart "PARTIAL year (through MMWR week 44)", and repeats the warning
   in the tooltip. (`scripts/build_dashboard_data.py` copies the `through` string
   onto each record as `partial`.)
 - **`charts/` PNGs** — drop partial rows entirely (`_partial_years()` in
   `scripts/generate_charts.py`); the static charts are the complete-year archive.
 
-2026 year-to-date (NNDSS `x9gk-5huc`, national `states=Total`, week 32):
-measles 2,365 · pertussis 7,844 · mumps 147 · tetanus 19 · HepB acute 1,202
-(996 confirmed + 206 probable) · Hib (<5, serotype b) 28 · meningococcal 188.
+2026 year-to-date (NNDSS `x9gk-5huc`, national `states=Total`, week 44):
+measles 5,087 · pertussis 12,397 · mumps 214 · tetanus 33 · HepB acute 1,832
+(1,570 confirmed + 262 probable) · Hib (<5, serotype b) 31 · meningococcal 260.
 
 Two known mismatches, left as-is rather than silently reconciled:
 
@@ -144,9 +144,8 @@ Two known mismatches, left as-is rather than silently reconciled:
   than the NNDSS weekly table (47 / 266 / 2,026). The 2025 value is carried at
   **2,289**, CDC's final count — one above OWID's snapshot; the rebuild script
   reports that divergence on every run rather than silently reverting it. The
-  2026 row uses NNDSS week 32 (2,365) because it is a reproducible cut with a
-  defined end date; CDC's measles page reported ~2,465 as of Aug 6, 2026 and a
-  higher figure since. Treat 2026 as a floor.
+  2026 row uses NNDSS week 44 (5,087) because it is a reproducible cut with a
+  defined end date; CDC's measles page reported 5,412 confirmed as of Nov 12, 2026. Treat 2026 as a floor.
 - **Rubella and paralytic polio have no 2025/2026 rows.** Every 2025 and 2026
   week is published with the `-` flag and an empty cumulative count. That is
   *consistent with* zero reported cases but is not a published annual total, so
@@ -355,7 +354,9 @@ Documented on the dashboard's Chronic-illness tab and summarized here:
   autism diagnosis in an older child → enriches the unvaccinated group for
   genetic risk) and **ascertainment bias** (unvaccinated children have fewer
   visits → less screening/diagnosis). Existing "vaxxed vs. unvaxxed" studies are
-  small/flawed (e.g., Mawson 2017, retracted).
+  small/flawed (e.g., Mawson 2017: a self-selected survey; an earlier version was
+  withdrawn by *Frontiers* in 2016, and the 2017 *J Transl Sci* version — briefly
+  pulled, then reinstated without explanation — is not MEDLINE-indexed).
 - **Madsen 2002 & Hviid 2019** (Denmark; 537k & 657k): observational; compare
   *MMR vs. no-MMR*, and the no-MMR children still received other routine vaccines.
   They isolate MMR's marginal effect; they do not test vaccination-vs-none and
@@ -364,6 +365,14 @@ Documented on the dashboard's Chronic-illness tab and summarized here:
 - **DeStefano 2013** (antigen load): case-control, 256 ASD cases; tests a dose
   gradient within vaccinated children (no zero-vaccine arm); antigen count
   doesn't capture adjuvants like aluminum.
+- **Hviid 2003** (JAMA, PMID 14519711; 467,450 Danish children born 1990–96):
+  thimerosal-containing vs. thimerosal-free formulation of the same vaccine; RR
+  0.85 for autism, no dose-response. Both arms vaccinated → isolates thimerosal.
+  Companion ecological study: Madsen 2003 (Pediatrics, PMID 12949291).
+- **Taylor 2014** (Vaccine, PMID 24814559): meta-analysis of 5 cohort studies
+  (1,256,407 children) + 5 case-control (9,920); cohort OR 0.99. Pools MMR /
+  thimerosal / mercury studies, so it inherits their vaccinated-vs-vaccinated
+  design despite the title "Vaccines are not associated with autism."
 - **Mercury vs. aluminum:** thimerosal removal (~2001) didn't lower autism, but
   that addresses mercury only. Aluminum adjuvants were not removed and cumulative
   vaccine aluminum rose; aluminum has far less autism-specific epidemiology
@@ -385,16 +394,22 @@ Documented on the dashboard's Chronic-illness tab and summarized here:
   aluminum or thimerosal.)
 - **Lamerato/Henry Ford vaccinated-vs-unvaccinated study** (presented at the
   Sept 2025 Senate hearing; re-analyzed by Oller, Broudy & Hulscher, *IJVTPR*
-  Dec 2025). Compared 1,957 zero-dose people vs 16,511 vaccinated (median 18
+  Dec 2025). Children born 2000–2016. Compared 1,957 zero-dose vs 16,511 vaccinated (median 18
   doses); reported ~2.5× higher likelihood of a chronic-condition diagnosis with
   vaccination. **Key confounder:** vaccinated had ~7 clinic visits/yr vs ~2 for
   the unvaccinated (~3.5×) — ascertainment/detection bias that can produce a 2.5×
   difference in *diagnosed* illness on its own; the analysis does not adjust for
-  utilization. Observational (association, not causation); original authors
-  reportedly still support the schedule; promoted via advocacy channels; IJVTPR
-  is a non-MEDLINE advocacy journal. Documented on the Chronic-illness tab.
-- **Net:** strongly supported — MMR, thimerosal, antigen load not associated with
-  autism. Not directly tested — whole schedule vs. none, aluminum adjuvants and
+  utilization. **Unequal follow-up:** median 2.7 yr (vaccinated) vs 1.3 yr
+  (unvaccinated). The draft's own analysis found **no autism association**; its
+  authors wrote "preliminary findings cannot prove causality." Never published:
+  it did not complete Henry Ford's internal review; Henry Ford says it "did not
+  meet the rigorous scientific standards we demand," while the documentary's
+  backers say superiors didn't want it submitted (authors haven't commented). The
+  re-analysis used the draft's summary tables, not patient data; IJVTPR is not
+  MEDLINE-indexed. Sources: Science Feedback review; Lead Stories (Oct 2025);
+  Michigan Public (Nov 6, 2025). Documented on the Safety tab.
+- **Net:** strongly supported — MMR and thimerosal not associated with autism.
+  Weaker — antigen load (more vs. fewer, never vs. zero). Not directly tested — whole schedule vs. none, aluminum adjuvants and
   neurodevelopment, a saturating cumulative effect. "Not tested" ≠ "evidence of
   harm"; indirect evidence (no dose-response, autism rising after thimerosal
   removal, ~80% genetic/prenatal heritability) weighs against a vaccine cause.
@@ -508,3 +523,34 @@ See `coverage_milestones.md` for the historical coverage narrative and the
 python3 -m venv .venv && .venv/bin/pip install matplotlib numpy
 .venv/bin/python scripts/generate_charts.py
 ```
+
+## Claims & evidence tab, COVID section, trial-monitoring table (added 2026-11-17)
+
+- **Trial monitoring windows** — current FDA package inserts, section 6 (Adverse
+  Reactions), read via NLM DailyMed SPL XML (setids: IPOL 6979f24b…, Recombivax HB
+  b5bd99e4…, Engerix-B dcecf9e0…, Infanrix de16dd6a…, PedvaxHIB 9dff46c6…, Prevnar 20
+  d4e2cf51…, M-M-R II 0a9e384f…, RotaTeq aaf3b24e…, Rotarix f3182470…). Engerix-B's
+  30-day SAE window is from an adult diabetes trial, so it is not shown for infants.
+- **Aaron Siri** — Senate PSI written testimony, Sept 5/9, 2025 (siri-testimony-2;
+  quotes the Henry Ford draft's abstract, sensitivity analyses, limitations), and his
+  May 19, 2025 prior submission (`hsgac.senate.gov/wp-content/uploads/Siri-Testimony.pdf`;
+  §II trial controls/monitoring, §VI mortality decline).
+- **Henry Ford draft** — HR 2.54 (2.16–2.97) adjusted; sensitivity HRs 2.84/3.48/4.05
+  (≥1/3/5 yr enrollment) and 1.87 (≥1 encounter); no cancer association; observed to
+  Dec 31, 2017; adjusted for sex, race, birth weight, respiratory distress, birth
+  trauma, prematurity (per Siri's quotation of the draft). Henry Ford statement via
+  Lead Stories (Oct 2025) and Michigan Public (Nov 6, 2025).
+- **1986 Act reports** — ICAN v. HHS, S.D.N.Y. 18-cv-03215-JMF, Doc 18 (July 9, 2018),
+  as cited in Siri & Glimstad's 2021 complaint (1:21-cv-04134); task-force revival
+  Aug 2025 (NBC News).
+- **IOM** — 2013 *The Childhood Immunization Schedule and Safety*; 2011 *Adverse
+  Effects of Vaccines* (DTaP–autism "inadequate to accept or reject").
+- **Leuridan 2010** BMJ (PMID 20483946); **Mogensen 2017** EBioMedicine (PMID 28188123:
+  HR 5.00; DTP-only HR 10.0).
+- **McCullough Foundation autism report** — Zenodo record 17451259 (Oct 27, 2025).
+  Journal republication (J Independent Medicine) reported by TechARP; unconfirmed.
+- **COVID** — Walter 2022 NEJM (PMID 34752019); waning VE test-negative study (PMID
+  37922479); Oster 2022 JAMA (PMID 35076665); Flaxman 2023 JAMA Netw Open (PMID
+  36716029); autopsy review withdrawal (FactCheck.org, Jul 2024); May 2025 HHS
+  directive (NPR/CBS, May 30, 2025); CDC autism-page change (AP via PBS, Nov 20, 2025).
+- **McCullough ABIM status** — TechARP (Jan 2025 ABIM lookup "Not Certified, Revoked").

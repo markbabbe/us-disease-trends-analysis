@@ -52,7 +52,7 @@
   button { cursor: pointer; }
   button.toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
-          padding: 16px; margin: 14px 0; }
+          padding: 16px; margin: 14px 0; overflow-x: auto; }
   .chart-box { position: relative; height: 460px; }
   .small .chart-box { height: 300px; }
   .grid { display: grid; grid-template-columns: 1fr 280px; gap: 14px; }
@@ -80,6 +80,29 @@
   th { color: var(--muted); font-weight: 600; }
   a { color: var(--accent); }
   footer { color: var(--muted); font-size: 13px; padding: 24px; text-align: center; }
+  .start { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+           border-radius: 12px; padding: 14px 18px; margin: 18px 0 4px; }
+  .start h2 { margin: 0 0 8px; font-size: 16px; }
+  .start ol { margin: 0; padding-left: 20px; }
+  .start li { margin-bottom: 6px; }
+  .start .legend { margin: 10px 0 0; font-size: 12.5px; color: var(--muted); }
+  .rate { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .03em; border-radius: 999px;
+          padding: 2px 9px; white-space: nowrap; color: #0f1419; }
+  .r-strong { background: #58d68d; } .r-partial { background: #f4d03f; } .r-unres { background: #f0b27a; }
+  .r-weak { background: #bfc9d1; } .r-contra { background: #ec7063; }
+  .claims td { font-size: 13px; }
+  .claims td:first-child { font-weight: 600; min-width: 170px; }
+  .claims .who { color: var(--muted); font-size: 12px; }
+  @media (max-width: 760px) {
+    .claims { min-width: 0 !important; }
+    .claims thead { display: none; }
+    .claims, .claims tbody, .claims tr, .claims td { display: block; width: 100%; }
+    .claims tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+    .claims td { border: none; padding: 3px 4px; }
+    .claims td:nth-child(2)::before { content: "Who says it: "; font-weight: 600; }
+  }
+  .claims tr.grp td { background: #14202b; color: var(--accent); font-weight: 700; font-size: 11.5px;
+                      letter-spacing: .06em; text-transform: uppercase; }
   .pill { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; }
 </style>
 </head>
@@ -87,15 +110,35 @@
 <header>
   <div class="wrap">
     <h1>U.S. Vaccines — the evidence, in the open</h1>
-    <p>An objective, fully-sourced look at the vaccine-preventable diseases on the U.S. childhood
-    schedule, in three parts: the historical <strong>data</strong> (how deaths and cases changed across the
-    20th–21st centuries), the clinical <strong>trials</strong> each vaccine passed before licensure, and the
-    <strong>safety</strong> evidence on autism and chronic disease. Everything is cited so you can check it —
-    from CDC/MMWR, NCHS Vital Statistics, the CDC Pink Book, OWID (PHS+CDC), and the U.S. Census.</p>
+    <p>A sourced look at the U.S. childhood vaccine schedule that isn't trying to sell you either way: the
+    historical <strong>data</strong> (how deaths and cases changed), the common <strong>claims</strong> from both
+    sides and the evidence behind each, the <strong>trials</strong> each vaccine passed, and the
+    <strong>safety</strong> evidence on autism, chronic illness and COVID. Everything is cited so you can check it.</p>
   </div>
 </header>
 
 <div class="wrap">
+  <div class="start">
+    <h2>New here? The full picture in five points</h2>
+    <ol>
+      <li><strong>Deaths fell first.</strong> For measles, whooping cough and diphtheria, the death rate fell 80–98%
+        <em>before</em> the vaccines arrived, thanks to clean water, better nutrition, antibiotics and hospital care.</li>
+      <li><strong>Vaccines then cut cases.</strong> People were still catching these diseases until vaccines drove
+        cases toward zero, ending most remaining deaths and disabilities like paralysis and birth defects.</li>
+      <li><strong>Autism: specific claims tested, the big question not.</strong> MMR and the mercury preservative
+        thimerosal were tested in large studies and no link was found. But the whole schedule vs. no vaccines has
+        never been cleanly tested, so neither "vaccines cause autism" nor "vaccines don't cause autism" is settled
+        for the schedule as a whole.</li>
+      <li><strong>Trials:</strong> most vaccines proved they work in controlled trials, but side effects were
+        actively tracked for days to months, not years. Long-term effects depend on monitoring after approval.</li>
+      <li><strong>Measles is back:</strong> the U.S. lost its measles-elimination status in November 2026.</li>
+    </ol>
+    <p class="legend">The <strong>Claims &amp; evidence</strong> tab lists common claims from <em>both</em> sides,
+      who makes them, and how strong the evidence is:
+      <span class="rate r-strong">Strong</span> <span class="rate r-partial">Partly true</span>
+      <span class="rate r-unres">Unresolved</span> <span class="rate r-weak">Weak evidence</span>
+      <span class="rate r-contra">Contradicted</span></p>
+  </div>
   <div class="topnav" id="topnav"></div>
   <div id="dataSection">
   <div class="tabbar" id="tabbar"></div>
@@ -231,7 +274,8 @@
       in high-mortality, low-income settings. The most-cited study (Mogensen, Aaby et
       al., <em>EBioMedicine</em> 2017; a 1980s natural experiment) found DTP-vaccinated
       infants had roughly <strong>5× higher all-cause mortality</strong> than
-      unvaccinated infants despite fewer target-disease cases; the authors wrote DTP
+      unvaccinated infants despite fewer target-disease cases (about <strong>10×</strong> for infants who got DTP
+      without oral polio vaccine); the authors wrote DTP
       "may kill more children from other causes than it saves."<br><br>
       A WHO/SAGE-commissioned systematic review (Higgins et al. 2016) likewise found
       <strong>most DTP studies pointed toward higher mortality</strong> — but rated the
@@ -313,12 +357,12 @@
     <table>
       <thead><tr><th>Disease</th><th>Best metric</th><th>Before vaccine</th><th>After vaccine</th><th>Major caveat</th></tr></thead>
       <tbody>
-        <tr><td>Hepatitis B</td><td>Reported acute cases</td><td>Rose to ~26,654 (1985)</td><td>Down ~90%+ after infant vaccination (1991)</td><td>Reportable only ~1966; acute surveillance misses chronic infection &amp; later liver deaths</td></tr>
+        <tr><td>Hepatitis B</td><td>Reported acute cases</td><td>Rose to 26,611 (1985)</td><td>Down ~90%+ after infant vaccination (1991)</td><td>Reportable only ~1966; acute surveillance misses chronic infection &amp; later liver deaths</td></tr>
         <tr><td>Diphtheria</td><td>Cases &amp; deaths</td><td>&gt;100k cases/yr in the 1920s</td><td>Essentially eliminated</td><td>OWID series starts 1937; antitoxin cut fatality pre-vaccine</td></tr>
         <tr><td>Tetanus</td><td>Cases &amp; CFR</td><td>~560 cases/yr (1947)</td><td>~25/yr; deaths &gt;99% lower</td><td>NOT contagious (no herd immunity); pre-2009 anchors approximate</td></tr>
         <tr><td>Pertussis</td><td>Infant mortality &amp; hospitalization</td><td>Very high (~265k cases 1934)</td><td>Fell ~99% to 1976, then partial resurgence in cases</td><td>Resurgence inflated by PCR detection; waning acellular immunity is real</td></tr>
         <tr><td>Polio</td><td>Deaths &amp; paralytic cases per 100k</td><td>Rising, severe epidemic peaks (1952: 57,198 cases, 3,108 deaths — as plotted; CDC's quoted totals are ~57,600 / ~3,145)</td><td>Fell &gt;99% in a decade; wild virus eliminated 1979</td><td>Late-1950s definition tightening + enterovirus reclassification deflate later counts</td></tr>
-        <tr><td>Measles</td><td>Deaths per 100k + incidence</td><td>Near-universal childhood infection (~3–4M true infections/yr)</td><td>Fell ~99%+; eliminated 2000 (status under review, Nov 2026)</td><td>Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed</td></tr>
+        <tr><td>Measles</td><td>Deaths per 100k + incidence</td><td>Near-universal childhood infection (~3–4M true infections/yr)</td><td>Fell ~99%+; eliminated 2000 — status lost Nov 2026 (PAHO)</td><td>Pre-vaccine cases undercounted ~10×; modern cases lab-confirmed</td></tr>
         <tr><td>Mumps</td><td>Reported cases</td><td>Common childhood illness</td><td>Down &gt;99%; periodic resurgences</td><td>Notifiable only from 1968; waning immunity drives outbreaks</td></tr>
         <tr><td>Rubella</td><td>Cases + CRS births</td><td>1964–65: ~12.5M cases, ~20k CRS</td><td>Eliminated 2004</td><td>Harm is birth defects (CRS), not deaths; notifiable 1966</td></tr>
       </tbody>
@@ -328,6 +372,7 @@
   </div>
   </div><!-- /dataSection -->
 
+  <div id="claimsPanels" style="display:none;"></div>
   <div id="trialsPanels" style="display:none;"></div>
   <div id="safetyPanels" style="display:none;"></div>
 </div>
@@ -375,7 +420,7 @@ const FACTS = {
         "PCV7 in 2000; PCV13 in 2010.",
         "Cases = invasive pneumococcal disease in children <5 (CDC ABCs). DEATHS view is an ESTIMATE — pneumococcal deaths aren't recorded separately (coded under pneumonia/sepsis/meningitis, rarely lab-confirmed); it's IPD cases × the measured ~1.3% case-fatality, matching CDC's ~200 deaths/yr pre-PCV estimate. Unlike Hib, there's no clean measured proxy. Also a major killer of older adults (not shown)."],
   diphtheria: ["Once a top infectious killer: ~40 deaths per 100,000 in 1900 (~30,000 deaths/yr); >100,000 cases/yr in the early 1920s.",
-               "Toxoid (1920s) drove most of the death decline; combined into DTP ~1948.",
+               "Most of the death-rate fall (~81%, 1900→1926) came before the toxoid, much of it from 1890s antitoxin. The toxoid (mid-1920s, widely used 1930s–40s) then drove cases and the remaining deaths toward zero; combined into DTP ~1948.",
                "Deaths shown 1900–2022 (pre-1937 from NCHS Table 65 rates × population; 1937+ CDC/OWID). Cases start 1937.",
                "Now essentially gone. Antitoxin (1890s) cut fatality even before the toxoid."],
   tetanus: ["NOT contagious — from environmental spores, so herd immunity doesn't apply.",
@@ -392,8 +437,9 @@ const FACTS = {
           "Caveat: paralytic case definition tightened late-1950s; enteroviruses reclassified out."],
   measles: ["Pre-vaccine: ~500k reported cases/yr but ~3–4M estimated infections/yr.",
             "Vaccine 1963; MMR 1971; 2nd dose 1989 (after 1989–91 resurgence).",
-            "Declared eliminated 2000 — but that status is under formal PAHO review in Nov 2026 after the 2025-26 outbreaks (the Americas lost measles-free status in Nov 2025 when Canada passed 12 months of continuous transmission).",
-            "2025 was the largest post-elimination year (2,289 confirmed, CDC final); 2026 has already passed it — the 2026 point is PARTIAL (NNDSS through MMWR week 32) and will keep rising.",
+            "Declared eliminated 2000. Status lost Nov 17, 2026, when PAHO found the chain of transmission that began in January 2025 had run more than 12 months (Canada lost its status in Nov 2025; Mexico and Bolivia lost theirs alongside the U.S.).",
+            "2025: 2,289 confirmed (CDC final). 2026 is far higher: 5,412 confirmed as of Nov 12 (CDC), the most since 1991. The chart's 2026 point is PARTIAL (NNDSS through MMWR week 44: 5,087) and will keep rising.",
+            "Babies of vaccinated mothers get less measles protection at birth: maternal antibodies last a median ~1 month vs ~3.8 months when the mother had measles herself (Leuridan, BMJ 2010). By 6 months nearly all babies lose them either way — one reason infants are vulnerable during outbreaks.",
             "Caveat: deaths per REPORTED case fell ~90% from the 1920s to 1950 — BEFORE the vaccine (antibiotics, nutrition, care). Part of that fall is better reporting, not just better medicine: this series starts in 1919 and early case counts miss most infections."],
   mumps: ["Vaccine 1967; into MMR 1971; nationally notifiable from 1968.",
           "Cases down >99%, but resurgences occur (2006; 2016–17) in close-contact settings / waning immunity.",
@@ -405,7 +451,7 @@ const FACTS = {
   meningococcal: ["Neisseria meningitidis — sudden bacterial meningitis/sepsis; rare but ~10–15% fatal even with treatment.",
                   "MenACWY (Menactra) licensed + routine adolescent recommendation 2005; 16-year booster ~2011; MenB vaccines 2014–15.",
                   "IMPORTANT: incidence was already falling for years BEFORE the 2005 vaccine — from ~1.1/100k in the mid-1990s to ~0.40 by 2006 — and serogroup B (not covered by MenACWY) fell too, so the overall drop is largely a pre-existing trend. The vaccine's clearest measured effect is on serogroups C/W/Y in vaccinated teens (~80–90% lower).",
-                  "Rebounding since 2021 (serogroup Y): 208 (2021) → 438 (2023) → ~477 (2024) → 463 (2025); 2026 is PARTIAL (188 through MMWR week 32). Deaths shown are ESTIMATES (cases × ~13% CFR); pre-2021 case counts derived from CDC published incidence × population, 2021+ are reported NNDSS counts."],
+                  "Rebounding since 2021 (serogroup Y): 208 (2021) → 438 (2023) → ~477 (2024) → 463 (2025); 2026 is PARTIAL (260 through MMWR week 44). Deaths shown are ESTIMATES (cases × ~13% CFR); pre-2021 case counts derived from CDC published incidence × population, 2021+ are reported NNDSS counts."],
 };
 
 const AFFECTED = {
@@ -566,6 +612,33 @@ function renderOverview() {
       separate is the whole point — conflating them is where most of the noise comes from. Every trend and caveat here is
       sourced so you can check it yourself; read the trend shape on each tab, not the exact digits.</p>
     </div>
+    <div class="card" style="line-height:1.6;border-left:4px solid #e0a800;">
+      <h3 style="margin:2px 0 8px;font-size:16px;">Why did deaths fall before the vaccines?</h3>
+      <p style="margin:0 0 8px;">For measles, whooping cough and diphtheria, deaths per 100,000 fell 80–98% before
+      the vaccines arrived. Three waves of change did most of it:</p>
+      <ul style="margin:0 0 8px;padding-left:18px;">
+        <li><strong>1890s–1930s, living conditions:</strong> chlorinated water (from 1908), pasteurized milk, sewers,
+          less crowded housing and better nutrition. Well-fed children survived infections that killed malnourished ones.
+          Diphtheria antitoxin (1894) cut deaths among those infected directly.</li>
+        <li><strong>Late 1930s–1940s, antibiotics:</strong> sulfa drugs (1935) and penicillin (mid-1940s). Much of the
+          dying from measles and whooping cough came from bacterial pneumonia afterwards, which could now be treated.</li>
+        <li><strong>1940s–50s, hospital care:</strong> oxygen, IV fluids, and the first intensive-care units and
+          ventilators (1952).</li>
+      </ul>
+      <p style="margin:0 0 8px;">What these did <em>not</em> do was stop infection. Nearly every child still caught
+      measles; deaths per case fell, but cases didn't. That's where vaccines come in (see the next card). Polio went the
+      other way: its deaths rose until the 1955 vaccine.</p>
+      <p style="margin:0 0 8px;font-size:13px;"><strong>Points raised by vaccine critic Aaron Siri (2025 Senate
+      testimony), checked:</strong> (1) Before the 1963 vaccine, U.S. measles killed about 400 people a year, roughly 1
+      in 450,000 Americans — consistent with CDC figures. (2) A U.S. Public Health Service analysis found diphtheria
+      deaths began falling at the same time in every state after 1925, even though early immunization reached very
+      different shares of children — a sign other factors were at work too. (3) Scarlet fever, a childhood killer
+      in 1900, all but disappeared with <em>no</em> vaccine (antibiotics and milder strains). (4) His claim that
+      deaths fell no faster after vaccines arrived hasn't been tested on this site's data, so it isn't shown.</p>
+      <p style="margin:0;font-size:12.5px;color:var(--muted);"><strong>What about hospitalizations?</strong> The U.S.
+      has no national hospitalization records for these diseases before their vaccines (rotavirus is the only one
+      tracked here), so a pre-vaccine fall in hospitalizations can't be shown — only deaths.</p>
+    </div>
     <div class="card" style="line-height:1.6;border-left:4px solid #4aa3df;">
       <h3 style="margin:2px 0 8px;font-size:16px;">Why any of this matters</h3>
       <p style="margin:0 0 8px;">The point of a vaccine is the reward side of this whole picture: not dying — or being
@@ -586,10 +659,20 @@ function renderOverview() {
       <p style="margin:0 0 8px;">Coverage among young children that year:
       <strong>DTP (3+ doses) ${pct(y85.dtp3)}</strong>, <strong>polio (3+ doses) ${pct(y85.polio3)}</strong>,
       and <strong>MMR (1+ dose) ${pct(y85.mmr)}</strong>.</p>
-      <p style="margin:0 0 10px;font-size:12.5px;color:var(--muted);">For comparison, the current schedule (birth–18)
-      protects against roughly <strong>16 diseases</strong> (HepB, rotavirus, DTaP, Hib, pneumococcal, polio,
-      influenza, MMR, varicella, hepatitis A, HPV, and meningococcal). 1985 coverage source: CDC Pink Book
+      <p style="margin:0 0 8px;font-size:12.5px;color:var(--muted);">For comparison, the schedule in force today
+      (birth–18, as it stood in May 2025) covers <strong>18 diseases</strong>: the 7 above plus hepatitis B,
+      rotavirus, Hib, pneumococcal, influenza, COVID-19, RSV, varicella, hepatitis A, HPV, and meningococcal. (Infant
+      RSV protection is usually a monoclonal antibody rather than a vaccine.) 1985 coverage source: CDC Pink Book
       Appendix E, "Vaccine Coverage Levels — United States, 1962–2016."</p>
+      <p style="margin:0 0 10px;font-size:12.5px;color:var(--muted);"><strong>The schedule is in legal flux (as of
+      Nov 2026).</strong> On <strong>Jan 5, 2026</strong> HHS revised it without an ACIP vote. Nothing was removed, but
+      hepatitis A, meningococcal ACWY, RSV, rotavirus and influenza moved from "all children" to risk-based or
+      "shared clinical decision-making." It also carried over a Dec 2025 ACIP vote making the hepatitis B birth dose
+      an individual decision for babies of mothers who test negative. On <strong>Mar 16, 2026</strong> a federal court
+      (<em>American Academy of Pediatrics v. Kennedy</em>, D. Mass.) stayed that revision, the appointments of 13 ACIP
+      members, and their votes, putting the May 2025 schedule back in force. The government appealed (argued in the First Circuit Oct 6, 2026; no ruling yet), and
+      a <strong>May 29, 2026</strong> executive order (EO 14407) directed CDC and ACIP to review the schedule again.
+      Source: Congressional Research Service, R48982 and IN12684.</p>
       <details style="margin:0;">
         <summary style="cursor:pointer;font-weight:600;font-size:13.5px;">What the 1986 Act did — in plain English</summary>
         <div style="margin-top:8px;font-size:13px;line-height:1.65;">
@@ -600,6 +683,11 @@ function renderOverview() {
           wrong — and in return, manufacturers are <strong>largely shielded from ordinary lawsuits</strong> over side
           effects (upheld in <em>Bruesewitz v. Wyeth</em>, 2011). It also required parent safety handouts and
           side-effect reporting (now <strong>VAERS</strong>).</p>
+          <p style="margin:0 0 6px;">The Act also required HHS to keep a <strong>Task Force on Safer Childhood
+          Vaccines</strong> and to report to Congress every two years, from 1989, on vaccine-safety improvements. In a
+          2018 lawsuit brought by the advocacy group ICAN (lawyer: Aaron Siri), HHS could not produce any of those
+          reports (<em>ICAN v. HHS</em>, S.D.N.Y. 18-cv-03215). The task force had been disbanded in 1998; HHS revived it
+          in August 2025 after another lawsuit.</p>
           <p style="margin:0;color:var(--muted);">It's a law about <em>liability</em>, not evidence — it says nothing
           about whether any specific vaccine causes any specific harm.</p>
         </div>
@@ -640,7 +728,7 @@ function renderOverview() {
         <strong>A note on tetanus:</strong> its decline is real but works differently — tetanus is <em>not
         contagious</em> (environmental spores, no herd immunity), so its drop reflects wound care, antitoxin, and the
         toxoid rather than population immunity. It's included because solid U.S. death rates exist back to 1900
-        (CDC/Fraser + NCHS), and you asked for the number regardless of cause.</p>
+        (CDC/Fraser + NCHS).</p>
       <p class="metric-note" style="margin:8px 0 0;line-height:1.6;">
         <strong>Why not the other diseases:</strong> <strong>polio is the counterexample</strong> — it was <em>not</em>
         a major killer in 1900; its deaths <em>rose</em> through the mid-century epidemics and only fell <em>after</em>
@@ -650,10 +738,12 @@ function renderOverview() {
         "1900 → release" reduction can't be computed honestly for them.</p>
     </div>
     <div class="card" style="line-height:1.6;">
-      <h3 style="margin:2px 0 8px;font-size:15px;">What's in each tab</h3>
+      <h3 style="margin:2px 0 8px;font-size:15px;">What's on this site</h3>
       <ul style="margin:0;padding-left:18px;font-size:13px;">
-        <li><strong>HepB · DTaP · Hib · PCV · Polio · MMR · Rotavirus</strong> — disease tabs (ordered by the childhood schedule). Each: deaths / cases / hospitalizations per 100,000 over time, plus "most affected" notes and key caveats. DTaP, Polio, Hib and MMR also carry deep-dive cards (e.g., the polio case-definition change; the DTP all-cause-mortality debate; the Hib meningitis proxy).</li>
-        <li><strong>Chronic illness</strong> — autism, developmental disability and asthma prevalence over time vs. the vaccine count, plus the vaccinated-vs-unvaccinated (Lamerato) study and the most-cited "no-link" studies — all with their limitations.</li>
+        <li><strong>The Data</strong> — this overview, then one tab per vaccine (ordered by the childhood schedule). Each shows deaths / cases / hospitalizations per 100,000 over time with vaccine-introduction markers, "most affected" notes and key caveats. Some carry deep-dive cards (e.g., the polio case-definition change; the DTP all-cause-mortality debate; the Hib meningitis proxy; meningococcal's pre-vaccine decline).</li>
+        <li><strong>Claims &amp; evidence</strong> — common claims from both sides, who makes them, and a plain rating of how strong the evidence is.</li>
+        <li><strong>How they were tested</strong> — the pivotal approval trial for each vaccine (design, size, result, source), and how long participants were monitored for reactions after each shot.</li>
+        <li><strong>Safety</strong> — autism and chronic illness (the trend lines people point to, what the most-cited studies can and can't show, the few vaccinated-vs-unvaccinated comparisons) and COVID-19 vaccines in children — each with its limitations.</li>
       </ul>
     </div>`;
 
@@ -688,10 +778,12 @@ const CHRONIC_CAVEAT =
   "diagnostic criteria (DSM-III→IV→5), diagnostic substitution (children formerly labeled intellectual " +
   "disability), awareness, screening, and services — not necessarily a true increase in occurrence. " +
   "(3) The asthma rise is studied via the hygiene hypothesis, environment, and obesity. " +
-  "(4) MMR, thimerosal, and cumulative antigen exposure have been tested and found NOT associated with " +
-  "autism (Hviid 2019, 657,461 children; DeStefano 2013; Madsen 2002; U.S. Institute of Medicine 2004/2011; " +
-  "Cochrane). The 1998 Wakefield claim was retracted for fraud. A fully-vaccinated-vs-never-vaccinated " +
-  "comparison has NOT been done — see the Vaxxed-vs-unvaxxed section below. " +
+  "(4) MMR and thimerosal have been tested head-on in large studies and found NOT associated with autism " +
+  "(Madsen 2002; Hviid 2019, 657,461 children; Hviid 2003; U.S. Institute of Medicine 2004/2011; Cochrane). " +
+  "Cumulative antigen exposure has weaker evidence (DeStefano 2013 compared more vs. fewer antigens, never zero). " +
+  "The 1998 Wakefield claim was retracted for fraud. No CLEAN fully-vaccinated-vs-never-vaccinated comparison " +
+  "exists; the few attempts (the Henry Ford draft, Mawson 2017) are badly confounded — see the " +
+  "Vaxxed-vs-unvaxxed section below. " +
   "(5) '# vaccines' counts diseases on the routine childhood/adolescent schedule (definition-dependent).";
 
 const CHRONIC_LIMITATIONS = `
@@ -702,11 +794,16 @@ observational version is feasible — databases (immunization registries, EHRs, 
 Datalink) <em>can</em> identify never-vaccinated children — but it is heavily confounded: <strong>confounding
 by indication</strong> (families often skip vaccines <em>after</em> a diagnosis in an older child) and
 <strong>ascertainment bias</strong> (unvaccinated children have far fewer medical visits → fewer recorded
-diagnoses). Observational zero-dose studies <em>do</em> exist but are confounded (e.g., Mawson 2017,
-retracted; the Lamerato/Henry Ford study — see above). The mainstream
+diagnoses). Observational zero-dose studies <em>do</em> exist but are confounded (e.g., Mawson 2017, a small
+self-selected survey; the Lamerato/Henry Ford draft — see above). The mainstream
 "no-link" studies (listed in the section above) are mostly <strong>Scandinavian registry or
 U.S. managed-care</strong> populations — observational, with residual confounding and diagnosis
 tied to medical contact.</p>
+<p style="margin:0 0 8px;"><strong>What the official reviews said.</strong> The Institute of Medicine's 2013 review
+of the whole schedule found "no evidence" that it is unsafe, but also that few studies examine the schedule as a
+whole. It said a randomized vaccinated-vs-unvaccinated trial would be unethical and recommended using the Vaccine
+Safety Datalink to study it. Its 2011 review found the evidence "inadequate to accept or reject" a link between DTaP
+and autism, meaning it had not been studied enough to say either way.</p>
 <p style="margin:0 0 8px;"><strong>Mercury vs. aluminum.</strong> Thimerosal (mercury) is well-studied and
 its removal (~2001 in the U.S.) did not lower autism — but that addresses <em>mercury only</em>. Aluminum
 adjuvants were <em>not</em> removed, and cumulative vaccine aluminum <em>rose</em> as the schedule grew.
@@ -721,8 +818,8 @@ arms. That shows the new MMR is as safe as the established one, but with no plac
 can't measure effects common to both. (Active comparison is standard and appropriate for a new formulation
 of an already-licensed vaccine — a saline arm would withhold proven protection — so it's a limitation for
 the "vaccine vs. none" question, not evidence of harm.)</p>
-<p style="margin:0;"><strong>Net:</strong> strongly supported — MMR, thimerosal, and antigen load are
-<em>not</em> associated with autism. Not directly tested — whole schedule vs. none, aluminum adjuvants and
+<p style="margin:0;"><strong>Net:</strong> strongly supported — MMR and thimerosal are <em>not</em>
+associated with autism. Weaker — antigen load (more vs. fewer, never vs. zero). Not directly tested — whole schedule vs. none, aluminum adjuvants and
 neurodevelopment, and a "saturating" cumulative effect. "Not tested" is not "evidence of harm": indirect
 evidence (no dose-response, autism rising after thimerosal removal, ~80% genetic/prenatal heritability)
 weighs against a vaccine cause.</p>`;
@@ -732,12 +829,14 @@ const CHRONIC_LAMERATO = `
 <p style="margin:0 0 10px;font-size:13px;line-height:1.6;">This is the <strong>only sizable completely-unvaccinated-vs-vaccinated
 comparison from a mainstream U.S. health system to reach the public</strong> — nearly every other study
 (in the section above) compares <em>MMR vs. no-MMR</em> or more-vs-fewer antigens, not vaccinated vs. truly zero doses.
-(Other vaxxed-vs-unvaxxed studies exist but are small, survey-based, or retracted, e.g. Mawson 2017.)
-A retrospective analysis at Henry Ford Health (Detroit, data ~2020–2022) compared people who received
-<strong>zero</strong> CDC-schedule doses to vaccinated people, counting chronic-illness diagnoses. It was
-presented at a U.S. Senate hearing (Sept 9, 2025) and re-analyzed in a December 2025 commentary in
-<em>IJVTPR</em> (Oller, Broudy &amp; Hulscher, McCullough Foundation), which reported an
-<strong>~2.5× higher likelihood of a chronic condition</strong> associated with vaccination.</p>
+(Other vaxxed-vs-unvaxxed studies exist but are small or survey-based — e.g. Mawson 2017, a self-selected
+survey; an earlier version was withdrawn by Frontiers in 2016, and the 2017 version is in a journal not indexed
+in MEDLINE.) A retrospective analysis at Henry Ford Health (Detroit) of <strong>children born 2000–2016</strong>
+compared those who received <strong>zero</strong> CDC-schedule doses to vaccinated children, counting
+chronic-illness diagnoses. The draft itself reported a <strong>~2.5× higher likelihood of a chronic
+condition</strong> associated with vaccination (adjusted hazard ratio 2.54). It was presented at a U.S. Senate
+hearing (Sept 9, 2025) and re-analyzed in a December 2025 commentary in <em>IJVTPR</em> (Oller, Broudy &amp;
+Hulscher, McCullough Foundation).</p>
 <table style="margin:0 0 12px;">
   <thead><tr><th>Cohort</th><th>People</th><th>CDC-schedule doses</th><th>Clinic visits / year</th><th>Chronic-condition finding</th></tr></thead>
   <tbody>
@@ -748,24 +847,40 @@ presented at a U.S. Senate hearing (Sept 9, 2025) and re-analyzed in a December 
 <div style="font-size:12px;color:var(--muted);margin:2px 0 4px;">Each chronic condition by group (sorted by the vaccinated rate). These are <strong>raw reported rates</strong> — read the disclaimer below before interpreting.</div>
 __CONDTABLE__
 <div style="border-left:4px solid #e0a800;background:#14202b;border-radius:6px;padding:11px 13px;font-size:12.5px;line-height:1.55;">
-  <strong style="color:#e0a800;">⚠ Disclaimer — this does NOT establish that vaccines cause chronic illness.</strong>
+  <strong style="color:#e0a800;">⚠ What this study can and can't show: it reports an association, which is not proof that vaccines cause chronic illness.</strong>
   <ul style="margin:7px 0 0;padding-left:18px;">
-    <li><strong>Ascertainment / detection bias (the decisive one):</strong> the vaccinated were seen ~7×/year
-        vs ~2× for the unvaccinated — about 3.5× more chances to diagnose and record a condition. That alone
-        can produce a ~2.5× difference in <em>diagnosed</em> illness with no real difference in underlying
-        health. The analysis does not resolve this; it would need to adjust for healthcare utilization
-        (e.g., conditions per visit, or matching on visit frequency).</li>
-    <li><strong>Unequal follow-up time (also decisive):</strong> the vaccinated were tracked for years, while a
-        quarter of the unvaccinated were followed only to under 6 months old and half to under 15 months. More
-        follow-up time = more chances for any condition to be recorded, regardless of true health — on its own enough
-        to manufacture much of the ~2.5× gap.</li>
-    <li><strong>Observational → association, not causation.</strong> "Zero doses" also selects for families
-        who rarely use the medical system, deepening the gap.</li>
-    <li><strong>The original Henry Ford authors reportedly still support the vaccine schedule</strong> and do
-        not endorse the causal reading — that interpretation comes from outside re-analysis.</li>
-    <li><strong>Provenance is advocacy:</strong> presented at a partisan Senate hearing, promoted in a
-        documentary, and "peer-reviewed" in a non-MEDLINE advocacy journal (IJVTPR) by McCullough-Foundation
-        authors. The underlying study's formal peer-review/publication status is unclear.</li>
+    <li><strong>Doctor visits (the biggest concern):</strong> vaccinated children were seen ~7 times a year vs ~2 for
+        unvaccinated children, about 3.5× more chances to diagnose and record a condition.
+        <em>What the authors did:</em> re-ran the analysis using only children with at least one medical visit; the gap
+        shrank but remained (1.87×). They also noted that many of these conditions (asthma attacks, anaphylaxis) send
+        families to a doctor regardless.
+        <em>Critics' reply:</em> one visit doesn't level out 7 vs. 2 a year, and unvaccinated children <em>with</em> a
+        condition averaged ~5 visits a year, which suggests conditions get found when children are seen.</li>
+    <li><strong>Unequal follow-up time:</strong> median 2.7 years for vaccinated vs. 1.3 years for unvaccinated
+        children; a quarter of the unvaccinated left the plan before 6 months old.
+        <em>What the authors did:</em> used a method (Cox regression) that accounts for follow-up time, and re-ran it
+        for children enrolled at least 1, 3 and 5 years. The gap grew rather than shrank (2.84×, 3.48×, 4.05×).
+        <em>Critics' reply:</em> the 5-year group had ~20 vaccinated children for every unvaccinated one, and families
+        who leave a health plan early may differ in ways the data can't see.</li>
+    <li><strong>What it adjusted for:</strong> sex, race, birth weight, prematurity and birth complications, but
+        <em>not</em> family income, diet or lifestyle (the authors' own stated limitation). As a check, it found no link
+        with cancer, which shouldn't be linked to vaccines.</li>
+    <li><strong>Observational → association, not causation.</strong> Families who choose zero vaccines may also
+        differ in how they use doctors and in other ways the records don't capture.</li>
+    <li><strong>Where it came from:</strong> ICAN, the advocacy group Siri represents, urged Dr. Zervos to run the
+        study in 2017. The draft itself says its aim was to "reassure parents of the overall safety of vaccination."</li>
+    <li><strong>Autism specifically:</strong> the draft's own analysis found <em>no</em> association with autism.
+        The raw autism row above (23 vs. 1 cases) is far too few cases to read either way.</li>
+    <li><strong>What the authors themselves concluded:</strong> the draft reported the ~2.5× figure (adjusted
+        hazard ratio 2.54) and wrote that it "suggests that in certain susceptible children, exposure to vaccination
+        may increase the likelihood" of a chronic condition — adding, "Our preliminary findings cannot prove
+        causality and warrant further investigation." The 2025 re-analysis worked from the draft's summary tables,
+        not the patient data.</li>
+    <li><strong>Never published — and why is disputed:</strong> the draft did not complete Henry Ford's internal
+        review and was not submitted to a journal. Henry Ford Health says it "did not meet the rigorous scientific
+        standards we demand"; the documentary's backers say the authors told them superiors didn't want it
+        submitted. (The authors haven't commented publicly.) It reached the public through a Senate hearing and a documentary, and the re-analysis appeared in IJVTPR,
+        a journal not indexed in MEDLINE, by McCullough Foundation authors.</li>
     <li><strong>What would actually answer it:</strong> a study that matches/adjusts for clinic contact,
         pre-registered and independent.</li>
   </ul>
@@ -789,6 +904,12 @@ link was retracted for fraud.</p>
     <tr><td><strong>DeStefano et al. 2013</strong><br><span style="color:var(--muted);font-size:12px;">J Pediatr · 256 cases / 752 controls</span></td>
         <td>Cumulative antigen exposure ("too many too soon")</td><td>No dose-response with antigen number/timing</td>
         <td>Small case-control; tests a gradient <em>within</em> vaccinated children (no zero-vaccine arm); antigen count misses adjuvants such as aluminum</td></tr>
+    <tr><td><strong>Hviid et al. 2003</strong><br><span style="color:var(--muted);font-size:12px;">JAMA · 467,450 children</span></td>
+        <td>Thimerosal-containing vs. thimerosal-free version of the same vaccine (Denmark, born 1990–96)</td><td>No association (RR 0.85) and no dose-response with ethylmercury</td>
+        <td>Both groups were vaccinated → isolates thimerosal only; observational/registry. (A companion ecological study, Madsen 2003, found Danish autism diagnoses kept rising after thimerosal was removed in 1992.)</td></tr>
+    <tr><td><strong>Taylor et al. 2014</strong><br><span style="color:var(--muted);font-size:12px;">Vaccine · meta-analysis, 1,256,407 children (cohorts) + 9,920 (case-control)</span></td>
+        <td>Pools 10 studies of MMR, thimerosal and mercury exposure</td><td>No association (cohort OR 0.99)</td>
+        <td>A pool of the same kinds of studies above, so it inherits their design: it rules out MMR/thimerosal/mercury, not vaccination vs. none — despite its title ("Vaccines are not associated with autism"). Pooling can't remove confounding shared by the inputs.</td></tr>
   </tbody>
 </table>`;
 
@@ -904,6 +1025,8 @@ function renderSafety() {
            <a href="#sec-tested">Jump&nbsp;↓</a></li>
          <li><strong>The whole schedule vs. no vaccines at all</strong> — the "everything vs. nothing" comparison most
            people actually mean. Far harder, and far less settled. <a href="#sec-vaxvs">Jump&nbsp;↓</a></li>
+         <li><strong>COVID-19 vaccines in children</strong> — benefits, the heart-inflammation risk, and the claims.
+           <a href="#sec-covid">Jump&nbsp;↓</a></li>
        </ul>
      </div>
      <h3 style="margin:8px 2px 4px;font-size:15px;">The correlation people point to</h3>
@@ -927,6 +1050,21 @@ function renderSafety() {
        vaccinated vs. not</em>, or chronic illness in general. That question is separate, and far less settled — see
        below.</div>
      <div class="card">${CHRONIC_NOLINK}</div>
+     <div class="card" style="font-size:13px;line-height:1.6;">
+       <h3 style="margin:2px 0 8px;font-size:15px;">The main review arguing FOR a link — and its limits</h3>
+       <table>
+         <thead><tr><th>Review</th><th>What it claims</th><th>Key limitations</th></tr></thead>
+         <tbody><tr>
+           <td><strong>McCullough Foundation report, Oct 2025</strong><br><span style="color:var(--muted);font-size:12px;">Hulscher, Leake, McCullough, Wakefield et al. · preprint (Zenodo)</span></td>
+           <td>Vaccination, especially early and combined, is "the most significant modifiable risk factor" for autism.
+             Of 136 studies on vaccines or their ingredients, it says 107 "inferred a possible link" and 29 found none.</td>
+           <td>It counts studies rather than weighing their size and quality. Critics say it includes animal studies,
+             small case series and retracted work. All authors belong to the foundation, including Andrew Wakefield, whose
+             1998 MMR paper was retracted for fraud. It reportedly later appeared in the <em>Journal of Independent
+             Medicine</em>, which is not MEDLINE-indexed. It contains no new comparison of children.</td>
+         </tr></tbody>
+       </table>
+     </div>
      <h2 id="sec-vaxvs" style="${secH2}">Vaccinated vs unvaccinated: the whole-schedule question</h2>
      <div class="verdict"><b>What the direct comparisons found</b>
        On this exact question — the whole schedule vs. no vaccines at all — very few studies have measured it, and the
@@ -939,14 +1077,50 @@ function renderSafety() {
        <strong>But the association can't yet be read as cause.</strong> Both studies have flaws big enough to produce it
        on their own: in Lamerato the vaccinated were <em>followed far longer</em> (a quarter of the unvaccinated dropped
        out before 6 months old) and <em>saw doctors far more often</em> — each mechanically produces more recorded
-       diagnoses regardless of real health. Mawson was a small, self-selected survey. Neither corrected for this, and no
-       randomized trial exists.
+       diagnoses regardless of real health. The Henry Ford authors ran checks for both and the gap held, but critics
+       argue those checks don't go far enough (details below). Mawson was a small, self-selected survey. No randomized
+       trial exists.
        <br><br>
        <strong>Honest bottom line:</strong> an apparent association, from a tiny and badly-confounded evidence base —
        genuinely unresolved, not "no harm" and not "harm proven." The clean study (matched on follow-up time and doctor
        visits) hasn't been done.</div>
      <div class="card">${CHRONIC_LAMERATO.replace("__CONDTABLE__", condTable)}</div>
-     <div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;">${CHRONIC_LIMITATIONS}</div>`;
+     <div class="card" style="border-left:4px solid var(--accent);font-size:13px;line-height:1.55;">${CHRONIC_LIMITATIONS}</div>
+     <h2 id="sec-covid" style="${secH2}">COVID-19 vaccines in children</h2>
+     <div class="verdict"><b>The honest picture</b>
+       COVID vaccines are the newest on the schedule and the most argued over for healthy children. Both of these are
+       true: the vaccines <strong>cut symptomatic COVID sharply at first</strong>, but that protection
+       <strong>faded within months</strong>; and they carry a <strong>real but rare risk of heart inflammation</strong>
+       (myocarditis), mostly in teenage boys and young men. Countries weigh this differently: Denmark (2022) and the UK
+       (from 2023) stopped routinely offering them to healthy children, and in May 2025 HHS moved healthy U.S. children
+       from "recommended" to "talk with your doctor" (shared decision-making).</div>
+     <div class="card" style="font-size:13px;line-height:1.6;overflow-x:auto;">
+       <table style="min-width:600px;">
+         <thead><tr><th>Question</th><th>What the evidence shows</th><th>Source</th></tr></thead>
+         <tbody>
+           <tr><td><strong>Did it work in the trial?</strong></td><td>Ages 5–11: 90.7% fewer symptomatic COVID cases
+             (3 vs 16) over a median 2.3 months, against a saline placebo, 2,268 children.</td>
+             <td><a href="https://pubmed.ncbi.nlm.nih.gov/34752019/" target="_blank" rel="noopener">Walter, NEJM 2022</a></td></tr>
+           <tr><td><strong>Did protection last?</strong></td><td>No. Real-world protection against symptomatic infection
+             fell from ~68% to ~25% within months, and was lost against later Omicron variants. Among children tested in
+             emergency rooms and hospital wards, it held steadier, at ~40%.</td>
+             <td><a href="https://pubmed.ncbi.nlm.nih.gov/37922479/" target="_blank" rel="noopener">Test-negative study, 2023</a></td></tr>
+           <tr><td><strong>Heart inflammation (myocarditis)?</strong></td><td>Confirmed. Highest after the 2nd dose: ~106 per
+             million doses in males 16–17, ~71 per million in males 12–15; usually within a few days. Raised early by
+             vaccine critics including Peter McCullough, and confirmed by CDC/FDA.</td>
+             <td><a href="https://pubmed.ncbi.nlm.nih.gov/35076665/" target="_blank" rel="noopener">Oster, JAMA 2022</a></td></tr>
+           <tr><td><strong>How dangerous is COVID for children?</strong></td><td>821 deaths among ages 0–19 from Aug 2021 to
+             Jul 2022, the 8th leading cause of death in that age group; far lower risk than adults, highest in infants and
+             children with other conditions.</td>
+             <td><a href="https://pubmed.ncbi.nlm.nih.gov/36716029/" target="_blank" rel="noopener">Flaxman, JAMA Netw Open 2023</a></td></tr>
+           <tr><td><strong>Have they killed many people?</strong></td><td>Claimed by Peter McCullough. The main evidence offered
+             is a 2024 review of autopsy reports by McCullough Foundation authors, in which their own reviewers judged
+             most deaths vaccine-caused. The journal withdrew it, and it was republished in a non-PubMed-indexed journal.
+             VAERS death reports can't establish cause. No population study has established mass deaths.</td>
+             <td><a href="https://www.factcheck.org/2024/07/flawed-autopsy-review-revives-unsupported-claims-of-covid-19-vaccine-harm-censorship/" target="_blank" rel="noopener">FactCheck.org, 2024</a></td></tr>
+         </tbody>
+       </table>
+     </div>`;
   const vax = D.chronic.vaccines.map(p => ({ x: p.year, y: p.value }));
   conds.forEach(c => {
     const pts = D.chronic[c.key].map(p => ({ x: p.year, y: p.value }));
@@ -969,58 +1143,73 @@ const TRIALS = [
   { v: "Polio (Salk, IPV)", trial: "Francis field trial, 1954",
     design: "Randomized, double-blind, placebo-controlled. 1.8 million children — ~650,000 in the blinded vaccine/placebo arm, ~1.18M observed controls. One of the largest trials ever run; analyzed independently by Thomas Francis, not Salk.",
     result: "80–90% effective against paralytic polio.",
-    cite: "Francis et al., Am. J. Public Health, 1955", href: "" },
+    cite: "Francis et al., Am. J. Public Health, 1955", href: "",
+    today: "Today's U.S. vaccine, IPOL (licensed 1990), is a newer, more potent inactivated polio vaccine grown in a different cell line. It was licensed on antibody response, not a new placebo-controlled efficacy trial." },
   { v: "Measles (MMR)", trial: "Enders/Katz vaccine, licensed 1963",
     design: "Developed from the Enders–Katz attenuated strain and tested in field trials in the early 1960s; predates today's mega-trials. Efficacy figures below are the established CDC estimates.",
     result: "~93% effective after 1 dose, ~97% after 2 doses (CDC).",
-    cite: "CDC, Measles Vaccination", href: "" },
+    cite: "CDC, Measles Vaccination", href: "",
+    today: "Today's M-M-R II (1978) was licensed on antibody response; there was no placebo-controlled efficacy trial of the combined product." },
   { v: "Hepatitis B", trial: "Szmuness et al., 1980",
     design: "Randomized, double-blind, placebo-controlled. 1,083 high-risk adults.",
     result: "92% efficacy — HBV infection 3.2% (vaccine) vs 25.6% (placebo).",
-    cite: "Szmuness et al., NEJM, 1980", href: "https://pubmed.ncbi.nlm.nih.gov/6997738/" },
+    cite: "Szmuness et al., NEJM, 1980", href: "https://pubmed.ncbi.nlm.nih.gov/6997738/",
+    today: "This tested the original plasma-derived vaccine. Today's genetically engineered vaccines (Recombivax HB 1986, Engerix-B 1989) were licensed on antibody response. Per its label, Recombivax's infant safety data came from 147 infants and children watched for 5 days after each dose." },
   { v: "Hib (conjugate)", trial: "Santosham et al., 1991",
-    design: "Randomized field trial in Navajo infants (a very high-incidence population), PRP-OMP conjugate at 2 and 4 months.",
-    result: "~95% efficacy against invasive Hib disease (2 doses). Kaiser HbOC trial similar.",
-    cite: "Santosham et al., NEJM, 1991", href: "https://pubmed.ncbi.nlm.nih.gov/1903846/" },
+    design: "Randomized, double-blind, placebo-controlled. 5,190 Navajo infants (a very high-incidence population), PRP-OMP conjugate at ~2 and ~4 months.",
+    result: "95% efficacy against invasive Hib disease (1 vs 22 cases); 93% among infants who got both doses. Kaiser HbOC trial similar.",
+    cite: "Santosham et al., NEJM, 1991", href: "https://pubmed.ncbi.nlm.nih.gov/1903846/",
+    today: "Same vaccine as today's PedvaxHIB; the current liquid form was licensed by comparison with the version tested here." },
   { v: "Pertussis (acellular, DTaP)", trial: "Progetto Pertosse (Greco et al.), 1996",
     design: "Randomized, double-blind trial in infants (Italy). A parallel Swedish trial (Gustafsson et al., 1996) found ~80–85%.",
     result: "84% efficacy against typical pertussis (the whole-cell vaccine in the same trial: 36%).",
-    cite: "Greco et al., NEJM, 1996", href: "https://pubmed.ncbi.nlm.nih.gov/8538704/" },
+    cite: "Greco et al., NEJM, 1996", href: "https://pubmed.ncbi.nlm.nih.gov/8538704/",
+    today: "One of the acellular vaccines tested here is today's Infanrix. The control group got DT (diphtheria–tetanus) shots, not an inert placebo." },
   { v: "Pneumococcal (PCV7)", trial: "Black et al., 2000",
     design: "Randomized, double-blind. 37,868 infants (Northern California Kaiser Permanente).",
     result: "~97% efficacy against vaccine-serotype invasive pneumococcal disease.",
-    cite: "Black et al., Pediatr. Infect. Dis. J., 2000", href: "https://pubmed.ncbi.nlm.nih.gov/10749457/" },
+    cite: "Black et al., Pediatr. Infect. Dis. J., 2000", href: "https://pubmed.ncbi.nlm.nih.gov/10749457/",
+    today: "The control group got an experimental meningococcal C vaccine, not a placebo. Each later version (Prevnar 13 in 2010, Prevnar 20 in 2023) was licensed by comparing antibody levels and side effects against the previous Prevnar." },
   { v: "Rotavirus (RotaTeq)", trial: "REST (Vesikari et al.), 2006",
     design: "Randomized, double-blind, placebo-controlled. ~70,000 infants across 11 countries — sized specifically to rule out the intussusception risk that got the earlier RotaShield vaccine withdrawn in 1999.",
     result: "98% efficacy against severe rotavirus disease; no intussusception signal.",
-    cite: "Vesikari et al., NEJM, 2006", href: "https://pubmed.ncbi.nlm.nih.gov/16394299/" },
+    cite: "Vesikari et al., NEJM, 2006", href: "https://pubmed.ncbi.nlm.nih.gov/16394299/",
+    today: "Same product as today. Its \"placebo\" contained the vaccine's other ingredients minus the virus. For the other rotavirus vaccine, Rotarix, the label reports deaths in 0.19% of vaccinated vs 0.15% of placebo infants across 8 trials, a gap too small to rule out chance." },
+  { v: "COVID-19 (Pfizer, ages 5–11)", trial: "Walter et al., 2022",
+    design: "Randomized 2:1, observer-blind, saline placebo. 2,268 children; median follow-up 2.3 months at data cutoff.",
+    result: "90.7% efficacy against symptomatic COVID (3 vs 16 cases). Real-world protection later fell to ~25% within months and faded against newer Omicron variants.",
+    cite: "Walter et al., NEJM, 2022", href: "https://pubmed.ncbi.nlm.nih.gov/34752019/",
+    today: "Authorized (EUA) for this age group on this trial. Formulations are updated each year based mainly on antibody data." },
 ];
 
 function renderTrials() {
   const rows = TRIALS.map(t => `<tr>
       <td><strong>${t.v}</strong><br><span style="color:var(--muted);font-size:12px;">${t.trial}</span></td>
-      <td>${t.design}</td>
+      <td>${t.design}${t.today ? `<div style="margin-top:6px;font-size:12px;color:var(--muted);"><strong style="color:var(--ink);">Today's product:</strong> ${t.today}</div>` : ""}</td>
       <td>${t.result}</td>
       <td>${t.href ? `<a href="${t.href}" target="_blank" rel="noopener">${t.cite}</a>` : t.cite}</td>
     </tr>`).join("");
   const SAFETY_REVIEW = [
-    { v: "Polio — IPOL", dur: "48 hours" },
-    { v: "Pneumococcal — Prevnar", dur: "48 hours" },
-    { v: "Hib — PedvaxHIB", dur: "3 days" },
-    { v: "DTaP — Infanrix", dur: "4 days" },
-    { v: "Hepatitis B — Engerix-B", dur: "4 days" },
-    { v: "MMR — M-M-R II", dur: "4 days (local) / 42 days (systemic)" },
-    { v: "Rotavirus — RotaTeq", dur: "42 days" },
+    { v: "Polio — IPOL", short: "48–72 hours", sae: "Not stated in label" },
+    { v: "Hepatitis B — Recombivax HB", short: "5 days (147 infants &amp; children)", sae: "Not stated in label" },
+    { v: "Hepatitis B — Engerix-B", short: "4 days", sae: "Not stated for infants" },
+    { v: "Hib — PedvaxHIB (liquid)", short: "2–3 days", sae: "Not stated (earlier placebo trial in 4,459 Navajo infants compared serious problems)" },
+    { v: "DTaP — Infanrix", short: "4 days (U.S.); 8 days (German subset)", sae: "~28–30 days (German study, 22,505 infants)" },
+    { v: "Pneumococcal — Prevnar 20", short: "7 days", sae: "6 months after last dose, incl. newly diagnosed chronic conditions" },
+    { v: "MMR — M-M-R II", short: "4 days (injection site) / 42 days (whole body)", sae: "42 days" },
+    { v: "Rotavirus — RotaTeq", short: "42 days", sae: "Intussusception tracked 1 year (~70,000 infants)" },
+    { v: "Rotavirus — Rotarix", short: "8 days", sae: "31 days; intussusception up to 1 year in 20,169 infants" },
   ];
   const safetyRows = SAFETY_REVIEW.map(s =>
-    `<tr><td><strong>${s.v}</strong></td><td style="text-align:right;">${s.dur}</td></tr>`).join("");
+    `<tr><td><strong>${s.v}</strong></td><td>${s.short}</td><td>${s.sae}</td></tr>`).join("");
   document.getElementById("trialsPanels").innerHTML =
     `<p class="evidence-lead">Before U.S. licensure, each vaccine had to show — in a controlled trial — that it actually works. Here are the pivotal ones: design, size, result, source.</p>
      <div class="verdict"><b>Plain-English verdict</b> These vaccines were tested in controlled trials before approval —
-       most randomized and placebo- or comparator-controlled, several among the largest medical trials ever run — and
-       efficacy ran high (roughly 80–98%). The same system also <em>removes</em> vaccines when a real risk appears: the
-       first rotavirus vaccine (RotaShield) was pulled in 1999 over a rare bowel problem, and its replacement's trial was
-       built specifically to rule that out.</div>
+       most randomized, several among the largest medical trials ever run — and protection ran high (roughly 80–98%).
+       Two caveats. First, several of <em>today's</em> products were licensed on antibody levels or against an older
+       vaccine, not in their own placebo trial (see "Today's product" under each row). Second, a trial "placebo" often
+       contains everything in the vaccine except the active part, not salt water. The system does remove vaccines when a
+       real risk appears: the first rotavirus vaccine (RotaShield) was pulled in 1999 over a rare bowel problem.</div>
      <div class="card" style="overflow-x:auto;">
        <table style="min-width:640px;">
          <thead><tr><th>Vaccine / pivotal trial</th><th>Design &amp; size</th><th>Result</th><th>Source</th></tr></thead>
@@ -1041,36 +1230,169 @@ function renderTrials() {
            (see the Safety tab's note on placebo arms).</li>
        </ul>
      </div>
-     <h2 style="margin:30px 0 6px;font-size:19px;border-top:1px solid var(--line);padding-top:22px;">Duration of safety review after injection</h2>
-     <p class="evidence-lead" style="margin-top:0;">How long, after each shot, participants were actively monitored for
-       reactions in the trials these products were licensed on — straight from the FDA package inserts (the windows for
-       solicited reactions logged after each dose).</p>
+     <h2 style="margin:30px 0 6px;font-size:19px;border-top:1px solid var(--line);padding-top:22px;">How long were side effects tracked after each shot?</h2>
+     <p class="evidence-lead" style="margin-top:0;">From the current FDA labels for today's U.S. products. Two different
+       windows: <strong>short-term reactions</strong> (fever, swelling, fussiness) that parents logged daily, and
+       <strong>serious events</strong> (hospitalization, new chronic conditions) that researchers followed afterwards.</p>
      <div class="card" style="overflow-x:auto;">
        <table style="min-width:520px;">
-         <thead><tr><th>Vaccine (FDA product)</th><th style="text-align:right;">Duration of safety review after injection</th></tr></thead>
+         <thead><tr><th>Vaccine (FDA product)</th><th>Short-term reactions actively logged</th><th>Serious events followed</th></tr></thead>
          <tbody>${safetyRows}</tbody>
        </table>
-       <p class="metric-note" style="margin:10px 0 0;">Source: FDA package inserts —
-         <a href="https://www.fda.gov/media/75695/download" target="_blank" rel="noopener">IPOL</a>,
-         <a href="https://www.fda.gov/media/75718/download" target="_blank" rel="noopener">RotaTeq</a>,
-         and the M-M-R II, Engerix-B, PedvaxHIB, Infanrix, and Prevnar inserts.</p>
+       <p class="metric-note" style="margin:10px 0 0;">Source: current FDA package inserts (section 6, "Adverse
+         Reactions"), read via the NLM's <a href="https://dailymed.nlm.nih.gov/" target="_blank" rel="noopener">DailyMed</a>.
+         "Not stated" means the label gives no serious-event follow-up window, not that none occurred. Vaccine-critic
+         Aaron Siri compiles similar figures (<a href="https://icandecide.org/no-placebo" target="_blank" rel="noopener">ICAN chart</a>).</p>
      </div>
      <div class="verdict" style="border-left-color:#e0a800;">
-       <b>These products were licensed on this evidence</b>
-       After each shot, participants were actively monitored for reactions for a short window — <strong>2 days to 6
-       weeks</strong> (most 2–4 days), shown above. Serious adverse events were followed for longer in the trials, but
-       <strong>none attempted to measure long-term, multi-year effects before the vaccine was released to the
-       public.</strong> Detecting rare or delayed effects is left to post-licensure surveillance (VAERS, the Vaccine
-       Safety Datalink) — i.e., <em>after</em> millions are already vaccinated.</div>`;
+       <b>What this means</b>
+       Short-term reactions were logged for <strong>2 days to 6 weeks</strong> (most under a week). Serious events were
+       followed for up to <strong>6 months</strong> in newer trials, and a specific bowel risk for a year in the rotavirus
+       trials. <strong>No trial followed children for multiple years before the vaccine was released.</strong> Rare or
+       delayed effects are left to monitoring after approval (VAERS, the Vaccine Safety Datalink), i.e., <em>after</em>
+       many children are already vaccinated. That system has caught real problems (RotaShield's bowel risk in 1999;
+       COVID myocarditis in 2021).</div>`;
+}
+
+// ---- Claims & evidence: each claim, who makes it, and the evidence behind it ----
+// r: strong | partial | unres | weak | contra  (rates the evidence FOR the claim as worded)
+const RATE = { strong: ["r-strong", "Strong"], partial: ["r-partial", "Partly true"],
+               unres: ["r-unres", "Unresolved"], weak: ["r-weak", "Weak evidence"],
+               contra: ["r-contra", "Contradicted"] };
+const CLAIMS = [
+  { g: "Deaths, cases and history" },
+  { c: "Most of the fall in deaths came before the vaccines.",
+    who: "Aaron Siri (2025 Senate testimony); also shown by CDC/NCHS death records",
+    ev: "U.S. death-rate records back to 1900: measles −98.6%, whooping cough −93.6%, diphtheria −80.9% before each vaccine (The Data tab). The 1900 baseline covers only part of the country, so treat the exact digits as approximate.",
+    r: "strong" },
+  { c: "Vaccines drove cases toward zero.",
+    who: "CDC, AAP, mainstream public health",
+    ev: "Case counts collapsed right after each rollout (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all >99%), and controlled trials measured 80–98% protection. Some caveats: polio's case definition tightened, and whooping cough has partly returned.",
+    r: "strong" },
+  { c: "Polio epidemics were caused by pesticides (DDT), not a virus.",
+    who: "Morton Biskind (1950s); Forrest Maready (2018 book)",
+    ev: "Poliovirus was isolated and grown in the lab (Nobel Prize 1954). Epidemics began in the 1890s, before DDT, and the decline tracks the 1955 vaccine, years before DDT was restricted (Polio tab).",
+    r: "contra" },
+  { c: "Babies of vaccinated mothers lose measles protection sooner.",
+    who: "Aaron Siri",
+    ev: "Correct. Babies of vaccinated mothers lost maternal measles antibodies at a median of ~1 month vs ~3.8 months for babies of naturally immune mothers (Leuridan, BMJ 2010). By 6 months nearly all babies had lost them either way.",
+    r: "strong" },
+  { c: "Catching measles naturally protects against cancer and heart disease.",
+    who: "Aaron Siri",
+    ev: "Observational studies report associations (e.g., a Japanese cohort: lower heart-disease death after childhood measles and mumps). But childhood infection was recalled decades later, and association isn't cause. Measles itself kills roughly 1–3 per 1,000 U.S. cases.",
+    r: "weak" },
+  { g: "Autism and chronic illness" },
+  { c: "The MMR vaccine causes autism.",
+    who: "Andrew Wakefield (1998 paper, retracted for fraud)",
+    ev: "Large studies compared children who got MMR with children who didn't (Madsen 2002, 537,303 children; Hviid 2019, 657,461) and found no association.",
+    r: "contra" },
+  { c: "Thimerosal (mercury preservative) causes autism.",
+    who: "Vaccine critics since ~1999",
+    ev: "Danish children who got a thimerosal-free version of the same vaccine had the same autism risk (Hviid 2003, 467,450 children), and autism diagnoses kept rising after thimerosal was removed.",
+    r: "contra" },
+  { c: "\"Vaccines do not cause autism\" (as a blanket statement).",
+    who: "CDC's long-standing position; AAP. In Nov 2025 HHS added an asterisk to this headline on CDC's site, saying it is \"not an evidence-based claim\"",
+    ev: "Holds for MMR and thimerosal specifically. The infant schedule as a whole has never been compared with no vaccines, and the Institute of Medicine (2011) called the evidence \"inadequate to accept or reject\" a link for DTaP.",
+    r: "partial" },
+  { c: "Infant vaccines have never been properly studied for autism.",
+    who: "Aaron Siri",
+    ev: "Largely true for the shots given in the first year (hep B, DTaP, Hib, polio, pneumococcal): the big autism studies tested MMR (given at ~12 months) and thimerosal. One study tested antigen counts within vaccinated children (DeStefano 2013), with no unvaccinated group.",
+    r: "partial" },
+  { c: "Vaccination is the biggest avoidable cause of autism.",
+    who: "McCullough Foundation report (Hulscher, McCullough, Wakefield et al., Oct 2025)",
+    ev: "The report counts studies (107 of 136 \"inferred a possible link\") rather than weighing their quality. Critics note it includes animal studies and retracted work, and all authors belong to the foundation. No study comparing children has shown vaccines cause autism. The Henry Ford draft, the study critics cite most, found no autism link.",
+    r: "weak" },
+  { c: "Vaccinated children have far more chronic illness.",
+    who: "Aaron Siri; the unpublished Henry Ford draft (Lamerato et al.); the McCullough Foundation re-analysis",
+    ev: "The Henry Ford draft found ~2.5× more diagnosed chronic conditions (asthma, allergies, developmental) in vaccinated children. But vaccinated children saw doctors ~3.5× as often, giving more chances for a diagnosis, and the authors' checks for this are disputed. No clean study exists either way (Safety tab).",
+    r: "unres" },
+  { g: "Testing and oversight" },
+  { c: "Childhood vaccines were never tested against a placebo.",
+    who: "Aaron Siri / ICAN",
+    ev: "Several were: the 1954 Salk polio trial, the Hib (PedvaxHIB) trial, the plasma hep B trial, both rotavirus vaccines, COVID. But most of today's injected products were licensed against an older vaccine, and many trial \"placebos\" contain every ingredient except the active one rather than salt water (Trials tab).",
+    r: "partial" },
+  { c: "Trials monitored safety for only a few days.",
+    who: "Aaron Siri",
+    ev: "Short-term reactions were logged for 2–8 days for most vaccines (MMR and RotaTeq: 42 days). Serious events were followed for ~1–6 months in some trials, and intussusception (a bowel blockage) for a year in the rotavirus trials. No trial followed children for years before approval (Trials tab).",
+    r: "partial" },
+  { c: "Vaccines are thoroughly tested for safety.",
+    who: "CDC, FDA, AAP",
+    ev: "Short-term safety and effectiveness were tested in controlled trials, often large ones. Long-term and whole-schedule safety rests on monitoring after approval (VAERS, the Vaccine Safety Datalink). The Institute of Medicine (2013) found no evidence the schedule is unsafe, but said few studies examine it as a whole.",
+    r: "partial" },
+  { c: "HHS never filed the vaccine-safety reports to Congress required by the 1986 law.",
+    who: "Aaron Siri / ICAN (2018 lawsuit)",
+    ev: "In ICAN v. HHS (S.D.N.Y. 2018), HHS could not produce any of the reports, which were due every two years from 1989. The required Task Force on Safer Childhood Vaccines was disbanded in 1998 and revived in Aug 2025 after another lawsuit.",
+    r: "strong" },
+  { c: "Whole-cell DTP raises overall infant deaths (in poor countries).",
+    who: "Peter Aaby / Bandim Health Project; cited by Aaron Siri",
+    ev: "Observational studies from Guinea-Bissau found ~5× higher overall infant death after DTP (10× when given without oral polio; Mogensen 2017). A WHO-commissioned review rated the evidence very low quality, and WHO kept recommending DTP. The U.S. has used acellular DTaP since the late 1990s.",
+    r: "unres" },
+  { g: "COVID-19 vaccines (children)" },
+  { c: "COVID vaccines can cause heart inflammation (myocarditis) in young males.",
+    who: "Peter McCullough; also confirmed by CDC and FDA",
+    ev: "Confirmed but rare: the highest rate was ~106 cases per million second doses in males 16–17, and ~71 per million in males 12–15 (Oster, JAMA 2022), usually within days of the dose.",
+    r: "strong" },
+  { c: "COVID vaccines have killed large numbers of people.",
+    who: "Peter McCullough; McCullough Foundation autopsy review (Hulscher et al., 2024)",
+    ev: "The autopsy review had its own reviewers decide cause case by case. The journal withdrew it in 2024, and it was republished in a non-PubMed-indexed journal. Death counts from VAERS reports can't show cause. No population study has established mass deaths from the vaccines.",
+    r: "weak" },
+  { c: "COVID vaccines protect children from COVID.",
+    who: "CDC, Pfizer, AAP",
+    ev: "The trial in ages 5–11 showed 90.7% protection against symptomatic COVID after ~2 months (Walter, NEJM 2022). Real-world protection fell to ~25% within months and faded against later Omicron variants (test-negative study, 2023).",
+    r: "partial" },
+  { c: "COVID is a serious threat to healthy children.",
+    who: "AAP; contested by Kennedy's HHS (May 2025 directive)",
+    ev: "COVID caused 821 deaths among ages 0–19 from Aug 2021 to Jul 2022, the 8th leading cause of death in that age group (Flaxman, JAMA Netw Open 2023). Risk is far lower than for adults and concentrated in infants and children with underlying conditions.",
+    r: "partial" },
+];
+
+const WHO = [
+  ["Aaron Siri", "Managing partner of Siri &amp; Glimstad, a law firm with what he calls the largest U.S. vaccine practice not representing drug companies (vaccine-injury, exemption and anti-mandate cases). Represents ICAN, the group that urged Henry Ford researchers to run their study. Author of <em>Vaccines, Amen</em> (2025). His firm litigates against vaccine makers and health agencies."],
+  ["Peter McCullough", "Cardiologist; runs the McCullough Foundation (authors of the autism report and the Henry Ford re-analysis). The American Board of Internal Medicine revoked his board certifications (listed as revoked by Jan 2025), citing false COVID information; he disputes this."],
+  ["Henry Ford authors", "Lois Lamerato (epidemiologist) and Marcus Zervos (infectious-disease chief, and a principal investigator in drug-company vaccine trials, per Siri). They wrote the draft but did not publish it, and haven't commented publicly."],
+  ["Jake Scott", "Stanford infectious-disease physician who testified against Siri's position at the Sept 9, 2025 Senate hearing."],
+  ["CDC / HHS", "The federal health agencies. Since 2025, HHS has been led by Robert F. Kennedy Jr., who founded Children's Health Defense, a vaccine-critical group, and has changed several long-standing CDC positions (autism webpage, schedule). Official positions on this site are dated for that reason."],
+  ["AAP", "American Academy of Pediatrics, the main U.S. pediatricians' group. It supports the pre-2025 schedule and is the lead plaintiff suing HHS over the 2026 schedule changes."],
+];
+
+function renderClaims() {
+  const rows = CLAIMS.map(x => x.g
+    ? `<tr class="grp"><td colspan="4">${x.g}</td></tr>`
+    : `<tr><td>${x.c}</td><td class="who">${x.who}</td><td>${x.ev}</td>
+         <td><span class="rate ${RATE[x.r][0]}">${RATE[x.r][1]}</span></td></tr>`).join("");
+  const who = WHO.map(([n, d]) => `<li><strong>${n}</strong> — ${d}</li>`).join("");
+  document.getElementById("claimsPanels").innerHTML =
+    `<p class="evidence-lead">Common claims about vaccines, from both sides of the debate. For each: who makes it,
+       what the evidence actually shows, and how strong that evidence is. The rating is about the <em>evidence</em>,
+       not the person making the claim.</p>
+     <div class="verdict"><b>How to read the ratings</b>
+       <span class="rate r-strong">Strong</span> solid, direct evidence supports the claim as worded ·
+       <span class="rate r-partial">Partly true</span> right about part of it, overstated about the rest ·
+       <span class="rate r-unres">Unresolved</span> real evidence on both sides, no clean study yet ·
+       <span class="rate r-weak">Weak evidence</span> the evidence offered can't support the claim ·
+       <span class="rate r-contra">Contradicted</span> directly tested and not supported</div>
+     <div class="card" style="overflow-x:auto;">
+       <table class="claims" style="min-width:720px;">
+         <thead><tr><th>Claim</th><th>Who makes it</th><th>What the evidence shows</th><th>Evidence</th></tr></thead>
+         <tbody>${rows}</tbody>
+       </table>
+     </div>
+     <div class="card" style="font-size:13px;line-height:1.6;">
+       <h3 style="margin:2px 0 8px;font-size:15px;">Who's who</h3>
+       <p style="margin:0 0 8px;color:var(--muted);">Roles and interests, so you can weigh each source. Listed for
+         people and institutions on both sides.</p>
+       <ul style="margin:0;padding-left:18px;">${who}</ul>
+     </div>`;
 }
 
 const PRIMARY = [
   { id: "data",   label: "The Data",             sub: "disease trends over time" },
+  { id: "claims", label: "Claims & evidence",    sub: "who says what, and how strong it is" },
   { id: "trials", label: "How they were tested", sub: "the approval trials" },
-  { id: "safety", label: "Safety",               sub: "autism, chronic disease, vaxxed vs unvaxxed" },
+  { id: "safety", label: "Safety",               sub: "autism, chronic illness, COVID" },
 ];
 let activePrimary = "data";
-const EVID = { trials: renderTrials, safety: renderSafety };
+const EVID = { claims: renderClaims, trials: renderTrials, safety: renderSafety };
 
 function buildTopnav() {
   const nav = document.getElementById("topnav");
@@ -1087,6 +1409,7 @@ function selectPrimary(id) {
     b.setAttribute("aria-selected", String(b.dataset.p === id)));
   const isData = id === "data";
   document.getElementById("dataSection").style.display = isData ? "" : "none";
+  document.getElementById("claimsPanels").style.display = id === "claims" ? "" : "none";
   document.getElementById("trialsPanels").style.display = id === "trials" ? "" : "none";
   document.getElementById("safetyPanels").style.display = id === "safety" ? "" : "none";
   window.scrollTo(0, 0);
