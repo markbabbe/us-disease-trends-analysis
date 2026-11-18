@@ -65,11 +65,10 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; text-wrap: balance
 /* ---------- abstract ---------- */
 .abstract { margin: 32px 0 8px; display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 8px 32px; }
 .abstract h2 { margin: 0; font: 600 0.75rem/1.9 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
-.abstract ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; max-width: var(--measure); }
-.abstract li { padding-left: 1.1em; text-indent: -1.1em; }
-.abstract li::before { content: "■"; color: var(--accent); font-size: .55em; vertical-align: .35em; margin-right: .9em; }
-.abstract .after { grid-column: 2; margin: 6px 0 0; font-size: .95rem; color: var(--ink-2); max-width: var(--measure); }
-@media (max-width: 720px) { .abstract { grid-template-columns: 1fr; } .abstract .after { grid-column: 1; } }
+.abs-body { display: grid; gap: 12px; max-width: var(--measure); }
+.abs-body p { margin: 0; }
+.abs-body strong { font-family: var(--sans); font-size: .8125rem; letter-spacing: .02em; color: var(--accent); margin-right: .25em; }
+@media (max-width: 720px) { .abstract { grid-template-columns: 1fr; } }
 
 /* ---------- section navigation ---------- */
 .topnav { display: flex; flex-wrap: wrap; gap: 0; margin: 36px 0 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
@@ -209,25 +208,27 @@ footer .wrap { padding-block: 22px 40px; font: 400 0.8125rem/1.6 var(--sans); co
 <div class="wrap">
   <section class="abstract" aria-label="Abstract">
     <h2>Abstract</h2>
-    <ul>
-      <li><strong>Deaths fell first.</strong> For measles, whooping cough and diphtheria, the death rate fell 80–98%
-        <em>before</em> the vaccines arrived, thanks to clean water, better nutrition, antibiotics and hospital care.</li>
-      <li><strong>Vaccines then cut cases.</strong> People were still catching these diseases until vaccines drove
-        cases toward zero, and with them the paralysis and birth defects that came with polio and rubella infection.
-        Their share of the final fall in <em>deaths</em> differs by disease. Where deaths were already falling year
-        over year (whooping cough, diphtheria), that decline would reasonably have continued without the vaccine, so
-        the vaccine's share can't be separated out. Where deaths had stopped falling (measles levelled off; polio swung
-        with epidemics), the drop after the vaccine broke from the trend.</li>
-      <li><strong>Autism: specific claims tested, the big question not.</strong> MMR and the mercury preservative
-        thimerosal were tested in large studies and no link was found. But the whole schedule vs. no vaccines has
-        never been cleanly tested, so neither "vaccines cause autism" nor "vaccines don't cause autism" is settled
-        for the schedule as a whole.</li>
-      <li><strong>Trials.</strong> Most vaccines proved they work in controlled trials, but side effects were
-        actively tracked for days to months, not years. Long-term effects depend on monitoring after approval.</li>
-      <li><strong>Measles is back.</strong> The U.S. lost its measles-elimination status in November 2026.</li>
-    </ul>
-    <p class="after">Section 2, Claims and evidence, sets out common claims from both sides, who makes them, and
-      what the evidence shows.</p>
+    <div class="abs-body">
+      <p><strong>Why this exists.</strong> It's hard to know what to believe about vaccines. Health agencies and their
+        critics both often claim more than the evidence shows. This review lays out the truth as the evidence shows it,
+        without spin in either direction: what is settled, what isn't, and where nobody knows yet.</p>
+      <p><strong>What this covers.</strong> The vaccines on the U.S. childhood schedule: hepatitis B, rotavirus, DTaP,
+        Hib, pneumococcal, polio, MMR, meningococcal and COVID-19. For each: U.S. death and case records (back to 1900 where they exist),
+        the trials it passed before approval, and the published safety studies, including those cited by critics.</p>
+      <p><strong>What the records show.</strong> Deaths from measles, whooping cough and diphtheria had already fallen
+        80–98% before their vaccines, as living conditions, antibiotics and hospital care improved. The vaccines then
+        drove cases toward zero, and with them polio paralysis and rubella birth defects. How much of the final fall in
+        deaths the vaccines caused depends on the disease. For whooping cough and diphtheria, deaths were already
+        falling year over year and would reasonably have kept falling, so the vaccines' share can't be separated out.
+        For measles and polio, deaths had stopped falling before the vaccine and dropped sharply after it.</p>
+      <p><strong>What is settled and what is not.</strong> Large studies found no link between autism and the MMR
+        vaccine or the preservative thimerosal. The full schedule has never been cleanly compared with no vaccines, so
+        whether it affects autism or chronic illness is unresolved in either direction. Most vaccines proved effective
+        in controlled trials, but side effects were tracked for days to months before approval; longer-term effects
+        rely on monitoring after release.</p>
+      <p><strong>Where things stand now.</strong> Measles has returned: 5,412 confirmed U.S. cases in 2026 as of
+        12 November, and the U.S. lost its measles-elimination status on 17 November 2026.</p>
+    </div>
   </section>
   <div class="topnav" id="topnav"></div>
   <div id="dataSection">
@@ -804,13 +805,11 @@ function renderOverview() {
       measles; deaths per case fell, but cases didn't. That's where vaccines come in, as the previous section describes. Polio went the
       other way: its deaths rose from 1900 into the mid-century epidemics, peaked in 1952, and fell for good only
       after the 1955 vaccine.</p>
-      <p class="fine"><strong>Points raised by vaccine critic Aaron Siri (2025 Senate
-      testimony), checked:</strong> (1) Before the 1963 vaccine, U.S. measles killed about 400 people a year, roughly 1
-      in 450,000 Americans — consistent with CDC figures. (2) A U.S. Public Health Service analysis found diphtheria
-      deaths began falling at the same time in every state after 1925, even though early immunization reached very
-      different shares of children — a sign other factors were at work too. (3) Scarlet fever, a childhood killer
-      in 1900, all but disappeared with <em>no</em> vaccine (antibiotics and milder strains). (4) His claim that
-      deaths fell no faster after vaccines arrived hasn't been tested on this site's data, so it isn't shown.</p>
+      <p class="fine"><strong>More from the record:</strong> Before the 1963 vaccine, U.S. measles killed about 400
+      people a year, roughly 1 in 450,000 Americans (NCHS). A U.S. Public Health Service analysis (<em>Public Health
+      Reports</em>) found diphtheria deaths began falling at the same time in every state after 1925, even though early
+      immunization reached very different shares of children, a sign other factors were at work too. Scarlet fever, a
+      leading childhood killer in 1900, all but disappeared with <em>no</em> vaccine (antibiotics and milder strains).</p>
       <p class="fine"><strong>What about hospitalizations?</strong> The U.S.
       has no national hospitalization records for these diseases before their vaccines (rotavirus is the only one
       tracked here), so a pre-vaccine fall in hospitalizations can't be shown — only deaths.</p>
@@ -861,7 +860,7 @@ function renderOverview() {
           side-effect reporting (now <strong>VAERS</strong>).</p>
           <p>The Act also required HHS to keep a <strong>Task Force on Safer Childhood
           Vaccines</strong> and to report to Congress every two years, from 1989, on vaccine-safety improvements. In a
-          2018 lawsuit brought by the advocacy group ICAN (lawyer: Aaron Siri), HHS could not produce any of those
+          2018 lawsuit, HHS could not produce any of those
           reports (<em>ICAN v. HHS</em>, S.D.N.Y. 18-cv-03215). The task force had been disbanded in 1998; HHS revived it
           in August 2025 after another lawsuit.</p>
           <p class="fine">It's a law about <em>liability</em>, not evidence — it says nothing
@@ -1282,8 +1281,7 @@ function renderSafety() {
              emergency rooms and hospital wards, it held steadier, at ~40%.</td>
              <td><a href="https://pubmed.ncbi.nlm.nih.gov/37922479/" target="_blank" rel="noopener">Test-negative study, 2023</a></td></tr>
            <tr><td><strong>Heart inflammation (myocarditis)?</strong></td><td>Confirmed. Highest after the 2nd dose: ~106 per
-             million doses in males 16–17, ~71 per million in males 12–15; usually within a few days. Raised early by
-             vaccine critics including Peter McCullough, and confirmed by CDC/FDA.</td>
+             million doses in males 16–17, ~71 per million in males 12–15; usually within a few days.</td>
              <td><a href="https://pubmed.ncbi.nlm.nih.gov/35076665/" target="_blank" rel="noopener">Oster, JAMA 2022</a></td></tr>
            <tr><td><strong>How dangerous is COVID for children?</strong></td><td>821 deaths among ages 0–19 from Aug 2021 to
              Jul 2022, the 8th leading cause of death in that age group; far lower risk than adults, highest in infants and
@@ -1417,8 +1415,7 @@ function renderTrials() {
        </table>
        <p class="metric-note">Source: current FDA package inserts (section 6, "Adverse
          Reactions"), read via the NLM's <a href="https://dailymed.nlm.nih.gov/" target="_blank" rel="noopener">DailyMed</a>.
-         "Not stated" means the label gives no serious-event follow-up window, not that none occurred. Vaccine-critic
-         Aaron Siri compiles similar figures (<a href="https://icandecide.org/no-placebo" target="_blank" rel="noopener">ICAN chart</a>).</p>
+         "Not stated" means the label gives no serious-event follow-up window, not that none occurred.</p>
      </div>
      <div class="verdict">
        <b>What this means</b>
@@ -1434,19 +1431,19 @@ function renderTrials() {
 const CLAIMS = [
   { g: "Deaths, cases and history" },
   { c: "Most of the fall in deaths came before the vaccines.",
-    who: "Aaron Siri (2025 Senate testimony); also shown by CDC/NCHS death records",
+    src: "U.S. death records (NCHS, 1900–1963)",
     ev: "U.S. death-rate records back to 1900: measles −98.6%, whooping cough −93.6%, diphtheria −80.9% before each vaccine (The Data tab). The 1900 baseline covers only part of the country, so treat the exact digits as approximate." },
   { c: "Death rates would have kept falling without the vaccines.",
-    who: "Inference from the pre-vaccine trend in U.S. death records (NCHS, 1900–1970; see The Data)",
+    src: "The pre-vaccine trend in U.S. death records (NCHS, 1900–1970)",
     ev: "Reasonable where deaths were already falling year over year. Whooping cough: 4.8 per 100,000 in 1930 → 0.78 in 1948 (vaccine routine) → 0.07 in 1960. Diphtheria: 40.3 in 1900 → 7.7 in 1926 (toxoid) → 0.4 in 1948. The decline sped up after each vaccine, but antibiotics and other improvements arrived in the same years, so the vaccine's share can't be measured; assuming deaths would have frozen at the vaccine-year level isn't supported either. The trend points the other way for two diseases. Measles deaths fell in the early 1950s, then levelled off: 0.21–0.32 per 100,000 (about 400 a year) every year from 1955 to 1962. After the 1963 vaccine they fell to 0.012 by 1968, about 95% below that plateau. Polio deaths swung with epidemics but showed no downward trend before the vaccine (0.86 per 100,000 in 1945, a 1.98 peak in 1952, 0.84 in 1954). After the 1955 vaccine they fell below any earlier level, to 0.008 by 1965." },
   { c: "Vaccines drove cases toward zero.",
-    who: "CDC, AAP, mainstream public health",
+    src: "CDC case surveillance (MMWR) and the approval trials",
     ev: "Case counts collapsed right after each rollout (polio 57,198 in 1952 → 0; measles, diphtheria, Hib, rubella all >99%), and controlled trials measured 80–98% protection. Some caveats: polio's case definition tightened, and whooping cough has partly returned." },
   { c: "Polio epidemics were caused by pesticides (DDT), not a virus.",
     who: "Morton Biskind (1950s); Forrest Maready (2018 book)",
     ev: "Poliovirus was isolated and grown in the lab (Nobel Prize 1954). Epidemics began in the 1890s, before DDT, and the decline tracks the 1955 vaccine, years before DDT was restricted (Polio tab)." },
   { c: "Babies of vaccinated mothers lose measles protection sooner.",
-    who: "Aaron Siri",
+    src: "Leuridan et al., BMJ 2010 (207 Belgian mother–infant pairs)",
     ev: "Babies of vaccinated mothers lost maternal measles antibodies at a median of ~1 month vs ~3.8 months for babies of naturally immune mothers (Leuridan, BMJ 2010). By 6 months nearly all babies had lost them either way." },
   { c: "Catching measles naturally protects against cancer and heart disease.",
     who: "Aaron Siri",
@@ -1462,39 +1459,39 @@ const CLAIMS = [
     who: "CDC's long-standing position; AAP. In Nov 2025 HHS added an asterisk to this headline on CDC's site, saying it is \"not an evidence-based claim\"",
     ev: "Holds for MMR and thimerosal specifically. The infant schedule as a whole has never been compared with no vaccines, and the Institute of Medicine (2011) called the evidence \"inadequate to accept or reject\" a link for DTaP." },
   { c: "Infant vaccines have never been properly studied for autism.",
-    who: "Aaron Siri",
+    src: "The published autism studies; Institute of Medicine review (2011)",
     ev: "Largely true for the shots given in the first year (hep B, DTaP, Hib, polio, pneumococcal): the big autism studies tested MMR (given at ~12 months) and thimerosal. One study tested antigen counts within vaccinated children (DeStefano 2013), with no unvaccinated group." },
   { c: "Vaccination is the biggest avoidable cause of autism.",
     who: "McCullough Foundation report (Hulscher, McCullough, Wakefield et al., Oct 2025)",
     ev: "The report counts studies (107 of 136 \"inferred a possible link\") rather than weighing their quality. Critics note it includes animal studies and retracted work, and all authors belong to the foundation. No study comparing children has shown vaccines cause autism. The Henry Ford draft, the study critics cite most, found no autism link." },
   { c: "Vaccinated children have far more chronic illness.",
-    who: "Aaron Siri; the unpublished Henry Ford draft (Lamerato et al.); the McCullough Foundation re-analysis",
+    src: "Henry Ford Health records, unpublished draft (Lamerato et al.)",
     ev: "The Henry Ford draft found ~2.5× more diagnosed chronic conditions (asthma, allergies, developmental) in vaccinated children. But vaccinated children saw doctors ~3.5× as often, giving more chances for a diagnosis, and the authors' checks for this are disputed. No clean study exists either way (Safety tab)." },
   { g: "Testing and oversight" },
   { c: "Childhood vaccines were never tested against a placebo.",
     who: "Aaron Siri / ICAN",
     ev: "Several were: the 1954 Salk polio trial, the Hib (PedvaxHIB) trial, the plasma hep B trial, both rotavirus vaccines, COVID. But most of today's injected products were licensed against an older vaccine, and many trial \"placebos\" contain every ingredient except the active one rather than salt water (Trials tab)." },
   { c: "Trials monitored safety for only a few days.",
-    who: "Aaron Siri",
+    src: "Current FDA package inserts",
     ev: "Short-term reactions were logged for 2–8 days for most vaccines (MMR and RotaTeq: 42 days). Serious events were followed for ~1–6 months in some trials, and intussusception (a bowel blockage) for a year in the rotavirus trials. No trial followed children for years before approval (Trials tab)." },
   { c: "Vaccines are thoroughly tested for safety.",
     who: "CDC, FDA, AAP",
     ev: "Short-term safety and effectiveness were tested in controlled trials, often large ones. Long-term and whole-schedule safety rests on monitoring after approval (VAERS, the Vaccine Safety Datalink). The Institute of Medicine (2013) found no evidence the schedule is unsafe, but said few studies examine it as a whole." },
   { c: "HHS never filed the vaccine-safety reports to Congress required by the 1986 law.",
-    who: "Aaron Siri / ICAN (2018 lawsuit)",
+    src: "Court record, ICAN v. HHS (S.D.N.Y. 2018)",
     ev: "In ICAN v. HHS (S.D.N.Y. 2018), HHS could not produce any of the reports, which were due every two years from 1989. The required Task Force on Safer Childhood Vaccines was disbanded in 1998 and revived in Aug 2025 after another lawsuit." },
   { c: "Whole-cell DTP raises overall infant deaths (in poor countries).",
-    who: "Peter Aaby / Bandim Health Project; cited by Aaron Siri",
+    src: "Bandim Health Project studies, Guinea-Bissau (Mogensen et al., 2017)",
     ev: "Observational studies from Guinea-Bissau found ~5× higher overall infant death after DTP (10× when given without oral polio; Mogensen 2017). A WHO-commissioned review rated the evidence very low quality, and WHO kept recommending DTP. The U.S. has used acellular DTaP since the late 1990s." },
   { g: "COVID-19 vaccines (children)" },
   { c: "COVID vaccines can cause heart inflammation (myocarditis) in young males.",
-    who: "Peter McCullough; also confirmed by CDC and FDA",
+    src: "CDC and FDA safety monitoring (Oster et al., JAMA 2022)",
     ev: "Confirmed but rare: the highest rate was ~106 cases per million second doses in males 16–17, and ~71 per million in males 12–15 (Oster, JAMA 2022), usually within days of the dose." },
   { c: "COVID vaccines have killed large numbers of people.",
     who: "Peter McCullough; McCullough Foundation autopsy review (Hulscher et al., 2024)",
     ev: "The autopsy review had its own reviewers decide cause case by case. The journal withdrew it in 2024, and it was republished in a non-PubMed-indexed journal. Death counts from VAERS reports can't show cause. No population study has established mass deaths from the vaccines." },
   { c: "COVID vaccines protect children from COVID.",
-    who: "CDC, Pfizer, AAP",
+    src: "Pfizer pediatric trial (Walter et al., NEJM 2022); 2023 test-negative study",
     ev: "The trial in ages 5–11 showed 90.7% protection against symptomatic COVID after ~2 months (Walter, NEJM 2022). Real-world protection fell to ~25% within months and faded against later Omicron variants (test-negative study, 2023)." },
   { c: "COVID is a serious threat to healthy children.",
     who: "AAP; contested by Kennedy's HHS (May 2025 directive)",
@@ -1522,7 +1519,7 @@ function renderClaims() {
       open = true;
     } else {
       html += `<article class="claim">
-        <div><p class="claim-text">${esc(x.c)}</p><p class="claim-who"><span>Made by</span> ${x.who}</p></div>
+        <div><p class="claim-text">${esc(x.c)}</p><p class="claim-who">${x.src ? `<span>Source</span> ${x.src}` : `<span>Made by</span> ${x.who}`}</p></div>
         <p class="claim-ev"><span class="lbl">What the evidence shows</span>${x.ev}</p></article>`;
     }
   });
