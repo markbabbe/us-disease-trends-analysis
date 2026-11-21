@@ -554,3 +554,19 @@ python3 -m venv .venv && .venv/bin/pip install matplotlib numpy
   36716029); autopsy review withdrawal (FactCheck.org, Jul 2024); May 2025 HHS
   directive (NPR/CBS, May 30, 2025); CDC autism-page change (AP via PBS, Nov 20, 2025).
 - **McCullough ABIM status** — TechARP (Jan 2025 ABIM lookup "Not Certified, Revoked").
+
+## Measles mortality additions (2026-11-21)
+
+- **U.S. 1900 measles deaths** — 13.3 per 100,000 (NCHS vital statistics rates 1900–1960)
+  × ~76.1M population ≈ 10,100.
+- **England and Wales** — 99 measles deaths in 1967 (UKHSA/GOV.UK "Measles notifications and
+  deaths in England and Wales: 1940 to 2025", ONS data); first vaccine 1968. 1901–05 counts
+  (8,440 in 1901; 12,065 in 1902; 10,383 in 1905) from Longevitas' analysis of the ONS
+  20th Century Mortality Files — secondary, shown as approximate.
+- **Royal Society & British Academy (2020)**, "COVID-19 vaccine deployment: behaviour, ethics,
+  misinformation and policy strategies" — states "around 530,217 deaths per year"; 530,217 is
+  the pre-vaccine annual average of reported measles *cases* (Roush & Murphy, JAMA 2007).
+- **Montella et al. 2006**, Leuk Res (PMID 16406019); **Hoption Cann et al. 2006**, Cancer
+  Detect Prev (PMID 16490323); **Kubota et al. 2015**, Atherosclerosis (PMID 26122188).
+- Prompted by Aaron Siri, "Measles and Mortality" (Substack, Nov 19, 2026); figures above
+  checked against the primary sources listed.

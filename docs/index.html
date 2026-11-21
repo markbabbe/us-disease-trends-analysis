@@ -805,8 +805,11 @@ function renderOverview() {
       measles; deaths per case fell, but cases didn't. That's where vaccines come in, as the previous section describes. Polio went the
       other way: its deaths rose from 1900 into the mid-century epidemics, peaked in 1952, and fell for good only
       after the 1955 vaccine.</p>
-      <p class="fine"><strong>More from the record:</strong> Before the 1963 vaccine, U.S. measles killed about 400
-      people a year, roughly 1 in 450,000 Americans (NCHS). A U.S. Public Health Service analysis (<em>Public Health
+      <p class="fine"><strong>More from the record:</strong> In 1900, measles killed about 10,100 Americans (13.3 per
+      100,000; NCHS). Before the 1963 vaccine, it killed about 400 a year, roughly 1 in 450,000 Americans. The same
+      pattern appears elsewhere: in England and Wales, measles deaths fell from roughly 8,000–12,000 a year in
+      1901–05 (approximate, from ONS mortality files) to 99 in 1967, more than 99% lower, before that country's
+      first measles vaccine in 1968 (ONS/UKHSA). A U.S. Public Health Service analysis (<em>Public Health
       Reports</em>) found diphtheria deaths began falling at the same time in every state after 1925, even though early
       immunization reached very different shares of children, a sign other factors were at work too. Scarlet fever, a
       leading childhood killer in 1900, all but disappeared with <em>no</em> vaccine (antibiotics and milder strains).</p>
@@ -1445,9 +1448,12 @@ const CLAIMS = [
   { c: "Babies of vaccinated mothers lose measles protection sooner.",
     src: "Leuridan et al., BMJ 2010 (207 Belgian mother–infant pairs)",
     ev: "Babies of vaccinated mothers lost maternal measles antibodies at a median of ~1 month vs ~3.8 months for babies of naturally immune mothers (Leuridan, BMJ 2010). By 6 months nearly all babies had lost them either way." },
-  { c: "Catching measles naturally protects against cancer and heart disease.",
+  { c: "Catching measles naturally protects against cancer and heart disease, so the MMR vaccine may cost more lives than it saves.",
     who: "Aaron Siri",
-    ev: "Observational studies report associations (e.g., a Japanese cohort: lower heart-disease death after childhood measles and mumps). But childhood infection was recalled decades later, and association isn't cause. Measles itself kills roughly 1–3 per 1,000 U.S. cases." },
+    ev: "Observational studies do report associations. A Japanese cohort of 103,836 adults found lower heart-disease death in men who recalled having both measles and mumps as children (hazard ratio 0.80; Kubota 2015). An Italian case-control study (225 non-Hodgkin and 62 Hodgkin lymphoma patients vs. 504 controls) linked childhood measles to lower lymphoma risk (Montella 2006), and a review linked feverish childhood infections to lower ovarian and overall cancer risk (Hoption Cann 2006). But infection history was recalled decades later, the studies are small or observational, and association isn't cause. Weighing heart-disease or cancer deaths against measles deaths requires treating these associations as causal, which hasn't been shown. Measles itself kills roughly 1–3 per 1,000 U.S. cases." },
+  { c: "At the start of the 20th century, measles killed about 530,000 Americans a year.",
+    who: "Royal Society and British Academy (2020 report on COVID-19 vaccine deployment)",
+    ev: "U.S. death records show about 10,100 measles deaths in 1900 (13.3 per 100,000; NCHS). The figure 530,217 is the pre-vaccine average number of reported measles cases per year (Roush et al., JAMA 2007), apparently mistaken for deaths." },
   { g: "Autism and chronic illness" },
   { c: "The MMR vaccine causes autism.",
     who: "Andrew Wakefield (1998 paper, retracted for fraud)",
