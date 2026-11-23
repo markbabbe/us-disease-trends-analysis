@@ -570,3 +570,19 @@ python3 -m venv .venv && .venv/bin/pip install matplotlib numpy
   Detect Prev (PMID 16490323); **Kubota et al. 2015**, Atherosclerosis (PMID 26122188).
 - Prompted by Aaron Siri, "Measles and Mortality" (Substack, Nov 19, 2026); figures above
   checked against the primary sources listed.
+
+## Measles PCR and vaccine reactions (2026-11-23)
+
+- CDC, "Measles Virus Genotype A RT-qPCR (MeVA RT-qPCR)" info sheet: ~5% of vaccinees develop
+  fever and rash; standard MeV RT-qPCR and serology can't distinguish vaccine from wild-type;
+  genotype A detection is consistent with a vaccine reaction.
+- CDC, "Genetic Analysis of Measles Viruses": during outbreaks "vaccine reactions may be
+  mistakenly classified as measles cases"; all vaccine strains are genotype A.
+- CSTE/CDC measles case definition (2013, position statement 12-ID-07): probable cases exclude
+  illness explained by MMR vaccination in the previous 6–45 days.
+- WHO measles lab manual, Annex 6.3: MeVA ~95% as sensitive as general RT-qPCR.
+- Tennessee 2022–23 (Open Forum Infect Dis abstract 913, PMC10677566): 7 incidental measles
+  positives on a multiplex panel, all vaccinated 8–15 days earlier.
+- Ontario 2025 (PMC12579314): vaccine-virus mutation produced a false-negative MeVA result.
+- CDC measles data page (Nov 12, 2026): 5,216 of 5,412 cases outbreak-associated; D8 is the
+  predominant genotype. Wisconsin wastewater genotype detection: MMWR 75(27), 2026.
