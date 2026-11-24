@@ -586,3 +586,19 @@ python3 -m venv .venv && .venv/bin/pip install matplotlib numpy
 - Ontario 2025 (PMC12579314): vaccine-virus mutation produced a false-negative MeVA result.
 - CDC measles data page (Nov 12, 2026): 5,216 of 5,412 cases outbreak-associated; D8 is the
   predominant genotype. Wisconsin wastewater genotype detection: MMWR 75(27), 2026.
+
+## Measles vaccine breakthrough in Mexico (2026-11-24)
+
+- De Arcos-Jiménez JC et al., "Population-level measles RT–PCR cycle threshold values…: a time
+  series analysis of the 2025–2026 outbreak in Mexico," Front Public Health 2026;14:1967103
+  (doi 10.3389/fpubh.2026.1967103; PMID 42923402; PMC13687380). EFE/SINAVE extract,
+  Chihuahua + Jalisco, 10,910 Cq determinations from confirmed cases: 0 doses n=6,790,
+  1 dose n=1,114, 2 doses n=454 (median ages 17, 15, 26); median age 20; Cq +0.761 cycles per
+  documented dose (lower RNA burden).
+- Muñoz-Valle JF et al., Vaccines (Basel) 2026;14(3):234 (doi 10.3390/vaccines14030234):
+  302 Guadalajara blood donors, 67.2% seropositive (>200 mIU/mL); pre-1970 cohort GMC 1096.63
+  vs 270.43 overall.
+- Effectiveness range (96–97%) computed here by the Farrington screening method with 19%
+  of cases vaccinated and 85–90% population coverage (coverage per Viruses 2026,
+  PMC12944898, and IJID 2026, PMID 41933695). Viruses 2026 national estimate: 98.1%.
+- Prompted by Peter McCullough, Focal Points (Substack), Nov 24, 2026.
